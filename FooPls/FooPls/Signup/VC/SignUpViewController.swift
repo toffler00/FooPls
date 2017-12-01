@@ -9,9 +9,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signupScrollView: UIScrollView!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField!
-    @IBOutlet weak var rePwdTF: UITextField!
-    @IBOutlet weak var confirmBtn: UIButton!
-    @IBOutlet weak var signupView: UIView!
+    @IBOutlet weak var rePwdTF: UITextField! {
+        didSet{
+            rePwdTF.delegate = self
+        }
+    }
     
     // MARK: Property
     lazy var reference = Database.database().reference()
@@ -19,10 +21,9 @@ class SignUpViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil
-        )
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     @objc func keyboardDidShow(_ noti: Notification) {
@@ -74,21 +75,33 @@ class SignUpViewController: UIViewController {
         }else{
             Auth.auth().createUser(withEmail: email, password: pwd, completion: { [weak self] (user, error) in
                 guard let `self` = self else { return }
-                if error == nil, let user = user{
-                    let userDictionary : [String: Any] = ["user":["email": user.email]]
-                    self.reference.child(user.uid).setValue(userDictionary)
+                if error == nil && user != nil {
+                    let userDictionary : [String: Any] = ["email": email]
+                    self.reference.child("users").child(user!.uid).setValue(userDictionary)
                     UIAlertController.presentAlertController(target: self,
                                                              title: "가입축하",
                                                              massage: "가입을 축하드립니다.",
                                                              actionStyle: .default,
                                                              cancelBtn: false,
                                                              completion: { _ in
-//                                                                self.performSegue(withIdentifier: self.segueSignUpToMain, sender: nil)
+                                                                
+                                                                self.performSegue(withIdentifier: "mainSegue", sender: nil)
+                                                                
                     })
                 }
             })
         }
     }
-    
 }
+
+// MARK: UITextFieldDelegate
+extension SignUpViewController: UITextFieldDelegate {
+    
+    // MARK: textFieldShouldReturn
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        rePwdTF.resignFirstResponder()
+        return true
+    }
+}
+
 

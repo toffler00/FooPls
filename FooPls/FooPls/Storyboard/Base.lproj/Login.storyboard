@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,16 +76,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v8-95-ea7">
                                                 <rect key="frame" x="56.5" y="450.5" width="262.5" height="33"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <state key="normal" title="로그인">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loginBtnAction:" destination="Oof-Qf-0Mx" eventType="touchUpInside" id="1M7-qd-TVq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWM-G4-iWI" customClass="FBSDKLoginButton">
-                                                <rect key="frame" x="56.5" y="517" width="262.5" height="33"/>
+                                                <rect key="frame" x="56.5" y="584" width="262.5" height="33"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="페이스북으로 이용하기">
@@ -92,7 +93,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xy-lr-S0n" customClass="KOLoginButton">
-                                                <rect key="frame" x="56.5" y="584" width="262.5" height="33"/>
+                                                <rect key="frame" x="56.5" y="517" width="262.5" height="33"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="카카오로 이용하기">
@@ -102,8 +103,8 @@
                                                     <action selector="kakaoBtnAction:" destination="Oof-Qf-0Mx" eventType="touchUpInside" id="pvw-MO-Tkw"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFk-PZ-6yd">
-                                                <rect key="frame" x="253" y="287" width="66" height="26"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFk-PZ-6yd">
+                                                <rect key="frame" x="187.5" y="287" width="131.5" height="26"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                 <state key="normal" title="회원 가입하기">
                                                     <color key="titleColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +117,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="6rg-vo-z6U" firstAttribute="trailing" secondItem="fFk-PZ-6yd" secondAttribute="trailing" id="3am-Xf-KMZ"/>
+                                            <constraint firstItem="fFk-PZ-6yd" firstAttribute="leading" secondItem="Un9-tk-3J0" secondAttribute="centerX" id="4OS-uQ-VGB"/>
                                             <constraint firstItem="As1-dk-baB" firstAttribute="height" secondItem="Un9-tk-3J0" secondAttribute="height" multiplier="0.1" id="4ln-jB-Atf"/>
                                             <constraint firstItem="6rg-vo-z6U" firstAttribute="height" secondItem="Un9-tk-3J0" secondAttribute="height" multiplier="0.15" id="5Tt-Qc-Prg"/>
                                             <constraint firstItem="1Xy-lr-S0n" firstAttribute="width" secondItem="7v8-95-ea7" secondAttribute="width" id="8vK-wd-Eya"/>
@@ -131,10 +133,10 @@
                                             <constraint firstAttribute="trailing" secondItem="mef-mz-PCa" secondAttribute="trailing" id="fiv-yN-6PD"/>
                                             <constraint firstItem="7v8-95-ea7" firstAttribute="height" secondItem="Un9-tk-3J0" secondAttribute="height" multiplier="0.05" id="hty-YR-nEd"/>
                                             <constraint firstItem="As1-dk-baB" firstAttribute="width" secondItem="Un9-tk-3J0" secondAttribute="width" multiplier="0.4" id="lGf-1H-0Bn"/>
-                                            <constraint firstItem="1Xy-lr-S0n" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="1.8" id="oRs-mt-j8I"/>
+                                            <constraint firstItem="1Xy-lr-S0n" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="1.6" id="oRs-mt-j8I"/>
                                             <constraint firstItem="7v8-95-ea7" firstAttribute="width" secondItem="Un9-tk-3J0" secondAttribute="width" multiplier="0.7" id="oeb-mx-x4W"/>
                                             <constraint firstItem="iWM-G4-iWI" firstAttribute="width" secondItem="7v8-95-ea7" secondAttribute="width" id="pEo-6n-b16"/>
-                                            <constraint firstItem="iWM-G4-iWI" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="1.6" id="qUf-qA-gSd"/>
+                                            <constraint firstItem="iWM-G4-iWI" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="1.8" id="qUf-qA-gSd"/>
                                             <constraint firstItem="fFk-PZ-6yd" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="0.9" id="t0E-QL-zAF"/>
                                             <constraint firstItem="7v8-95-ea7" firstAttribute="centerX" secondItem="Un9-tk-3J0" secondAttribute="centerX" id="u7N-vQ-jIl"/>
                                             <constraint firstItem="iWM-G4-iWI" firstAttribute="centerX" secondItem="Un9-tk-3J0" secondAttribute="centerX" id="xFP-TI-OmJ"/>
@@ -144,6 +146,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="emailTF" destination="suZ-xN-VgB" id="Kpe-lK-7UX"/>
+                                            <outlet property="logInBtn" destination="7v8-95-ea7" id="kEq-Cc-YDG"/>
                                             <outlet property="loginStackView" destination="6rg-vo-z6U" id="j8k-VL-ooY"/>
                                             <outlet property="passwordTF" destination="jgK-kA-6LK" id="BWa-aV-iJk"/>
                                             <outlet property="signUpBtn" destination="7v8-95-ea7" id="tky-Eh-qeC"/>
@@ -173,9 +176,7 @@
                     <connections>
                         <outlet property="emailTF" destination="suZ-xN-VgB" id="MTx-Z9-un0"/>
                         <outlet property="faceBookBtn" destination="iWM-G4-iWI" id="v8e-68-h8s"/>
-                        <outlet property="facebookBtn" destination="iWM-G4-iWI" id="kpn-dP-lSS"/>
                         <outlet property="kakaoBtn" destination="1Xy-lr-S0n" id="ZXa-lh-jPu"/>
-                        <outlet property="loginBtn" destination="7v8-95-ea7" id="QgK-eI-6Cn"/>
                         <outlet property="loginScrollView" destination="Mss-wL-eC4" id="7e8-fV-FwD"/>
                         <outlet property="pwdTF" destination="jgK-kA-6LK" id="6tq-IX-i89"/>
                         <segue destination="2LH-jv-hXu" kind="show" identifier="mainSegue" id="80J-S1-MC9"/>
@@ -223,7 +224,7 @@
                                                                 <rect key="frame" x="47.5" y="88" width="223" height="24"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
                                                                 </userDefinedRuntimeAttributes>
@@ -232,7 +233,7 @@
                                                                 <rect key="frame" x="48" y="168" width="223" height="24"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
                                                                 </userDefinedRuntimeAttributes>
@@ -241,17 +242,17 @@
                                                                 <rect key="frame" x="48" y="248" width="223" height="24"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-bf-56b">
-                                                                <rect key="frame" x="48.5" y="323.5" width="223" height="33"/>
+                                                                <rect key="frame" x="48.5" y="325.5" width="223" height="29"/>
                                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                                <state key="normal" title="SIGN UP">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                                <state key="normal" title="확인">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="singUpBtn:" destination="N4e-M0-siA" eventType="touchUpInside" id="8ao-C2-hOA"/>
@@ -285,10 +286,9 @@
                                                             <action selector="backBtnAction:" destination="N4e-M0-siA" eventType="touchUpInside" id="Odu-Em-AlU"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oq-yI-1Fy">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oq-yI-1Fy">
                                                         <rect key="frame" x="92.5" y="180" width="191" height="40"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -351,12 +351,10 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="confirmBtn" destination="a1a-bf-56b" id="IY9-az-xFV"/>
                         <outlet property="emailTF" destination="310-lx-Ijz" id="dhI-Wa-zam"/>
                         <outlet property="pwdTF" destination="HCf-l6-HYe" id="oL1-pc-7rE"/>
                         <outlet property="rePwdTF" destination="Edg-7d-Yp8" id="z8F-tS-nuj"/>
                         <outlet property="signupScrollView" destination="Pgh-O0-k16" id="7Bk-Zr-5tf"/>
-                        <outlet property="signupView" destination="Lgv-r8-G5K" id="Ol2-jL-ra1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hib-Re-1Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>

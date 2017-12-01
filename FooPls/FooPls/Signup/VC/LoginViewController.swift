@@ -4,32 +4,32 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
-let userAccount = "account"
 
 class LoginViewController: UIViewController {
     
     // MARK: 프로퍼티
-   
+    let reference = Database.database().reference()
     
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var pwdTF: UITextField!
     @IBOutlet weak var faceBookBtn: FBSDKLoginButton!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var pwdTF: UITextField! {
+        didSet {
+            pwdTF.delegate = self
+        }
+    }
+    
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginBtn.layer.cornerRadius  = loginBtn.frame.size.height / 2
-        facebookBtn.layer.cornerRadius  = facebookBtn.frame.size.height / 2
-        kakaoBtn.layer.cornerRadius  = kakaoBtn.frame.size.height / 2
         faceBookBtn.delegate = self
+        loginScrollView.bounces = false
+        self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil
-        )
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     @objc func keyboardDidShow(_ noti: Notification) {
@@ -59,10 +59,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-//    @IBAction func facebookBtnAction(_sender: UIButton) {
-//
-//    }
-    
     @IBAction func loginBtnAction(_ sender: UIButton) {
         guard let email = emailTF.text, !email.isEmpty else {
             UIAlertController.presentAlertController(target: self,
@@ -85,14 +81,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] (user, error) in
             guard let `self` = self else { return }
             if error == nil, user != nil{
-                let account = Account(email: email, password: pwd)
-                do{
-                    let data = try JSONEncoder().encode(account)
-                    KeychainWrapper.standard.set(data, forKey: userAccount)
-                    self.performSegue(withIdentifier: "mainSegue", sender: nil)
-                }catch (let error){
-                    print("\(error.localizedDescription)")
-                }
+                self.performSegue(withIdentifier: "mainSegue", sender: self)
             }else{
                 UIAlertController.presentAlertController(target: self,
                                                          title: "이메일 또는 비밀번호가\n 잘못되었습니다.",
@@ -143,9 +132,12 @@ class LoginViewController: UIViewController {
     //MARK: - 파이어베이스 토큰을 통한 로그인
     func signInToFirebaseWithToken(firebaseToken: String) {
         Auth.auth().signIn(withCustomToken: firebaseToken) { (user, error) in
+            let userEmail = user?.email ?? ""
+            let userDic = ["email": userEmail]
             if let authError = error {
                 print("authError",authError)
             } else {
+                self.reference.child("users").child(user!.uid).setValue(userDic)
                 self.performSegue(withIdentifier: "mainSegue", sender: self)
             }
         }
@@ -162,7 +154,18 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             Auth.auth().signIn(with: credential) { [weak self] (user, error) in
                 guard let `self` = self else { return }
                 if error == nil, user != nil {
-                    self.performSegue(withIdentifier: "mainSegue", sender: self)
+                    let userEmail = user?.email ?? ""
+                    let userDic = ["email" : userEmail]
+                    FBSDKLoginManager().logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                            return
+                        }else {
+                            self.reference.child("users").child(user!.uid).setValue(userDic)
+                            self.performSegue(withIdentifier: "mainSegue", sender: self)
+                        }
+                    })
+                    
                 }
             }
         }
@@ -172,6 +175,14 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
     }
+}
+
+// MARK: UITextFieldDelegate
+extension LoginViewController : UITextFieldDelegate {
     
-    
+    // MARK: textFieldShouldReturn
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pwdTF.resignFirstResponder()
+        return true
+    }
 }

@@ -2,30 +2,6 @@ import UIKit
 
 @IBDesignable
 class CustomTextField : UITextField {
-    @IBInspectable var cornerRadius : CGFloat = 0{
-        didSet{
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
-    
-    @IBInspectable var borderWidth : CGFloat = 0 {
-        didSet{
-            layer.borderWidth = borderWidth
-        }
-    }
-    
-    @IBInspectable var borderColor : UIColor? {
-        didSet {
-            layer.borderColor = borderColor?.cgColor
-        }
-    }
-    
-    @IBInspectable var bgColor : UIColor? {
-        didSet {
-            backgroundColor = bgColor
-        }
-    }
     
     @IBInspectable var leftImage : UIImage? {
         didSet {
@@ -61,3 +37,14 @@ class CustomTextField : UITextField {
     }
 }
 
+// MARK: UITextField
+extension UITextField {
+    
+    // MARK: 텍스트필드 밑줄
+    func addUnderLine(height:CGFloat, color: UIColor) {
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: self.frame.height-height, width: self.frame.width, height: height)
+        border.backgroundColor = color.cgColor
+        self.layer.addSublayer(border)
+    }
+}

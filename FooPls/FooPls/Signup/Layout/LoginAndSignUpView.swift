@@ -13,6 +13,7 @@ class LoginAndSignUpView: UIView {
     // MARK: Button
     @IBOutlet weak var signUpBtn: UIButton?
     @IBOutlet weak var logInBtn: UIButton?
+   
     
     // MARK: TextField
     @IBOutlet weak var emailTF: UITextField?
@@ -24,7 +25,9 @@ class LoginAndSignUpView: UIView {
     
     // MARK: Login + SignUp View Setting
     override func awakeFromNib() {
-        
+        // MARK: 버튼 라운드
+        logInBtn?.buttonLayer(cornerRadius: 5)
+        signUpBtn?.buttonLayer(cornerRadius: 5)
     }
     
     // MARK: Login + SignUp View Setting

@@ -3,27 +3,27 @@
 
 import UIKit
 
+extension UIViewController {
+    // MARK: 탭으로 keyboard 내리기
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 // MARK: UIButton
 extension UIButton {
-   
-    // MARK: 버튼레이어
-    func buttonLayer(cornerRadius: CGFloat, borderWidth: CGFloat, borderColor: CGColor) {
-        self.layer.cornerRadius = cornerRadius
-        self.layer.borderColor = borderColor
-        self.layer.borderWidth = borderWidth
-    }
-}
-// MARK: UITextField
-extension UITextField {
     
-    // MARK: 텍스트필드 밑줄
-    func addUnderLine(height:CGFloat, color: UIColor) {
-        let border = CALayer()
-        border.frame = CGRect(x: (self.leftView?.frame.maxX)!, y: self.frame.height, width: self.frame.width-(self.leftView?.frame.maxX)!, height: height)
-        border.backgroundColor = color.cgColor
-        self.layer.addSublayer(border)
+    // MARK: 버튼레이어
+    func buttonLayer(cornerRadius: CGFloat) {
+        self.layer.cornerRadius = cornerRadius
     }
 }
+
 // MARK: UIView
 extension UIView {
     
@@ -63,3 +63,4 @@ extension UIAlertController {
         target.present(alert, animated: true, completion: nil)
     }
 }
+
