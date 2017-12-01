@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MbZ-Uy-rhD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="4fH-gF-wJd">
+            <objects>
+                <viewController id="CDD-9S-6vh" customClass="SplashViewController" customModule="LogInSignUpProc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A4s-06-IYc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmZ-TO-aSu" customClass="FOOPLSView" customModule="LogInSignUpProc" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.93725490196078431" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tmZ-TO-aSu" firstAttribute="trailing" secondItem="bRh-0o-o74" secondAttribute="trailing" id="9kK-9v-8rt"/>
+                            <constraint firstItem="tmZ-TO-aSu" firstAttribute="bottom" secondItem="bRh-0o-o74" secondAttribute="bottom" id="lpr-li-UdP"/>
+                            <constraint firstItem="tmZ-TO-aSu" firstAttribute="leading" secondItem="bRh-0o-o74" secondAttribute="leading" id="mCO-fr-VH1"/>
+                            <constraint firstItem="tmZ-TO-aSu" firstAttribute="top" secondItem="A4s-06-IYc" secondAttribute="top" id="okE-hC-QtY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bRh-0o-o74"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lv5-de-aD7"/>
+                    <connections>
+                        <outlet property="fooplsLoadingView" destination="tmZ-TO-aSu" id="GG8-vP-6Xs"/>
+                        <segue destination="Qdf-i5-110" kind="show" identifier="loginSegue" id="4v6-OY-2IO"/>
+                        <segue destination="IlT-Ur-ZhK" kind="show" identifier="mainSegue" id="rLH-Di-RnX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcd-bI-0Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="169.56521739130437"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="Xv1-vW-kX8">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="Login" id="Qdf-i5-110" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWD-Ad-lwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196" y="169"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="otf-Tg-qfM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="IlT-Ur-ZhK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qB-0j-RoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gsr-iW-dvw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="MbZ-Uy-rhD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wfq-7P-f8f">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CDD-9S-6vh" kind="relationship" relationship="rootViewController" id="zxF-C3-vV1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74T-L7-cDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="170"/>
+        </scene>
+    </scenes>
+</document>
