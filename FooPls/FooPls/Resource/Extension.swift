@@ -19,7 +19,7 @@ extension UITextField {
     // MARK: 텍스트필드 밑줄
     func addUnderLine(height:CGFloat, color: UIColor) {
         let border = CALayer()
-        border.frame = CGRect(x: 0, y: self.frame.height-height, width: self.frame.width, height: height)
+        border.frame = CGRect(x: (self.leftView?.frame.maxX)!, y: self.frame.height, width: self.frame.width-(self.leftView?.frame.maxX)!, height: height)
         border.backgroundColor = color.cgColor
         self.layer.addSublayer(border)
     }

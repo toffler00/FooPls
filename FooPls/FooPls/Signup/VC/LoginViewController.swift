@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
    
     
     // @IBOutlet
+    @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
@@ -26,6 +27,19 @@ class LoginViewController: UIViewController {
         facebookBtn.layer.cornerRadius  = facebookBtn.frame.size.height / 2
         kakaoBtn.layer.cornerRadius  = kakaoBtn.frame.size.height / 2
         faceBookBtn.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil
+        )
+    }
+    
+    @objc func keyboardDidShow(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    }
+    
+    @objc func keyboardWillHide(_ noti: Notification) {
+        loginScrollView.contentInset = UIEdgeInsets.zero
     }
     
     // MARK: IBAction

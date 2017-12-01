@@ -6,6 +6,7 @@ import Firebase
 class SignUpViewController: UIViewController {
     
     // MARK: IBOutlet
+    @IBOutlet weak var signupScrollView: UIScrollView!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField!
     @IBOutlet weak var rePwdTF: UITextField!
@@ -18,7 +19,20 @@ class SignUpViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil
+        )
+    }
+    
+    @objc func keyboardDidShow(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        signupScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    }
+    
+    @objc func keyboardWillHide(_ noti: Notification) {
+        signupScrollView.contentInset = UIEdgeInsets.zero
     }
 
     @IBAction func backBtnAction(_ sender: UIButton) {
