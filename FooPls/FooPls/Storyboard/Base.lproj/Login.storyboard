@@ -47,9 +47,6 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,9 +62,6 @@
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -104,7 +98,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFk-PZ-6yd">
-                                                <rect key="frame" x="187.5" y="287" width="131.5" height="26"/>
+                                                <rect key="frame" x="187.5" y="270.5" width="131.5" height="26"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                 <state key="normal" title="회원 가입하기">
                                                     <color key="titleColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,7 +131,7 @@
                                             <constraint firstItem="7v8-95-ea7" firstAttribute="width" secondItem="Un9-tk-3J0" secondAttribute="width" multiplier="0.7" id="oeb-mx-x4W"/>
                                             <constraint firstItem="iWM-G4-iWI" firstAttribute="width" secondItem="7v8-95-ea7" secondAttribute="width" id="pEo-6n-b16"/>
                                             <constraint firstItem="iWM-G4-iWI" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="1.8" id="qUf-qA-gSd"/>
-                                            <constraint firstItem="fFk-PZ-6yd" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="0.9" id="t0E-QL-zAF"/>
+                                            <constraint firstItem="fFk-PZ-6yd" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="0.85" id="t0E-QL-zAF"/>
                                             <constraint firstItem="7v8-95-ea7" firstAttribute="centerX" secondItem="Un9-tk-3J0" secondAttribute="centerX" id="u7N-vQ-jIl"/>
                                             <constraint firstItem="iWM-G4-iWI" firstAttribute="centerX" secondItem="Un9-tk-3J0" secondAttribute="centerX" id="xFP-TI-OmJ"/>
                                             <constraint firstItem="mef-mz-PCa" firstAttribute="top" secondItem="Un9-tk-3J0" secondAttribute="top" id="xgw-D1-wIA"/>
