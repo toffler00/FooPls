@@ -49,7 +49,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="Login" id="Qdf-i5-110" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWD-Ad-lwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="169"/>
+            <point key="canvasLocation" x="1191" y="114"/>
         </scene>
         <!--Main-->
         <scene sceneID="otf-Tg-qfM">
@@ -57,7 +57,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="IlT-Ur-ZhK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qB-0j-RoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="307"/>
+            <point key="canvasLocation" x="1194" y="216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gsr-iW-dvw">

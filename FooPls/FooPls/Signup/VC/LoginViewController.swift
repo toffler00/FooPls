@@ -28,16 +28,20 @@ class LoginViewController: UIViewController {
         faceBookBtn.delegate = self
         loginScrollView.bounces = false
         self.hideKeyboardWhenTappedAround()
+        
+        //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
+    //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
     @objc func keyboardDidShow(_ noti: Notification) {
         guard let info = noti.userInfo else { return }
         guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
         loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
     }
     
+    //MARK: - 키보드가 내려갈 경우 원래의 크기대로 돌림
     @objc func keyboardWillHide(_ noti: Notification) {
         loginScrollView.contentInset = UIEdgeInsets.zero
     }
@@ -58,8 +62,9 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+    //로그인 버튼을 눌렀을 때
     @IBAction func loginBtnAction(_ sender: UIButton) {
+        //email이 비어있는 경우 알럿으로 처리
         guard let email = emailTF.text, !email.isEmpty else {
             UIAlertController.presentAlertController(target: self,
                                                      title: "이메일을 입력해 주세요.",
@@ -69,6 +74,7 @@ class LoginViewController: UIViewController {
                                                      completion: nil)
             return
         }
+        //암호가 비어있는 경우 알럿
         guard let pwd = pwdTF.text, !pwd.isEmpty else {
             UIAlertController.presentAlertController(target: self,
                                                      title: "비밀번호를 입력해 주세요.",
@@ -78,6 +84,7 @@ class LoginViewController: UIViewController {
                                                      completion: nil)
             return
         }
+        
         Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] (user, error) in
             guard let `self` = self else { return }
             if error == nil, user != nil{
@@ -112,7 +119,8 @@ class LoginViewController: UIViewController {
             print("Error in adding token as a parameter: \(error)")
         }
         //Request를 만들면 Session을 통해 POST를 보냄
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { [weak self](data, response, error) in
+            guard let `self` = self else { return }
             guard let data = data, error == nil else {
                 print("Error in request token verifying: \(error!)")
                 return
@@ -131,7 +139,8 @@ class LoginViewController: UIViewController {
     
     //MARK: - 파이어베이스 토큰을 통한 로그인
     func signInToFirebaseWithToken(firebaseToken: String) {
-        Auth.auth().signIn(withCustomToken: firebaseToken) { (user, error) in
+        Auth.auth().signIn(withCustomToken: firebaseToken) { [weak self] (user, error) in
+            guard let `self` = self else { return }
             let userEmail = user?.email ?? ""
             let userDic = ["email": userEmail]
             if let authError = error {
