@@ -35,7 +35,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="mef-mz-PCa">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooPls" translatesAutoresizingMaskIntoConstraints="NO" id="As1-dk-baB">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteFooPls" translatesAutoresizingMaskIntoConstraints="NO" id="As1-dk-baB">
                                                 <rect key="frame" x="112.5" y="100" width="150" height="66.5"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6rg-vo-z6U">
@@ -208,7 +208,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaK-1b-HKm" userLabel="BlurView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooPls" translatesAutoresizingMaskIntoConstraints="NO" id="9Ud-RB-fXA">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteFooPls" translatesAutoresizingMaskIntoConstraints="NO" id="9Ud-RB-fXA">
                                                         <rect key="frame" x="112.5" y="67" width="150" height="66.5"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgv-r8-G5K">
@@ -357,10 +357,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FooPls" width="198" height="73"/>
         <image name="Password" width="10" height="12"/>
         <image name="back_white" width="64" height="64"/>
         <image name="food1" width="564" height="792"/>
         <image name="user" width="14" height="14"/>
+        <image name="whiteFooPls" width="198" height="73"/>
     </resources>
 </document>

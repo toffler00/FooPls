@@ -13,7 +13,7 @@ class SplashViewController: UIViewController {
     let loginSegue = "loginSegue"
     let mainSegue = "mainSegue"
     
-    @IBOutlet weak var fooplsLoadingView: FOOPLSView!
+    @IBOutlet weak var fooplsLoadingView: FooPlsView!
 
     // MARK: Life Cycle
     override func viewDidLoad() {        
@@ -22,7 +22,7 @@ class SplashViewController: UIViewController {
         FBSDKLoginManager().logOut()
         
         //MARK: - 애니메이션 동작, 동작 후 후행 클로저를 통해 현재 로그인이 되어 있는지 확인
-        fooplsLoadingView.addLoadingAnimation { [weak self] (action) in
+        fooplsLoadingView.addSplashLoadingAnimation { [weak self] (action) in
             guard let `self` = self else { return }
             if let _ = Auth.auth().currentUser {
                 self.performSegue(withIdentifier: self.mainSegue, sender: self)
