@@ -16,7 +16,6 @@ target 'FooPls' do
   pod 'SDWebImage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-
   # Pods for FooPls
 
 end
