@@ -10,7 +10,7 @@ import Foundation
 
 // Firebase 관련 Tool을 import합니다.
 import Firebase
-import FirebaseStorage
+//import FirebaseStorage
 import FirebaseDatabase
 
 //Firebase를 사용하기 위하여, database를 생성하는 변수를 선언한다.

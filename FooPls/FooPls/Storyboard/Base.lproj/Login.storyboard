@@ -173,7 +173,7 @@
                         <outlet property="kakaoBtn" destination="1Xy-lr-S0n" id="ZXa-lh-jPu"/>
                         <outlet property="loginScrollView" destination="Mss-wL-eC4" id="7e8-fV-FwD"/>
                         <outlet property="pwdTF" destination="jgK-kA-6LK" id="6tq-IX-i89"/>
-                        <segue destination="2LH-jv-hXu" kind="show" identifier="mainSegue" id="80J-S1-MC9"/>
+                        <segue destination="2LH-jv-hXu" kind="presentation" identifier="mainSegue" id="80J-S1-MC9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3e-gS-QUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,6 +250,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="singUpBtn:" destination="N4e-M0-siA" eventType="touchUpInside" id="8ao-C2-hOA"/>
+                                                                    <segue destination="2LH-jv-hXu" kind="presentation" identifier="mainSegue" id="6RM-D4-FOf"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -363,4 +364,7 @@
         <image name="user" width="14" height="14"/>
         <image name="whiteFooPls" width="198" height="73"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="80J-S1-MC9"/>
+    </inferredMetricsTieBreakers>
 </document>
