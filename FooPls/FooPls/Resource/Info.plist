@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationUsageDescription</key>
+	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -39,12 +45,6 @@
 				<string>fb132925974055334</string>
 			</array>
 		</dict>
-        <!--<dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb374709879645138</string>
-            </array>
-        </dict>-->
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -60,17 +60,13 @@
 	<string>132925974055334</string>
 	<key>FacebookDisplayName</key>
 	<string>FooPls</string>
-    <!--<key>FacebookAppID</key>
-    <string>374709879645138</string>
-    <key>FacebookDisplayName</key>
-    <string>LoginSignUpProc</string>-->
 	<key>KAKAO_APP_KEY</key>
 	<string>ddb655dcbc9971bb203aa167747c55ea</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-        <string>kakaoddb655dcbc9971bb203aa167747c55ea</string>
-        <string>kakaokompassauth</string>
-        <string>storykompassauth</string>
+		<string>kakaoddb655dcbc9971bb203aa167747c55ea</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
 		<string>fbapi</string>
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>

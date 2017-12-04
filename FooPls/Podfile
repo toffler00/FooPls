@@ -14,6 +14,9 @@ target 'FooPls' do
   pod 'FBSDKLoginKit'
   pod 'KakaoOpenSDK/KakaoOpenSDK'
   pod 'SDWebImage'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
   # Pods for FooPls
 
 end

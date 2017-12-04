@@ -24,6 +24,10 @@
 		CE1E93F41FCFF2110059775A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E93F31FCFF2110059775A /* Model.swift */; };
 		CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */; };
 		CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AD1FCEE4F200F5351E /* Extension.swift */; };
+		FCDCFB7E1FD525AF00B993C9 /* SKGoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */; };
+		FCDCFB7F1FD525AF00B993C9 /* SKMapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */; };
+		FCDCFB801FD525AF00B993C9 /* SKFirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */; };
+		FCDCFB821FD525C000B993C9 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE1E93F31FCFF2110059775A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKGoogleMapMainVC.swift; sourceTree = "<group>"; };
+		FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMapDataCenter.swift; sourceTree = "<group>"; };
+		FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFirebaseInputVC.swift; sourceTree = "<group>"; };
+		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 		CE0A7F021FCE8EDA009C884F /* FooPls */ = {
 			isa = PBXGroup;
 			children = (
+				FCDCFB781FD524C900B993C9 /* Samkyu's Work */,
 				CE9D36F11FCE92CA00E3713D /* Storyboard */,
 				CE0A7F221FCE9251009C884F /* Resource */,
 				2328AB8A1FCE9FBB004B75C0 /* Splash */,
@@ -186,6 +195,33 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		FCDCFB781FD524C900B993C9 /* Samkyu's Work */ = {
+			isa = PBXGroup;
+			children = (
+				FCDCFB811FD525C000B993C9 /* SKMain.storyboard */,
+				FCDCFB7A1FD5258400B993C9 /* SKModel */,
+				FCDCFB791FD5258200B993C9 /* SKController */,
+			);
+			path = "Samkyu's Work";
+			sourceTree = "<group>";
+		};
+		FCDCFB791FD5258200B993C9 /* SKController */ = {
+			isa = PBXGroup;
+			children = (
+				FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */,
+				FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */,
+			);
+			path = SKController;
+			sourceTree = "<group>";
+		};
+		FCDCFB7A1FD5258400B993C9 /* SKModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */,
+			);
+			path = SKModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCDCFB821FD525C000B993C9 /* SKMain.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */,
@@ -266,9 +303,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FooPls/Pods-FooPls-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -337,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
+				FCDCFB7E1FD525AF00B993C9 /* SKGoogleMapMainVC.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				2317CFA81FD4522B0024BEB1 /* FooPls.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
@@ -345,6 +387,8 @@
 				2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */,
 				237379B01FCEE53800F5351E /* LoginAndSignUpView.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
+				FCDCFB801FD525AF00B993C9 /* SKFirebaseInputVC.swift in Sources */,
+				FCDCFB7F1FD525AF00B993C9 /* SKMapDataCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
