@@ -19,6 +19,7 @@
 		2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */; };
 		2328AB901FCEAC6A004B75C0 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */; };
 		2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
+		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
 		CE0A7F091FCE8EDA009C884F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F071FCE8EDA009C884F /* Login.storyboard */; };
@@ -31,7 +32,6 @@
 		FCDCFB7E1FD525AF00B993C9 /* SKGoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */; };
 		FCDCFB7F1FD525AF00B993C9 /* SKMapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */; };
 		FCDCFB801FD525AF00B993C9 /* SKFirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */; };
-		FCDCFB821FD525C000B993C9 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -296,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
 				23235BFA1FD5355800DE5D82 /* Calendar.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
