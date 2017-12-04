@@ -22,14 +22,14 @@
         <scene sceneID="aMO-Pk-Llm">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Oof-Qf-0Mx" customClass="LoginViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bFd-Wa-eKw" customClass="LoginAndSignUpView" customModule="FooPls" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="bFd-Wa-eKw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mss-wL-eC4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Un9-tk-3J0" customClass="LoginAndSignUpView" customModule="FooPls" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Un9-tk-3J0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="mef-mz-PCa">
@@ -67,7 +67,7 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v8-95-ea7">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v8-95-ea7" customClass="CustomButton" customModule="FooPls" customModuleProvider="target">
                                                 <rect key="frame" x="56.5" y="450.5" width="262.5" height="33"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
@@ -138,13 +138,6 @@
                                             <constraint firstItem="iWM-G4-iWI" firstAttribute="height" secondItem="7v8-95-ea7" secondAttribute="height" id="zEk-QL-QOL"/>
                                             <constraint firstItem="7v8-95-ea7" firstAttribute="centerY" secondItem="Un9-tk-3J0" secondAttribute="centerY" multiplier="1.4" id="zXa-qI-gCE"/>
                                         </constraints>
-                                        <connections>
-                                            <outlet property="emailTF" destination="suZ-xN-VgB" id="Kpe-lK-7UX"/>
-                                            <outlet property="logInBtn" destination="7v8-95-ea7" id="kEq-Cc-YDG"/>
-                                            <outlet property="loginStackView" destination="6rg-vo-z6U" id="j8k-VL-ooY"/>
-                                            <outlet property="passwordTF" destination="jgK-kA-6LK" id="BWa-aV-iJk"/>
-                                            <outlet property="signUpBtn" destination="7v8-95-ea7" id="tky-Eh-qeC"/>
-                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -192,7 +185,7 @@
         <scene sceneID="WQp-3A-hCD">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="N4e-M0-siA" customClass="SignUpViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4rf-oP-HXP" customClass="LoginAndSignUpView" customModule="FooPls" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="4rf-oP-HXP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -212,37 +205,46 @@
                                                         <rect key="frame" x="112.5" y="67" width="150" height="66.5"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgv-r8-G5K">
-                                                        <rect key="frame" x="28.5" y="167" width="319" height="400"/>
+                                                        <rect key="frame" x="28.5" y="167.5" width="319" height="400"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디를 입려해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="310-lx-Ijz" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
-                                                                <rect key="frame" x="47.5" y="88" width="223" height="24"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-l6-HYe" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
-                                                                <rect key="frame" x="48" y="168" width="223" height="24"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다시 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-7d-Yp8" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
-                                                                <rect key="frame" x="48" y="248" width="223" height="24"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-bf-56b">
-                                                                <rect key="frame" x="48.5" y="325.5" width="223" height="29"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Wt-Pp-TSn">
+                                                                <rect key="frame" x="47.5" y="100.5" width="225" height="160"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디를 입려해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="310-lx-Ijz" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="33.5"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-l6-HYe" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="63.5" width="225" height="33"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다시 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-7d-Yp8" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="126.5" width="225" height="33.5"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="HCf-l6-HYe" firstAttribute="width" secondItem="310-lx-Ijz" secondAttribute="width" id="ON2-Sd-fFL"/>
+                                                                    <constraint firstItem="Edg-7d-Yp8" firstAttribute="width" secondItem="310-lx-Ijz" secondAttribute="width" id="U3I-5X-hh8"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-bf-56b" customClass="CustomButton" customModule="FooPls" customModuleProvider="target">
+                                                                <rect key="frame" x="47.5" y="326" width="225" height="29"/>
                                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                                 <state key="normal" title="확인">
@@ -256,18 +258,12 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="Edg-7d-Yp8" firstAttribute="centerX" secondItem="Lgv-r8-G5K" secondAttribute="centerX" id="A0h-wb-NgA"/>
                                                             <constraint firstItem="a1a-bf-56b" firstAttribute="centerY" secondItem="Lgv-r8-G5K" secondAttribute="centerY" multiplier="1.7" id="AdC-F0-kaD"/>
-                                                            <constraint firstItem="Edg-7d-Yp8" firstAttribute="centerY" secondItem="Lgv-r8-G5K" secondAttribute="centerY" multiplier="1.3" id="DC5-iy-q7K"/>
-                                                            <constraint firstItem="310-lx-Ijz" firstAttribute="width" secondItem="Lgv-r8-G5K" secondAttribute="width" multiplier="0.7" id="Exi-cn-2j2"/>
-                                                            <constraint firstItem="310-lx-Ijz" firstAttribute="centerX" secondItem="Lgv-r8-G5K" secondAttribute="centerX" id="QlL-aH-umj"/>
-                                                            <constraint firstItem="Edg-7d-Yp8" firstAttribute="width" secondItem="310-lx-Ijz" secondAttribute="width" id="UFM-6f-n0B"/>
-                                                            <constraint firstItem="HCf-l6-HYe" firstAttribute="centerX" secondItem="Lgv-r8-G5K" secondAttribute="centerX" id="VLv-nI-Lsx"/>
+                                                            <constraint firstItem="0Wt-Pp-TSn" firstAttribute="centerY" secondItem="Lgv-r8-G5K" secondAttribute="centerY" multiplier="0.9" id="FcN-Iq-wSo"/>
+                                                            <constraint firstItem="a1a-bf-56b" firstAttribute="width" secondItem="Edg-7d-Yp8" secondAttribute="width" id="Szz-0o-Iod"/>
                                                             <constraint firstItem="a1a-bf-56b" firstAttribute="centerX" secondItem="Lgv-r8-G5K" secondAttribute="centerX" id="azw-a7-GqQ"/>
-                                                            <constraint firstItem="310-lx-Ijz" firstAttribute="centerY" secondItem="Lgv-r8-G5K" secondAttribute="centerY" multiplier="0.5" id="dZo-s6-gmT"/>
-                                                            <constraint firstItem="HCf-l6-HYe" firstAttribute="centerY" secondItem="Lgv-r8-G5K" secondAttribute="centerY" multiplier="0.9" id="wBb-ub-nQ7"/>
-                                                            <constraint firstItem="HCf-l6-HYe" firstAttribute="width" secondItem="310-lx-Ijz" secondAttribute="width" id="weW-Gx-K1c"/>
-                                                            <constraint firstItem="a1a-bf-56b" firstAttribute="width" secondItem="310-lx-Ijz" secondAttribute="width" id="woE-vz-26e"/>
+                                                            <constraint firstItem="0Wt-Pp-TSn" firstAttribute="centerX" secondItem="Lgv-r8-G5K" secondAttribute="centerX" id="cJn-Jo-k68"/>
+                                                            <constraint firstItem="0Wt-Pp-TSn" firstAttribute="height" secondItem="Lgv-r8-G5K" secondAttribute="height" multiplier="0.4" id="mYP-IK-Jie"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xET-Dz-QSg">
@@ -282,7 +278,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oq-yI-1Fy">
-                                                        <rect key="frame" x="92.5" y="180" width="191" height="40"/>
+                                                        <rect key="frame" x="92.5" y="180.5" width="191" height="40"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -337,13 +333,6 @@
                             <constraint firstItem="Pgh-O0-k16" firstAttribute="trailing" secondItem="e4Q-05-4bj" secondAttribute="trailing" id="ndX-Bq-fwz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e4Q-05-4bj"/>
-                        <connections>
-                            <outlet property="newEmailTF" destination="310-lx-Ijz" id="yHY-dF-wrQ"/>
-                            <outlet property="newPasswordTF" destination="HCf-l6-HYe" id="g7O-1r-Xcd"/>
-                            <outlet property="rePasswordTF" destination="Edg-7d-Yp8" id="He4-lm-bJR"/>
-                            <outlet property="signUpBtn" destination="a1a-bf-56b" id="xHe-7Z-c6Q"/>
-                            <outlet property="signUpView" destination="Lgv-r8-G5K" id="9Sy-Yh-rdS"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailTF" destination="310-lx-Ijz" id="dhI-Wa-zam"/>
