@@ -15,15 +15,6 @@ extension UIViewController {
     }
 }
 
-// MARK: UIButton
-extension UIButton {
-    
-    // MARK: 버튼레이어
-    func buttonLayer(cornerRadius: CGFloat) {
-        self.layer.cornerRadius = cornerRadius
-    }
-}
-
 // MARK: UIView
 extension UIView {
     
