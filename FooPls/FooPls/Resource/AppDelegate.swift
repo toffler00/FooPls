@@ -4,6 +4,8 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
