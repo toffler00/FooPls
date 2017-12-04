@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        GMSServices.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
+        GMSPlacesClient.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
+        
         return true
     }
     
