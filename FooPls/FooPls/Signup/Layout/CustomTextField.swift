@@ -28,10 +28,39 @@ class CustomTextField : UITextField {
         }
     }
     
+    let bottomLayer = CALayer()
+    
+    // MARK: Initializer
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        bottomLayer.backgroundColor = UIColor.gray.cgColor
+        layer.addSublayer(bottomLayer)
+    }
+    
+    // MARK: required Initializer
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        bottomLayer.backgroundColor = UIColor.gray.cgColor
+        layer.addSublayer(bottomLayer)
+    }
+    
+    // MARK: layoutSubviews
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let scale = 1 / UIScreen.main.scale
+        bottomLayer.frame = CGRect(x: 0, y: self.bounds.height - scale,
+                                   width: self.bounds.width, height: scale)
+    }
+    
+    // MARK: textRect
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: 50, dy: 5)
     }
     
+    // MARK: editingRexct
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: 50, dy: 5)
     }

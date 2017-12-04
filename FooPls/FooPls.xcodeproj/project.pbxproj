@@ -10,11 +10,11 @@
 		0D96C334393FDF0C64B1536B /* Pods_FooPls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D5D224DE83084B71301F9F /* Pods_FooPls.framework */; };
 		2317CFA81FD4522B0024BEB1 /* FooPls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CFA71FD4522A0024BEB1 /* FooPls.swift */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
+		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2328AB881FCE9FB5004B75C0 /* Splash.storyboard */; };
 		2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */; };
 		2328AB901FCEAC6A004B75C0 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */; };
 		2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
-		237379B01FCEE53800F5351E /* LoginAndSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AF1FCEE53800F5351E /* LoginAndSignUpView.swift */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
 		CE0A7F091FCE8EDA009C884F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F071FCE8EDA009C884F /* Login.storyboard */; };
@@ -31,12 +31,12 @@
 		15DAC707017257161F47E4EB /* Pods-LogInSignUpProc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogInSignUpProc.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogInSignUpProc/Pods-LogInSignUpProc.release.xcconfig"; sourceTree = "<group>"; };
 		2317CFA71FD4522A0024BEB1 /* FooPls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPls.swift; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2328AB881FCE9FB5004B75C0 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		237379AF1FCEE53800F5351E /* LoginAndSignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpView.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		647ABC3419EA261130400E38 /* Pods-FooPls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooPls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FooPls/Pods-FooPls.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 		CE0A7F1F1FCE91FE009C884F /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				237379AF1FCEE53800F5351E /* LoginAndSignUpView.swift */,
 				2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */,
+				231EC1B21FD5155800A0DD19 /* CustomButton.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -338,12 +338,12 @@
 			files = (
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
+				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
 				2317CFA81FD4522B0024BEB1 /* FooPls.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */,
-				237379B01FCEE53800F5351E /* LoginAndSignUpView.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
