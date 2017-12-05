@@ -22,6 +22,9 @@ PODS:
   - Firebase/Database (4.7.0):
     - Firebase/Core
     - FirebaseDatabase (= 4.1.2)
+  - Firebase/Storage (4.7.0):
+    - Firebase/Core
+    - FirebaseStorage (= 2.1.0)
   - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -38,6 +41,10 @@ PODS:
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
   - FirebaseInstanceID (2.0.7)
+  - FirebaseStorage (2.1.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -76,6 +83,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Storage
   - GoogleMaps
   - GooglePlaces
   - KakaoOpenSDK/KakaoOpenSDK
@@ -93,6 +101,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 6cf108b63997bc08c04a1ffa55a3ac0d71a59ffc
   FirebaseDatabase: 18ecb23e15c7f58bb0c4527e9cace06897cc40ca
   FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
+  FirebaseStorage: 0930e97994dc79b404179bdfafb6b16f59433a82
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
@@ -103,6 +112,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 49232bda905e0d1e570047c0597ee2250e241d85
+PODFILE CHECKSUM: 18a1572a391e264780cd3807baad4786c1bc349b
 
 COCOAPODS: 1.2.0
