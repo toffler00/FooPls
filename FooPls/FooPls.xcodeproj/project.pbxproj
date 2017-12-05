@@ -29,9 +29,12 @@
 		CE1E93F41FCFF2110059775A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E93F31FCFF2110059775A /* Model.swift */; };
 		CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */; };
 		CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AD1FCEE4F200F5351E /* Extension.swift */; };
-		FCDCFB7E1FD525AF00B993C9 /* SKGoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */; };
-		FCDCFB7F1FD525AF00B993C9 /* SKMapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */; };
-		FCDCFB801FD525AF00B993C9 /* SKFirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */; };
+		FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */; };
+		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
+		FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */; };
+		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
+		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
+		FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,10 +67,13 @@
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE1E93F31FCFF2110059775A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKGoogleMapMainVC.swift; sourceTree = "<group>"; };
-		FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMapDataCenter.swift; sourceTree = "<group>"; };
-		FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFirebaseInputVC.swift; sourceTree = "<group>"; };
+		FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_GoogleMapMainVC.swift; sourceTree = "<group>"; };
+		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
+		FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_FirebaseInputVC.swift; sourceTree = "<group>"; };
 		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
+		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
+		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
+		FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB811FD525C000B993C9 /* SKMain.storyboard */,
+				FCDCFB871FD6967B00B993C9 /* SKView */,
 				FCDCFB7A1FD5258400B993C9 /* SKModel */,
 				FCDCFB791FD5258200B993C9 /* SKController */,
 			);
@@ -220,8 +227,10 @@
 		FCDCFB791FD5258200B993C9 /* SKController */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB7B1FD525AD00B993C9 /* SKGoogleMapMainVC.swift */,
-				FCDCFB7D1FD525AE00B993C9 /* SKFirebaseInputVC.swift */,
+				FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */,
+				FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */,
+				FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */,
+				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -229,9 +238,17 @@
 		FCDCFB7A1FD5258400B993C9 /* SKModel */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB7C1FD525AE00B993C9 /* SKMapDataCenter.swift */,
+				FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */,
 			);
 			path = SKModel;
+			sourceTree = "<group>";
+		};
+		FCDCFB871FD6967B00B993C9 /* SKView */ = {
+			isa = PBXGroup;
+			children = (
+				FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */,
+			);
+			path = SKView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,17 +411,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
-				FCDCFB7E1FD525AF00B993C9 /* SKGoogleMapMainVC.swift in Sources */,
+				FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
 				2317CFA81FD4522B0024BEB1 /* FooPls.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
+				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
+				FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */,
 				2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */,
+				FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
-				FCDCFB801FD525AF00B993C9 /* SKFirebaseInputVC.swift in Sources */,
-				FCDCFB7F1FD525AF00B993C9 /* SKMapDataCenter.swift in Sources */,
+				FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */,
+				FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
