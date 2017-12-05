@@ -12,7 +12,6 @@
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF51FD5353800DE5D82 /* Search.storyboard */; };
 		23235BF81FD5354600DE5D82 /* Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF71FD5354600DE5D82 /* Posting.storyboard */; };
-		23235BFA1FD5355800DE5D82 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF91FD5355800DE5D82 /* Calendar.storyboard */; };
 		23235BFC1FD5356300DE5D82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BFB1FD5356300DE5D82 /* Settings.storyboard */; };
 		2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2328AB881FCE9FB5004B75C0 /* Splash.storyboard */; };
 		2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */; };
@@ -20,7 +19,10 @@
 		2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
 		233773D31FD68D52006C28F0 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */; };
 		233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233773DB1FD69715006C28F0 /* CalendarCell.swift */; };
-		234302E81FD63B9200501C46 /* TempCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TempCalendar.storyboard */; };
+		233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233773DD1FD6B6BF006C28F0 /* Calendar.storyboard */; };
+		233773E01FD6D80E006C28F0 /* NewWrite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */; };
+		233773E21FD6D908006C28F0 /* NewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233773E11FD6D908006C28F0 /* NewWriteViewController.swift */; };
+		234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TJCalendar.storyboard */; };
 		234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234302E91FD63BB200501C46 /* CalendarViewController.swift */; };
 		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
@@ -45,7 +47,6 @@
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		23235BF51FD5353800DE5D82 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		23235BF71FD5354600DE5D82 /* Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Posting.storyboard; sourceTree = "<group>"; };
-		23235BF91FD5355800DE5D82 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		23235BFB1FD5356300DE5D82 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		2328AB881FCE9FB5004B75C0 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,10 @@
 		2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		233773DB1FD69715006C28F0 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
-		234302E71FD63B9200501C46 /* TempCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TempCalendar.storyboard; sourceTree = "<group>"; };
+		233773DD1FD6B6BF006C28F0 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewWrite.storyboard; sourceTree = "<group>"; };
+		233773E11FD6D908006C28F0 /* NewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWriteViewController.swift; sourceTree = "<group>"; };
+		234302E71FD63B9200501C46 /* TJCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJCalendar.storyboard; sourceTree = "<group>"; };
 		234302E91FD63BB200501C46 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -95,9 +99,11 @@
 		23170EB01FD63B440064E047 /* Taejune */ = {
 			isa = PBXGroup;
 			children = (
-				234302E71FD63B9200501C46 /* TempCalendar.storyboard */,
+				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
+				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
 				233773DB1FD69715006C28F0 /* CalendarCell.swift */,
 				234302E91FD63BB200501C46 /* CalendarViewController.swift */,
+				233773E11FD6D908006C28F0 /* NewWriteViewController.swift */,
 			);
 			path = Taejune;
 			sourceTree = "<group>";
@@ -221,8 +227,8 @@
 				CE0A7F071FCE8EDA009C884F /* Login.storyboard */,
 				231BA7BE1FD0203E00EF2B69 /* Main.storyboard */,
 				23235BF51FD5353800DE5D82 /* Search.storyboard */,
+				233773DD1FD6B6BF006C28F0 /* Calendar.storyboard */,
 				23235BF71FD5354600DE5D82 /* Posting.storyboard */,
-				23235BF91FD5355800DE5D82 /* Calendar.storyboard */,
 				23235BFB1FD5356300DE5D82 /* Settings.storyboard */,
 			);
 			path = Storyboard;
@@ -317,13 +323,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
-				23235BFA1FD5355800DE5D82 /* Calendar.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
+				233773E01FD6D80E006C28F0 /* NewWrite.storyboard in Resources */,
 				CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
-				234302E81FD63B9200501C46 /* TempCalendar.storyboard in Resources */,
+				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
 				23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */,
 				23235BF81FD5354600DE5D82 /* Posting.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
@@ -425,6 +432,7 @@
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
+				233773E21FD6D908006C28F0 /* NewWriteViewController.swift in Sources */,
 				2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */,
 				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
