@@ -18,6 +18,10 @@
 		2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */; };
 		2328AB901FCEAC6A004B75C0 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */; };
 		2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
+		233773D31FD68D52006C28F0 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */; };
+		233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233773DB1FD69715006C28F0 /* CalendarCell.swift */; };
+		234302E81FD63B9200501C46 /* TempCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TempCalendar.storyboard */; };
+		234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234302E91FD63BB200501C46 /* CalendarViewController.swift */; };
 		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
@@ -47,6 +51,10 @@
 		2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		233773DB1FD69715006C28F0 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		234302E71FD63B9200501C46 /* TempCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TempCalendar.storyboard; sourceTree = "<group>"; };
+		234302E91FD63BB200501C46 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233773D31FD68D52006C28F0 /* JTAppleCalendar.framework in Frameworks */,
 				2328AB901FCEAC6A004B75C0 /* KakaoOpenSDK.framework in Frameworks */,
 				0D96C334393FDF0C64B1536B /* Pods_FooPls.framework in Frameworks */,
 			);
@@ -83,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23170EB01FD63B440064E047 /* Taejune */ = {
+			isa = PBXGroup;
+			children = (
+				234302E71FD63B9200501C46 /* TempCalendar.storyboard */,
+				233773DB1FD69715006C28F0 /* CalendarCell.swift */,
+				234302E91FD63BB200501C46 /* CalendarViewController.swift */,
+			);
+			path = Taejune;
+			sourceTree = "<group>";
+		};
 		2328AB8A1FCE9FBB004B75C0 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +124,7 @@
 		96A13FB02113034E7BE8EA69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */,
 				2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */,
 				829B4403FD344F685DF572E2 /* Pods_LogInSignUpProc.framework */,
 				54D5D224DE83084B71301F9F /* Pods_FooPls.framework */,
@@ -134,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB781FD524C900B993C9 /* Samkyu's Work */,
+				23170EB01FD63B440064E047 /* Taejune */,
 				CE9D36F11FCE92CA00E3713D /* Storyboard */,
 				CE0A7F221FCE9251009C884F /* Resource */,
 				2328AB8A1FCE9FBB004B75C0 /* Splash */,
@@ -302,6 +323,7 @@
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
+				234302E81FD63B9200501C46 /* TempCalendar.storyboard in Resources */,
 				23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */,
 				23235BF81FD5354600DE5D82 /* Posting.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
@@ -363,6 +385,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -376,6 +399,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -394,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
+				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				FCDCFB7E1FD525AF00B993C9 /* SKGoogleMapMainVC.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
@@ -401,6 +426,7 @@
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */,
+				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
 				23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */,
 				FCDCFB801FD525AF00B993C9 /* SKFirebaseInputVC.swift in Sources */,
