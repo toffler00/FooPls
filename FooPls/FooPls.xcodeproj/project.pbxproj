@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D96C334393FDF0C64B1536B /* Pods_FooPls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D5D224DE83084B71301F9F /* Pods_FooPls.framework */; };
-		2317CFA81FD4522B0024BEB1 /* FooPls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CFA71FD4522A0024BEB1 /* FooPls.swift */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF51FD5353800DE5D82 /* Search.storyboard */; };
@@ -20,6 +19,7 @@
 		2328AB901FCEAC6A004B75C0 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */; };
 		2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
 		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
+		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
 		CE0A7F091FCE8EDA009C884F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F071FCE8EDA009C884F /* Login.storyboard */; };
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		11C4E457AA252E7421C235A3 /* Pods-FooPls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooPls.release.xcconfig"; path = "Pods/Target Support Files/Pods-FooPls/Pods-FooPls.release.xcconfig"; sourceTree = "<group>"; };
 		15DAC707017257161F47E4EB /* Pods-LogInSignUpProc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogInSignUpProc.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogInSignUpProc/Pods-LogInSignUpProc.release.xcconfig"; sourceTree = "<group>"; };
-		2317CFA71FD4522A0024BEB1 /* FooPls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPls.swift; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		23235BF51FD5353800DE5D82 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		647ABC3419EA261130400E38 /* Pods-FooPls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooPls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FooPls/Pods-FooPls.debug.xcconfig"; sourceTree = "<group>"; };
 		829B4403FD344F685DF572E2 /* Pods_LogInSignUpProc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogInSignUpProc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +181,7 @@
 			children = (
 				237379AD1FCEE4F200F5351E /* Extension.swift */,
 				CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */,
-				2317CFA71FD4522A0024BEB1 /* FooPls.swift */,
+				23E6F40A1FD5C50200543A84 /* FooPlsView.swift */,
 				23B317981FCFF7E600C0A078 /* Bridging-Header.h */,
 				CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */,
 				CE0A7F0C1FCE8EDA009C884F /* LaunchScreen.storyboard */,
@@ -414,7 +414,6 @@
 				FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
-				2317CFA81FD4522B0024BEB1 /* FooPls.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
@@ -425,6 +424,7 @@
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
 				FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */,
 				FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */,
+				23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
