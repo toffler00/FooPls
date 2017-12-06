@@ -5,11 +5,11 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - FBSDKCoreKit (4.28.0):
+  - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.28.0):
+  - FBSDKLoginKit (4.29.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.28.0):
+  - FBSDKShareKit (4.29.0):
     - FBSDKCoreKit
   - Firebase (4.7.0):
     - Firebase/Core (= 4.7.0)
@@ -43,6 +43,9 @@ PODS:
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
+  - GooglePlacePicker (2.5.0):
+    - GoogleMaps (= 2.5.0)
+    - GooglePlaces (= 2.5.0)
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
@@ -78,6 +81,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - GoogleMaps
+  - GooglePlacePicker
   - GooglePlaces
   - JTAppleCalendar
   - KakaoOpenSDK/KakaoOpenSDK
@@ -86,9 +90,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FBSDKCoreKit: ca961e279113f691fd83dc634c0bbad9d4e3f370
-  FBSDKLoginKit: b077381c27d800f21661757e8140cf2c80a91e4a
-  FBSDKShareKit: 4f525556e0df4cf0f574cb3f01c675434f29d477
+  FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
+  FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
+  FBSDKShareKit: 18a2cd118aef11dd657fe7e8b64bae5c719088b2
   Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: cdeee95b528958dbb7dcf220ad0fb804d3a284b0
@@ -96,6 +100,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 18ecb23e15c7f58bb0c4527e9cace06897cc40ca
   FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
@@ -106,6 +111,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 0e3185bcfd223a1d8acac9d1930a1412e1fbc1f6
+PODFILE CHECKSUM: b804ef95375e4a1e2433e2a9bf044ace009e8788
 
 COCOAPODS: 1.3.1
