@@ -4,11 +4,13 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
+var userInfo : UserModel?
 
 class LoginViewController: UIViewController {
     
     // MARK: 프로퍼티
     let reference = Database.database().reference()
+    
     
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
@@ -88,6 +90,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] (user, error) in
             guard let `self` = self else { return }
             if error == nil, user != nil{
+                userInfo = UserModel.init(email: (user?.email)!, uid: (user?.uid)!)
                 self.performSegue(withIdentifier: "mainSegue", sender: self)
             }else{
                 UIAlertController.presentAlertController(target: self,

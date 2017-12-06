@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="-1201" y="1008"/>
         </scene>
-        <!--SKMain-->
+        <!--Ih_CollectionView-->
         <scene sceneID="Q1a-Da-q72">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SKMain" storyboardName="SKMain" id="sdq-m7-1RZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SKMain" storyboardName="Ih_CollectionView" id="sdq-m7-1RZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Eei-pC-Sli"/>
                     <navigationItem key="navigationItem" id="1KL-P6-Hcn"/>
                 </viewControllerPlaceholder>
