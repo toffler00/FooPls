@@ -29,6 +29,7 @@
 		CE1E93F41FCFF2110059775A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E93F31FCFF2110059775A /* Model.swift */; };
 		CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */; };
 		CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AD1FCEE4F200F5351E /* Extension.swift */; };
+		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
 		FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */; };
 		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
 		FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */; };
@@ -67,6 +68,7 @@
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE1E93F31FCFF2110059775A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
 		FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_GoogleMapMainVC.swift; sourceTree = "<group>"; };
 		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
 		FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_FirebaseInputVC.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */,
 				FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */,
 				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
+				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -364,7 +367,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D32F1333C676D2B10543C474 /* [CP] Embed Pods Frameworks */ = {
@@ -418,6 +421,7 @@
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
+				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
 				FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */,
 				2335CAB61FCF1C9500AF06F0 /* CustomTextField.swift in Sources */,
 				FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */,
