@@ -13,5 +13,6 @@ class CalendarCell: JTAppleCell {
     
     @IBOutlet weak var calendarLb: UILabel!
     @IBOutlet weak var selectedView: UIView!
+    @IBOutlet weak var isContentImgView: UIImageView!
     
 }

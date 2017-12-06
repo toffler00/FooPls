@@ -5,8 +5,8 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController {
     
     let formater = DateFormatter()
-    var selectedDate = ""
-    
+    var selectedDate: String?
+    var contentArray: [String] = ["2017년 02월 28일"]
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
@@ -66,14 +66,31 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    func handleCellisContents(cell: JTAppleCell?, cellState: CellState) {
+        guard let validCell = cell as? CalendarCell else { return }
+        formater.dateFormat = "yyyy년 MM월 dd일"
+        let thisMonthContents = formater.string(from: cellState.date)
+        print(thisMonthContents)
+        if contentArray.contains(thisMonthContents) {
+            validCell.isContentImgView.isHidden = false
+        }else {
+            validCell.isContentImgView.isHidden = true
+        }
+    }
+    
     //MARK: - Segue
     //선택된 데이터를 넘기기 위한 메소드
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewWrite" {
-            print(selectedDate)
             let destinationController = segue.destination as! NewWriteViewController
-            destinationController.selectedDate = selectedDate
+            destinationController.selectedDate = selectedDate!
         }
+    }
+    
+    @IBAction func writeBtnAction(_ sender: UIButton) {
+        if selectedDate != nil {
+            performSegue(withIdentifier: "NewWrite", sender: self)
+        }else { return }
     }
 }
 
@@ -81,16 +98,14 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     //MARK: - 셀이 선택 되었을 때 불림
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
-        let dd = formater.string(from: date)
-        print("date: ",dd)
-        selectedDate = dd
-        print(selectedDate)
+        selectedDate = formater.string(from: date)
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
     }
     
     //MARK: - 셀의 선택이 풀렸을 때 불리는 함수
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        print("deselected")
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
     }
@@ -108,7 +123,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
         cell.calendarLb.text = cellState.text
-        
+        handleCellisContents(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
         

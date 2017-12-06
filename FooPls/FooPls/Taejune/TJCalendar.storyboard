@@ -39,7 +39,7 @@
                                         </constraints>
                                         <state key="normal" image="write"/>
                                         <connections>
-                                            <segue destination="28d-cd-HdP" kind="show" identifier="NewWrite" id="GpW-QY-QRI"/>
+                                            <action selector="writeBtnAction:" destination="uGL-yC-vUs" eventType="touchUpInside" id="mit-8F-UUO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -162,18 +162,34 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72x-qU-gY4">
+                                                            <rect key="frame" x="21.5" y="54" width="11" height="10.5"/>
+                                                            <color key="backgroundColor" red="0.7803921568627451" green="0.91764705882352937" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="72x-qU-gY4" secondAttribute="height" multiplier="1:1" id="vgp-Vx-P9Q"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <real key="value" value="5.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" red="1" green="0.99607843137254903" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="72x-qU-gY4" firstAttribute="centerY" secondItem="4wq-cV-AMm" secondAttribute="centerY" multiplier="1.5" id="0L7-wq-h67"/>
                                                     <constraint firstItem="8nk-9g-RmK" firstAttribute="centerY" secondItem="4wq-cV-AMm" secondAttribute="centerY" multiplier="0.4" id="E8q-1L-Jh6"/>
                                                     <constraint firstItem="8nk-9g-RmK" firstAttribute="centerX" secondItem="4wq-cV-AMm" secondAttribute="centerX" id="IHl-C9-dIt"/>
                                                     <constraint firstItem="8nk-9g-RmK" firstAttribute="centerY" secondItem="ICC-uu-0lt" secondAttribute="centerY" id="OS1-LA-7se"/>
                                                     <constraint firstItem="ICC-uu-0lt" firstAttribute="centerX" secondItem="4wq-cV-AMm" secondAttribute="centerX" id="ko9-2q-Ycz"/>
                                                     <constraint firstItem="ICC-uu-0lt" firstAttribute="width" secondItem="4wq-cV-AMm" secondAttribute="width" multiplier="0.6" id="rNd-mN-7YM"/>
+                                                    <constraint firstItem="72x-qU-gY4" firstAttribute="centerX" secondItem="4wq-cV-AMm" secondAttribute="centerX" id="tPg-Ci-iyZ"/>
+                                                    <constraint firstItem="72x-qU-gY4" firstAttribute="width" secondItem="4wq-cV-AMm" secondAttribute="width" multiplier="0.2" id="woR-Pa-vrt"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="calendarLb" destination="8nk-9g-RmK" id="qsn-dC-MZa"/>
+                                                    <outlet property="isContentImgView" destination="72x-qU-gY4" id="c1M-9v-Cu1"/>
                                                     <outlet property="selectedView" destination="ICC-uu-0lt" id="cUJ-b1-In5"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -207,6 +223,7 @@
                     <connections>
                         <outlet property="calendarView" destination="lSr-Ce-ohA" id="qB9-i0-ecD"/>
                         <outlet property="yearMonthLb" destination="Pb8-xj-dLQ" id="dsy-CM-eV6"/>
+                        <segue destination="28d-cd-HdP" kind="show" identifier="NewWrite" id="SCb-AO-cGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hft-46-rMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
