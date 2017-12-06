@@ -36,6 +36,7 @@
 		62ADCF6B1FD7C2C4008BAC57 /* Ih_LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF5B1FD7C2C3008BAC57 /* Ih_LocationModel.swift */; };
 		62ADCF6C1FD7C2C4008BAC57 /* Ih_PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF5C1FD7C2C3008BAC57 /* Ih_PostModel.swift */; };
 		62ADCF6E1FD7C2C4008BAC57 /* Ih_DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF5F1FD7C2C3008BAC57 /* Ih_DataCenter.swift */; };
+		62ADCF921FD7CF71008BAC57 /* Ih_PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF911FD7CF71008BAC57 /* Ih_PostVC.swift */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
 		CE0A7F091FCE8EDA009C884F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F071FCE8EDA009C884F /* Login.storyboard */; };
@@ -86,6 +87,8 @@
 		62ADCF5B1FD7C2C3008BAC57 /* Ih_LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ih_LocationModel.swift; sourceTree = "<group>"; };
 		62ADCF5C1FD7C2C3008BAC57 /* Ih_PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ih_PostModel.swift; sourceTree = "<group>"; };
 		62ADCF5F1FD7C2C3008BAC57 /* Ih_DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ih_DataCenter.swift; sourceTree = "<group>"; };
+		62ADCF901FD7C9F6008BAC57 /* Ih_Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ih_Posting.storyboard; sourceTree = "<group>"; };
+		62ADCF911FD7CF71008BAC57 /* Ih_PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ih_PostVC.swift; sourceTree = "<group>"; };
 		647ABC3419EA261130400E38 /* Pods-FooPls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooPls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FooPls/Pods-FooPls.debug.xcconfig"; sourceTree = "<group>"; };
 		829B4403FD344F685DF572E2 /* Pods_LogInSignUpProc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogInSignUpProc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FD80398EEA170A72A1748F /* Pods-LogInSignUpProc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogInSignUpProc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogInSignUpProc/Pods-LogInSignUpProc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 			children = (
 				62ADCF4C1FD7C2C3008BAC57 /* Ih_Main.storyboard */,
 				62ADCF4E1FD7C2C3008BAC57 /* Ih_CollectionView.storyboard */,
+				62ADCF901FD7C9F6008BAC57 /* Ih_Posting.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -189,6 +193,7 @@
 			children = (
 				62ADCF571FD7C2C3008BAC57 /* Ih_DetailInfoVC.swift */,
 				62ADCF581FD7C2C3008BAC57 /* Ih_MapVC.swift */,
+				62ADCF911FD7CF71008BAC57 /* Ih_PostVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				62ADCF6C1FD7C2C4008BAC57 /* Ih_PostModel.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
+				62ADCF921FD7CF71008BAC57 /* Ih_PostVC.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
 				62ADCF691FD7C2C4008BAC57 /* Ih_MapVC.swift in Sources */,
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,
