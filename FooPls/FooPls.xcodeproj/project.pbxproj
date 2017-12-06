@@ -31,6 +31,7 @@
 		62ADCF6C1FD7C2C4008BAC57 /* Ih_PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF5C1FD7C2C3008BAC57 /* Ih_PostModel.swift */; };
 		62ADCF6E1FD7C2C4008BAC57 /* Ih_DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF5F1FD7C2C3008BAC57 /* Ih_DataCenter.swift */; };
 		62ADCF921FD7CF71008BAC57 /* Ih_PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCF911FD7CF71008BAC57 /* Ih_PostVC.swift */; };
+		62ADCF931FD7DA08008BAC57 /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62ADCF901FD7C9F6008BAC57 /* Ih_Posting.storyboard */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
 		CE0A7F091FCE8EDA009C884F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F071FCE8EDA009C884F /* Login.storyboard */; };
@@ -397,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62ADCF931FD7DA08008BAC57 /* Ih_Posting.storyboard in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
 				23235BFA1FD5355800DE5D82 /* Calendar.storyboard in Resources */,
 				62ADCF611FD7C2C4008BAC57 /* Ih_Main.storyboard in Resources */,
