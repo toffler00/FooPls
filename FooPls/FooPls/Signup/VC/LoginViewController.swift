@@ -9,7 +9,7 @@ class LoginViewController: UIViewController {
     
     // MARK: 프로퍼티
     let reference = Database.database().reference()
-    
+    var kakaoServerURL = ""
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
@@ -28,7 +28,11 @@ class LoginViewController: UIViewController {
         faceBookBtn.delegate = self
         loginScrollView.bounces = false
         self.hideKeyboardWhenTappedAround()
-        
+        //뷰가 로드 될때 카카오 서버값을 미리 받음
+        reference.child("KakaoLoginServer").observe(.value, with: { (snapshot) in
+            print(snapshot)
+            self.kakaoServerURL = snapshot.value as! String
+        })
         //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
@@ -103,7 +107,8 @@ class LoginViewController: UIViewController {
     //MARK: - 커스텀 토큰을 만들기위해 만든 서버에 POST를 보내서 파이어베이스에 맞는 커스텀 토큰을 가져옴
     func requestFirebaseCustomToken(accessToken: String) {
         //VALIDATION SERVER는 로컬 서버
-        let url = URL(string: String(format: "%@/verifyToken", Bundle.main.object(forInfoDictionaryKey: "VALIDATION_SERVER_URL") as! String))!
+        let url = URL(string: String(format: "%@/verifyToken", kakaoServerURL))!
+        print(url)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

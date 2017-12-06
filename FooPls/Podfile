@@ -17,7 +17,7 @@ target 'FooPls' do
   pod 'SDWebImage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-
+  pod 'JTAppleCalendar'
   # Pods for FooPls
 
 end

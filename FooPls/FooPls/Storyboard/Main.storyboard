@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-488" y="721"/>
         </scene>
-        <!--Calendar-->
+        <!--TJCalendar-->
         <scene sceneID="fLc-1Z-dKw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" id="ecY-Tm-gXt" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="TJCalendar" id="ecY-Tm-gXt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="zvh-KO-q91"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG9-Tt-yoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
