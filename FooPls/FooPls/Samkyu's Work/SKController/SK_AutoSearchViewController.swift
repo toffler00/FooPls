@@ -8,8 +8,11 @@
 
 import UIKit
 import GooglePlaces
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
-class AutoSearchViewController: UIViewController {
+class SK_AutoSearchViewController: UIViewController {
     
     @IBOutlet weak var placeLB: UILabel!
     @IBOutlet weak var addressLB: UILabel!
@@ -18,9 +21,35 @@ class AutoSearchViewController: UIViewController {
     var searchController: UISearchController?
     var resultView:UITextView?
     
+    var ref:DatabaseReference!
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        
+        makeGoogleSearchBar()
+        
+        
+    
+        
+        
+    }
+    
+    @IBAction func postToFirebase(_ sender: Any) {
+        
+        
+        
+        
+        
+    }
+    func makeGoogleSearchBar(){
         
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
@@ -40,10 +69,6 @@ class AutoSearchViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
         self.navigationController?.navigationBar.tintColor = .white
         //self.navigationController?.navigationItem.setRightBarButton(UIBarButtonItem, animated: true)
-        
-    
-        
-        
     }
     
     @IBAction func searchForGoogleBtn(_ sender: UIButton) {
@@ -57,7 +82,7 @@ class AutoSearchViewController: UIViewController {
     
 }
 
-extension AutoSearchViewController : GMSAutocompleteResultsViewControllerDelegate {
+extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDelegate {
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         
@@ -65,6 +90,7 @@ extension AutoSearchViewController : GMSAutocompleteResultsViewControllerDelegat
         
         placeLB.text = place.name
         addressLB.text = place.formattedAddress
+        
         
         
     }
