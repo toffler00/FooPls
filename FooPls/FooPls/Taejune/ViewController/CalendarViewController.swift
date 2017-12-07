@@ -8,6 +8,7 @@ class CalendarViewController: UIViewController {
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
+    var oldDate: String = ""
     var selectedDate: String?
     var contentArray: [String] = []
     
@@ -124,6 +125,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
+        if oldDate == selectedDate {
+            print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
+            performSegue(withIdentifier: "TJ_Temp", sender: self)
+        }else {
+            oldDate = selectedDate!
+        }
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
     }
@@ -154,7 +161,9 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         return cell
     }
     
-    
+    @IBAction func unwindeSegue(_ sender: UIStoryboardSegue) {
+        
+    }
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource {

@@ -26,6 +26,7 @@
 		234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TJCalendar.storyboard */; };
 		234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234302E91FD63BB200501C46 /* CalendarViewController.swift */; };
 		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
+		23D554971FD9603300F2BA7E /* TJ_Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D554961FD9603300F2BA7E /* TJ_Temp.storyboard */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
 		62E1FF531FD924BF00E1FEAE /* Ih_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF401FD924BF00E1FEAE /* Ih_Main.storyboard */; };
@@ -79,6 +80,7 @@
 		234302E91FD63BB200501C46 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		23D554961FD9603300F2BA7E /* TJ_Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJ_Temp.storyboard; sourceTree = "<group>"; };
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_Posting.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				231A40571FD8E39E0046F3D4 /* View */,
 				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
 				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
+				23D554961FD9603300F2BA7E /* TJ_Temp.storyboard */,
 			);
 			path = Taejune;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			files = (
 				233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
+				23D554971FD9603300F2BA7E /* TJ_Temp.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
