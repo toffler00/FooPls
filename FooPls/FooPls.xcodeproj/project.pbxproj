@@ -563,12 +563,8 @@
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
-<<<<<<< HEAD
-				62ADCF6C1FD7C2C4008BAC57 /* Ih_PostModel.swift in Sources */,
-				FC34D5651FD8D72600561433 /* AutoSearchViewController.swift in Sources */,
-=======
 				62E1FF5B1FD924BF00E1FEAE /* Ih_UserModel.swift in Sources */,
->>>>>>> master
+
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
 				62E1FF5C1FD924BF00E1FEAE /* Ih_LocationModel.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
