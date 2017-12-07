@@ -7,29 +7,76 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class AutoSearchViewController: UIViewController {
-
+    
+    @IBOutlet weak var placeLB: UILabel!
+    @IBOutlet weak var addressLB: UILabel!
+    
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView:UITextView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        
+        searchController?.searchBar.sizeToFit()
+        navigationItem.titleView = searchController?.searchBar
+        
+        definesPresentationContext = true
+        
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
+        //self.navigationController?.navigationBar.backgroundColor = UIColor.blue
+        //self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 248, green: 239, blue: 106, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = .white
+        //self.navigationController?.navigationItem.setRightBarButton(UIBarButtonItem, animated: true)
+        
+    
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func searchForGoogleBtn(_ sender: UIButton) {
+        
+        
+        
+        
+        
     }
-    */
+    
+    
+}
 
+extension AutoSearchViewController : GMSAutocompleteResultsViewControllerDelegate {
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
+        
+        searchController?.isActive = false
+        
+        placeLB.text = place.name
+        addressLB.text = place.formattedAddress
+        
+        
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {
+        
+        print("Error : ", error.localizedDescription)
+        
+    }
+    
+    
+    
+    
+    
 }
