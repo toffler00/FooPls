@@ -4,7 +4,7 @@ import Firebase
 import GooglePlacePicker
 
 class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate{
-
+    
     //MARK: - Firebase
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
