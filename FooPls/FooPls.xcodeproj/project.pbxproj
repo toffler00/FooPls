@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D96C334393FDF0C64B1536B /* Pods_FooPls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D5D224DE83084B71301F9F /* Pods_FooPls.framework */; };
 		230ED26B1FD92D270054914A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230ED26A1FD92D260054914A /* Login.storyboard */; };
+		230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF51FD5353800DE5D82 /* Search.storyboard */; };
@@ -552,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */,
