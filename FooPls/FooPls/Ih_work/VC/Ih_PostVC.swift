@@ -1,12 +1,17 @@
 
 import UIKit
 import Photos
+import FirebaseAuth
 
 class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    //MARK: - Property
+    var dataCenter : DataCenter!
+    var userInfo = Auth.auth().currentUser
+    
     @IBOutlet var postImgView: UIImageView!
     @IBOutlet var postTextView: UITextView!
-    
     @IBOutlet var adressTextF: UITextField!
     @IBOutlet var nameTextF: UITextField!
     
@@ -36,20 +41,17 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     
     @IBAction func postSaveAndUpload(sender: AnyObject) {
-        guard postTextView.text != nil,
-              adressTextF.text != nil,
-              nameTextF.text != nil,
-              postImgView.image != nil
-            else {return}
+    
+        guard let uid = userInfo?.uid else {return}
+        print(uid)
+        guard let image = postImgView.image, let name = nameTextF.text,
+            let adress = adressTextF.text, let contents = postTextView.text else {return}
+        DispatchQueue.main.async {
+            self.dataCenter?.postUpload(uid: uid, storeimg: image, storeName: name, storeAdress: adress, contents: contents)
+        }
         
-        let name = nameTextF.text
-        let adress = adressTextF.text
-        let content = postTextView.text
-        let image = postImgView.image
-      
-        let datacenter : DataCenter?
-       
-        print("포스트업로드성공")
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     override func didReceiveMemoryWarning() {
