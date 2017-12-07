@@ -5,6 +5,10 @@ import Firebase
 
 class CalendarViewController: UIViewController {
     
+    // 사용자 정의 팝업
+    let popUpView: PopView = UINib(nibName: "View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
+    
+    
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
