@@ -171,7 +171,7 @@
 				62E1FF501FD924BF00E1FEAE /* Data */,
 			);
 			name = Ih_work;
-			path = "FooPls/Samkyu's Work/Ih_work";
+			path = FooPls/Ih_work;
 			sourceTree = SOURCE_ROOT;
 		};
 		62E1FF3E1FD924BF00E1FEAE /* StoryBoard */ = {
@@ -253,6 +253,7 @@
 		CE0A7F021FCE8EDA009C884F /* FooPls */ = {
 			isa = PBXGroup;
 			children = (
+				62E1FF3D1FD924BF00E1FEAE /* Ih_work */,
 				FCDCFB781FD524C900B993C9 /* Samkyu's Work */,
 				23170EB01FD63B440064E047 /* Taejune */,
 				CE9D36F11FCE92CA00E3713D /* Storyboard */,
@@ -335,7 +336,6 @@
 				FCDCFB871FD6967B00B993C9 /* SKView */,
 				FCDCFB7A1FD5258400B993C9 /* SKModel */,
 				FCDCFB791FD5258200B993C9 /* SKController */,
-				62E1FF3D1FD924BF00E1FEAE /* Ih_work */,
 			);
 			path = "Samkyu's Work";
 			sourceTree = "<group>";
