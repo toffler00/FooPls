@@ -8,6 +8,7 @@ target 'FooPls' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
   pod 'FBSDKShareKit'
   pod 'FBSDKCoreKit'

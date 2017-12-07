@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        GMSServices.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
-        GMSPlacesClient.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
+        GMSServices.provideAPIKey("AIzaSyD2FUz-8xN5k12ZAR3tKcMfyhvzylksNXQ")
+        GMSPlacesClient.provideAPIKey("AIzaSyD2FUz-8xN5k12ZAR3tKcMfyhvzylksNXQ")
         
         return true
     }
