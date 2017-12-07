@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GooglePlaces
+
 
 class SK_MainViewController: UIViewController {
 
@@ -41,8 +43,19 @@ class SK_MainViewController: UIViewController {
         
     }
 
-
+    @IBAction func searchForGoogleBtn(_ sender: Any) {
+        
+        
+    }
+    
 }
+
+
+//구글 맵 로딩 익스텐션 설정
+//extension SK_MainViewController:   {
+//    
+//}
+
 
 extension SK_MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
