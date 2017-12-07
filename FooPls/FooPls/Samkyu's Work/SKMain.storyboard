@@ -229,7 +229,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JxT-Ln-Blq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="R4B-Oo-M9Q"/>
+                    <navigationItem key="navigationItem" id="R4B-Oo-M9Q">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="Xmr-zx-63O">
+                            <connections>
+                                <action selector="searchForGoogleBtn:" destination="9Ra-Da-3zA" id="vJo-3r-3cD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="bPX-hg-OTe" id="ZjT-xh-XCm"/>
                         <segue destination="uIK-Zc-dXB" kind="show" identifier="detailView" id="Rkh-aV-WQm"/>
@@ -445,6 +451,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4x-rq-Vrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="506" y="1774"/>
+        </scene>
+        <!--Auto Search View Controller-->
+        <scene sceneID="nc0-Ng-2E4">
+            <objects>
+                <viewController id="xgl-bk-aAc" customClass="AutoSearchViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3IB-QE-wvZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fOg-QS-zWw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdT-7j-URV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275" y="1787"/>
         </scene>
     </scenes>
     <resources>
