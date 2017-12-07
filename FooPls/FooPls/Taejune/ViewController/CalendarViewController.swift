@@ -1,12 +1,16 @@
 
 import UIKit
 import JTAppleCalendar
+import Firebase
 
 class CalendarViewController: UIViewController {
     
+    var reference: DatabaseReference!
+    var userID: String!
     let formater = DateFormatter()
     var selectedDate: String?
-    var contentArray: [String] = ["2017년 02월 28일"]
+    var contentArray: [String] = []
+    
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
@@ -17,7 +21,22 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reference = Database.database().reference()
+        userID = Auth.auth().currentUser?.uid
         setupCalendar()
+        loadDate()
+    }
+    
+    private func loadDate() {
+        reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
+            if let value = snapshot.value as? [String : [String: Any]] {
+                for (key, calendarDic) in value {
+                    print(key)
+                    self.contentArray.append(key)
+                    self.calendarView.reloadData()
+                }
+            }
+        }
     }
     
     //MARK: - 처음 뷰가 불렸을 때 캘린더 셋팅
@@ -70,7 +89,6 @@ class CalendarViewController: UIViewController {
         guard let validCell = cell as? CalendarCell else { return }
         formater.dateFormat = "yyyy년 MM월 dd일"
         let thisMonthContents = formater.string(from: cellState.date)
-        print(thisMonthContents)
         if contentArray.contains(thisMonthContents) {
             validCell.isContentImgView.isHidden = false
         }else {
@@ -90,7 +108,14 @@ class CalendarViewController: UIViewController {
     @IBAction func writeBtnAction(_ sender: UIButton) {
         if selectedDate != nil {
             performSegue(withIdentifier: "NewWrite", sender: self)
-        }else { return }
+        }else {
+            let alertSheet = UIAlertController(title: "날짜 선택", message: "날짜를 선택해주세요", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alertSheet.addAction(okAction)
+            present(alertSheet, animated: true, completion: nil)
+            return
+            
+        }
     }
 }
 
@@ -105,7 +130,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     
     //MARK: - 셀의 선택이 풀렸을 때 불리는 함수
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        print("deselected")
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
     }

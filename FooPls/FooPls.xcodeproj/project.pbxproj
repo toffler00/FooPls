@@ -132,13 +132,29 @@
 		23170EB01FD63B440064E047 /* Taejune */ = {
 			isa = PBXGroup;
 			children = (
+				231A40561FD8E3850046F3D4 /* ViewController */,
+				231A40571FD8E39E0046F3D4 /* View */,
 				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
 				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
-				233773DB1FD69715006C28F0 /* CalendarCell.swift */,
+			);
+			path = Taejune;
+			sourceTree = "<group>";
+		};
+		231A40561FD8E3850046F3D4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
 				234302E91FD63BB200501C46 /* CalendarViewController.swift */,
 				233773E11FD6D908006C28F0 /* NewWriteViewController.swift */,
 			);
-			path = Taejune;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		231A40571FD8E39E0046F3D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				233773DB1FD69715006C28F0 /* CalendarCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2328AB8A1FCE9FBB004B75C0 /* Splash */ = {
@@ -461,6 +477,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FooPls/Pods-FooPls-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";

@@ -50,6 +50,9 @@ PODS:
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
+  - GooglePlacePicker (2.5.0):
+    - GoogleMaps (= 2.5.0)
+    - GooglePlaces (= 2.5.0)
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
@@ -86,6 +89,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GoogleMaps
+  - GooglePlacePicker
   - GooglePlaces
   - JTAppleCalendar
   - KakaoOpenSDK/KakaoOpenSDK
@@ -105,6 +109,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
   FirebaseStorage: 0930e97994dc79b404179bdfafb6b16f59433a82
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
@@ -114,7 +119,7 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+PODFILE CHECKSUM: 01d5da17154604eafcab4d2fdba26985685a9a76
 
-PODFILE CHECKSUM: 6c8281bd4914cd1be0cf36a37180478bb706e385
 
 COCOAPODS: 1.3.1

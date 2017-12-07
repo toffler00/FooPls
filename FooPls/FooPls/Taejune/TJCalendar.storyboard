@@ -223,7 +223,7 @@
                     <connections>
                         <outlet property="calendarView" destination="lSr-Ce-ohA" id="qB9-i0-ecD"/>
                         <outlet property="yearMonthLb" destination="Pb8-xj-dLQ" id="dsy-CM-eV6"/>
-                        <segue destination="28d-cd-HdP" kind="show" identifier="NewWrite" id="SCb-AO-cGW"/>
+                        <segue destination="28d-cd-HdP" kind="presentation" identifier="NewWrite" id="SCb-AO-cGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hft-46-rMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
