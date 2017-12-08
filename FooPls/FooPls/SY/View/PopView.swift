@@ -23,8 +23,9 @@ class PopView: UIView {
     // MARK: awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-    }
+       
+    } 
+    
 }
 
 protocol writingDateLBDelegate: class {

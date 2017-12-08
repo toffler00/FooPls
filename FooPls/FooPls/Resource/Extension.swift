@@ -32,6 +32,15 @@ extension UIView {
         mask.path = path.cgPath
         self.layer.mask = mask
     }
+    
+    // MARK: 탭제스쳐
+    func addTapGesture(tapNumber : Int, target: Any , action : Selector) {
+        let tap = UITapGestureRecognizer(target: target, action: action)
+        tap.numberOfTapsRequired = tapNumber
+        addGestureRecognizer(tap)
+        isUserInteractionEnabled = true
+    }
+    
 }
 
 // MARK: UIAlertCotroller

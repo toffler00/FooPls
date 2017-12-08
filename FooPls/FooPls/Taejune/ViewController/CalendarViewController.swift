@@ -34,14 +34,12 @@ class CalendarViewController: UIViewController {
         loadDate()
         setUpPopUpView()
         popUpView.alpha = 0
-        
+        self.popUpView.baseView.addTapGesture(tapNumber: 1, target: self, action: #selector(dismissPopUpView))
     }
     
-    
-    @objc func readData() {
-        popView.dateLB.text = selectedDate
+    @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
+        self.popUpView.alpha = 0
     }
-    
     private func loadDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
@@ -139,7 +137,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
-        
         if oldDate == selectedDate {
             print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
             self.popUpView.alpha = 1
