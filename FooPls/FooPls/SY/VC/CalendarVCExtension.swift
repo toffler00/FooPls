@@ -11,7 +11,7 @@
 //
 //// MARK: CalendarViewController extension
 //extension CalendarViewController {
-//    
+//
 //    // MARK: 팝업뷰 세팅
 //    func setUpPopUpView() {
 //        // 팝업뷰 생성
@@ -33,33 +33,34 @@
 //
 //// MARK: UITableViewDataSource
 //extension CalendarViewController: UITableViewDataSource {
-//    
+//
 //    // MARK: 데이터 개수에 따른 테이블 뷰 row 생성
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let count = testList.count
+////        let count = testList.count
 //        return (count > 0) ? count : 1
 //    }
-//    
+//
 //    // MARK: 데이터 개수에 따라 사용하는 cell다름
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch testList.count {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: emptyCell, for: indexPath) as! EmptyCell
-//            tableView.separatorStyle = .none
-//            //            cell.postWritingButton.addTarget(self, action: #selector(postWriting), for: UIControlEvents.touchUpInside)
-//            cell.delegate = self
-//            return cell
-//        default:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
-//            let index = indexPath.row
-//            if let cell = cell as? PostCell {
-//                cell.postLB.text = testList[index]
-//            }
-//            return cell
-//        }
+////        switch testList.count {
+////        case 0:
+////            let cell = tableView.dequeueReusableCell(withIdentifier: emptyCell, for: indexPath) as! EmptyCell
+////            tableView.separatorStyle = .none
+////            //            cell.postWritingButton.addTarget(self, action: #selector(postWriting), for: UIControlEvents.touchUpInside)
+////            cell.delegate = self
+////            return cell
+////        default:
+////            let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
+////            let index = indexPath.row
+////            if let cell = cell as? PostCell {
+////                cell.postLB.text = testList[index]
+////            }
+////            return cell
+////        }
+//        let
 //    }
-//    
-//    
+//
+//
 //}
 //
 //// MARK: UITableViewDelegate
@@ -85,7 +86,10 @@
 //        //        self.present(viewController, animated: true, completion: nil)
 //        self.performSegue(withIdentifier: "NewWrite", sender: self )
 //    }
-//    
+//
 //}
+//
+//
+//
 //
 //
