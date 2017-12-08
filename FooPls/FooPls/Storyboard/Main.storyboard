@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="rCy-Wo-ZxS">
             <objects>
                 <viewController id="hhD-Me-bFx" sceneMemberID="viewController">
@@ -34,11 +34,51 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2Q5-6y-qau"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="pXB-jw-bve"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="BlackHome" id="pXB-jw-bve" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="To3-xv-vpv" id="vUV-XY-dFz"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34Z-3k-7eL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="To3-xv-vpv" customClass="RAMRightRotationAnimation" customModule="FooPls" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-1159" y="1008"/>
+            <point key="canvasLocation" x="-1719" y="1008"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Qh6-cN-6vC">
+            <objects>
+                <viewController id="3Im-qS-jGl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dtA-pD-Emq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpx-dC-DXO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="sdq-m7-1RZ" kind="embed" id="RDO-M7-ZNx"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qpx-dC-DXO" firstAttribute="trailing" secondItem="Qph-Ra-eul" secondAttribute="trailing" id="40G-XV-svA"/>
+                            <constraint firstItem="qpx-dC-DXO" firstAttribute="bottom" secondItem="Qph-Ra-eul" secondAttribute="bottom" id="50U-kt-qof"/>
+                            <constraint firstItem="qpx-dC-DXO" firstAttribute="top" secondItem="dtA-pD-Emq" secondAttribute="top" id="FY3-JO-SLb"/>
+                            <constraint firstItem="qpx-dC-DXO" firstAttribute="leading" secondItem="Qph-Ra-eul" secondAttribute="leading" id="K6b-vA-dR2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qph-Ra-eul"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="KMg-o1-skG" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="plV-PN-NkO" id="c1m-hW-sjQ"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TFI-2E-uOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="plV-PN-NkO" customClass="RAMRightRotationAnimation" customModule="FooPls" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-1055.2" y="1007.9460269865068"/>
         </scene>
         <!--Ih_CollectionView-->
         <scene sceneID="Q1a-Da-q72">
@@ -49,7 +89,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXf-o0-N0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="721"/>
+            <point key="canvasLocation" x="-1055" y="1431"/>
         </scene>
         <!--Ih_Posting-->
         <scene sceneID="6YS-B5-3W8">
@@ -59,7 +99,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlP-jK-fRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-488" y="721"/>
+            <point key="canvasLocation" x="-399" y="1431"/>
         </scene>
         <!--TJCalendar-->
         <scene sceneID="fLc-1Z-dKw">
@@ -69,7 +109,42 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG9-Tt-yoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="721"/>
+            <point key="canvasLocation" x="254" y="1432"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ViR-vo-M4z">
+            <objects>
+                <viewController id="cro-Cv-VkI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Us1-31-nwz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-6l-Tcf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="qAl-xd-Kg0" kind="embed" id="z6l-Q0-zWz"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Q3U-6l-Tcf" secondAttribute="trailing" id="ZcO-yW-NN7"/>
+                            <constraint firstItem="Q3U-6l-Tcf" firstAttribute="leading" secondItem="Us1-31-nwz" secondAttribute="leading" id="Zvn-nK-ybu"/>
+                            <constraint firstItem="Q3U-6l-Tcf" firstAttribute="top" secondItem="Us1-31-nwz" secondAttribute="top" id="qsb-SL-PiL"/>
+                            <constraint firstItem="Q3U-6l-Tcf" firstAttribute="bottom" secondItem="a6m-R3-6Oz" secondAttribute="bottom" id="wlN-yS-PVz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a6m-R3-6Oz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="blackSetting" id="FTD-VW-6ka" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="8Db-eV-UcB" id="qNr-ab-wdZ"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KRb-X5-ebU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="8Db-eV-UcB" customClass="RAMRightRotationAnimation" customModule="FooPls" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="1008"/>
         </scene>
         <!--SKMain-->
         <scene sceneID="7Dz-dt-IzX">
@@ -79,29 +154,109 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maL-Nk-JXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="721"/>
+            <point key="canvasLocation" x="920" y="1431"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Posting-->
+        <scene sceneID="qOO-6H-56j">
+            <objects>
+                <viewController id="2nF-ES-6DM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ily-Fc-fPB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrO-3b-Gcl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="nRi-5n-Ndb" kind="embed" id="yod-4F-12k"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VrO-3b-Gcl" firstAttribute="leading" secondItem="ily-Fc-fPB" secondAttribute="leading" id="1T2-Vy-wbT"/>
+                            <constraint firstAttribute="trailing" secondItem="VrO-3b-Gcl" secondAttribute="trailing" id="5b5-ON-FBp"/>
+                            <constraint firstItem="VrO-3b-Gcl" firstAttribute="top" secondItem="ily-Fc-fPB" secondAttribute="top" id="Ezl-tp-Bva"/>
+                            <constraint firstItem="VrO-3b-Gcl" firstAttribute="bottom" secondItem="nCn-hG-pwd" secondAttribute="bottom" id="dXq-1x-u9y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nCn-hG-pwd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Posting" image="posting" id="p21-xg-wLm" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="1U9-KM-y4g" id="y8C-Us-emc"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ni1-Ce-JfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="1U9-KM-y4g" customClass="RAMRightRotationAnimation" customModule="FooPls" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-398" y="1008"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="jch-6h-TUJ">
+            <objects>
+                <viewController id="mcX-aw-JpG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZGq-8h-cIP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJY-dr-giX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="ecY-Tm-gXt" kind="embed" id="rJu-gQ-M2y"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TJY-dr-giX" firstAttribute="trailing" secondItem="M5X-ZR-MgG" secondAttribute="trailing" id="JSY-Bo-889"/>
+                            <constraint firstItem="TJY-dr-giX" firstAttribute="leading" secondItem="M5X-ZR-MgG" secondAttribute="leading" id="bKB-F0-2bE"/>
+                            <constraint firstItem="TJY-dr-giX" firstAttribute="bottom" secondItem="M5X-ZR-MgG" secondAttribute="bottom" id="weV-Mj-yuw"/>
+                            <constraint firstItem="TJY-dr-giX" firstAttribute="top" secondItem="ZGq-8h-cIP" secondAttribute="top" id="y9n-Up-bhA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M5X-ZR-MgG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="blackCalendar" id="8gS-Bg-Gcy" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="gB6-y3-UIL" id="wsO-ur-iKm"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Rf-pb-1LE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="gB6-y3-UIL" customClass="RAMRightRotationAnimation" customModule="FooPls" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="1008"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="mbH-Ac-scr">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="ijQ-Rz-J2u" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="ijQ-Rz-J2u" customClass="RAMAnimatedTabBarController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B4V-A9-dQX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.78039215689999997" green="0.91764705879999997" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="hhD-Me-bFx" kind="relationship" relationship="viewControllers" id="EHa-im-8h9"/>
-                        <segue destination="sdq-m7-1RZ" kind="relationship" relationship="viewControllers" id="pNm-Oj-KdS"/>
-                        <segue destination="nRi-5n-Ndb" kind="relationship" relationship="viewControllers" id="2Jp-zL-a4V"/>
-                        <segue destination="ecY-Tm-gXt" kind="relationship" relationship="viewControllers" id="gHw-QT-XJY"/>
-                        <segue destination="qAl-xd-Kg0" kind="relationship" relationship="viewControllers" id="p2u-Y7-vG4"/>
+                        <segue destination="3Im-qS-jGl" kind="relationship" relationship="viewControllers" id="ymk-yG-kT1"/>
+                        <segue destination="2nF-ES-6DM" kind="relationship" relationship="viewControllers" id="kan-AP-rBs"/>
+                        <segue destination="mcX-aw-JpG" kind="relationship" relationship="viewControllers" id="aar-ss-qCP"/>
+                        <segue destination="cro-Cv-VkI" kind="relationship" relationship="viewControllers" id="HyI-Xp-pAg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itx-PY-8Bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-487" y="137"/>
+            <point key="canvasLocation" x="-399" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BlackHome" width="23" height="23"/>
+        <image name="blackCalendar" width="23" height="24"/>
+        <image name="blackSetting" width="20" height="21"/>
+        <image name="posting" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+    </resources>
 </document>
