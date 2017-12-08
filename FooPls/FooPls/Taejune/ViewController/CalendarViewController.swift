@@ -6,9 +6,8 @@ import Firebase
 class CalendarViewController: UIViewController {
     
     // 사용자 정의 팝업
-    let popUpView: PopView = UINib(nibName: "View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
-    
-    
+    let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
+
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
@@ -16,6 +15,8 @@ class CalendarViewController: UIViewController {
     var selectedDate: String?
     var contentArray: [String] = []
     
+    @IBOutlet weak var yHeight: NSLayoutConstraint!
+    @IBOutlet weak var popView: PopView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
@@ -30,6 +31,11 @@ class CalendarViewController: UIViewController {
         userID = Auth.auth().currentUser?.uid
         setupCalendar()
         loadDate()
+    }
+    
+    
+    @objc func readData() {
+        popView.dateLB.text = selectedDate
     }
     
     private func loadDate() {
