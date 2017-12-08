@@ -20,6 +20,8 @@ target 'FooPls' do
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'JTAppleCalendar'
+  pod 'Kingfisher'
+  pod 'RAMAnimatedTabBarController'
   # Pods for FooPls
 
 end
