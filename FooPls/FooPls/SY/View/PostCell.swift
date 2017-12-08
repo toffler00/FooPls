@@ -1,10 +1,7 @@
 //
 //  PostCell.swift
 //  FinalPopView
-//
-//  Created by SONGYEE SHIN on 2017. 12. 7..
-//  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
-//
+
 
 import UIKit
 

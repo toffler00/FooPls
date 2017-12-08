@@ -7,6 +7,8 @@ import UIKit
 
 class PopView: UIView {
     
+    weak var dateLBDelegate: writingDateLBDelegate?
+    
     // MARK: IBOutlet
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var contentView: UIView!
@@ -23,6 +25,10 @@ class PopView: UIView {
         super.awakeFromNib()
         
     }
+}
+
+protocol writingDateLBDelegate: class {
+    func popUpWritingDelegate(date: String)
 }
 
 

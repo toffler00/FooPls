@@ -13,7 +13,6 @@ class EmptyCell: UITableViewCell {
     weak var delegate: EmptyCellDelegate?
     
     // 글쓰기 부분으로 넘어가는 버튼
-    @IBOutlet weak var postWritingButton: UIButton!
     @IBAction func postWriting(_ sender: UIButton) {
         delegate?.emptyCellButton(self)
     }
