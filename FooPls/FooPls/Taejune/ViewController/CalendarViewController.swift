@@ -32,7 +32,9 @@ class CalendarViewController: UIViewController {
         loadDate()
         setUpPopUpView()
         popUpView.alpha = 0
-        self.popUpView.baseView.addTapGesture(tapNumber: 1, target: self, action: #selector(dismissPopUpView))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView(_:)))
+        gesture.delegate = self
+        self.popUpView.baseSuperView.addGestureRecognizer(gesture)
     }
 
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
@@ -139,7 +141,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         if oldDate == selectedDate {
             print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
             self.popUpView.alpha = 1
-            self.popUpWritingDelegate(date: oldDate)
+            self.popUpWritingDelegate(date: selectedDate!)
         }else {
             oldDate = selectedDate!
         }
