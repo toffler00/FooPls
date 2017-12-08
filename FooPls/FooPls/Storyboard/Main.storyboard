@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34Z-3k-7eL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1201" y="1008"/>
+            <point key="canvasLocation" x="-1159" y="1008"/>
         </scene>
         <!--Ih_CollectionView-->
         <scene sceneID="Q1a-Da-q72">
@@ -84,7 +84,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="mbH-Ac-scr">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ijQ-Rz-J2u" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="ijQ-Rz-J2u" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B4V-A9-dQX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

@@ -26,6 +26,7 @@
 		234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TJCalendar.storyboard */; };
 		234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234302E91FD63BB200501C46 /* CalendarViewController.swift */; };
 		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
+		23D554971FD9603300F2BA7E /* TJ_Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D554961FD9603300F2BA7E /* TJ_Temp.storyboard */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
 		62E1FF531FD924BF00E1FEAE /* Ih_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF401FD924BF00E1FEAE /* Ih_Main.storyboard */; };
@@ -62,6 +63,8 @@
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
 		FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */; };
+		FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */; };
+		FCF45A2E1FD96B7C00D99E85 /* SK_PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,7 @@
 		234302E91FD63BB200501C46 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		23D554961FD9603300F2BA7E /* TJ_Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJ_Temp.storyboard; sourceTree = "<group>"; };
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_Posting.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		CEB899771FD9C4A800BFFF3B /* PopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 		CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVCExtension.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
+		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
 		FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_GoogleMapMainVC.swift; sourceTree = "<group>"; };
 		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
 		FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_FirebaseInputVC.swift; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
 		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
 		FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
+		FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 				231A40571FD8E39E0046F3D4 /* View */,
 				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
 				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
+				23D554961FD9603300F2BA7E /* TJ_Temp.storyboard */,
 			);
 			path = Taejune;
 			sourceTree = "<group>";
@@ -194,9 +201,9 @@
 		62E1FF3D1FD924BF00E1FEAE /* Ih_work */ = {
 			isa = PBXGroup;
 			children = (
+				62E1FF461FD924BF00E1FEAE /* LaunchScreen.storyboard */,
 				62E1FF3E1FD924BF00E1FEAE /* StoryBoard */,
 				62E1FF431FD924BF00E1FEAE /* CollectionVC */,
-				62E1FF461FD924BF00E1FEAE /* LaunchScreen.storyboard */,
 				62E1FF481FD924BF00E1FEAE /* VC */,
 				62E1FF4C1FD924BF00E1FEAE /* Model */,
 				62E1FF501FD924BF00E1FEAE /* Data */,
@@ -418,6 +425,7 @@
 				FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */,
 				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
+				FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -426,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */,
+				FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */,
 			);
 			path = SKModel;
 			sourceTree = "<group>";
@@ -503,6 +512,7 @@
 				233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */,
 				CEB8997C1FD9C4A800BFFF3B /* EmptyCell.xib in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
+				23D554971FD9603300F2BA7E /* TJ_Temp.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
@@ -612,6 +622,7 @@
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
 				CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */,
+				FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
 				FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */,
@@ -627,6 +638,7 @@
 				62E1FF561FD924BF00E1FEAE /* MainCollectionView.swift in Sources */,
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				62E1FF551FD924BF00E1FEAE /* CustomCell.swift in Sources */,
+				FCF45A2E1FD96B7C00D99E85 /* SK_PostDataModel.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
 				62E1FF581FD924BF00E1FEAE /* Ih_PostVC.swift in Sources */,
