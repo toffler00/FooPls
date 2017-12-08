@@ -93,6 +93,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="baseSuperView" destination="dtH-ot-05A" id="bre-43-ern"/>
                 <outlet property="baseView" destination="1kZ-Gg-ChL" id="dan-8H-wnZ"/>
                 <outlet property="contentView" destination="mw3-8x-7Vw" id="FDo-17-Q6S"/>
                 <outlet property="dateLB" destination="wxn-hC-YN8" id="Ifb-ZR-TaS"/>

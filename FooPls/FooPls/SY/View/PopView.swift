@@ -10,6 +10,7 @@ class PopView: UIView {
     weak var dateLBDelegate: writingDateLBDelegate?
     
     // MARK: IBOutlet
+    @IBOutlet weak var baseSuperView: UIView!
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var dateLB: UILabel!
