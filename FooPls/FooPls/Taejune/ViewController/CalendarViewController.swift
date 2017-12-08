@@ -15,9 +15,7 @@ class CalendarViewController: UIViewController {
     var oldDate: String = ""
     var selectedDate: String?
     var contentArray: [String] = []
-    
-    @IBOutlet weak var yHeight: NSLayoutConstraint!
-    @IBOutlet weak var popView: PopView!
+
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
@@ -36,10 +34,11 @@ class CalendarViewController: UIViewController {
         popUpView.alpha = 0
         self.popUpView.baseView.addTapGesture(tapNumber: 1, target: self, action: #selector(dismissPopUpView))
     }
-    
+
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
         self.popUpView.alpha = 0
     }
+    
     private func loadDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
