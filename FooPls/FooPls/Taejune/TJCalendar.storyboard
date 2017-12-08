@@ -44,6 +44,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="XOl-SK-8hE" firstAttribute="centerX" secondItem="QeP-qJ-yeh" secondAttribute="centerX" multiplier="1.89" id="5cg-gw-Q2J"/>
                                     <constraint firstItem="1Dz-uM-ty3" firstAttribute="centerX" secondItem="QeP-qJ-yeh" secondAttribute="centerX" id="QjN-IF-gpQ"/>
@@ -200,6 +201,7 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
+                                <gestureRecognizers/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
