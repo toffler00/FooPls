@@ -27,9 +27,6 @@
                                 <rect key="frame" x="224" y="20" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="IxK-Xz-GZH" kind="unwind" unwindAction="unwindeSegue:" id="Zn5-E9-EOC"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +35,6 @@
                     <size key="freeformSize" width="300" height="400"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KnE-9q-ALj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="IxK-Xz-GZH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-49" y="19"/>
         </scene>

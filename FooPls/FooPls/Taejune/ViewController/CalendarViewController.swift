@@ -6,8 +6,9 @@ import Firebase
 class CalendarViewController: UIViewController {
     
     // 사용자 정의 팝업
+    
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
-
+    var testList: [String] = []
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
@@ -31,6 +32,9 @@ class CalendarViewController: UIViewController {
         userID = Auth.auth().currentUser?.uid
         setupCalendar()
         loadDate()
+        setUpPopUpView()
+        popUpView.alpha = 0
+        
     }
     
     
@@ -135,14 +139,19 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
-        if oldDate == selectedDate {
+        
+        if let oldDate = selectedDate {
             print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
-            performSegue(withIdentifier: "TJ_Temp", sender: self)
+            self.popUpView.alpha = 1
+            self.popUpWritingDelegate(date: oldDate)
+            
+            //performSegue(withIdentifier: “TJ_Temp”, sender: self)
         }else {
-            oldDate = selectedDate!
+            //            oldDate = selectedDate!
+            
+            handleCellSelected(cell: cell, cellState: cellState)
+            handleCellTextColor(cell: cell, cellState: cellState)
         }
-        handleCellSelected(cell: cell, cellState: cellState)
-        handleCellTextColor(cell: cell, cellState: cellState)
     }
     
     //MARK: - 셀의 선택이 풀렸을 때 불리는 함수
@@ -159,7 +168,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setupViewCalendar(from: visibleDates)
     }
-
+    
     //MARK: - 셀을 재사용할 때 셀의 상태와 셀의 정보를 읽기 위한 메소드
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
@@ -171,9 +180,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         return cell
     }
     
-    @IBAction func unwindeSegue(_ sender: UIStoryboardSegue) {
-        
-    }
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource {
@@ -191,3 +197,4 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         return parameters
     }
 }
+

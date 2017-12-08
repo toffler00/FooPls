@@ -25,6 +25,7 @@ extension CalendarViewController {
         popUpView.baseView.backgroundColor = baseViewColor.withAlphaComponent(0.8)
         popUpView.tableView.delegate = self
         popUpView.tableView.dataSource = self
+        popUpView.dateLBDelegate = self
         popUpView.tableView.register(UINib.init(nibName: postCell, bundle: nil), forCellReuseIdentifier: postCell)
         popUpView.tableView.register(UINib.init(nibName: emptyCell, bundle: nil), forCellReuseIdentifier: emptyCell)
         self.view.addSubview(popUpView)
@@ -57,6 +58,7 @@ extension CalendarViewController: UITableViewDataSource {
             }
             return cell
         }
+
     }
 
 
@@ -87,6 +89,16 @@ extension CalendarViewController: EmptyCellDelegate {
     }
 
 }
+
+
+extension CalendarViewController: writingDateLBDelegate {
+    func popUpWritingDelegate(date: String) {
+        popUpView.dateLB.text = date
+    }
+    
+    
+}
+
 
 
 
