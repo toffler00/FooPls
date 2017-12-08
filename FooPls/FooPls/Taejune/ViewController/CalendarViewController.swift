@@ -140,18 +140,15 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
         
-        if let oldDate = selectedDate {
+        if oldDate == selectedDate {
             print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
             self.popUpView.alpha = 1
             self.popUpWritingDelegate(date: oldDate)
-            
-            //performSegue(withIdentifier: “TJ_Temp”, sender: self)
         }else {
-            //            oldDate = selectedDate!
-            
-            handleCellSelected(cell: cell, cellState: cellState)
-            handleCellTextColor(cell: cell, cellState: cellState)
+            oldDate = selectedDate!
         }
+        handleCellSelected(cell: cell, cellState: cellState)
+        handleCellTextColor(cell: cell, cellState: cellState)
     }
     
     //MARK: - 셀의 선택이 풀렸을 때 불리는 함수
