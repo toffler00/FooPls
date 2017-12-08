@@ -89,16 +89,21 @@ extension CalendarViewController: EmptyCellDelegate {
     }
 
 }
-
-
+// MARK: writingDateLBDelegate
 extension CalendarViewController: writingDateLBDelegate {
     func popUpWritingDelegate(date: String) {
         popUpView.dateLB.text = date
     }
-    
-    
 }
 
+extension CalendarViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if popUpView.bounds.contains(touch.location(in: popUpView.baseView)){
+            return false
+        }
+        return true
+    }
+}
 
 
 
