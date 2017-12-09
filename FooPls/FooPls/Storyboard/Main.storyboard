@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="254" y="1432"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="ViR-vo-M4z">
             <objects>
                 <viewController id="cro-Cv-VkI" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a6m-R3-6Oz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="blackSetting" id="FTD-VW-6ka" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="FTD-VW-6ka" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
                         <connections>
                             <outlet property="animation" destination="8Db-eV-UcB" id="qNr-ab-wdZ"/>
                         </connections>
@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="922" y="1008"/>
         </scene>
-        <!--SKMain-->
+        <!--Profile-->
         <scene sceneID="7Dz-dt-IzX">
             <objects>
-                <viewControllerPlaceholder storyboardName="SKMain" id="qAl-xd-Kg0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="qAl-xd-Kg0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SDi-Ip-Ze1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maL-Nk-JXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +235,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.78039215689999997" green="0.91764705879999997" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -255,8 +254,8 @@
     <resources>
         <image name="BlackHome" width="23" height="23"/>
         <image name="blackCalendar" width="23" height="24"/>
-        <image name="blackSetting" width="20" height="21"/>
         <image name="posting" width="24" height="24"/>
+        <image name="profile" width="25" height="25"/>
         <image name="search" width="24" height="24"/>
     </resources>
 </document>

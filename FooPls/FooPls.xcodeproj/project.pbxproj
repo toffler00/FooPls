@@ -20,6 +20,8 @@
 		231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59C71FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift */; };
 		231F59D21FDAC2EA00580D69 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59C91FDAC2EA00580D69 /* RAMRotationAnimation.swift */; };
 		231F59D31FDAC2EA00580D69 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59CB1FDAC2EA00580D69 /* RAMBounceAnimation.swift */; };
+		231F59D51FDC137800580D69 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231F59D41FDC137800580D69 /* Settings.storyboard */; };
+		231F59D71FDC146400580D69 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231F59D61FDC146400580D69 /* Profile.storyboard */; };
 		23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF51FD5353800DE5D82 /* Search.storyboard */; };
 		23235BF81FD5354600DE5D82 /* Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF71FD5354600DE5D82 /* Posting.storyboard */; };
 		23235BFC1FD5356300DE5D82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BFB1FD5356300DE5D82 /* Settings.storyboard */; };
@@ -88,6 +90,8 @@
 		231F59C71FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimations.swift; sourceTree = "<group>"; };
 		231F59C91FDAC2EA00580D69 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
 		231F59CB1FDAC2EA00580D69 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
+		231F59D41FDC137800580D69 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		231F59D61FDC146400580D69 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		23235BF51FD5353800DE5D82 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		23235BF71FD5354600DE5D82 /* Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Posting.storyboard; sourceTree = "<group>"; };
 		23235BFB1FD5356300DE5D82 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				231A40571FD8E39E0046F3D4 /* View */,
 				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
 				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
+				231F59D41FDC137800580D69 /* Settings.storyboard */,
+				231F59D61FDC146400580D69 /* Profile.storyboard */,
 			);
 			path = Taejune;
 			sourceTree = "<group>";
@@ -600,11 +606,13 @@
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
+				231F59D51FDC137800580D69 /* Settings.storyboard in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
 				62E1FF531FD924BF00E1FEAE /* Ih_Main.storyboard in Resources */,
 				233773E01FD6D80E006C28F0 /* NewWrite.storyboard in Resources */,
 				CEB899791FD9C4A800BFFF3B /* PostCell.xib in Resources */,
 				62E1FF571FD924BF00E1FEAE /* LaunchScreen.storyboard in Resources */,
+				231F59D71FDC146400580D69 /* Profile.storyboard in Resources */,
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
 				CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
@@ -833,6 +841,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
