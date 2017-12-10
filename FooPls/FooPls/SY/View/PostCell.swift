@@ -1,12 +1,12 @@
 //
 //  PostCell.swift
 //  FinalPopView
-
-
 import UIKit
 
 class PostCell: UITableViewCell {
 
+    weak var postDelegate: PostCellDelegate?
+    
     @IBOutlet weak var postLB: UILabel!
     
     override func awakeFromNib() {
@@ -20,4 +20,8 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+// MARK: 프로토콜
+protocol PostCellDelegate: class {
+    func postCellData(_ cell: PostCell)
 }
