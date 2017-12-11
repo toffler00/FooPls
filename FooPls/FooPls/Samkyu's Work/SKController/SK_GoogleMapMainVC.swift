@@ -32,7 +32,7 @@ class SKGoogleMapMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showSomeWhere(lati: 37.515, longi: 127.019, placeName: "Fast Campus!")
+        //showSomeWhere(lati: 37.515, longi: 127.019, placeName: "Fast Campus!")
         
         reloadPoint()
 
@@ -83,6 +83,9 @@ class SKGoogleMapMainVC: UIViewController {
         // 선언된 IBOulet의 위치를 지정해준다.
         self.CustomMap.camera = camera
         
+        
+        
+        
         //구글 마커 기능을 이용하여, Anotation을 찍어주는 기능을 구현한다.
         let marker = GMSMarker()
         marker.map = CustomMap
@@ -92,6 +95,7 @@ class SKGoogleMapMainVC: UIViewController {
         
         CustomMap.settings.myLocationButton = true
         CustomMap.isMyLocationEnabled = true
+        
         
     }
     

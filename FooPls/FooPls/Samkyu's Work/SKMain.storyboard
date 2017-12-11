@@ -460,35 +460,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-AC-KH4">
-                                <rect key="frame" x="85" y="176" width="204" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-TJ-z2b">
-                                <rect key="frame" x="85" y="302" width="204" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-AC-KH4">
+                                <rect key="frame" x="85" y="439" width="204" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="867-3h-r0P">
-                                <rect key="frame" x="165" y="533" width="44" height="30"/>
+                                <rect key="frame" x="165" y="606" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="POST!"/>
                                 <connections>
                                     <action selector="postToFirebase:" destination="xgl-bk-aAc" eventType="touchUpInside" id="2bq-3L-wKd"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-Z3-EIi" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="OaF-Ep-IbE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-TJ-z2b">
+                                <rect key="frame" x="85" y="472" width="204" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xCl-Z3-EIi" firstAttribute="trailing" secondItem="fOg-QS-zWw" secondAttribute="trailing" id="Dd3-WH-AU5"/>
+                            <constraint firstItem="xCl-Z3-EIi" firstAttribute="top" secondItem="fOg-QS-zWw" secondAttribute="top" id="O9e-Jo-f95"/>
+                            <constraint firstItem="xCl-Z3-EIi" firstAttribute="leading" secondItem="fOg-QS-zWw" secondAttribute="leading" id="g1U-Jb-4IK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fOg-QS-zWw"/>
                     </view>
                     <navigationItem key="navigationItem" id="Acd-A4-0GM"/>
                     <connections>
                         <outlet property="addressLB" destination="51Z-TJ-z2b" id="Sw1-0t-Qzc"/>
+                        <outlet property="googleMapView" destination="xCl-Z3-EIi" id="yIe-f6-Eq0"/>
                         <outlet property="placeLB" destination="GI8-AC-KH4" id="V6H-lJ-rxX"/>
                     </connections>
                 </viewController>
@@ -518,7 +531,4 @@
     <resources>
         <image name="food2" width="564" height="846"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="FoJ-iS-jFe"/>
-    </inferredMetricsTieBreakers>
 </document>
