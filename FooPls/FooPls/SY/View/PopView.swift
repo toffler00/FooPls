@@ -41,7 +41,7 @@ class PopView: UIView {
         // 항상 색상 정보를 무시하고 템플릿 이미지로 그림
         let add = UIImage(named: "plus.png")?.withRenderingMode(.alwaysTemplate)
         self.addButton.setImage(add, for: .normal)
-        self.addButton.tintColor = #colorLiteral(red: 0.9803921569, green: 0.937254902, blue: 0.2941176471, alpha: 1)
+        self.addButton.tintColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)
         self.addButton.contentMode = .scaleAspectFit
         self.addButton.imageEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
     }

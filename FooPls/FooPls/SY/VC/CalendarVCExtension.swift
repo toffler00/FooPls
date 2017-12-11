@@ -20,7 +20,7 @@ extension CalendarViewController {
         popUpView.backgroundColor = viewColor.withAlphaComponent(0.3)
         popUpView.frame = self.view.bounds // 팝업 뷰를 화면에 맞게
         // 팝업창 배경색
-        let baseViewColor = UIColor.white
+        let baseViewColor = #colorLiteral(red: 1, green: 0.9967653155, blue: 0.9591305852, alpha: 1)
         // 팝업 배경
         popUpView.baseView.backgroundColor = baseViewColor.withAlphaComponent(0.8)
         popUpView.tableView.delegate = self

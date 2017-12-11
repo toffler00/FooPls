@@ -58,6 +58,10 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     
                     let calendarDic = ["title": locationTitle, "content": contentTxtView, "photoID": photoID, "longitude": self.longitude!, "latitude": self.latitude!, "adress": self.adress!] as [String: Any]
                     self.reference.child("users").child(self.userID!).child("calendar").child(self.selectedDate).setValue(calendarDic)
+                    
+                    // MARK: Noti
+                    NotificationCenter.default.post(name: .reload, object: locationTitle)
+                    
                     self.dismiss(animated: true, completion: nil)
                 }
             })

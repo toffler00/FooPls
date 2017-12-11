@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cm1-tt-yxf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cm1-tt-yxf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -226,7 +226,6 @@
                         <outlet property="calendarView" destination="lSr-Ce-ohA" id="qB9-i0-ecD"/>
                         <outlet property="yearMonthLb" destination="Pb8-xj-dLQ" id="dsy-CM-eV6"/>
                         <segue destination="28d-cd-HdP" kind="presentation" identifier="NewWrite" id="SCb-AO-cGW"/>
-                        <segue destination="zcZ-La-fZ2" kind="presentation" identifier="TJ_Temp" id="Oaq-yC-TWM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hft-46-rMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,14 +239,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbc-7e-zJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404" y="-400.29985007496254"/>
-        </scene>
-        <!--TJ_Temp-->
-        <scene sceneID="uBk-7C-YRo">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TJ_Temp" id="zcZ-La-fZ2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g8R-Ti-Np2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="463" y="-128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xqk-55-2dJ">

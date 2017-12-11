@@ -46,6 +46,16 @@ class CalendarViewController: UIViewController {
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
                     print(key)
+                    print(calendarDic)
+//                    guard let title = calendarDic["title"] as? String else { return }
+//                    self.testList.append(calendarDic)
+                    // MARK: 데이터 변경시 noti
+                    NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] _ in
+                        guard let `self` = self else { return }
+//                        self.testList.removeAll()
+                        self.testList.append(self.title!)
+                        self.popUpView.tableView.reloadData()
+                    })
                     self.contentArray.append(key)
                     self.calendarView.reloadData()
                 }
@@ -139,9 +149,24 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
         if oldDate == selectedDate {
+            reference.child("users").child(userID!).child("calendar").observe(.value, with: { (snapshot) in
+                if let value = snapshot.value as? [String : [String: Any]] {
+                    for (key, calendarDic) in value {
+                        if key == self.selectedDate {
+                            guard let title = calendarDic["title"] as? String else { return }
+                            self.testList.removeAll()
+                            self.testList.append(title)
+                        }else {
+                            self.testList.removeAll()
+                        }
+                    }
+                }
+                        
+            })
             print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
             self.popUpView.alpha = 1
             self.popUpWritingDelegate(date: selectedDate!)
+            self.popUpView.tableView.reloadData()
         }else {
             oldDate = selectedDate!
         }
