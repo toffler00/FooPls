@@ -25,7 +25,7 @@ extension CalendarViewController {
         popUpView.baseView.backgroundColor = baseViewColor.withAlphaComponent(0.8)
         popUpView.tableView.delegate = self
         popUpView.tableView.dataSource = self
-        popUpView.dateLBDelegate = self
+        popUpView.popViewDelegate = self
         popUpView.tableView.register(UINib.init(nibName: postCell, bundle: nil), forCellReuseIdentifier: postCell)
         popUpView.tableView.register(UINib.init(nibName: emptyCell, bundle: nil), forCellReuseIdentifier: emptyCell)
         self.view.addSubview(popUpView)
@@ -47,14 +47,15 @@ extension CalendarViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: emptyCell, for: indexPath) as! EmptyCell
             tableView.separatorStyle = .none
-            //            cell.postWritingButton.addTarget(self, action: #selector(postWriting), for: UIControlEvents.touchUpInside)
             cell.delegate = self
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
-            let index = indexPath.row
+//            let index = indexPath.row
             if let cell = cell as? PostCell {
-                cell.postLB.text = testList[index]
+                cell.postDelegate = self
+                let text = testList[indexPath.row]
+                cell.postLB.text = text
             }
             return cell
         }
@@ -77,25 +78,39 @@ extension CalendarViewController: UITableViewDelegate {
         }
     }
 }
+
 // MARK: EmptyCellDelegate
 extension CalendarViewController: EmptyCellDelegate {
     // MARK: 빈셀의 버튼을 눌렀을 경우 글쓰기 VC로 이동
     func emptyCellButton(_ cell: EmptyCell) {
         print("\(#function)")
-        //        let viewController = UIViewController()
-        //        viewController.view.backgroundColor = .blue
-        //        self.present(viewController, animated: true, completion: nil)
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
 
 }
-// MARK: writingDateLBDelegate
-extension CalendarViewController: writingDateLBDelegate {
-    func popUpWritingDelegate(date: String) {
-        popUpView.dateLB.text = date
+
+// MARK: PostCellDelegate
+extension CalendarViewController: PostCellDelegate {
+    // MARK: PostList
+    func postCellData(_ cell: PostCell) {
+        
     }
 }
 
+// MARK: PopViewDelegate
+extension CalendarViewController: PopViewDelegate {
+    // 포스팅버튼
+    func postWritingButton(button: UIButton) {
+        self.performSegue(withIdentifier: "NewWrite", sender: self )
+    }
+    // 선택한 날짜 레이블에 표시
+    func popUpWritingDelegate(date: String) {
+        popUpView.dateLB.text = date
+    }
+    
+}
+
+// MARK: UIGestureRecognizerDelegate
 extension CalendarViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if popUpView.bounds.contains(touch.location(in: popUpView.baseView)){

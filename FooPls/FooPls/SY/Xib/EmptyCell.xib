@@ -19,9 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="329.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-NC-BE7">
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-NC-BE7">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="329.5"/>
-                        <state key="normal" title="Button">
+                        <state key="normal" image="write">
                             <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
@@ -37,6 +37,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="writeButton" destination="Zwi-NC-BE7" id="RaZ-gy-wg3"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="write" width="585" height="595"/>
+    </resources>
 </document>

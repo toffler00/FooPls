@@ -1,15 +1,12 @@
 //
 //  EmptyCell.swift
 //  FinalPopView
-//
-//  Created by SONGYEE SHIN on 2017. 12. 8..
-//  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
-//
 
 import UIKit
 
 class EmptyCell: UITableViewCell {
     
+    @IBOutlet weak var writeButton: UIButton!
     weak var delegate: EmptyCellDelegate?
     
     // 글쓰기 부분으로 넘어가는 버튼
@@ -19,7 +16,10 @@ class EmptyCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // 버튼 이미지 사이즈
+        writeButton.imageEdgeInsets = UIEdgeInsetsMake(70, 70, 70, 50)
+        // 버튼 원으로 만들기
+//        writeButton.layer.cornerRadius = writeButton.frame.width/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

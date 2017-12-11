@@ -6,16 +6,16 @@ import Firebase
 class CalendarViewController: UIViewController {
     
     // 사용자 정의 팝업
-    
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
     var testList: [String] = []
+    
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
     var oldDate: String = ""
     var selectedDate: String?
     var contentArray: [String] = []
-
+    
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
@@ -36,7 +36,7 @@ class CalendarViewController: UIViewController {
         gesture.delegate = self
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
     }
-
+    
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
         self.popUpView.alpha = 0
     }

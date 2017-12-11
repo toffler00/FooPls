@@ -25,20 +25,19 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-8x-7Vw">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4U-lw-fqB">
-                                            <rect key="frame" x="210" y="0.0" width="80" height="70"/>
-                                            <state key="normal" title="Button"/>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4U-lw-fqB">
+                                            <rect key="frame" x="220" y="0.0" width="70" height="70"/>
                                             <connections>
                                                 <action selector="addPostButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="IZC-ug-xsk"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-hC-YN8">
-                                            <rect key="frame" x="10" y="0.0" width="200" height="70"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-hC-YN8">
+                                            <rect key="frame" x="10" y="0.0" width="210" height="70"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="ska-Wb-d2a"/>
+                                                <constraint firstAttribute="width" constant="210" id="ska-Wb-d2a"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -93,6 +92,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="addButton" destination="b4U-lw-fqB" id="X9q-u9-0wi"/>
                 <outlet property="baseSuperView" destination="dtH-ot-05A" id="bre-43-ern"/>
                 <outlet property="baseView" destination="1kZ-Gg-ChL" id="dan-8H-wnZ"/>
                 <outlet property="contentView" destination="mw3-8x-7Vw" id="FDo-17-Q6S"/>
