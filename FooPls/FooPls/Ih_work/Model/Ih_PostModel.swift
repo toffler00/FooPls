@@ -18,6 +18,7 @@ struct  PostModel {
 //    var storeTag : String? tag는 추후
     
     var storeImg : UIImage?
+    var storeImgUrl : String?
     var storeImgData : Data?  {
         if let image = storeImg
         {
@@ -26,15 +27,25 @@ struct  PostModel {
         return nil
     }
     
-    var storeImgUrl : String?
+    
     init(storeName : String, storeAdress : String,
-         contentText : String, storeImgUrl : String, storeImg : UIImage){
+         contentText : String, storeImgUrl : String){
         self.storeName = storeName
         self.storeAdress = storeAdress
         self.contentsText = contentText
         self.storeImgUrl = storeImgUrl
+    }
+    init(storeName : String, StoreAdress : String, contentText : String, storeImg : UIImage) {
+        self.storeName = storeName
+        self.storeAdress = StoreAdress
+        self.contentsText = contentText
         self.storeImg = storeImg
-        
     }
     
+    mutating func addPostInfo(widh dic : (key : String, value: String)){
+        self.storeName = dic.value
+        self.storeAdress = dic.value
+        self.storeImgUrl = dic.value
+        self.contentsText = dic.value
+    }
 }
