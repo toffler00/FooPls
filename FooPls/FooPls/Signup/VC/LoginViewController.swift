@@ -153,7 +153,8 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withCustomToken: firebaseToken) { [weak self] (user, error) in
             guard let `self` = self else { return }
             let userEmail = user?.email ?? ""
-            let userDic = ["email": userEmail]
+            let userNickname = user?.displayName ?? ""
+            let userDic = ["email": userEmail, "nickname": userNickname]
             if let authError = error {
                 print("authError",authError)
             } else {
@@ -174,8 +175,10 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             Auth.auth().signIn(with: credential) { [weak self] (user, error) in
                 guard let `self` = self else { return }
                 if error == nil, user != nil {
+                    print("displayname: ", user?.displayName)
                     let userEmail = user?.email ?? ""
-                    let userDic = ["email" : userEmail]
+                    let userNickname = user?.displayName ?? ""
+                    let userDic = ["email": userEmail, "nickname": userNickname]
                     FBSDKLoginManager().logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
                         if error != nil {
                             print(error!.localizedDescription)

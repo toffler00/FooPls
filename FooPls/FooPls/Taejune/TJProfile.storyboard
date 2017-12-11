@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="5ta-oc-ZAf">
             <objects>
-                <viewController id="0Jf-zO-Wkq" sceneMemberID="viewController">
+                <viewController id="0Jf-zO-Wkq" customClass="TJProfileViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zzc-f1-LGk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,20 +95,69 @@
                                     <constraint firstItem="9aH-mS-fls" firstAttribute="top" secondItem="mGL-7s-aKC" secondAttribute="top" id="tx1-UA-7RW"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAC-3I-GcZ">
+                                <rect key="frame" x="0.0" y="336" width="375" height="330"/>
+                                <connections>
+                                    <segue destination="Jak-nz-eA9" kind="embed" id="AKl-Jd-fhI"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0m-R8-7sV">
+                                <rect key="frame" x="0.0" y="279" width="375" height="52"/>
+                                <connections>
+                                    <segue destination="MT1-jQ-JKS" kind="embed" id="SYV-pQ-kAp"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="height" secondItem="xoJ-rx-uTZ" secondAttribute="height" multiplier="0.4" id="7w3-XA-A6r"/>
+                            <constraint firstItem="Z0m-R8-7sV" firstAttribute="width" secondItem="zzc-f1-LGk" secondAttribute="width" id="LUa-pk-Fwr"/>
+                            <constraint firstItem="Z0m-R8-7sV" firstAttribute="centerX" secondItem="zzc-f1-LGk" secondAttribute="centerX" id="WPO-HY-8dN"/>
+                            <constraint firstItem="Z0m-R8-7sV" firstAttribute="top" secondItem="mGL-7s-aKC" secondAttribute="bottom" id="f80-5V-j2d"/>
+                            <constraint firstItem="wAC-3I-GcZ" firstAttribute="width" secondItem="zzc-f1-LGk" secondAttribute="width" id="jK2-gs-hh8"/>
+                            <constraint firstItem="wAC-3I-GcZ" firstAttribute="centerX" secondItem="zzc-f1-LGk" secondAttribute="centerX" id="jKm-X8-782"/>
+                            <constraint firstItem="wAC-3I-GcZ" firstAttribute="centerY" secondItem="zzc-f1-LGk" secondAttribute="centerY" multiplier="1.5" id="lu6-mm-4ed"/>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="trailing" secondItem="xoJ-rx-uTZ" secondAttribute="trailing" id="mg0-ua-Z6a"/>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="leading" secondItem="xoJ-rx-uTZ" secondAttribute="leading" id="oIa-xu-1SR"/>
+                            <constraint firstItem="Z0m-R8-7sV" firstAttribute="height" secondItem="xoJ-rx-uTZ" secondAttribute="height" multiplier="0.08" id="ox4-x6-gGO"/>
+                            <constraint firstItem="wAC-3I-GcZ" firstAttribute="height" secondItem="xoJ-rx-uTZ" secondAttribute="height" multiplier="0.51" id="pJv-TM-NzU"/>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="top" secondItem="xoJ-rx-uTZ" secondAttribute="top" id="snu-oq-MQg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xoJ-rx-uTZ"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjJ-72-u5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356" y="300"/>
+        </scene>
+        <!--Paging Menu View Controller-->
+        <scene sceneID="ymq-XC-928">
+            <objects>
+                <viewController id="MT1-jQ-JKS" customClass="PagingMenuViewController" customModule="PagingKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XQT-x0-HPX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BU6-xl-TPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="300"/>
+        </scene>
+        <!--Paging Content View Controller-->
+        <scene sceneID="uzE-Mv-YCg">
+            <objects>
+                <viewController id="Jak-nz-eA9" customClass="PagingContentViewController" customModule="PagingKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ecu-eP-ceh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5LQ-Kf-rcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="549"/>
         </scene>
     </scenes>
     <resources>
