@@ -3,9 +3,12 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
 import GoogleMaps
 import GooglePlaces
+import FacebookLogin
+import FacebookCore
+
+var fbAccessToken: AccessToken?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        FBSDKApplicationDelegate.initialize()
-        
+//        FBSDKApplicationDelegate.initialize()
+        // Facebook Login
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         GMSServices.provideAPIKey("AIzaSyD2FUz-8xN5k12ZAR3tKcMfyhvzylksNXQ")
         GMSPlacesClient.provideAPIKey("AIzaSyD2FUz-8xN5k12ZAR3tKcMfyhvzylksNXQ")
         
@@ -27,12 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     open func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if KOSession.handleOpen(url) {
             return true
+        } else {
+            SDKApplicationDelegate.shared.application(app, open: url, options: options)
+            return true
         }
+       
         return false
     }
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        let faceBook = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-        return faceBook
+//        let faceBook = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -47,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         KOSession.handleDidBecomeActive()
-        FBSDKAppEvents.activateApp()
+//        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

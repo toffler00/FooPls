@@ -1,10 +1,8 @@
 // LoginViewController
 import UIKit
-import FBSDKLoginKit
 import Firebase
-import SwiftKeychainWrapper
-
-
+import FacebookLogin
+import FacebookCore
 
 class LoginViewController: UIViewController {
     
@@ -12,11 +10,11 @@ class LoginViewController: UIViewController {
     let reference = Database.database().reference()
     var kakaoServerURL = ""
     var userInfo : UserModel?
-
+    
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
-    @IBOutlet weak var faceBookBtn: FBSDKLoginButton!
+//    @IBOutlet weak var faceBookBtn: LoginButton!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField! {
         didSet {
@@ -28,7 +26,17 @@ class LoginViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        faceBookBtn.delegate = self
+//        let fbLoginBtn = UIButton(type: .custom)
+//        fbLoginBtn.frame = CGRect(x: 20, y: 100, width: kakaoBtn.bounds.width, height: 40)
+//        fbLoginBtn.backgroundColor = #colorLiteral(red: 0.2568020225, green: 0.3641974628, blue: 0.6838921905, alpha: 1)
+//        fbLoginBtn.tintColor = UIColor.white
+//        fbLoginBtn.addTarget(self, action: #selector(facebookLogin), for: .touchUpInside)
+//        view.addSubview(fbLoginBtn)
+        let fbLoginButton = LoginButton(readPermissions: [ .email ])
+        
+        fbLoginButton.frame = CGRect(x: 56.5, y: 584, width: kakaoBtn.frame.width, height: 33)
+        view.addSubview(fbLoginButton)
+        fbLoginButton.delegate = self
         loginScrollView.bounces = false
         self.hideKeyboardWhenTappedAround()
         //뷰가 로드 될때 카카오 서버값을 미리 받음
@@ -52,6 +60,33 @@ class LoginViewController: UIViewController {
     @objc func keyboardWillHide(_ noti: Notification) {
         loginScrollView.contentInset = UIEdgeInsets.zero
     }
+    // MARK: facebookLogin 버튼
+//    @objc func facebookLogin() {
+//        let loginManager = LoginManager()
+//        loginManager.logIn(readPermissions: [.email], viewController: self) { (result) in
+//            switch result {
+//            case.success:
+//                let accessToken = AccessToken.current
+//                guard let accessTokenString = accessToken?.authenticationToken else { return }
+//                let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+//                Auth.auth().signIn(with: credentials, completion: { (user, error) in
+//                    if error == nil, user != nil{
+//                        let userEmail = user?.email ?? ""
+//                        let userDic = ["email" : userEmail]
+//                        self.reference.child("users").child(user!.uid).setValue(userDic)
+//                    }else{
+//                        if let errors = error {
+//                            print(errors.localizedDescription)
+//                            return
+//                        }
+//                    }
+//                })
+//                self.performSegue(withIdentifier: "mainSegue", sender: self)
+//            default:
+//                break
+//            }
+//        }
+//    }
     
     // MARK: IBAction
     //MARK: - 카카오 버튼 눌렀을 때
@@ -165,35 +200,34 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: FBSDKLoginButtonDelegate
-extension LoginViewController: FBSDKLoginButtonDelegate {
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult?, error: Error!) {
-        if result?.token == nil {
-            return
-        }else{
-            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-            Auth.auth().signIn(with: credential) { [weak self] (user, error) in
-                guard let `self` = self else { return }
-                if error == nil, user != nil {
-                    let userEmail = user?.email ?? ""
-                    let userDic = ["email" : userEmail]
-                    FBSDKLoginManager().logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
-                        if error != nil {
-                            print(error!.localizedDescription)
-                            return
-                        }else {
-                            self.reference.child("users").child(user!.uid).setValue(userDic)
-                            self.performSegue(withIdentifier: "mainSegue", sender: self)
-                        }
-                    })
-                    
-                }
-            }
-        }
- 
+extension LoginViewController : LoginButtonDelegate{
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .success:
+            let accessToken = AccessToken.current
+            guard let accessTokenString = accessToken?.authenticationToken else { return }
+            let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+            Auth.auth().signIn(with: credentials, completion: { (user, error) in
+                if error == nil, user != nil{
+                    let userEmail = user?.email ?? ""
+                    let userDic = ["email" : userEmail]
+                    self.reference.child("users").child(user!.uid).setValue(userDic)
+                }else{
+                    if let errors = error {
+                        print(errors.localizedDescription)
+                        return
+                    }
+                }
+            })
+            self.performSegue(withIdentifier: "mainSegue", sender: self)
+        default:
+            break
+        }
     }
 }
 
