@@ -3,48 +3,51 @@ import UIKit
 import PagingKit
 import Firebase
 
-class TJProfileViewController: UIViewController {
+class TJProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var menuViewController: PagingMenuViewController!
     var contentViewController: PagingContentViewController!
+    var reference = Database.database().reference()
+    var userID = Auth.auth().currentUser?.uid
     
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var profileBGImgView: UIImageView!
     @IBOutlet weak var profileNickname: UILabel!
-    static var viewController: (UIColor) -> UIViewController = { (color) in
-        let vc = UIViewController()
-        vc.view.backgroundColor = color
-        return vc
-    }
     
-    //var dataSource = [(menuTitle: "test1", vc: viewController(.yellow)), (menuTitle: "test2", vc: viewController(.blue)), (menuTitle: "test3", vc: viewController(.yellow))]
+    var dataSource: [(titleImg: String, title: String, vc: UIViewController)]?
     
-//    let dataSource: [(menu: String, content: UIViewController)] = ["내 정보", "좋아요", "미정", "미정"].map {
-//        let title = $0
-//        let vc = UIStoryboard(name: "TJTemp", bundle: nil).instantiateInitialViewController() as! TJTempViewController
-//        return (menu: title, content: vc)
-//    }
-    
-    var dataSource: [(title: String, vc: UIViewController)]?
+    let mainColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 75.0/255.0, alpha: 1.0)
+    let normalColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPaging()
-        profileView.layer.borderColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 75.0/255.0, alpha: 1.0).cgColor
+        profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
-        
     }
     
+    //MARK: - 페이징킷 초기 셋업
     private func setupPaging() {
-        let tempSB = UIStoryboard(name: "TJTemp", bundle: nil)
-        let tempVC = tempSB.instantiateViewController(withIdentifier: "TJTempViewController")
+        let timelineSB = UIStoryboard(name: "TJTimeline", bundle: nil)
+        let timelineVC = timelineSB.instantiateViewController(withIdentifier: "TJTimelineViewController")
+        let likeSB = UIStoryboard(name: "TJLike", bundle: nil)
+        let likeVC = likeSB.instantiateViewController(withIdentifier: "TJLikeViewController")
+        let listSB = UIStoryboard(name: "TJList", bundle: nil)
+        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
+        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
+        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
         
-        dataSource = [(title: "내정보", vc: tempVC)]
+        dataSource = [(titleImg: "timeline",title: "타임라인", vc: timelineVC),
+                      (titleImg: "like",title: "좋아요", vc: likeVC),
+                      (titleImg: "list",title: "리스트", vc: listVC),
+                      (titleImg: "bookmark",title: "북마크", vc: bookmarkVC)]
         
+        //페이징 메뉴셀과 메뉴 포커싱 뷰를 등록
         menuViewController.register(nib: UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")
         menuViewController.registerFocusView(nib: UINib(nibName: "FocusView", bundle: nil))
         
+        //페이징컨트롤러는 두가지의 뷰컨트롤러로 나뉜다. 메뉴뷰컨트롤러와 컨텐츠뷰컨트롤러로 나뉘는데 처음에 초기화할때 로드한다.
         menuViewController.reloadData(with: 0)
         contentViewController.reloadData(with: 0)
     }
@@ -57,11 +60,37 @@ class TJProfileViewController: UIViewController {
         } else if let vc = segue.destination as? PagingContentViewController {
             contentViewController = vc
             contentViewController.dataSource = self
-            contentViewController.delegate = self // <- set content delegate
+            contentViewController.delegate = self
         }
     }
     
     @IBAction func profilePhotoBtn(_ sender: UIButton) {
+        let imgPicker = UIImagePickerController()
+        imgPicker.allowsEditing = true
+        imgPicker.sourceType = .photoLibrary
+        imgPicker.delegate = self
+        self.present(imgPicker, animated: true, completion: nil)
+    }
+    
+    // MARK : - ImgPickerView
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            profileImgView.image = img
+            profileBGImgView.image = img
+            guard let uploadData = UIImageJPEGRepresentation(img, 0.3) else { return }
+            // Save imageData
+            Storage.storage().reference().child("profile_images").child(userID!).putData(uploadData, metadata: nil, completion: { [weak self](metadata, error) in
+                guard let `self` = self else { return }
+                guard let profilePhotoID = metadata?.downloadURL()?.absoluteString else { return }
+
+                print(profilePhotoID)
+                self.reference.child("users").child(self.userID!).updateChildValues(["profilePhotoID": profilePhotoID], withCompletionBlock: { (error, databaseRef) in
+                    //finish
+                })
+            })
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -76,6 +105,7 @@ extension TJProfileViewController: PagingMenuViewControllerDataSource {
     
     func menuViewController(viewController: PagingMenuViewController, cellForItemAt index: Int) -> PagingMenuViewCell {
         let cell = viewController.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: index) as! MenuCell
+        cell.titleImgView.image = UIImage(named: dataSource![index].titleImg)
         cell.titleLabel.text = dataSource![index].title
         return cell
     }
@@ -93,6 +123,18 @@ extension TJProfileViewController: PagingContentViewControllerDataSource {
 
 extension TJProfileViewController: PagingMenuViewControllerDelegate {
     func menuViewController(viewController: PagingMenuViewController, didSelect page: Int, previousPage: Int) {
+//          페이지 이동시에 Menucell에 컬러를 바꿔주려고 했지만 이미지 때문에 보류
+//        for index in 0...(dataSource!.count - 1) {
+//            let cell = viewController.cellForItem(at: index) as! MenuCell
+//            if cell.index == page {
+//                //cell.titleLabel.textColor = mainColor
+//                //cell.titleImgView. = mainColor
+//                cell.backgroundColor = mainColor
+//            }else {
+//                //cell.titleLabel.textColor = normalColor
+//                cell.backgroundColor = .white
+//            }
+//        }
         contentViewController.scroll(to: page, animated: true)
     }
 }
@@ -102,3 +144,4 @@ extension TJProfileViewController: PagingContentViewControllerDelegate {
         menuViewController.scroll(index: index, percent: percent, animated: false)
     }
 }
+
