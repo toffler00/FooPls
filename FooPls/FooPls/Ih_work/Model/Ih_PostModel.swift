@@ -30,6 +30,7 @@ struct  PostModel {
         return nil
     }
     
+    var postData : [PostModel] = []
     
     init(storeName : String, storeAdress : String,
          contentText : String, storeImgUrl : String){
