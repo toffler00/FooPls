@@ -43,14 +43,29 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default) { [unowned self] (action) in
             guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
-            Storage.storage().reference().child("calendar_images").child(self.userID!).putData(uploadImg, metadata: nil, completion: { [unowned self](metaData, error) in
+            let uuid = UUID().uuidString
+            Storage.storage().reference().child("calendar_images").child(uuid).putData(uploadImg, metadata: nil, completion: { [unowned self] (metaData, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 }else {
                     guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
                     
-                    let calendarDic = ["title": contentTitle, "content": contentTxtView, "photoID": photoID, "locationTitle": locationTitle, "longitude": self.longitude!, "latitude": self.latitude!, "adress": self.adress!] as [String: Any]
-                    self.reference.child("users").child(self.userID!).child("calendar").child(self.selectedDate).setValue(calendarDic)
+                    let calendarDic = ["title": contentTitle,
+                                       "author": self.userID!,
+                                       "content": contentTxtView,
+                                       "photoID": photoID,
+                                       "locationTitle": locationTitle,
+                                       "longitude": self.longitude!,
+                                       "latitude": self.latitude!,
+                                       "adress": self.adress!,
+                                       "date": self.selectedDate,
+                                       "postTime": ServerValue.timestamp()] as [String: Any]
+                    
+                    self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
+                    let key = self.reference.child("users").childByAutoId().key
+                    let postKey = NSArray(array: [key])
+                    self.reference.child("posts").setValue(postKey)
+                    
                     self.dismiss(animated: true, completion: nil)
                 }
             })

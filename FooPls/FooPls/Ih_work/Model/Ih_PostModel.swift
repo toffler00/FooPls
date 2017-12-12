@@ -10,13 +10,16 @@ import Foundation
 import Photos
 
 struct  PostModel {
+    
+    //MARK : - Variable
     var storeName : String
     var storeAdress : String
-//    var storeLati : Double?
-//    var storeLongi : Double?
-    var contentsText : String?
-//    var storeTag : String? tag는 추후
     
+    
+    var storeLati : Double?
+    var storeLongi : Double?
+    var contentsText : String?
+    var storeTag : String?
     var storeImg : UIImage?
     var storeImgUrl : String?
     var storeImgData : Data?  {

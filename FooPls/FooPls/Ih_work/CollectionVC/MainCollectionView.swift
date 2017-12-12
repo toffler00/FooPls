@@ -22,11 +22,9 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
        
             self.loadDataToMainCollectionView()
-        
-        
+   
     }
     func loadDataToMainCollectionView() {
-        
         guard let uid = self.currentUser?.uid else {return}
         ref = Database.database().reference()
         ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
@@ -34,7 +32,6 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             for (_, dic) in data {
                 guard let name = dic["sotrename"], let adress = dic["adress"],
                     let url = dic["imageurl"], let content = dic["content"] else {return}
-                
                 let posts = PostModel(storeName: name, storeAdress: adress, contentText: content, storeImgUrl: url)
                 self.postData.append(posts)
                 self.mainCollectionView.reloadData()
@@ -77,10 +74,12 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         setUpCell()
         cell.cellTitleLb.text = self.postData[indexPath.row].storeName
         cell.cellAdressLb.text = self.postData[indexPath.row].storeAdress
+        
+        // url to image - FirebaseUI
         let storeImgUrl = self.postData[indexPath.row].storeImgUrl
         let url = URL(string: storeImgUrl!)
         cell.cellImageView.sd_setImage(with: url!)
-        cell.cellImageView.contentMode = .scaleAspectFill
+
         return cell
     }
     
@@ -101,7 +100,6 @@ extension MainCollectionView {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
 
-//        cell.cellImageView.backgroundColor = UIColor.cyan
         cell.cellImageView.layer.cornerRadius = 5
         cell.cellImageView.layer.masksToBounds = true
     }
