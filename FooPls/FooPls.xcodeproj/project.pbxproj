@@ -324,9 +324,9 @@
 		232D49FF1FDFBB6B0094DA1A /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				232D49FD1FDF7AA10094DA1A /* Storyboard */,
 				231A40571FD8E39E0046F3D4 /* View */,
 				231A40561FD8E3850046F3D4 /* ViewController */,
+				232D49FD1FDF7AA10094DA1A /* Storyboard */,
 			);
 			path = Information;
 			sourceTree = "<group>";

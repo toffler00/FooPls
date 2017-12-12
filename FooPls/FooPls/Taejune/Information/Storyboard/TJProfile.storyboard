@@ -17,6 +17,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--TJSettings-->
+        <scene sceneID="CZ9-KO-f5z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TJSettings" id="RCd-J1-Jzb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpI-nl-Csa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="762"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="5ta-oc-ZAf">
             <objects>
@@ -74,6 +82,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrs-Li-oUe">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                             <state key="normal" image="blackSetting"/>
+                                                            <connections>
+                                                                <segue destination="RCd-J1-Jzb" kind="show" id="mNa-Ds-nXk"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

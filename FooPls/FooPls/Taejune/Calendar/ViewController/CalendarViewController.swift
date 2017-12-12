@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
-    let outsideMonthColor = UIColor(red: 88.0/255.0, green: 74.0/255.0, blue: 102.0/255.0, alpha: 1.0)
+    let outsideMonthColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0)
     let monthColor = UIColor.black
     let selectedMonthColor = UIColor(red: 58.0/255.0, green: 41.0/255.0, blue: 75.0/255.0, alpha: 1.0)
     let currentDateSelectedViewColor = UIColor(red: 78.0/255.0, green: 63.0/255.0, blue: 93.0/255.0, alpha: 1.0)
@@ -30,13 +30,17 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         reference = Database.database().reference()
         userID = Auth.auth().currentUser?.uid
-        setupCalendar()
         loadDate()
         setUpPopUpView()
         popUpView.alpha = 0
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView(_:)))
         gesture.delegate = self
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupCalendar()
     }
     
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
@@ -58,7 +62,7 @@ class CalendarViewController: UIViewController {
     
     //MARK: - 처음 뷰가 불렸을 때 캘린더 셋팅
     private func setupCalendar() {
-        calendarView.scrollToDate(Date.init())
+        
         //날짜 cell들의 간격
         calendarView.minimumLineSpacing = 0.5
         calendarView.minimumInteritemSpacing = 0
@@ -68,8 +72,8 @@ class CalendarViewController: UIViewController {
             
             self.formater.dateFormat = "yyyy년 MM월"
             self.yearMonthLb.text = self.formater.string(from: date)
+            self.calendarView.scrollToDate(Date.init())
         }
-        
     }
     
     //MARK: - 보이는 날의 정보를 보여 주기 위한 메소드
@@ -190,7 +194,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         
         return cell
     }
-    
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource {
@@ -202,7 +205,6 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         
         let startDate = formater.date(from: "2017 01 01")!
         let endDate = formater.date(from: "2018 12 31")!
-        
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         
         return parameters

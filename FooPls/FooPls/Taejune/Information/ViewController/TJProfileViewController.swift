@@ -9,6 +9,7 @@ class TJProfileViewController: UIViewController, UIImagePickerControllerDelegate
     var contentViewController: PagingContentViewController!
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
+    var userNickname: String?
     
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImgView: UIImageView!
@@ -25,6 +26,17 @@ class TJProfileViewController: UIViewController, UIImagePickerControllerDelegate
         setupPaging()
         profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
+        loadData()
+    }
+    
+    private func loadData() {
+        reference.child("users").child(userID!).observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
+            if let value = snapshot.value as? [String : Any] {
+                self.userNickname = value["nickname"] as? String
+                self.profileNickname.text = self.userNickname
+            }
+        }
     }
     
     //MARK: - 페이징킷 초기 셋업
@@ -86,7 +98,6 @@ class TJProfileViewController: UIViewController, UIImagePickerControllerDelegate
 
                 print(profilePhotoID)
                 self.reference.child("users").child(self.userID!).updateChildValues(["profilePhotoID": profilePhotoID], withCompletionBlock: { (error, databaseRef) in
-                    //finish
                 })
             })
         }
