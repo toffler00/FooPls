@@ -23,6 +23,7 @@ target 'FooPls' do
   pod 'Kingfisher'
   pod 'RAMAnimatedTabBarController'
   pod 'FirebaseUI/Storage'
+  pod 'PagingKit'
   # Pods for FooPls
 
 end
