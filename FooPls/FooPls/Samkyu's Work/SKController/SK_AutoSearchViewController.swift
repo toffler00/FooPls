@@ -35,16 +35,14 @@ class SK_AutoSearchViewController: UIViewController {
         
         makeGoogleSearchBar()
         startGoogleMap()
+        view.backgroundColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
+        
         
 
         
     }
     
     @IBAction func postToFirebase(_ sender: Any) {
-        
-        
-        
-        
         
     }
     
@@ -60,6 +58,11 @@ class SK_AutoSearchViewController: UIViewController {
         let marker = GMSMarker()
         marker.map = googleMapView
         marker.position = camera.target
+        marker.icon = UIImage(named: "GMarker")
+        marker.snippet = "FooPls Center"
+        
+        placeLB.text = "FooPls Center"
+        addressLB.text = "서울시 강남구 신사동"
         
     }
     
@@ -74,7 +77,8 @@ class SK_AutoSearchViewController: UIViewController {
         marker.map = googleMapView
         marker.position = camera.target
         marker.snippet = placeName
-        marker.accessibilityElementsHidden = true
+        marker.icon = UIImage(named: "GMarker")
+        
     }
     
     func makeGoogleSearchBar(){
@@ -118,6 +122,7 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         
         placeLB.text = place.name
         addressLB.text = place.formattedAddress
+        
         
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         

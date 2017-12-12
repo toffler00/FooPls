@@ -52,7 +52,6 @@
 		62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E1FF511FD924BF00E1FEAE /* Ih_DataCenter.swift */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
-		CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */; };
 		CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F0C1FCE8EDA009C884F /* LaunchScreen.storyboard */; };
 		CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */; };
 		CE1E93F41FCFF2110059775A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E93F31FCFF2110059775A /* Model.swift */; };
@@ -65,15 +64,14 @@
 		CEB8997D1FD9C4A800BFFF3B /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899771FD9C4A800BFFF3B /* PopView.swift */; };
 		CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */; };
 		CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AD1FCEE4F200F5351E /* Extension.swift */; };
+		FC0E2CC41FDFB33600E32F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */; };
+		FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */; };
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
-		FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */; };
 		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
-		FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */; };
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
 		FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */; };
 		FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */; };
-		FCF45A2E1FD96B7C00D99E85 /* SK_PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,7 +127,6 @@
 		CE0A7F001FCE8EDA009C884F /* FooPls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FooPls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0A7F0D1FCE8EDA009C884F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0A7F0F1FCE8EDA009C884F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -142,16 +139,15 @@
 		CEB899761FD9C4A700BFFF3B /* EmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
 		CEB899771FD9C4A800BFFF3B /* PopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 		CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVCExtension.swift; sourceTree = "<group>"; };
+		FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
-		FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_GoogleMapMainVC.swift; sourceTree = "<group>"; };
 		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
-		FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_FirebaseInputVC.swift; sourceTree = "<group>"; };
 		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
 		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
 		FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
-		FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,11 +421,11 @@
 		CE0A7F221FCE9251009C884F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */,
 				237379AD1FCEE4F200F5351E /* Extension.swift */,
 				CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */,
 				23E6F40A1FD5C50200543A84 /* FooPlsView.swift */,
 				23B317981FCFF7E600C0A078 /* Bridging-Header.h */,
-				CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */,
 				CE0A7F0C1FCE8EDA009C884F /* LaunchScreen.storyboard */,
 				CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */,
 				CE0A7F0F1FCE8EDA009C884F /* Info.plist */,
@@ -511,8 +507,6 @@
 		FCDCFB791FD5258200B993C9 /* SKController */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */,
-				FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */,
 				FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */,
 				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
@@ -525,7 +519,6 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */,
-				FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */,
 			);
 			path = SKModel;
 			sourceTree = "<group>";
@@ -534,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */,
+				FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */,
 			);
 			path = SKView;
 			sourceTree = "<group>";
@@ -602,6 +596,7 @@
 			files = (
 				233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */,
 				CEB8997C1FD9C4A800BFFF3B /* EmptyCell.xib in Resources */,
+				FC0E2CC41FDFB33600E32F14 /* Assets.xcassets in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
@@ -614,7 +609,6 @@
 				62E1FF571FD924BF00E1FEAE /* LaunchScreen.storyboard in Resources */,
 				231F59D71FDC146400580D69 /* Profile.storyboard in Resources */,
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
-				CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
 				62E1FF541FD924BF00E1FEAE /* Ih_CollectionView.storyboard in Resources */,
@@ -663,7 +657,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D32F1333C676D2B10543C474 /* [CP] Embed Pods Frameworks */ = {
@@ -715,6 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */,
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
 				CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */,
@@ -722,7 +717,6 @@
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
-				FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
@@ -737,7 +731,6 @@
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */,
 				62E1FF551FD924BF00E1FEAE /* CustomCell.swift in Sources */,
-				FCF45A2E1FD96B7C00D99E85 /* SK_PostDataModel.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
 				231F59CE1FDAC2EA00580D69 /* RAMItemAnimationProtocol.swift in Sources */,
@@ -751,7 +744,6 @@
 				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
 				231F59D01FDAC2EA00580D69 /* RAMFrameItemAnimation.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
-				FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */,
 				62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */,
 				FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */,
 				CEB8997D1FD9C4A800BFFF3B /* PopView.swift in Sources */,
