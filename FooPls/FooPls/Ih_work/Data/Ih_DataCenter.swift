@@ -23,11 +23,34 @@ class DataCenter {
     let userInfo = Auth.auth().currentUser
     var postModel : PostModel?
     var currentUser : UserModel?
-    private init() { }
+    var mainView : MainCollectionView?
+    init() { }
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
 
- 
+    
+    func loadDataToMainCollectionView() {
+        guard let uid = self.currentUser?.uid else {return}
+        ref = Database.database().reference()
+        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
+            guard let data = snapshot.value as? [ String: [String : String]] else {return}
+            var datas = [self.postModel]
+            for (_, dic) in data {
+                guard let name = dic["sotrename"], let adress = dic["adress"],
+                    let url = dic["imageurl"], let content = dic["content"] else {return}
+                let urlString = URL(string: url)
+                let imgData = try! Data(contentsOf: urlString!)
+                let image = UIImage(data: imgData)
+                let posts = PostModel(storeName: name, StoreAdress: adress, contentText: content, storeImg: image!)
+                datas.append(posts)
+               print(datas)
+                
+            }
+        }
+    }
+    
+    
+    
     // MARK: - load location Data
     func load(completion: @escaping ([LocationModel]) -> Void) {//[Position] 을 파라미터로 받는 completion 탈출클로저를 사용, 함수가 완료되는 시점에 클로저를 실행함.
         ref.child("latiAndLongi").observeSingleEvent(of: .value) { (snapshot) in //observeSingleEvent 사용
@@ -57,8 +80,6 @@ class DataCenter {
     // MARK: - upload
     func postUpload(uid : String?, storeimg : UIImage, storeName : String,
                     storeAdress : String, contents : String) {
-        
-       
         guard ((postModel?.storeImg = storeimg) != nil) else {return}
         guard let img = postModel?.storeImgData else {return}
         Storage.storage().reference().child(uid!).child("storeimg").putData(img, metadata: nil) { (metadata, error) in
@@ -79,35 +100,9 @@ class DataCenter {
         }
     }
     
-    // MARK: - loadData
-    func loadDataToMainCollectionView(completion : @escaping ([PostModel]?) -> Void) {
-        guard let uid = currentUser?.uid else {return}
-        let postData = [PostModel]()
-        ref = Database.database().reference()
-        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
-            guard let data = snapshot.value as? [String : Any] else {return}
-            for (_, value) in data {
-                guard let name = (value as? [String : String])?["storename"],
-                    let adress = (value as? [String: String])?["storeadress"],
-                    let content = (value as? [String : String])?["content"],
-                    let url = (value as? [String : String])?["storeimgurl"]
-                    else {return}
-            var storeImage : UIImage?
-            let img = Storage.storage().reference().child(url)
-                img.getData(maxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                    if error != nil {
-                        print("fail")
-                    } else {
-                        let image = UIImage(data: data!)
-                        storeImage = image
-                    }
-                })
-                let data = PostModel(storeName: name, storeAdress: adress, contentText: content, storeImgUrl: url, storeImg: storeImage!)
-               
-            }
-            completion(postData)
-        }
-    }
-
+   
+    
+    
+    
 }
-
+ 

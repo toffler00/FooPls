@@ -51,6 +51,9 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Storage (4.5.0):
+    - Firebase/Storage (~> 4.0)
+    - SDWebImage (~> 4.0)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -81,6 +84,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - PagingKit (1.1.0)
   - RAMAnimatedTabBarController (3.0.1)
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
@@ -95,12 +99,14 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FirebaseUI/Storage
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
   - JTAppleCalendar
   - KakaoOpenSDK/KakaoOpenSDK
   - Kingfisher
+  - PagingKit
   - RAMAnimatedTabBarController
   - SDWebImage
   - SwiftKeychainWrapper
@@ -118,6 +124,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 18ecb23e15c7f58bb0c4527e9cace06897cc40ca
   FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
   FirebaseStorage: 0930e97994dc79b404179bdfafb6b16f59433a82
+  FirebaseUI: 883482fea73b73bbb488c55176f4c6ad128957eb
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
@@ -128,10 +135,12 @@ SPEC CHECKSUMS:
   Kingfisher: 26ae0473102b77b575da51960c932431e3745407
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  PagingKit: 72a8a05c8bd23811c0ab6055360d941ff17a61f9
   RAMAnimatedTabBarController: 78bafa7a1c1b162f0d4a86a936c0d1ee4a06ffcc
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
 PODFILE CHECKSUM: ab3fed178f30544ca44315991ffb7d9350480548
+PODFILE CHECKSUM: 006616e35c79f44d2ede5745d7708cc8c60d6e86
 
 COCOAPODS: 1.3.1

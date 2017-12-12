@@ -20,15 +20,20 @@
 		231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59C71FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift */; };
 		231F59D21FDAC2EA00580D69 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59C91FDAC2EA00580D69 /* RAMRotationAnimation.swift */; };
 		231F59D31FDAC2EA00580D69 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59CB1FDAC2EA00580D69 /* RAMBounceAnimation.swift */; };
-		23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF51FD5353800DE5D82 /* Search.storyboard */; };
-		23235BF81FD5354600DE5D82 /* Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BF71FD5354600DE5D82 /* Posting.storyboard */; };
-		23235BFC1FD5356300DE5D82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23235BFB1FD5356300DE5D82 /* Settings.storyboard */; };
+		231F59D51FDC137800580D69 /* TJSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231F59D41FDC137800580D69 /* TJSettings.storyboard */; };
+		231F59D71FDC146400580D69 /* TJProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231F59D61FDC146400580D69 /* TJProfile.storyboard */; };
 		2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2328AB881FCE9FB5004B75C0 /* Splash.storyboard */; };
 		2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */; };
 		2328AB901FCEAC6A004B75C0 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */; };
+		232D49F01FDE3F850094DA1A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D49EF1FDE3F850094DA1A /* MenuCell.xib */; };
+		232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D49F11FDE3FBA0094DA1A /* FocusView.xib */; };
+		232D49F41FDE3FE50094DA1A /* TJProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */; };
+		232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49F51FDE40950094DA1A /* MenuCell.swift */; };
+		232D49F81FDE4C8F0094DA1A /* TJTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49F71FDE4C8F0094DA1A /* TJTempViewController.swift */; };
+		232D49FA1FDE507C0094DA1A /* TJTemp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232D49F91FDE507C0094DA1A /* TJTemp.storyboard */; };
+		232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */; };
 		233773D31FD68D52006C28F0 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */; };
 		233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233773DB1FD69715006C28F0 /* CalendarCell.swift */; };
-		233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233773DD1FD6B6BF006C28F0 /* Calendar.storyboard */; };
 		233773E01FD6D80E006C28F0 /* NewWrite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */; };
 		233773E21FD6D908006C28F0 /* NewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233773E11FD6D908006C28F0 /* NewWriteViewController.swift */; };
 		234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TJCalendar.storyboard */; };
@@ -50,7 +55,6 @@
 		62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E1FF511FD924BF00E1FEAE /* Ih_DataCenter.swift */; };
 		CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */; };
 		CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */; };
-		CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */; };
 		CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F0C1FCE8EDA009C884F /* LaunchScreen.storyboard */; };
 		CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */; };
 		CE1E93F41FCFF2110059775A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E93F31FCFF2110059775A /* Model.swift */; };
@@ -63,15 +67,14 @@
 		CEB8997D1FD9C4A800BFFF3B /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899771FD9C4A800BFFF3B /* PopView.swift */; };
 		CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */; };
 		CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AD1FCEE4F200F5351E /* Extension.swift */; };
+		FC0E2CC41FDFB33600E32F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */; };
+		FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */; };
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
-		FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */; };
 		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
-		FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */; };
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
 		FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */; };
 		FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */; };
-		FCF45A2E1FD96B7C00D99E85 /* SK_PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,16 +91,21 @@
 		231F59C71FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimations.swift; sourceTree = "<group>"; };
 		231F59C91FDAC2EA00580D69 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
 		231F59CB1FDAC2EA00580D69 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
-		23235BF51FD5353800DE5D82 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		23235BF71FD5354600DE5D82 /* Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Posting.storyboard; sourceTree = "<group>"; };
-		23235BFB1FD5356300DE5D82 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		231F59D41FDC137800580D69 /* TJSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJSettings.storyboard; sourceTree = "<group>"; };
+		231F59D61FDC146400580D69 /* TJProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJProfile.storyboard; sourceTree = "<group>"; };
 		2328AB881FCE9FB5004B75C0 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2328AB8F1FCEAC69004B75C0 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK/KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		232D49EF1FDE3F850094DA1A /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		232D49F11FDE3FBA0094DA1A /* FocusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusView.xib; sourceTree = "<group>"; };
+		232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJProfileViewController.swift; sourceTree = "<group>"; };
+		232D49F51FDE40950094DA1A /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		232D49F71FDE4C8F0094DA1A /* TJTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJTempViewController.swift; sourceTree = "<group>"; };
+		232D49F91FDE507C0094DA1A /* TJTemp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJTemp.storyboard; sourceTree = "<group>"; };
+		232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostingCell.swift; sourceTree = "<group>"; };
 		2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		233773DB1FD69715006C28F0 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
-		233773DD1FD6B6BF006C28F0 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewWrite.storyboard; sourceTree = "<group>"; };
 		233773E11FD6D908006C28F0 /* NewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWriteViewController.swift; sourceTree = "<group>"; };
 		234302E71FD63B9200501C46 /* TJCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJCalendar.storyboard; sourceTree = "<group>"; };
@@ -125,7 +133,6 @@
 		CE0A7F001FCE8EDA009C884F /* FooPls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FooPls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0A7F051FCE8EDA009C884F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0A7F0D1FCE8EDA009C884F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0A7F0F1FCE8EDA009C884F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,16 +145,15 @@
 		CEB899761FD9C4A700BFFF3B /* EmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
 		CEB899771FD9C4A800BFFF3B /* PopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 		CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVCExtension.swift; sourceTree = "<group>"; };
+		FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
-		FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_GoogleMapMainVC.swift; sourceTree = "<group>"; };
 		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
-		FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_FirebaseInputVC.swift; sourceTree = "<group>"; };
 		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
 		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
 		FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
-		FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,10 +173,8 @@
 		23170EB01FD63B440064E047 /* Taejune */ = {
 			isa = PBXGroup;
 			children = (
-				231A40561FD8E3850046F3D4 /* ViewController */,
-				231A40571FD8E39E0046F3D4 /* View */,
-				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
-				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
+				232D49FE1FDFBB350094DA1A /* Calendar */,
+				232D49FF1FDFBB6B0094DA1A /* Information */,
 			);
 			path = Taejune;
 			sourceTree = "<group>";
@@ -178,8 +182,8 @@
 		231A40561FD8E3850046F3D4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				234302E91FD63BB200501C46 /* CalendarViewController.swift */,
-				233773E11FD6D908006C28F0 /* NewWriteViewController.swift */,
+				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
+				232D49F71FDE4C8F0094DA1A /* TJTempViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -187,7 +191,10 @@
 		231A40571FD8E39E0046F3D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				233773DB1FD69715006C28F0 /* CalendarCell.swift */,
+				232D49F51FDE40950094DA1A /* MenuCell.swift */,
+				232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */,
+				232D49EF1FDE3F850094DA1A /* MenuCell.xib */,
+				232D49F11FDE3FBA0094DA1A /* FocusView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,8 +274,65 @@
 			isa = PBXGroup;
 			children = (
 				2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */,
+				2328AB881FCE9FB5004B75C0 /* Splash.storyboard */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		232D49FD1FDF7AA10094DA1A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				231F59D41FDC137800580D69 /* TJSettings.storyboard */,
+				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
+				232D49F91FDE507C0094DA1A /* TJTemp.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		232D49FE1FDFBB350094DA1A /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				232D4A001FDFBBBC0094DA1A /* ViewController */,
+				232D4A011FDFBBC90094DA1A /* View */,
+				232D4A021FDFBBD10094DA1A /* Storyboard */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		232D49FF1FDFBB6B0094DA1A /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				232D49FD1FDF7AA10094DA1A /* Storyboard */,
+				231A40571FD8E39E0046F3D4 /* View */,
+				231A40561FD8E3850046F3D4 /* ViewController */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		232D4A001FDFBBBC0094DA1A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				234302E91FD63BB200501C46 /* CalendarViewController.swift */,
+				233773E11FD6D908006C28F0 /* NewWriteViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		232D4A011FDFBBC90094DA1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				233773DB1FD69715006C28F0 /* CalendarCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		232D4A021FDFBBD10094DA1A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
+				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		3C840C1FBDBC294980830D5A /* Pods */ = {
@@ -391,6 +455,7 @@
 		CE0A7F181FCE91BD009C884F /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				230ED26A1FD92D260054914A /* Login.storyboard */,
 				CE1E93F21FCFF2010059775A /* Model */,
 				CE0A7F211FCE9211009C884F /* VC */,
 				CE0A7F1F1FCE91FE009C884F /* Layout */,
@@ -419,11 +484,11 @@
 		CE0A7F221FCE9251009C884F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */,
 				237379AD1FCEE4F200F5351E /* Extension.swift */,
 				CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */,
 				23E6F40A1FD5C50200543A84 /* FooPlsView.swift */,
 				23B317981FCFF7E600C0A078 /* Bridging-Header.h */,
-				CE0A7F0A1FCE8EDA009C884F /* Assets.xcassets */,
 				CE0A7F0C1FCE8EDA009C884F /* LaunchScreen.storyboard */,
 				CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */,
 				CE0A7F0F1FCE8EDA009C884F /* Info.plist */,
@@ -442,13 +507,7 @@
 		CE9D36F11FCE92CA00E3713D /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				2328AB881FCE9FB5004B75C0 /* Splash.storyboard */,
-				230ED26A1FD92D260054914A /* Login.storyboard */,
 				231BA7BE1FD0203E00EF2B69 /* Main.storyboard */,
-				23235BF51FD5353800DE5D82 /* Search.storyboard */,
-				233773DD1FD6B6BF006C28F0 /* Calendar.storyboard */,
-				23235BF71FD5354600DE5D82 /* Posting.storyboard */,
-				23235BFB1FD5356300DE5D82 /* Settings.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -505,8 +564,6 @@
 		FCDCFB791FD5258200B993C9 /* SKController */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB7B1FD525AD00B993C9 /* SK_GoogleMapMainVC.swift */,
-				FCDCFB7D1FD525AE00B993C9 /* SK_FirebaseInputVC.swift */,
 				FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */,
 				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
@@ -519,7 +576,6 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */,
-				FCF45A2D1FD96B7C00D99E85 /* SK_PostDataModel.swift */,
 			);
 			path = SKModel;
 			sourceTree = "<group>";
@@ -528,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */,
+				FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */,
 			);
 			path = SKView;
 			sourceTree = "<group>";
@@ -594,26 +651,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				233773DE1FD6B6BF006C28F0 /* Calendar.storyboard in Resources */,
 				CEB8997C1FD9C4A800BFFF3B /* EmptyCell.xib in Resources */,
+				FC0E2CC41FDFB33600E32F14 /* Assets.xcassets in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
+				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
+				232D49FA1FDE507C0094DA1A /* TJTemp.storyboard in Resources */,
+				231F59D51FDC137800580D69 /* TJSettings.storyboard in Resources */,
+				232D49F01FDE3F850094DA1A /* MenuCell.xib in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
 				62E1FF531FD924BF00E1FEAE /* Ih_Main.storyboard in Resources */,
 				233773E01FD6D80E006C28F0 /* NewWrite.storyboard in Resources */,
 				CEB899791FD9C4A800BFFF3B /* PostCell.xib in Resources */,
 				62E1FF571FD924BF00E1FEAE /* LaunchScreen.storyboard in Resources */,
+				231F59D71FDC146400580D69 /* TJProfile.storyboard in Resources */,
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
-				CE0A7F0B1FCE8EDA009C884F /* Assets.xcassets in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
 				62E1FF541FD924BF00E1FEAE /* Ih_CollectionView.storyboard in Resources */,
-				23235BF61FD5353800DE5D82 /* Search.storyboard in Resources */,
-				23235BF81FD5354600DE5D82 /* Posting.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
-				23235BFC1FD5356300DE5D82 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +732,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PagingKit/PagingKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -691,6 +750,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -709,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */,
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
 				CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */,
@@ -716,9 +777,9 @@
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
-				FCDCFB7E1FD525AF00B993C9 /* SK_GoogleMapMainVC.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
+				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				62E1FF5B1FD924BF00E1FEAE /* Ih_UserModel.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
@@ -731,7 +792,6 @@
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */,
 				62E1FF551FD924BF00E1FEAE /* CustomCell.swift in Sources */,
-				FCF45A2E1FD96B7C00D99E85 /* SK_PostDataModel.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
 				231F59CE1FDAC2EA00580D69 /* RAMItemAnimationProtocol.swift in Sources */,
@@ -740,12 +800,15 @@
 				231F59CF1FDAC2EA00580D69 /* RAMFumeAnimation.swift in Sources */,
 				FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */,
 				233773E21FD6D908006C28F0 /* NewWriteViewController.swift in Sources */,
+				232D49F41FDE3FE50094DA1A /* TJProfileViewController.swift in Sources */,
 				231F59D21FDAC2EA00580D69 /* RAMRotationAnimation.swift in Sources */,
+				232D49F81FDE4C8F0094DA1A /* TJTempViewController.swift in Sources */,
 				231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */,
 				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
 				231F59D01FDAC2EA00580D69 /* RAMFrameItemAnimation.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
-				FCDCFB801FD525AF00B993C9 /* SK_FirebaseInputVC.swift in Sources */,
+
+				232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */,
 				62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */,
 				FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */,
 				CEB8997D1FD9C4A800BFFF3B /* PopView.swift in Sources */,
@@ -835,6 +898,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -909,7 +973,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FooPls/Resource/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -931,7 +995,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FooPls/Resource/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

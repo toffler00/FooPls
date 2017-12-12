@@ -10,6 +10,7 @@ class LoginViewController: UIViewController {
     let reference = Database.database().reference()
     var kakaoServerURL = ""
     var userInfo : UserModel?
+
     
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
@@ -188,7 +189,8 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withCustomToken: firebaseToken) { [weak self] (user, error) in
             guard let `self` = self else { return }
             let userEmail = user?.email ?? ""
-            let userDic = ["email": userEmail]
+            let userNickname = user?.displayName ?? ""
+            let userDic = ["email": userEmail, "nickname": userNickname]
             if let authError = error {
                 print("authError",authError)
             } else {
@@ -200,6 +202,7 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: FBSDKLoginButtonDelegate
+
 extension LoginViewController : LoginButtonDelegate{
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
@@ -222,6 +225,7 @@ extension LoginViewController : LoginButtonDelegate{
                         print(errors.localizedDescription)
                         return
                     }
+
                 }
             })
             self.performSegue(withIdentifier: "mainSegue", sender: self)

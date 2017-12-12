@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="로그인 성공" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c2-5p-kba">
-                                <rect key="frame" x="148" y="323" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQL-cH-GFh">
-                                <rect key="frame" x="164" y="70" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awz-5x-bvS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="kZF-Zg-1en" kind="embed" id="htL-3H-BUN"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="awz-5x-bvS" firstAttribute="trailing" secondItem="2Q5-6y-qau" secondAttribute="trailing" id="Cgh-M2-TCu"/>
+                            <constraint firstItem="awz-5x-bvS" firstAttribute="top" secondItem="Hx1-pP-6p4" secondAttribute="top" id="IuY-RA-dbn"/>
+                            <constraint firstItem="awz-5x-bvS" firstAttribute="leading" secondItem="2Q5-6y-qau" secondAttribute="leading" id="McE-lK-Xm4"/>
+                            <constraint firstItem="awz-5x-bvS" firstAttribute="bottom" secondItem="2Q5-6y-qau" secondAttribute="bottom" id="vnB-0U-ByL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Q5-6y-qau"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="BlackHome" id="pXB-jw-bve" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
@@ -81,9 +81,19 @@
             <point key="canvasLocation" x="-1055.2" y="1007.9460269865068"/>
         </scene>
         <!--Ih_CollectionView-->
+        <scene sceneID="SH1-ha-C1A">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ih_CollectionView" id="kZF-Zg-1en" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VQn-ad-p2i"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elC-Gd-8ve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1719" y="1452"/>
+        </scene>
+        <!--Storyboard Reference-->
         <scene sceneID="Q1a-Da-q72">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SKMain" storyboardName="Ih_CollectionView" id="sdq-m7-1RZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder id="sdq-m7-1RZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Eei-pC-Sli"/>
                     <navigationItem key="navigationItem" id="1KL-P6-Hcn"/>
                 </viewControllerPlaceholder>
@@ -111,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="254" y="1432"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="ViR-vo-M4z">
             <objects>
                 <viewController id="cro-Cv-VkI" sceneMemberID="viewController">
@@ -135,7 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a6m-R3-6Oz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="blackSetting" id="FTD-VW-6ka" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="FTD-VW-6ka" customClass="RAMAnimatedTabBarItem" customModule="FooPls" customModuleProvider="target">
                         <connections>
                             <outlet property="animation" destination="8Db-eV-UcB" id="qNr-ab-wdZ"/>
                         </connections>
@@ -146,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="922" y="1008"/>
         </scene>
-        <!--SKMain-->
+        <!--TJProfile-->
         <scene sceneID="7Dz-dt-IzX">
             <objects>
-                <viewControllerPlaceholder storyboardName="SKMain" id="qAl-xd-Kg0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="TJProfile" id="qAl-xd-Kg0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SDi-Ip-Ze1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maL-Nk-JXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +245,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.78039215689999997" green="0.91764705879999997" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -255,8 +264,8 @@
     <resources>
         <image name="BlackHome" width="23" height="23"/>
         <image name="blackCalendar" width="23" height="24"/>
-        <image name="blackSetting" width="20" height="21"/>
         <image name="posting" width="24" height="24"/>
+        <image name="profile" width="25" height="25"/>
         <image name="search" width="24" height="24"/>
     </resources>
 </document>

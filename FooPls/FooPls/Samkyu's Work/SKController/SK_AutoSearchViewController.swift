@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import GoogleMaps
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
@@ -20,13 +21,11 @@ class SK_AutoSearchViewController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView:UITextView?
-    
     var ref:DatabaseReference!
     
-    
-    
-    
-    
+    @IBOutlet var googleMapView: GMSMapView!
+    var zoom:Float = 14
+    var marker:GMSMarker?
     
     
     override func viewDidLoad() {
@@ -35,20 +34,53 @@ class SK_AutoSearchViewController: UIViewController {
         ref = Database.database().reference()
         
         makeGoogleSearchBar()
+        startGoogleMap()
+        view.backgroundColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
         
         
-    
-        
+
         
     }
     
     @IBAction func postToFirebase(_ sender: Any) {
         
+    }
+    
+    func startGoogleMap(){
         
         
+        googleMapView.isMyLocationEnabled = true
+        googleMapView.settings.myLocationButton = true
         
+        let camera = GMSCameraPosition.camera(withLatitude: 37.515, longitude: 127.019, zoom: zoom)
+        self.googleMapView.camera = camera
+        
+        let marker = GMSMarker()
+        marker.map = googleMapView
+        marker.position = camera.target
+        marker.icon = UIImage(named: "GMarker")
+        marker.snippet = "FooPls Center"
+        
+        placeLB.text = "FooPls Center"
+        addressLB.text = "서울시 강남구 신사동"
         
     }
+    
+    func showSearchResult(lati: Double, longi:Double, placeName:String){
+        
+        googleMapView.clear()
+        
+        let camera = GMSCameraPosition.camera(withLatitude: lati, longitude: longi, zoom: zoom)
+        self.googleMapView.camera = camera
+        
+        let marker = GMSMarker()
+        marker.map = googleMapView
+        marker.position = camera.target
+        marker.snippet = placeName
+        marker.icon = UIImage(named: "GMarker")
+        
+    }
+    
     func makeGoogleSearchBar(){
         
         resultsViewController = GMSAutocompleteResultsViewController()
@@ -90,6 +122,9 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         
         placeLB.text = place.name
         addressLB.text = place.formattedAddress
+        
+        
+        showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         
         
         

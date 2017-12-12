@@ -39,7 +39,7 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
+    // MARK: Post upload
     @IBAction func postSaveAndUpload(sender: AnyObject) {
     
         guard let uid = userInfo?.uid else {return}
@@ -49,9 +49,7 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         DispatchQueue.main.async {
             self.dataCenter?.postUpload(uid: uid, storeimg: image, storeName: name, storeAdress: adress, contents: contents)
         }
-        
         self.dismiss(animated: true, completion: nil)
-
     }
     
     override func didReceiveMemoryWarning() {

@@ -23,6 +23,8 @@ class CalendarViewController: UIViewController {
     let monthColor = UIColor.black
     let selectedMonthColor = UIColor(red: 58.0/255.0, green: 41.0/255.0, blue: 75.0/255.0, alpha: 1.0)
     let currentDateSelectedViewColor = UIColor(red: 78.0/255.0, green: 63.0/255.0, blue: 93.0/255.0, alpha: 1.0)
+    let currentDayColor = UIColor(red: 1, green: 1, blue: 200.0/255.0, alpha: 1)
+    let noCurrentDayColor = UIColor(red: 1, green: 254.0/255.0, blue: 245.0/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,8 @@ class CalendarViewController: UIViewController {
                         self.popUpView.tableView.reloadData()
                     })
                     self.contentArray.append(key)
+                    let date = calendarDic["date"] as! String
+                    self.contentArray.append(date)
                     self.calendarView.reloadData()
                 }
             }
@@ -65,6 +69,7 @@ class CalendarViewController: UIViewController {
     
     //MARK: - 처음 뷰가 불렸을 때 캘린더 셋팅
     private func setupCalendar() {
+        calendarView.scrollToDate(Date.init())
         //날짜 cell들의 간격
         calendarView.minimumLineSpacing = 0.5
         calendarView.minimumInteritemSpacing = 0
@@ -75,6 +80,7 @@ class CalendarViewController: UIViewController {
             self.formater.dateFormat = "yyyy년 MM월"
             self.yearMonthLb.text = self.formater.string(from: date)
         }
+        
     }
     
     //MARK: - 보이는 날의 정보를 보여 주기 위한 메소드
@@ -88,9 +94,20 @@ class CalendarViewController: UIViewController {
     //셀이 선택 되었을 때 텍스트 색을 정해주기 위한 메소드
     private func handleCellTextColor(cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CalendarCell else { return }
+        formater.dateFormat = "yyyy년 MM월 dd일"
+        let cellStateDay = formater.string(from: cellState.date)
+        let currentDay = formater.string(from: Date.init())
+        //현재 날짜의 셀의 배경을 다르게
+        if currentDay == cellStateDay {
+            validCell.backgroundColor = currentDayColor
+        }else {
+            validCell.backgroundColor = noCurrentDayColor
+        }
+        //선택된 셀의 뷰를 띄움
         if validCell.isSelected {
             validCell.calendarLb.textColor = selectedMonthColor
         }else {
+            //현재 달의 텍스트 색과 다른 달의 텍스트 색을 다르게 함
             if cellState.dateBelongsTo == .thisMonth {
                 validCell.calendarLb.textColor = monthColor
             }else {
@@ -112,8 +129,8 @@ class CalendarViewController: UIViewController {
     func handleCellisContents(cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CalendarCell else { return }
         formater.dateFormat = "yyyy년 MM월 dd일"
-        let thisMonthContents = formater.string(from: cellState.date)
-        if contentArray.contains(thisMonthContents) {
+        let cellStateDay = formater.string(from: cellState.date)
+        if contentArray.contains(cellStateDay) {
             validCell.isContentImgView.isHidden = false
         }else {
             validCell.isContentImgView.isHidden = true
@@ -138,7 +155,6 @@ class CalendarViewController: UIViewController {
             alertSheet.addAction(okAction)
             present(alertSheet, animated: true, completion: nil)
             return
-            
         }
     }
 }
@@ -193,6 +209,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
         cell.calendarLb.text = cellState.text
+        
         handleCellisContents(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)

@@ -1,26 +1,50 @@
 
 import UIKit
+import FirebaseDatabase
+import FirebaseStorage
+import FirebaseAuth
+
 
 class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Variable
     @IBOutlet weak var introImgView: UIImageView!
-
-    var cell : CustomCell!
-    var postData = [PostModel]()
+    @IBOutlet weak var mainCollectionView: UICollectionView!
     
-    override func viewWillAppear(_ animated: Bool) {
-      
-    }
+    var cell : CustomCell!
+    var dataCenter : DataCenter?
+    var postData : [PostModel] = []
+    var currentUser = Auth.auth().currentUser
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+            self.loadDataToMainCollectionView()
+   
     }
+    func loadDataToMainCollectionView() {
+        guard let uid = self.currentUser?.uid else {return}
+        ref = Database.database().reference()
+        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
+            guard let data = snapshot.value as? [ String: [String : String]] else {return}
+            for (_, dic) in data {
+                guard let name = dic["sotrename"], let adress = dic["adress"],
+                    let url = dic["imageurl"], let content = dic["content"] else {return}
+                let posts = PostModel(storeName: name, storeAdress: adress, contentText: content, storeImgUrl: url)
+                self.postData.append(posts)
+                self.mainCollectionView.reloadData()
+            }
+            print(self.postData.count)
+        }
+    }
+
     // MARK: - CollectionView Delegate & Datasource
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-      let count = postData.count
-        return count
+       
+        return self.postData.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -48,15 +72,19 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         
         // setUPCell
         setUpCell()
+        cell.cellTitleLb.text = self.postData[indexPath.row].storeName
+        cell.cellAdressLb.text = self.postData[indexPath.row].storeAdress
         
-        cell.cellTitleLb.text = postData[indexPath.row].storeName
-        cell.cellAdressLb.text = postData[indexPath.row].storeAdress
-        cell.cellImageView.image = postData[indexPath.row].storeImg
-        
+        // url to image - FirebaseUI
+        let storeImgUrl = self.postData[indexPath.row].storeImgUrl
+        let url = URL(string: storeImgUrl!)
+        cell.cellImageView.sd_setImage(with: url!)
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         
     }
     // CollectionView Delegate & Datasource_End
@@ -65,14 +93,13 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    }
+}
 
 extension MainCollectionView {
     func setUpCell() {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
 
-        cell.cellImageView.backgroundColor = UIColor.cyan
         cell.cellImageView.layer.cornerRadius = 5
         cell.cellImageView.layer.masksToBounds = true
     }
