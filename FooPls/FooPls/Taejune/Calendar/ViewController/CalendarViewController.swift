@@ -49,8 +49,6 @@ class CalendarViewController: UIViewController {
                 for (key, calendarDic) in value {
                     print(key)
                     print(calendarDic)
-//                    guard let title = calendarDic["title"] as? String else { return }
-//                    self.testList.append(calendarDic)
                     // MARK: 데이터 변경시 noti
                     NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] _ in
                         guard let `self` = self else { return }

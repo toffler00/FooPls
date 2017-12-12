@@ -50,10 +50,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                 }else {
                     guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
                     
-
-                    let calendarDic = ["title": locationTitle, "content": contentTxtView, "photoID": photoID, "longitude": self.longitude!, "latitude": self.latitude!, "adress": self.adress!] as [String: Any]
-                    self.reference.child("users").child(self.userID!).child("calendar").child(self.selectedDate).setValue(calendarDic)
-                    
                     // MARK: Noti
                     NotificationCenter.default.post(name: .reload, object: locationTitle)
                     let calendarDic = ["title": contentTitle,
