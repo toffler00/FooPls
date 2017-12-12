@@ -93,7 +93,7 @@
         <!--Storyboard Reference-->
         <scene sceneID="Q1a-Da-q72">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SKMain" id="sdq-m7-1RZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder id="sdq-m7-1RZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Eei-pC-Sli"/>
                     <navigationItem key="navigationItem" id="1KL-P6-Hcn"/>
                 </viewControllerPlaceholder>
@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="922" y="1008"/>
         </scene>
-        <!--Profile-->
+        <!--TJProfile-->
         <scene sceneID="7Dz-dt-IzX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="qAl-xd-Kg0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="TJProfile" id="qAl-xd-Kg0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SDi-Ip-Ze1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maL-Nk-JXE" userLabel="First Responder" sceneMemberID="firstResponder"/>

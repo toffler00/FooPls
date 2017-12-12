@@ -28,15 +28,14 @@ class DataCenter {
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
 
+    
     func loadDataToMainCollectionView() {
-        
         guard let uid = self.currentUser?.uid else {return}
         ref = Database.database().reference()
         ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [ String: [String : String]] else {return}
             var datas = [self.postModel]
             for (_, dic) in data {
-                print("이건 언제냐>~~~~~~~~~~")
                 guard let name = dic["sotrename"], let adress = dic["adress"],
                     let url = dic["imageurl"], let content = dic["content"] else {return}
                 let urlString = URL(string: url)
@@ -81,8 +80,6 @@ class DataCenter {
     // MARK: - upload
     func postUpload(uid : String?, storeimg : UIImage, storeName : String,
                     storeAdress : String, contents : String) {
-        
-       
         guard ((postModel?.storeImg = storeimg) != nil) else {return}
         guard let img = postModel?.storeImgData else {return}
         Storage.storage().reference().child(uid!).child("storeimg").putData(img, metadata: nil) { (metadata, error) in
