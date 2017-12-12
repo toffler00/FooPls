@@ -17,6 +17,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--TJSettings-->
+        <scene sceneID="CZ9-KO-f5z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TJSettings" id="RCd-J1-Jzb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpI-nl-Csa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="762"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="5ta-oc-ZAf">
             <objects>
@@ -28,7 +36,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGL-7s-aKC">
                                 <rect key="frame" x="0.0" y="20" width="375" height="259"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-mS-fls">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food2" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-mS-fls">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MN-IJ-rsx">
@@ -74,6 +82,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrs-Li-oUe">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                             <state key="normal" image="blackSetting"/>
+                                                            <connections>
+                                                                <segue destination="RCd-J1-Jzb" kind="show" id="mNa-Ds-nXk"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +164,7 @@
                                                 <constraint firstItem="Oz9-eG-03t" firstAttribute="centerY" secondItem="lao-XQ-VLY" secondAttribute="centerY" id="wHE-xN-FTF"/>
                                             </constraints>
                                         </view>
-                                        <blurEffect style="extraLight"/>
+                                        <blurEffect style="light"/>
                                     </visualEffectView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,13 +191,21 @@
                                     <segue destination="MT1-jQ-JKS" kind="embed" id="SYV-pQ-kAp"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oG-M5-8wW">
+                                <rect key="frame" x="0.0" y="331" width="375" height="5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="height" secondItem="xoJ-rx-uTZ" secondAttribute="height" multiplier="0.4" id="7w3-XA-A6r"/>
+                            <constraint firstItem="0oG-M5-8wW" firstAttribute="leading" secondItem="xoJ-rx-uTZ" secondAttribute="leading" id="IUa-Ax-tox"/>
+                            <constraint firstItem="0oG-M5-8wW" firstAttribute="top" secondItem="Z0m-R8-7sV" secondAttribute="bottom" id="JQQ-nf-Wld"/>
                             <constraint firstItem="Z0m-R8-7sV" firstAttribute="width" secondItem="zzc-f1-LGk" secondAttribute="width" id="LUa-pk-Fwr"/>
                             <constraint firstItem="Z0m-R8-7sV" firstAttribute="centerX" secondItem="zzc-f1-LGk" secondAttribute="centerX" id="WPO-HY-8dN"/>
+                            <constraint firstItem="wAC-3I-GcZ" firstAttribute="top" secondItem="0oG-M5-8wW" secondAttribute="bottom" id="WhS-Yd-vUn"/>
                             <constraint firstItem="Z0m-R8-7sV" firstAttribute="top" secondItem="mGL-7s-aKC" secondAttribute="bottom" id="f80-5V-j2d"/>
+                            <constraint firstItem="xoJ-rx-uTZ" firstAttribute="trailing" secondItem="0oG-M5-8wW" secondAttribute="trailing" id="h5I-VS-L95"/>
                             <constraint firstItem="wAC-3I-GcZ" firstAttribute="width" secondItem="zzc-f1-LGk" secondAttribute="width" id="jK2-gs-hh8"/>
                             <constraint firstItem="wAC-3I-GcZ" firstAttribute="centerX" secondItem="zzc-f1-LGk" secondAttribute="centerX" id="jKm-X8-782"/>
                             <constraint firstItem="wAC-3I-GcZ" firstAttribute="centerY" secondItem="zzc-f1-LGk" secondAttribute="centerY" multiplier="1.5" id="lu6-mm-4ed"/>
@@ -217,13 +236,13 @@
                     <view key="view" contentMode="scaleToFill" id="XQT-x0-HPX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iDl-gP-dvs"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BU6-xl-TPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="276"/>
+            <point key="canvasLocation" x="1126" y="210"/>
         </scene>
         <!--Paging Content View Controller-->
         <scene sceneID="uzE-Mv-YCg">
@@ -238,13 +257,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5LQ-Kf-rcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="528"/>
+            <point key="canvasLocation" x="1126" y="452"/>
         </scene>
     </scenes>
     <resources>
         <image name="blackSetting" width="20" height="21"/>
         <image name="camera" width="560" height="560"/>
-        <image name="food1" width="564" height="792"/>
         <image name="food2" width="564" height="846"/>
     </resources>
 </document>
