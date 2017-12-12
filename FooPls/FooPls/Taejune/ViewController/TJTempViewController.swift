@@ -32,10 +32,10 @@ class TJTempViewController: UIViewController {
                     let postingTitle = postingDic["title"] as! String
                     let postingAdress = postingDic["adress"] as! String
                     let postingImgURL = URL(string: postingDic["photoID"] as! String)
-                    self.myPostingTitles.insert(postingTitle, at: 0)
-                    self.myPostingAdress.insert(postingAdress, at: 0)
-                    self.myPostingImgs.insert(postingImgURL!, at: 0)
-                    self.myPostingIndex.insert(key, at: 0)
+                    self.myPostingTitles.append(postingTitle)
+                    self.myPostingAdress.append(postingAdress)
+                    self.myPostingImgs.append(postingImgURL!)
+                    self.myPostingIndex.append(key)
                     self.myPostingCollectionView.reloadData()
                 }
             }

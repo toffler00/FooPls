@@ -187,11 +187,7 @@
 			children = (
 				231A40561FD8E3850046F3D4 /* ViewController */,
 				231A40571FD8E39E0046F3D4 /* View */,
-				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
-				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
-				231F59D41FDC137800580D69 /* TJSettings.storyboard */,
-				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
-				232D49F91FDE507C0094DA1A /* TJTemp.storyboard */,
+				232D49FD1FDF7AA10094DA1A /* Storyboard */,
 			);
 			path = Taejune;
 			sourceTree = "<group>";
@@ -296,6 +292,18 @@
 				2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		232D49FD1FDF7AA10094DA1A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				234302E71FD63B9200501C46 /* TJCalendar.storyboard */,
+				233773DF1FD6D80E006C28F0 /* NewWrite.storyboard */,
+				231F59D41FDC137800580D69 /* TJSettings.storyboard */,
+				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
+				232D49F91FDE507C0094DA1A /* TJTemp.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		3C840C1FBDBC294980830D5A /* Pods */ = {
