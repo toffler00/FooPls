@@ -80,6 +80,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         let storeImgUrl = self.postData[indexPath.row].storeImgUrl
         let url = URL(string: storeImgUrl!)
         cell.cellImageView.sd_setImage(with: url!)
+        cell.cellImageView.contentMode = .scaleAspectFill
         return cell
     }
     
