@@ -1,5 +1,8 @@
 
 import UIKit
+import SDWebImage
+import FirebaseStorage
+import Firebase
 
 class CustomCell: UICollectionViewCell {
     

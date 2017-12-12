@@ -49,8 +49,9 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         DispatchQueue.main.async {
             self.dataCenter?.postUpload(uid: uid, storeimg: image, storeName: name, storeAdress: adress, contents: contents)
         }
-        
         self.dismiss(animated: true, completion: nil)
+        
+        
 
     }
     

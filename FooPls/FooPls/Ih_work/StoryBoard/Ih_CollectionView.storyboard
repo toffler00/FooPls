@@ -126,6 +126,7 @@
                     <navigationItem key="navigationItem" id="6xN-O2-6qc"/>
                     <connections>
                         <outlet property="introImgView" destination="QcT-dm-rDl" id="4Io-so-55g"/>
+                        <outlet property="mainCollectionView" destination="E2v-Nv-Xq6" id="A8A-I2-pMb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igo-ar-zJf" userLabel="First Responder" sceneMemberID="firstResponder"/>

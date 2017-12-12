@@ -22,6 +22,7 @@ target 'FooPls' do
   pod 'JTAppleCalendar'
   pod 'Kingfisher'
   pod 'RAMAnimatedTabBarController'
+  pod 'FirebaseUI/Storage'
   # Pods for FooPls
 
 end
