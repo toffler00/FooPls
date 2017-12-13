@@ -10,6 +10,13 @@
 		0D96C334393FDF0C64B1536B /* Pods_FooPls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D5D224DE83084B71301F9F /* Pods_FooPls.framework */; };
 		230ED26B1FD92D270054914A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230ED26A1FD92D260054914A /* Login.storyboard */; };
 		230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
+		230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */; };
+		230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD781FDFC54000FF26CC /* TJLike.storyboard */; };
+		230EDD7B1FDFC55900FF26CC /* TJList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD7A1FDFC55900FF26CC /* TJList.storyboard */; };
+		230EDD7D1FDFC56400FF26CC /* TJBookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */; };
+		230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */; };
+		230EDD811FDFC58F00FF26CC /* TJListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD801FDFC58F00FF26CC /* TJListViewController.swift */; };
+		230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */; };
@@ -29,8 +36,7 @@
 		232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232D49F11FDE3FBA0094DA1A /* FocusView.xib */; };
 		232D49F41FDE3FE50094DA1A /* TJProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */; };
 		232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49F51FDE40950094DA1A /* MenuCell.swift */; };
-		232D49F81FDE4C8F0094DA1A /* TJTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49F71FDE4C8F0094DA1A /* TJTempViewController.swift */; };
-		232D49FA1FDE507C0094DA1A /* TJTemp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232D49F91FDE507C0094DA1A /* TJTemp.storyboard */; };
+		232D49FA1FDE507C0094DA1A /* TJTimeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */; };
 		232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */; };
 		233773D31FD68D52006C28F0 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */; };
 		233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233773DB1FD69715006C28F0 /* CalendarCell.swift */; };
@@ -85,6 +91,13 @@
 		11C4E457AA252E7421C235A3 /* Pods-FooPls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooPls.release.xcconfig"; path = "Pods/Target Support Files/Pods-FooPls/Pods-FooPls.release.xcconfig"; sourceTree = "<group>"; };
 		15DAC707017257161F47E4EB /* Pods-LogInSignUpProc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogInSignUpProc.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogInSignUpProc/Pods-LogInSignUpProc.release.xcconfig"; sourceTree = "<group>"; };
 		230ED26A1FD92D260054914A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJTimelineViewController.swift; sourceTree = "<group>"; };
+		230EDD781FDFC54000FF26CC /* TJLike.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJLike.storyboard; sourceTree = "<group>"; };
+		230EDD7A1FDFC55900FF26CC /* TJList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJList.storyboard; sourceTree = "<group>"; };
+		230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJBookmark.storyboard; sourceTree = "<group>"; };
+		230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJLikeViewController.swift; sourceTree = "<group>"; };
+		230EDD801FDFC58F00FF26CC /* TJListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJListViewController.swift; sourceTree = "<group>"; };
+		230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJBookmarkViewController.swift; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
@@ -104,8 +117,7 @@
 		232D49F11FDE3FBA0094DA1A /* FocusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusView.xib; sourceTree = "<group>"; };
 		232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJProfileViewController.swift; sourceTree = "<group>"; };
 		232D49F51FDE40950094DA1A /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		232D49F71FDE4C8F0094DA1A /* TJTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJTempViewController.swift; sourceTree = "<group>"; };
-		232D49F91FDE507C0094DA1A /* TJTemp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJTemp.storyboard; sourceTree = "<group>"; };
+		232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJTimeline.storyboard; sourceTree = "<group>"; };
 		232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostingCell.swift; sourceTree = "<group>"; };
 		2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		233773D41FD68D52006C28F0 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
-				232D49F71FDE4C8F0094DA1A /* TJTempViewController.swift */,
+				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
+				230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */,
+				230EDD801FDFC58F00FF26CC /* TJListViewController.swift */,
+				230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -292,7 +307,10 @@
 			children = (
 				231F59D41FDC137800580D69 /* TJSettings.storyboard */,
 				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
-				232D49F91FDE507C0094DA1A /* TJTemp.storyboard */,
+				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
+				230EDD781FDFC54000FF26CC /* TJLike.storyboard */,
+				230EDD7A1FDFC55900FF26CC /* TJList.storyboard */,
+				230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -310,9 +328,9 @@
 		232D49FF1FDFBB6B0094DA1A /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				232D49FD1FDF7AA10094DA1A /* Storyboard */,
 				231A40571FD8E39E0046F3D4 /* View */,
 				231A40561FD8E3850046F3D4 /* ViewController */,
+				232D49FD1FDF7AA10094DA1A /* Storyboard */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -670,7 +688,7 @@
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
-				232D49FA1FDE507C0094DA1A /* TJTemp.storyboard in Resources */,
+				232D49FA1FDE507C0094DA1A /* TJTimeline.storyboard in Resources */,
 				231F59D51FDC137800580D69 /* TJSettings.storyboard in Resources */,
 				232D49F01FDE3F850094DA1A /* MenuCell.xib in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
@@ -679,10 +697,13 @@
 				CEB899791FD9C4A800BFFF3B /* PostCell.xib in Resources */,
 				62E1FF571FD924BF00E1FEAE /* LaunchScreen.storyboard in Resources */,
 				231F59D71FDC146400580D69 /* TJProfile.storyboard in Resources */,
+				230EDD7B1FDFC55900FF26CC /* TJList.storyboard in Resources */,
+				230EDD7D1FDFC56400FF26CC /* TJBookmark.storyboard in Resources */,
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
 				62E1FF541FD924BF00E1FEAE /* Ih_MainView.storyboard in Resources */,
+				230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +813,7 @@
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
+				230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */,
 				62E1FF5B1FD924BF00E1FEAE /* Ih_UserModel.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
 				62E1FF5C1FD924BF00E1FEAE /* Ih_LocationModel.swift in Sources */,
@@ -803,10 +825,13 @@
 				CE0A7F041FCE8EDA009C884F /* AppDelegate.swift in Sources */,
 				231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */,
 				62E1FF551FD924BF00E1FEAE /* CustomCell.swift in Sources */,
+				230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
 				231F59CE1FDAC2EA00580D69 /* RAMItemAnimationProtocol.swift in Sources */,
 				62E1FF581FD924BF00E1FEAE /* Ih_PostVC.swift in Sources */,
+				230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */,
+				230EDD811FDFC58F00FF26CC /* TJListViewController.swift in Sources */,
 				FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */,
 				231F59CF1FDAC2EA00580D69 /* RAMFumeAnimation.swift in Sources */,
 				FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */,
@@ -814,12 +839,13 @@
 				233773E21FD6D908006C28F0 /* NewWriteViewController.swift in Sources */,
 				232D49F41FDE3FE50094DA1A /* TJProfileViewController.swift in Sources */,
 				231F59D21FDAC2EA00580D69 /* RAMRotationAnimation.swift in Sources */,
-				232D49F81FDE4C8F0094DA1A /* TJTempViewController.swift in Sources */,
 				231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */,
 				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
 				231F59D01FDAC2EA00580D69 /* RAMFrameItemAnimation.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
+
 				62F1B7371FDFE13B0084D68F /* DetailPageCell.swift in Sources */,
+
 				232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */,
 				62F1B7351FDFE0CA0084D68F /* DetailPageView.swift in Sources */,
 				62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */,

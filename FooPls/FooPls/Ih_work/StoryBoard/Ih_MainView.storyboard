@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="160" id="IQZ-tb-Qia"/>
                                 </constraints>
                             </scrollView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-Nv-Xq6">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-Nv-Xq6">
                                 <rect key="frame" x="0.0" y="160" width="375" height="507"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ITe-06-vcI">
@@ -142,6 +142,14 @@
             </objects>
             <point key="canvasLocation" x="-111" y="-331"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="kcH-in-bRz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="WBX-Oz-6Ye" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvj-ow-qbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="318"/>
+        </scene>
         <!--Detail Page View-->
         <scene sceneID="e6X-Qe-j9n">
             <objects>
@@ -168,7 +176,7 @@
                                         <state key="normal" image="back_black"/>
                                         <connections>
                                             <action selector="returnMainView:" destination="JhG-aA-pyt" eventType="touchUpInside" id="rFp-Sw-fMs"/>
-                                            <segue destination="u6J-5p-K0a" kind="custom" identifier="returnMainView" customClass="SlideLeft" customModule="FooPls" customModuleProvider="target" id="Ch9-ZO-fOz"/>
+                                            <segue destination="WBX-Oz-6Ye" kind="custom" identifier="returnMainView" customClass="SlideLeft" customModule="FooPls" customModuleProvider="target" id="ixP-cG-AUA"/>
                                         </connections>
                                     </button>
                                 </subviews>

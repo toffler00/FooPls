@@ -22,8 +22,8 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         DispatchQueue.main.async {
             self.loadDataToMainCollectionView()
         }
+        
     }
-    
     
     //MARK: - loadData To Main CollectionView
     func loadDataToMainCollectionView() {
@@ -42,7 +42,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             print(self.postData.count)
         }
     }
-
+    
     // MARK: - CollectionView Delegate & Datasource
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -53,19 +53,19 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: (view.frame.width - 30) / 2, height: 216)
+        let size = CGSize(width: (view.frame.width - 24) / 2, height: 216)
         return size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8)
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,22 +83,20 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         let url = URL(string: storeImgUrl!)
         cell.cellImageView.sd_setImage(with: url!)
         
-        cell.layer.borderColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
-        cell.layer.borderWidth = 1
 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
         toDetailPage()
-        
     }
+    
     // CollectionView Delegate & Datasource_End
     
     func toDetailPage() {
+        //need data list : nickname , adress, date, content, image
+        
+        
         performSegue(withIdentifier: "ToDetailContent", sender: self)
     }
     
@@ -112,6 +110,9 @@ extension MainCollectionView {
     func setUpCell() {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
+        
+        cell.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        cell.layer.borderWidth = 1
 
         cell.cellImageView.layer.cornerRadius = 5
         cell.cellImageView.layer.masksToBounds = true

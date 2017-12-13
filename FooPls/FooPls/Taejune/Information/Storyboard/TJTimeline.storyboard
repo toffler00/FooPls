@@ -17,17 +17,17 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Temp View Controller-->
+        <!--Timeline View Controller-->
         <scene sceneID="6Q2-Lh-U5i">
             <objects>
-                <viewController storyboardIdentifier="TJTempViewController" id="Rhl-Fm-du4" customClass="TJTempViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TJTimelineViewController" id="Rhl-Fm-du4" customClass="TJTimelineViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EB3-7o-uYt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QQJ-k9-W0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nEQ-Ss-mjc">
                                     <size key="itemSize" width="177" height="238"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -42,21 +42,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="238"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0xp-Xn-24y">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="0xp-Xn-24y">
                                                     <rect key="frame" x="0.0" y="0.0" width="177" height="177"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0xp-Xn-24y" secondAttribute="height" multiplier="1:1" id="mkB-Sn-TuL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-d8-fZd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이틀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-d8-fZd">
                                                     <rect key="frame" x="0.0" y="187.5" width="177" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1O-KK-gtx">
-                                                    <rect key="frame" x="0.0" y="212" width="177" height="16.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1O-KK-gtx">
+                                                    <rect key="frame" x="0.0" y="213.5" width="177" height="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -74,11 +74,6 @@
                                             <constraint firstItem="b1O-KK-gtx" firstAttribute="width" secondItem="9Yy-bE-upZ" secondAttribute="width" id="pgK-px-Xvn"/>
                                             <constraint firstItem="0xp-Xn-24y" firstAttribute="leading" secondItem="9Yy-bE-upZ" secondAttribute="leading" id="uf5-gK-bdA"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="myPostingImgVIew" destination="0xp-Xn-24y" id="vOA-TG-nIM"/>
                                             <outlet property="postingAdress" destination="b1O-KK-gtx" id="nU5-aU-CKq"/>
@@ -112,4 +107,7 @@
             <point key="canvasLocation" x="149.59999999999999" y="155.62218890554723"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="food1" width="564" height="792"/>
+    </resources>
 </document>
