@@ -5,8 +5,8 @@ import Firebase
 import Kingfisher
 import SDWebImage
 
-class TJTempViewController: UIViewController {
-
+class TJTimelineViewController: UIViewController {
+    
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
     var myPostingIndex: [String] = []
@@ -19,11 +19,19 @@ class TJTempViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = Database.database().reference()
+        //loadDate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadDate()
-        
     }
     
     private func loadDate() {
+        myPostingTitles.removeAll()
+        myPostingAdress.removeAll()
+        myPostingImgs.removeAll()
+        myPostingIndex.removeAll()
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, postingDic) in value {
@@ -44,7 +52,7 @@ class TJTempViewController: UIViewController {
     
 }
 
-extension TJTempViewController: UICollectionViewDataSource {
+extension TJTimelineViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myPostingIndex.count
     }
@@ -59,3 +67,4 @@ extension TJTempViewController: UICollectionViewDataSource {
     
     
 }
+
