@@ -208,10 +208,6 @@ extension LoginViewController : LoginButtonDelegate{
         
     }
     
-    func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        
-    }
-    
 }
 
 // MARK: UITextFieldDelegate

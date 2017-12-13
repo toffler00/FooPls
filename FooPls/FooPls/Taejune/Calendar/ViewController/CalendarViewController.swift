@@ -40,16 +40,12 @@ class CalendarViewController: UIViewController {
         // MARK: 데이터 변경시 noti
         NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] (noti) in
             guard let `self` = self else { return }
-            // self.testList.removeAll()
             let contentTitle = noti.object as! String
             self.testList.append(contentTitle)
-            DispatchQueue.main.async {
-                 self.popUpView.tableView.reloadData()
-            }
-           
+            self.popUpView.tableView.reloadData()
         })
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupCalendar()
@@ -169,28 +165,25 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
+        print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
+        
         if oldDate == selectedDate {
-            reference.child("users").child(userID!).child("calendar").observe(.value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : [String: Any]] {
-                    for (_, calendarDic) in value {
-                        guard let date = calendarDic["date"] as? String else { return }
-                        if date == self.selectedDate {
-                            guard let title = calendarDic["title"] as? String else { return }
-//                            self.testList.removeAll()
-                            self.testList.append(title)
-//                            self.popUpView.tableView.reloadData()
-                        }else {
-                            self.testList.removeAll()
-
+                self.reference.child("users").child(self.userID!).child("calendar").observe(.value, with: { (snapshot) in
+                    if let value = snapshot.value as? [String : [String: Any]] {
+                        self.testList.removeAll()
+                        for (_, calendarDic) in value {
+                            guard let date = calendarDic["date"] as? String else { return }
+                            print(date)
+                            if date == self.selectedDate {
+                                guard let title = calendarDic["title"] as? String else { return }
+                                self.testList.insert(title, at: 0)
+                                self.popUpView.tableView.reloadData()
+                            }
                         }
                     }
-                }
-                        
-            })
-            print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
+                })
             self.popUpView.alpha = 1
             self.popUpWritingDelegate(date: selectedDate!)
-//            self.popUpView.tableView.reloadData()
         }else {
             oldDate = selectedDate!
         }
