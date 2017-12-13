@@ -36,10 +36,6 @@ class SK_AutoSearchViewController: UIViewController {
         makeGoogleSearchBar()
         startGoogleMap()
         view.backgroundColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
-        
-        
-
-        
     }
     
     @IBAction func postToFirebase(_ sender: Any) {
@@ -63,6 +59,7 @@ class SK_AutoSearchViewController: UIViewController {
         
         placeLB.text = "FooPls Center"
         addressLB.text = "서울시 강남구 신사동"
+        addressLB.textAlignment = .center
         
     }
     
@@ -95,22 +92,15 @@ class SK_AutoSearchViewController: UIViewController {
         definesPresentationContext = true
         
         searchController?.hidesNavigationBarDuringPresentation = false
-        
-        //self.navigationController?.navigationBar.backgroundColor = UIColor.blue
-        //self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 248, green: 239, blue: 106, alpha: 1)
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
         self.navigationController?.navigationBar.tintColor = .white
-        //self.navigationController?.navigationItem.setRightBarButton(UIBarButtonItem, animated: true)
-    }
-    
-    @IBAction func searchForGoogleBtn(_ sender: UIButton) {
-        
-        
-        
-        
         
     }
     
+    
+    @IBAction func dismissBtn(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 
@@ -120,8 +110,10 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         
         searchController?.isActive = false
         
+        addressLB.textAlignment = .left
         placeLB.text = place.name
         addressLB.text = place.formattedAddress
+        
         
         
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)

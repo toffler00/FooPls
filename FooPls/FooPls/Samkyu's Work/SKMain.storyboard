@@ -338,7 +338,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fOg-QS-zWw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Acd-A4-0GM"/>
+                    <navigationItem key="navigationItem" id="Acd-A4-0GM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="g5E-Ko-mO9">
+                            <connections>
+                                <action selector="dismissBtn:" destination="xgl-bk-aAc" id="azW-Yx-0nj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLB" destination="51Z-TJ-z2b" id="Sw1-0t-Qzc"/>
                         <outlet property="googleMapView" destination="xCl-Z3-EIi" id="yIe-f6-Eq0"/>
@@ -352,7 +358,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Coc-vI-znb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mv9-j1-tzm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="googlePlacePickerVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mv9-j1-tzm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8PF-el-xt8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
