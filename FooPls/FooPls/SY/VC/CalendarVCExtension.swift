@@ -61,8 +61,6 @@ extension CalendarViewController: UITableViewDataSource {
         }
 
     }
-
-
 }
 
 // MARK: UITableViewDelegate

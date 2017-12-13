@@ -53,7 +53,7 @@ class CalendarViewController: UIViewController {
                     NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] _ in
                         guard let `self` = self else { return }
 //                        self.testList.removeAll()
-                        self.testList.append(self.title!)
+//                        self.testList.append(self.title!)
                         self.popUpView.tableView.reloadData()
                     })
                     self.contentArray.append(key)
