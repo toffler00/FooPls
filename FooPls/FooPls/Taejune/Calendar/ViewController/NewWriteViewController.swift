@@ -78,17 +78,26 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     
     //MARK: - 장소 버튼을 누르면 GooglePlacePickerController로 들어감
     @IBAction func locationBtnAction(_ sender: UIButton) {
-        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-        let config = GMSPlacePickerConfig(viewport: viewport)
-        let placePicker = GMSPlacePickerViewController(config: config)
-        placePicker.delegate = self
-        present(placePicker, animated: true, completion: nil)
         
-        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-        placePicker.navigationController?.navigationBar.isTranslucent = false
+        //잠시 주석처리함.
+//        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
+//        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
+//        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
+//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+//        let config = GMSPlacePickerConfig(viewport: viewport)
+//        let placePicker = GMSPlacePickerViewController(config: config)
+//        placePicker.delegate = self
+//        present(placePicker, animated: true, completion: nil)
+//
+//        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
+//        placePicker.navigationController?.navigationBar.isTranslucent = false
+        
+        //구글 PlacePicker와 연결함
+        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
+        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
+            present(googlePicekerVC, animated: true, completion: nil)
+        }
+        
     }
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드
