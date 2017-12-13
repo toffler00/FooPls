@@ -17,6 +17,9 @@
 		230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */; };
 		230EDD811FDFC58F00FF26CC /* TJListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD801FDFC58F00FF26CC /* TJListViewController.swift */; };
 		230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */; };
+		230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */; };
+		230EDD871FE0F6AC00FF26CC /* TJSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD861FE0F6AC00FF26CC /* TJSettingViewController.swift */; };
+		230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */; };
@@ -94,6 +97,9 @@
 		230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJLikeViewController.swift; sourceTree = "<group>"; };
 		230EDD801FDFC58F00FF26CC /* TJListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJListViewController.swift; sourceTree = "<group>"; };
 		230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJBookmarkViewController.swift; sourceTree = "<group>"; };
+		230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJModifyProfileViewController.swift; sourceTree = "<group>"; };
+		230EDD861FE0F6AC00FF26CC /* TJSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJSettingViewController.swift; sourceTree = "<group>"; };
+		230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJModifyProfile.storyboard; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
@@ -194,7 +200,9 @@
 		231A40561FD8E3850046F3D4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				230EDD861FE0F6AC00FF26CC /* TJSettingViewController.swift */,
 				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
+				230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */,
 				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
 				230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */,
 				230EDD801FDFC58F00FF26CC /* TJListViewController.swift */,
@@ -299,6 +307,7 @@
 			children = (
 				231F59D41FDC137800580D69 /* TJSettings.storyboard */,
 				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
+				230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */,
 				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
 				230EDD781FDFC54000FF26CC /* TJLike.storyboard */,
 				230EDD7A1FDFC55900FF26CC /* TJList.storyboard */,
@@ -673,6 +682,7 @@
 				FC0E2CC41FDFB33600E32F14 /* Assets.xcassets in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
+				230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
@@ -794,11 +804,13 @@
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				CE1E93F41FCFF2110059775A /* Model.swift in Sources */,
 				CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */,
+				230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */,
 				FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */,
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
+				230EDD871FE0F6AC00FF26CC /* TJSettingViewController.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
