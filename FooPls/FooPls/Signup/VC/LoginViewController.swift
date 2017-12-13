@@ -176,7 +176,7 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             Auth.auth().signIn(with: credential) { [weak self] (user, error) in
                 guard let `self` = self else { return }
                 if error == nil, user != nil {
-                    print("displayname: ", user?.displayName)
+//                    print("displayname: ", user?.displayName ?? <#default value#>)
                     let userEmail = user?.email ?? ""
                     let userNickname = user?.displayName ?? ""
                     let userDic = ["email": userEmail, "nickname": userNickname]

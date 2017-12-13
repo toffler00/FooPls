@@ -53,7 +53,7 @@ class CalendarViewController: UIViewController {
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
                     print(key)
-                    let date = calendarDic["date"] as! String
+                    guard let date = calendarDic["date"] as? String else {return}
                     self.contentArray.append(date)
                     self.calendarView.reloadData()
                 }

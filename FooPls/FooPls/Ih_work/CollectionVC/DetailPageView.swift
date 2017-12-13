@@ -3,6 +3,8 @@ import UIKit
 
 class DetailPageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    
+    
     @IBOutlet weak var pageTitleLb: UILabel!
     
     
@@ -22,6 +24,7 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func returnMainView(_ sender: Any) {
+        
         performSegue(withIdentifier: "returnMainView", sender: self)
     }
     

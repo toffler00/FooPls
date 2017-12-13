@@ -88,6 +88,9 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+      
+        
         toDetailPage()
     }
     

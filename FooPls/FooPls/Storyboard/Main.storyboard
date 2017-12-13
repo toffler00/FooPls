@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-1719" y="1452"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--SKMain-->
         <scene sceneID="Q1a-Da-q72">
             <objects>
-                <viewControllerPlaceholder id="sdq-m7-1RZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SKMain" id="sdq-m7-1RZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Eei-pC-Sli"/>
                     <navigationItem key="navigationItem" id="1KL-P6-Hcn"/>
                 </viewControllerPlaceholder>
