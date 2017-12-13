@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Jf-zO-Wkq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s2t-6l-thE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -46,15 +46,15 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWD-8g-7Fp" userLabel="Profile Img View">
-                                                    <rect key="frame" x="136" y="65" width="102.5" height="103"/>
+                                                    <rect key="frame" x="136" y="64.5" width="102.5" height="103"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food2" translatesAutoresizingMaskIntoConstraints="NO" id="Tcy-i8-OOz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="102.5" height="103"/>
+                                                            <rect key="frame" x="0.0" y="-0.5" width="102.5" height="103"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KG4-cS-U2E">
-                                                            <rect key="frame" x="0.0" y="-0.5" width="102.5" height="103"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="102.5" height="103"/>
                                                             <connections>
-                                                                <action selector="profilePhotoBtn:" destination="0Jf-zO-Wkq" eventType="touchUpInside" id="RUN-mE-7fC"/>
+                                                                <segue destination="TYr-Ic-JOB" kind="show" id="dsD-aj-Pln"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -98,12 +98,12 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IG-7A-TFU">
-                                                    <rect key="frame" x="-0.5" y="178" width="375" height="20.5"/>
+                                                    <rect key="frame" x="-0.5" y="177.5" width="375" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="JRj-dR-Duj">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modify" translatesAutoresizingMaskIntoConstraints="NO" id="JRj-dR-Duj">
                                                     <rect key="frame" x="206.5" y="139" width="25.5" height="25.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="JRj-dR-Duj" secondAttribute="height" multiplier="1:1" id="0gI-ko-J8Q"/>
@@ -186,13 +186,13 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0m-R8-7sV">
-                                <rect key="frame" x="0.0" y="279" width="375" height="52"/>
+                                <rect key="frame" x="0.0" y="279" width="375" height="51.5"/>
                                 <connections>
                                     <segue destination="MT1-jQ-JKS" kind="embed" id="SYV-pQ-kAp"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oG-M5-8wW">
-                                <rect key="frame" x="0.0" y="331" width="375" height="5"/>
+                                <rect key="frame" x="0.0" y="330.5" width="375" height="5.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                         </subviews>
@@ -217,6 +217,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xoJ-rx-uTZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4Y5-wB-Nw3"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileBGImgView" destination="9aH-mS-fls" id="drl-N4-gqS"/>
@@ -227,14 +228,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjJ-72-u5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="300"/>
+            <point key="canvasLocation" x="695.20000000000005" y="300"/>
+        </scene>
+        <!--TJModifyProfile-->
+        <scene sceneID="tch-DJ-17W">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TJModifyProfile" id="TYr-Ic-JOB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zki-Ax-7ai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="94"/>
         </scene>
         <!--Paging Menu View Controller-->
         <scene sceneID="ymq-XC-928">
             <objects>
                 <viewController id="MT1-jQ-JKS" customClass="PagingMenuViewController" customModule="PagingKit" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XQT-x0-HPX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iDl-gP-dvs"/>
@@ -242,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BU6-xl-TPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="210"/>
+            <point key="canvasLocation" x="1591" y="208"/>
         </scene>
         <!--Paging Content View Controller-->
         <scene sceneID="uzE-Mv-YCg">
@@ -257,12 +266,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5LQ-Kf-rcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="452"/>
+            <point key="canvasLocation" x="1590" y="452"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NpU-IJ-nc6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s2t-6l-thE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7fx-05-JCs">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Jf-zO-Wkq" kind="relationship" relationship="rootViewController" id="kWT-M4-QLO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMx-JN-LBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78" y="300"/>
         </scene>
     </scenes>
     <resources>
         <image name="blackSetting" width="20" height="21"/>
-        <image name="camera" width="560" height="560"/>
         <image name="food2" width="564" height="846"/>
+        <image name="modify" width="600" height="600"/>
     </resources>
 </document>
