@@ -89,6 +89,7 @@ PODS:
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
+  - SnapKit (4.0.0)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
@@ -109,6 +110,7 @@ DEPENDENCIES:
   - PagingKit
   - RAMAnimatedTabBarController
   - SDWebImage
+  - SnapKit (~> 4.0.0)
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
@@ -138,8 +140,9 @@ SPEC CHECKSUMS:
   PagingKit: 72a8a05c8bd23811c0ab6055360d941ff17a61f9
   RAMAnimatedTabBarController: 78bafa7a1c1b162f0d4a86a936c0d1ee4a06ffcc
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 49f9dbf82cba1bca606a5131abb7a5382cffb6eb
+PODFILE CHECKSUM: 653d9225041c1619707ca52415cf8805d379f8be
 
 COCOAPODS: 1.3.1

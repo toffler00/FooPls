@@ -5,7 +5,7 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
-    weak var postDelegate: PostCellDelegate?
+//    weak var postDelegate: PostCellDelegate?
     
     @IBOutlet weak var postLB: UILabel!
     
@@ -21,7 +21,8 @@ class PostCell: UITableViewCell {
     }
     
 }
-// MARK: 프로토콜
-protocol PostCellDelegate: class {
-    func postCellData(_ cell: PostCell)
-}
+//// MARK: 프로토콜
+//protocol PostCellDelegate: class {
+//    func postCellData(_ cell: PostCell)
+//}
+

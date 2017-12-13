@@ -37,6 +37,17 @@ class CalendarViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView(_:)))
         gesture.delegate = self
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
+        // MARK: 데이터 변경시 noti
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] (noti) in
+            guard let `self` = self else { return }
+            // self.testList.removeAll()
+            let contentTitle = noti.object as! String
+            self.testList.append(contentTitle)
+            DispatchQueue.main.async {
+                 self.popUpView.tableView.reloadData()
+            }
+           
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,15 +63,6 @@ class CalendarViewController: UIViewController {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
-                    print(key)
-                    print(calendarDic)
-                    // MARK: 데이터 변경시 noti
-                    NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] _ in
-                        guard let `self` = self else { return }
-//                        self.testList.removeAll()
-//                        self.testList.append(self.title!)
-                        self.popUpView.tableView.reloadData()
-                    })
                     self.contentArray.append(key)
                     let date = calendarDic["date"] as! String
                     self.contentArray.append(date)
@@ -170,13 +172,16 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         if oldDate == selectedDate {
             reference.child("users").child(userID!).child("calendar").observe(.value, with: { (snapshot) in
                 if let value = snapshot.value as? [String : [String: Any]] {
-                    for (key, calendarDic) in value {
-                        if key == self.selectedDate {
+                    for (_, calendarDic) in value {
+                        guard let date = calendarDic["date"] as? String else { return }
+                        if date == self.selectedDate {
                             guard let title = calendarDic["title"] as? String else { return }
-                            self.testList.removeAll()
+//                            self.testList.removeAll()
                             self.testList.append(title)
+//                            self.popUpView.tableView.reloadData()
                         }else {
                             self.testList.removeAll()
+
                         }
                     }
                 }
@@ -185,7 +190,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
             print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
             self.popUpView.alpha = 1
             self.popUpWritingDelegate(date: selectedDate!)
-            self.popUpView.tableView.reloadData()
+//            self.popUpView.tableView.reloadData()
         }else {
             oldDate = selectedDate!
         }

@@ -3,6 +3,7 @@ import UIKit
 import Firebase
 import FacebookLogin
 import FacebookCore
+import SnapKit
 
 class LoginViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class LoginViewController: UIViewController {
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
+    @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField! {
         didSet {
@@ -26,10 +28,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: 페이스북 버튼
-//        let fbLoginButton = LoginButton(readPermissions: [.email])
-//        fbLoginButton.frame = CGRect(x: 56.5, y: 584, width: kakaoBtn.frame.width, height: 33)
-//        view.addSubview(fbLoginButton)
-
+        let fbLoginButton = LoginButton(readPermissions: [.email])
+        view.addSubview(fbLoginButton)
+        // 페이스북 버튼 레이아웃
+        fbLoginButton.snp.makeConstraints {
+            $0.bottom.equalTo(facebookBtn.snp.bottom)
+            $0.top.equalTo(facebookBtn.snp.top)
+            $0.left.equalTo(facebookBtn.snp.left)
+            $0.right.equalTo(facebookBtn.snp.right)
+        }
+        fbLoginButton.delegate = self
         loginScrollView.bounces = false
         self.hideKeyboardWhenTappedAround()
         //뷰가 로드 될때 카카오 서버값을 미리 받음
@@ -70,36 +78,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    // MARK: 페이스북 로그인 버튼
-    @IBAction func facebookLoginButton(_ sender: UIButton) {
-        let fbLoginManager = LoginManager()
-        fbLoginManager.logIn(readPermissions: [.email], viewController: self) { [weak self] (result) in
-            guard let `self` = self else { return }
-            switch result {
-            case .success:
-                let accessToken = AccessToken.current
-                guard let accessTokenString = accessToken?.authenticationToken else { return }
-                let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
-                Auth.auth().signIn(with: credentials, completion: { (user, error) in
-                    if error == nil, user != nil{
-                        let userEmail = user?.email ?? ""
-                        let userDic = ["email" : userEmail]
-                        self.reference.child("users").child(user!.uid).setValue(userDic)
-                    }else{
-                        if let errors = error {
-                            print(errors.localizedDescription)
-                            return
-                        }
-                        
-                    }
-                })
-                self.performSegue(withIdentifier: "mainSegue", sender: self)
-            default:
-                break
-            }
-        }
-    }
-    
     //로그인 버튼을 눌렀을 때
     @IBAction func loginBtnAction(_ sender: UIButton) {
         //email이 비어있는 경우 알럿으로 처리
@@ -195,6 +173,39 @@ class LoginViewController: UIViewController {
         }
     }
 }
+// MARK: FaceBookLoginButtonDelegate
+extension LoginViewController: LoginButtonDelegate {
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result{
+        case .success:
+            let accessToken = AccessToken.current
+            guard let accessTokenString = accessToken?.authenticationToken else { return }
+            let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+            Auth.auth().signIn(with: credentials, completion: { (user, error) in
+                if error == nil, user != nil{
+                    let userEmail = user?.email ?? ""
+                    let userDic = ["email" : userEmail]
+                    self.reference.child("users").child(user!.uid).setValue(userDic)
+                }else{
+                    if let errors = error {
+                        print(errors.localizedDescription)
+                        return
+                    }
+                    
+                }
+            })
+            self.performSegue(withIdentifier: "mainSegue", sender: self)
+        default:
+            break
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
+    }
+    
+}
+
 // MARK: UITextFieldDelegate
 extension LoginViewController : UITextFieldDelegate {
     

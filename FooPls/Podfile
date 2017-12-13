@@ -23,6 +23,7 @@ target 'FooPls' do
   pod 'RAMAnimatedTabBarController'
   pod 'FirebaseUI/Storage'
   pod 'PagingKit'
+  pod 'SnapKit', '~> 4.0.0'
   # Pods for FooPls
 
 end

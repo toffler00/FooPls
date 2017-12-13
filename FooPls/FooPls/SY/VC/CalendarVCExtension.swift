@@ -53,7 +53,7 @@ extension CalendarViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
 //            let index = indexPath.row
             if let cell = cell as? PostCell {
-                cell.postDelegate = self
+//                cell.postDelegate = self
                 let text = testList[indexPath.row]
                 cell.postLB.text = text
             }
@@ -87,13 +87,13 @@ extension CalendarViewController: EmptyCellDelegate {
 
 }
 
-// MARK: PostCellDelegate
-extension CalendarViewController: PostCellDelegate {
-    // MARK: PostList
-    func postCellData(_ cell: PostCell) {
-        
-    }
-}
+//// MARK: PostCellDelegate
+//extension CalendarViewController: PostCellDelegate {
+//    // MARK: PostList
+//    func postCellData(_ cell: PostCell) {
+//        
+//    }
+//}
 
 // MARK: PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
