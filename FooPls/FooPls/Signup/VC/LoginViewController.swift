@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     let reference = Database.database().reference()
     var kakaoServerURL = ""
     var userInfo : UserModel?
-    
+
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // MARK: 페이스북 버튼
         let fbLoginButton = LoginButton(readPermissions: [.email])
         view.addSubview(fbLoginButton)
@@ -61,7 +62,7 @@ class LoginViewController: UIViewController {
     @objc func keyboardWillHide(_ noti: Notification) {
         loginScrollView.contentInset = UIEdgeInsets.zero
     }
-    
+
     // MARK: IBAction
     //MARK: - 카카오 버튼 눌렀을 때
     @IBAction func kakaoBtnAction(_ sender: UIButton) {
@@ -173,8 +174,14 @@ class LoginViewController: UIViewController {
         }
     }
 }
-// MARK: FaceBookLoginButtonDelegate
-extension LoginViewController: LoginButtonDelegate {
+
+// MARK: FacebookLoginButtonDelegate
+extension LoginViewController : LoginButtonDelegate{
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
+    }
+    
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         switch result{
         case .success:
@@ -191,13 +198,14 @@ extension LoginViewController: LoginButtonDelegate {
                         print(errors.localizedDescription)
                         return
                     }
-                    
+
                 }
             })
             self.performSegue(withIdentifier: "mainSegue", sender: self)
         default:
             break
         }
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
