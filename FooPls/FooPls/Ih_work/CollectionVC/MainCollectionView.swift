@@ -8,23 +8,26 @@ import FirebaseAuth
 class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Variable
-    @IBOutlet weak var introImgView: UIImageView!
+
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var cell : CustomCell!
-    var dataCenter : DataCenter?
-    var postData : [PostModel] = []
+    var dataCenter = DataCenter()
+    var postData = [PostModel]()
     var currentUser = Auth.auth().currentUser
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        DispatchQueue.main.async {
             self.loadDataToMainCollectionView()
-   
+        }
     }
+    
+    
+    //MARK: - loadData To Main CollectionView
     func loadDataToMainCollectionView() {
+        print("self.postData.count")
         guard let uid = self.currentUser?.uid else {return}
         ref = Database.database().reference()
         ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
@@ -43,7 +46,6 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - CollectionView Delegate & Datasource
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-       
         return self.postData.count
     }
     
@@ -51,7 +53,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: (view.frame.width - 30) / 2, height: 205)
+        let size = CGSize(width: (view.frame.width - 30) / 2, height: 216)
         return size
     }
     
@@ -72,6 +74,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         
         // setUPCell
         setUpCell()
+        
         cell.cellTitleLb.text = self.postData[indexPath.row].storeName
         cell.cellAdressLb.text = self.postData[indexPath.row].storeAdress
         
@@ -79,6 +82,9 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         let storeImgUrl = self.postData[indexPath.row].storeImgUrl
         let url = URL(string: storeImgUrl!)
         cell.cellImageView.sd_setImage(with: url!)
+        
+        cell.layer.borderColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+        cell.layer.borderWidth = 1
 
         return cell
     }
@@ -86,9 +92,16 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
+        
+        toDetailPage()
+        
     }
     // CollectionView Delegate & Datasource_End
-  
+    
+    func toDetailPage() {
+        performSegue(withIdentifier: "ToDetailContent", sender: self)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
