@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Modify Profile View Controller-->
         <scene sceneID="Nug-Aj-SnO">
@@ -101,21 +106,138 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-qg-Efn" userLabel="Nickname Stack View">
+                                <rect key="frame" x="19" y="322.5" width="337.5" height="23"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="m6F-MT-0dh">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRD-2Y-IyW">
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임 쓰세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fye-RO-xKf">
+                                                <rect key="frame" x="85.5" y="0.0" width="252" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="TRD-2Y-IyW" firstAttribute="width" secondItem="fye-RO-xKf" secondAttribute="width" multiplier="1:5" id="iew-ja-Cwl"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPX-Op-4Rk">
+                                        <rect key="frame" x="0.0" y="22" width="337.5" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="a0o-aZ-zfJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uPX-Op-4Rk" firstAttribute="width" secondItem="m6F-MT-0dh" secondAttribute="width" id="4io-Pw-U48"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="91N-aG-AYR" userLabel="Email Stack View">
+                                <rect key="frame" x="18.5" y="372" width="337.5" height="23"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="akk-xx-IT1">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqV-MW-PdZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="있을 경우 출력 없는 경우 placeholder 사용" placeholder="example@foopls.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQd-lG-FVt">
+                                                <rect key="frame" x="85" y="0.0" width="252.5" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zqV-MW-PdZ" firstAttribute="width" secondItem="DQd-lG-FVt" secondAttribute="width" multiplier="1:5" id="ZrF-En-hM7"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-nA-vY8">
+                                        <rect key="frame" x="0.0" y="22" width="337.5" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="BKS-DQ-Bdx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qmt-nA-vY8" firstAttribute="width" secondItem="akk-xx-IT1" secondAttribute="width" id="YOz-VM-OHD"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nz7-Sr-11D" userLabel="Phone Stack View">
+                                <rect key="frame" x="18" y="422" width="337.5" height="23"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Lp1-gU-UT7">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y37-ip-nBM">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="위와 동일" placeholder="&quot;-&quot;없이 번호만 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-Lc-rdk">
+                                                <rect key="frame" x="85" y="0.0" width="252.5" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Y37-ip-nBM" firstAttribute="width" secondItem="Ghh-Lc-rdk" secondAttribute="width" multiplier="1:5" id="sxn-RY-6hk"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-Yb-feV">
+                                        <rect key="frame" x="0.0" y="22" width="337.5" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="jIs-xb-y9C"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bOX-Yb-feV" firstAttribute="width" secondItem="Lp1-gU-UT7" secondAttribute="width" id="668-3T-gsT"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="f1m-Q2-Gt1" firstAttribute="centerY" secondItem="wax-gh-JCl" secondAttribute="centerY" id="53q-e2-cK3"/>
+                            <constraint firstItem="91N-aG-AYR" firstAttribute="width" secondItem="yPH-bT-V3d" secondAttribute="width" multiplier="0.9" id="5PC-CS-IYf"/>
                             <constraint firstItem="wax-gh-JCl" firstAttribute="top" secondItem="bG0-JV-Ixn" secondAttribute="top" id="8Pc-ZU-ZkV"/>
                             <constraint firstItem="f1m-Q2-Gt1" firstAttribute="width" secondItem="wax-gh-JCl" secondAttribute="width" id="UeF-Ik-bT7"/>
                             <constraint firstItem="wax-gh-JCl" firstAttribute="centerX" secondItem="bG0-JV-Ixn" secondAttribute="centerX" id="Vgg-wT-eOi"/>
                             <constraint firstItem="f1m-Q2-Gt1" firstAttribute="centerX" secondItem="wax-gh-JCl" secondAttribute="centerX" id="bAr-Lw-bcn"/>
+                            <constraint firstItem="Oxe-qg-Efn" firstAttribute="width" secondItem="yPH-bT-V3d" secondAttribute="width" multiplier="0.9" id="eXg-bh-mLZ"/>
                             <constraint firstItem="wax-gh-JCl" firstAttribute="width" secondItem="yPH-bT-V3d" secondAttribute="width" id="ene-iE-y7f"/>
+                            <constraint firstItem="Nz7-Sr-11D" firstAttribute="width" secondItem="Oxe-qg-Efn" secondAttribute="width" id="iLG-wp-Q26"/>
+                            <constraint firstItem="Oxe-qg-Efn" firstAttribute="centerY" secondItem="yPH-bT-V3d" secondAttribute="centerY" id="kWB-Kr-NIm"/>
+                            <constraint firstItem="91N-aG-AYR" firstAttribute="centerX" secondItem="yPH-bT-V3d" secondAttribute="centerX" id="nKj-2e-VSc"/>
+                            <constraint firstItem="Nz7-Sr-11D" firstAttribute="centerX" secondItem="yPH-bT-V3d" secondAttribute="centerX" id="rab-ZD-9jT"/>
+                            <constraint firstItem="91N-aG-AYR" firstAttribute="centerY" secondItem="yPH-bT-V3d" secondAttribute="centerY" multiplier="1.15" id="s4y-He-UF1"/>
+                            <constraint firstItem="Nz7-Sr-11D" firstAttribute="centerY" secondItem="yPH-bT-V3d" secondAttribute="centerY" multiplier="1.3" id="wAf-jK-GYo"/>
                             <constraint firstItem="f1m-Q2-Gt1" firstAttribute="height" secondItem="wax-gh-JCl" secondAttribute="height" id="wLC-8O-KaG"/>
+                            <constraint firstItem="Oxe-qg-Efn" firstAttribute="centerX" secondItem="yPH-bT-V3d" secondAttribute="centerX" id="x2t-fh-G9P"/>
                             <constraint firstItem="wax-gh-JCl" firstAttribute="height" secondItem="bG0-JV-Ixn" secondAttribute="height" multiplier="0.4" id="xKx-zM-elU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bG0-JV-Ixn"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="DQd-lG-FVt" id="isA-dH-Hfj"/>
+                        <outlet property="nicknameTextField" destination="fye-RO-xKf" id="MXn-3e-tZd"/>
+                        <outlet property="phoneTextField" destination="Ghh-Lc-rdk" id="kaA-1X-UBD"/>
                         <outlet property="profileBGImgView" destination="wax-gh-JCl" id="ru4-9x-D01"/>
                         <outlet property="profileImgView" destination="jXR-Bv-GEX" id="Wtt-Dn-5Og"/>
                         <outlet property="profilePhotoView" destination="aHC-t2-Qgg" id="Kuu-Ke-Zhp"/>
@@ -123,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JL-yG-v3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="134"/>
+            <point key="canvasLocation" x="-12" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
