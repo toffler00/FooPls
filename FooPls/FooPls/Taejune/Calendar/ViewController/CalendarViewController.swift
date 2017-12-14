@@ -7,7 +7,7 @@ class CalendarViewController: UIViewController {
     
     // 사용자 정의 팝업
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
-    var testList: [String] = []
+    var contentTitleList: [String] = []
     
     var reference: DatabaseReference!
     var userID: String!
@@ -41,7 +41,7 @@ class CalendarViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] (noti) in
             guard let `self` = self else { return }
             let contentTitle = noti.object as! String
-            self.testList.append(contentTitle)
+            self.contentTitleList.append(contentTitle)
             self.popUpView.tableView.reloadData()
         })
     }
@@ -170,13 +170,13 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         if oldDate == selectedDate {
                 self.reference.child("users").child(self.userID!).child("calendar").observe(.value, with: { (snapshot) in
                     if let value = snapshot.value as? [String : [String: Any]] {
-                        self.testList.removeAll()
+                        self.contentTitleList.removeAll()
                         for (_, calendarDic) in value {
                             guard let date = calendarDic["date"] as? String else { return }
                             print(date)
                             if date == self.selectedDate {
                                 guard let title = calendarDic["title"] as? String else { return }
-                                self.testList.insert(title, at: 0)
+                                self.contentTitleList.insert(title, at: 0)
                                 self.popUpView.tableView.reloadData()
                             }
                         }

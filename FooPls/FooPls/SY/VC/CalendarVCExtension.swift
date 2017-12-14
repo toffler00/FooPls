@@ -37,13 +37,13 @@ extension CalendarViewController: UITableViewDataSource {
 
     // MARK: 데이터 개수에 따른 테이블 뷰 row 생성
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = testList.count
+        let count = contentTitleList.count
         return (count > 0) ? count : 1
     }
 
     // MARK: 데이터 개수에 따라 사용하는 cell다름
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch testList.count {
+        switch contentTitleList.count {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: emptyCell, for: indexPath) as! EmptyCell
             tableView.separatorStyle = .none
@@ -54,7 +54,7 @@ extension CalendarViewController: UITableViewDataSource {
 //            let index = indexPath.row
             if let cell = cell as? PostCell {
 //                cell.postDelegate = self
-                let text = testList[indexPath.row]
+                let text = contentTitleList[indexPath.row]
                 cell.postLB.text = text
             }
             return cell
@@ -68,7 +68,7 @@ extension CalendarViewController: UITableViewDelegate {
     // MARK: 테이블 뷰 컨텐츠에 따라서 row 높이 설정
     // 테이블 뷰의 셀 값이 유동적이게 해야하는데;;
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch testList.count {
+        switch contentTitleList.count {
         case 0:
             return tableView.bounds.size.height
         default:
