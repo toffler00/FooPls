@@ -55,6 +55,7 @@ extension CalendarViewController: UITableViewDataSource {
 //                cell.postDelegate = self
                 let text = contentTitleList[indexPath.row]
                 cell.postLB.text = text
+//                tableView.separatorStyle = .singleLine
             }
             return cell
         }
@@ -77,9 +78,13 @@ extension CalendarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        if let contentTitle: String = contentTitleList[index]{
-            postDelegate?.selectedPostCellData(data: contentTitle)
-        }
+        
+        
+        
+        // 델리게이트를 이용해서 넘길 예정
+//        if let contentTitle: String = contentTitleList[index] {
+//            postDelegate?.selectedPostCellData(data: contentTitle)
+//        }
     }
 }
 
