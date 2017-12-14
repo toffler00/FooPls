@@ -19,7 +19,7 @@ class TJTimelineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = Database.database().reference()
-        //loadDate()
+//        loadDate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +35,6 @@ class TJTimelineViewController: UIViewController {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, postingDic) in value {
-                    print(key)
-                    print(postingDic)
                     let postingTitle = postingDic["title"] as! String
                     let postingAdress = postingDic["adress"] as! String
                     let postingImgURL = URL(string: postingDic["photoID"] as! String)
@@ -49,10 +47,10 @@ class TJTimelineViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension TJTimelineViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myPostingIndex.count
     }
@@ -64,7 +62,12 @@ extension TJTimelineViewController: UICollectionViewDataSource {
         cell.myPostingImgVIew.kf.setImage(with: myPostingImgs[indexPath.item])
         return cell
     }
-    
-    
+}
+
+extension TJTimelineViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSize = CGSize(width: (self.view.frame.width - 60) / 2, height: (2 * self.view.frame.height) / 3)
+        return cellSize
+    }
 }
 

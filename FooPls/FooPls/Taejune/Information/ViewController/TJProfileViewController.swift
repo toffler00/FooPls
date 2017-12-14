@@ -26,6 +26,11 @@ class TJProfileViewController: UIViewController {
         setupPaging()
         profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
+        //loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadData()
     }
     
@@ -35,6 +40,9 @@ class TJProfileViewController: UIViewController {
             if let value = snapshot.value as? [String : Any] {
                 self.userNickname = value["nickname"] as? String
                 self.profileNickname.text = self.userNickname
+                let profileImg = value["profilePhotoID"] as? String
+                self.profileImgView.kf.setImage(with: URL(string: profileImg!))
+                self.profileBGImgView.kf.setImage(with: URL(string: profileImg!))
             }
         }
     }
