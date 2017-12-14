@@ -20,9 +20,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     //MARK: - viewDidload
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadData()
-        profilePhotoView.layer.borderColor = mainColor.cgColor
-        profilePhotoView.layer.borderWidth = 3
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +29,8 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     }
     
     private func setupUI() {
-        
+        profilePhotoView.layer.borderColor = mainColor.cgColor
+        profilePhotoView.layer.borderWidth = 3
     }
     
     private func loadData() {

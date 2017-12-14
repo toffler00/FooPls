@@ -24,14 +24,17 @@ class TJProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPaging()
-        profileView.layer.borderColor = mainColor.cgColor
-        profileView.layer.borderWidth = 3
-        //loadData()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
+    }
+    
+    private func setupUI() {
+        profileView.layer.borderColor = mainColor.cgColor
+        profileView.layer.borderWidth = 3
     }
     
     private func loadData() {
