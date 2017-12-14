@@ -3,6 +3,10 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let reload = Notification.Name(rawValue: "reload")
+}
+
 extension UIViewController {
     // MARK: 탭으로 keyboard 내리기
     func hideKeyboardWhenTappedAround() {

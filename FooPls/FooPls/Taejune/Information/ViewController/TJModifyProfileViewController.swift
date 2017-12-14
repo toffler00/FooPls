@@ -3,22 +3,28 @@ import UIKit
 import Firebase
 
 class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    //MARK: - Property
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
     
     let mainColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 75.0/255.0, alpha: 1.0)
     
+    //MARK: - IBOutlet
     @IBOutlet weak var profileBGImgView: UIImageView!
     @IBOutlet weak var profilePhotoView: UIView!
     @IBOutlet weak var profileImgView: UIImageView!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    //MARK: - viewDidload
     override func viewDidLoad() {
         super.viewDidLoad()
         
         profilePhotoView.layer.borderColor = mainColor.cgColor
         profilePhotoView.layer.borderWidth = 3
     }
-
+    //MARK: - ButtonAction
     @IBAction func profilePhotoBtnAction(_ sender: UIButton) {
         let imgPicker = UIImagePickerController()
         imgPicker.allowsEditing = true
@@ -27,7 +33,11 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         self.present(imgPicker, animated: true, completion: nil)
     }
     
-    // MARK : - ImgPickerView
+    @IBAction func backBtnAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: - ImgPickerView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
@@ -47,7 +57,5 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func backBtnAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
 }

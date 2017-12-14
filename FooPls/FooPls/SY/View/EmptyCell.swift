@@ -17,9 +17,9 @@ class EmptyCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // 버튼 이미지 사이즈
-        writeButton.imageEdgeInsets = UIEdgeInsetsMake(70, 70, 70, 50)
+        writeButton.imageEdgeInsets = UIEdgeInsetsMake(25, 25, 25, 25)
         // 버튼 원으로 만들기
-//        writeButton.layer.cornerRadius = writeButton.frame.width/2
+        writeButton.layer.cornerRadius = writeButton.frame.width/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

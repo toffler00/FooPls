@@ -49,7 +49,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     print(error!.localizedDescription)
                 }else {
                     guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
-                    
+            
                     let calendarDic = ["title": contentTitle,
                                        "author": self.userID!,
                                        "content": contentTxtView,
@@ -60,12 +60,12 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "adress": self.adress!,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
-                    
+                    // MARK: Noti
+                    NotificationCenter.default.post(name: .reload, object: contentTitle)
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
                     let key = self.reference.child("users").childByAutoId().key
                     let postKey = NSArray(array: [key])
-                    self.reference.child("posts").setValue(postKey)
-                    
+                    self.reference.child("posts").setValue(postKey)                    
                     self.dismiss(animated: true, completion: nil)
                 }
             })

@@ -11,9 +11,8 @@ target 'FooPls' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
-  pod 'FBSDKShareKit'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
   pod 'KakaoOpenSDK/KakaoOpenSDK'
   pod 'SDWebImage'
   pod 'GoogleMaps'
@@ -24,6 +23,7 @@ target 'FooPls' do
   pod 'RAMAnimatedTabBarController'
   pod 'FirebaseUI/Storage'
   pod 'PagingKit'
+  pod 'SnapKit', '~> 4.0.0'
   # Pods for FooPls
 
 end

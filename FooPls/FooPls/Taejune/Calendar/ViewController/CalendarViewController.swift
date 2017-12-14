@@ -7,7 +7,7 @@ class CalendarViewController: UIViewController {
     
     // 사용자 정의 팝업
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
-    var testList: [String] = []
+    var contentTitleList: [String] = []
     
     var reference: DatabaseReference!
     var userID: String!
@@ -37,8 +37,15 @@ class CalendarViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView(_:)))
         gesture.delegate = self
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
+        // MARK: 데이터 변경시 noti
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] (noti) in
+            guard let `self` = self else { return }
+            let contentTitle = noti.object as! String
+            self.contentTitleList.append(contentTitle)
+            self.popUpView.tableView.reloadData()
+        })
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupCalendar()
@@ -52,8 +59,13 @@ class CalendarViewController: UIViewController {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
+<<<<<<< HEAD
                     print(key)
                     guard let date = calendarDic["date"] as? String else {return}
+=======
+                    self.contentArray.append(key)
+                    let date = calendarDic["date"] as! String
+>>>>>>> a86e535cbf16f61f4651a3522435663487d051d3
                     self.contentArray.append(date)
                     self.calendarView.reloadData()
                 }
@@ -158,8 +170,23 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
+        print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
+        
         if oldDate == selectedDate {
-            print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
+                self.reference.child("users").child(self.userID!).child("calendar").observe(.value, with: { (snapshot) in
+                    if let value = snapshot.value as? [String : [String: Any]] {
+                        self.contentTitleList.removeAll()
+                        for (_, calendarDic) in value {
+                            guard let date = calendarDic["date"] as? String else { return }
+                            print(date)
+                            if date == self.selectedDate {
+                                guard let title = calendarDic["title"] as? String else { return }
+                                self.contentTitleList.insert(title, at: 0)
+                                self.popUpView.tableView.reloadData()
+                            }
+                        }
+                    }
+                })
             self.popUpView.alpha = 1
             self.popUpWritingDelegate(date: selectedDate!)
         }else {
