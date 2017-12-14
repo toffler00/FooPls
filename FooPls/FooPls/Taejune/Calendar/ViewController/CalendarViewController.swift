@@ -200,7 +200,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     }
     //MARK: - 아직은 잘 모름
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        
     }
     
     //MARK: - 스크롤 했을 때 보이는 날짜정보를 업데이트 하기 위한 메소드 (스크롤을 했을 때 불림)

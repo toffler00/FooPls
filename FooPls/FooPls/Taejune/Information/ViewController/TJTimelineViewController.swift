@@ -13,13 +13,13 @@ class TJTimelineViewController: UIViewController {
     var myPostingImgs: [URL] = []
     var myPostingTitles: [String] = []
     var myPostingAdress: [String] = []
+    var selectedKey: String?
     
     @IBOutlet weak var myPostingCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = Database.database().reference()
-//        loadDate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +61,25 @@ extension TJTimelineViewController: UICollectionViewDataSource {
         cell.postingAdress.text = myPostingAdress[indexPath.item]
         cell.myPostingImgVIew.kf.setImage(with: myPostingImgs[indexPath.item])
         return cell
+    }
+}
+
+extension TJTimelineViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+        selectedKey = myPostingIndex[indexPath.item]
+        print(selectedKey)
+        performSegue(withIdentifier: "TJDetailTimeline", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TJDetailTimeline" {
+            let destinationVC = segue.destination as! TJDetailTimelineViewController
+            
+            destinationVC.selectedKey = self.selectedKey
+            print(destinationVC.selectedKey)
+        }
     }
 }
 
