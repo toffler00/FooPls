@@ -11,7 +11,7 @@ import UIKit
 class DetailPageCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var nickNameLb: UILabel!
+    @IBOutlet weak var storeNameLb: UILabel!
     @IBOutlet weak var writeDateLb: UILabel!
     @IBOutlet weak var adressLb: UILabel!
     @IBOutlet weak var showStoryLb: UILabel!

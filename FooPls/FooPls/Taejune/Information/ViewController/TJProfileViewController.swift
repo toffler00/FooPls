@@ -3,7 +3,7 @@ import UIKit
 import PagingKit
 import Firebase
 
-class TJProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TJProfileViewController: UIViewController {
 
     var menuViewController: PagingMenuViewController!
     var contentViewController: PagingContentViewController!
@@ -74,34 +74,6 @@ class TJProfileViewController: UIViewController, UIImagePickerControllerDelegate
             contentViewController.dataSource = self
             contentViewController.delegate = self
         }
-    }
-    
-    @IBAction func profilePhotoBtn(_ sender: UIButton) {
-        let imgPicker = UIImagePickerController()
-        imgPicker.allowsEditing = true
-        imgPicker.sourceType = .photoLibrary
-        imgPicker.delegate = self
-        self.present(imgPicker, animated: true, completion: nil)
-    }
-    
-    // MARK : - ImgPickerView
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
-            profileImgView.image = img
-            profileBGImgView.image = img
-            guard let uploadData = UIImageJPEGRepresentation(img, 0.3) else { return }
-            // Save imageData
-            Storage.storage().reference().child("profile_images").child(userID!).putData(uploadData, metadata: nil, completion: { [weak self](metadata, error) in
-                guard let `self` = self else { return }
-                guard let profilePhotoID = metadata?.downloadURL()?.absoluteString else { return }
-
-                print(profilePhotoID)
-                self.reference.child("users").child(self.userID!).updateChildValues(["profilePhotoID": profilePhotoID], withCompletionBlock: { (error, databaseRef) in
-                })
-            })
-        }
-        dismiss(animated: true, completion: nil)
     }
 }
 

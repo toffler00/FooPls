@@ -206,8 +206,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="330" height="618"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-XO-Qyi">
-                                                    <rect key="frame" x="18" y="18" width="77" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-XO-Qyi">
+                                                    <rect key="frame" x="18" y="18" width="34" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="pIw-Ff-xtx"/>
                                                     </constraints>
@@ -265,7 +265,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-ww-pbA">
-                                                    <rect key="frame" x="114" y="18" width="35" height="21"/>
+                                                    <rect key="frame" x="71" y="18" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -283,8 +283,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="adressLb" destination="7At-Qf-Zo1" id="gx6-An-6fq"/>
-                                            <outlet property="nickNameLb" destination="qpY-XO-Qyi" id="pys-BH-yvx"/>
                                             <outlet property="showStoryLb" destination="Kr1-eG-jn7" id="4RW-BA-NKW"/>
+                                            <outlet property="storeNameLb" destination="qpY-XO-Qyi" id="AKI-8j-ee3"/>
                                             <outlet property="writeDateLb" destination="XE7-ww-pbA" id="8gU-Xb-mbY"/>
                                         </connections>
                                     </collectionViewCell>
