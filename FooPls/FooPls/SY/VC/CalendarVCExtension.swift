@@ -51,7 +51,6 @@ extension CalendarViewController: UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
-//            let index = indexPath.row
             if let cell = cell as? PostCell {
 //                cell.postDelegate = self
                 let text = contentTitleList[indexPath.row]
@@ -73,6 +72,13 @@ extension CalendarViewController: UITableViewDelegate {
             return tableView.bounds.size.height
         default:
             return 50
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        if let contentTitle: String = contentTitleList[index]{
+            postDelegate?.selectedPostCellData(data: contentTitle)
         }
     }
 }
