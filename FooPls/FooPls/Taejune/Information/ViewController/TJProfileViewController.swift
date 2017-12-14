@@ -35,6 +35,8 @@ class TJProfileViewController: UIViewController {
             if let value = snapshot.value as? [String : Any] {
                 self.userNickname = value["nickname"] as? String
                 self.profileNickname.text = self.userNickname
+                let profileImg = value["profilePhotoID"] as? String
+                self.profileImgView.kf.setImage(with: URL(string: profileImg!))
             }
         }
     }
