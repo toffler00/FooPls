@@ -327,9 +327,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="867-3h-r0P">
-                                <rect key="frame" x="165" y="606" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="867-3h-r0P">
+                                <rect key="frame" x="165" y="585.5" width="44" height="30"/>
                                 <state key="normal" title="POST!"/>
                                 <connections>
                                     <action selector="postToFirebase:" destination="xgl-bk-aAc" eventType="touchUpInside" id="2bq-3L-wKd"/>
@@ -337,21 +336,19 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-Z3-EIi" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="340"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="OaF-Ep-IbE"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-AC-KH4" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
-                                <rect key="frame" x="62" y="438" width="250" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-AC-KH4" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="450.5" width="300" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-TJ-z2b" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
-                                <rect key="frame" x="62" y="498" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-TJ-z2b" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
+                                <rect key="frame" x="37" y="517" width="300.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -367,9 +364,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="width" secondItem="GI8-AC-KH4" secondAttribute="width" id="5qH-5L-aw2"/>
                             <constraint firstItem="xCl-Z3-EIi" firstAttribute="trailing" secondItem="fOg-QS-zWw" secondAttribute="trailing" id="Dd3-WH-AU5"/>
+                            <constraint firstItem="867-3h-r0P" firstAttribute="centerY" secondItem="3IB-QE-wvZ" secondAttribute="centerY" multiplier="1.8" id="FDl-bX-MIf"/>
                             <constraint firstItem="xCl-Z3-EIi" firstAttribute="top" secondItem="fOg-QS-zWw" secondAttribute="top" id="O9e-Jo-f95"/>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="centerY" secondItem="3IB-QE-wvZ" secondAttribute="centerY" multiplier="1.4" id="U3J-yU-vlq"/>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="centerX" secondItem="3IB-QE-wvZ" secondAttribute="centerX" id="Za7-9h-6Pa"/>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="width" secondItem="3IB-QE-wvZ" secondAttribute="width" multiplier="0.8" id="dFL-w6-axt"/>
                             <constraint firstItem="xCl-Z3-EIi" firstAttribute="leading" secondItem="fOg-QS-zWw" secondAttribute="leading" id="g1U-Jb-4IK"/>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="centerX" secondItem="3IB-QE-wvZ" secondAttribute="centerX" id="gF7-GE-St0"/>
+                            <constraint firstItem="867-3h-r0P" firstAttribute="centerX" secondItem="3IB-QE-wvZ" secondAttribute="centerX" id="iO4-17-0su"/>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="height" secondItem="3IB-QE-wvZ" secondAttribute="height" multiplier="0.05" id="kPl-vq-8il"/>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="centerY" secondItem="3IB-QE-wvZ" secondAttribute="centerY" multiplier="1.6" id="mk9-kg-2k5"/>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="height" secondItem="GI8-AC-KH4" secondAttribute="height" id="vWm-rl-qbd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fOg-QS-zWw"/>
                     </view>
