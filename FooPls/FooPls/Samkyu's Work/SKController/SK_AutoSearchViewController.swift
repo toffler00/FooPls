@@ -15,6 +15,9 @@ import FirebaseStorage
 
 class SK_AutoSearchViewController: UIViewController {
     
+    var delegate : GooglePlaceDataDelegate?
+    
+    
     @IBOutlet weak var placeLB: UILabel!
     @IBOutlet weak var addressLB: UILabel!
     
@@ -22,6 +25,14 @@ class SK_AutoSearchViewController: UIViewController {
     var searchController: UISearchController?
     var resultView:UITextView?
     var ref:DatabaseReference!
+    
+    //Delegate 관련 업로드 자료
+    var adress:String?
+    var placeName:String?
+    var latitude:Double?
+    var longitudue:Double?
+    
+    
     
     @IBOutlet var googleMapView: GMSMapView!
     var zoom:Float = 14
@@ -36,6 +47,7 @@ class SK_AutoSearchViewController: UIViewController {
         makeGoogleSearchBar()
         startGoogleMap()
         view.backgroundColor = UIColor(red: 250/255, green: 239/255, blue: 75/255, alpha: 1)
+        
     }
     
     @IBAction func postToFirebase(_ sender: Any) {
@@ -76,6 +88,8 @@ class SK_AutoSearchViewController: UIViewController {
         marker.snippet = placeName
         marker.icon = UIImage(named: "GMarker")
         
+        
+        
     }
     
     func makeGoogleSearchBar(){
@@ -98,8 +112,15 @@ class SK_AutoSearchViewController: UIViewController {
     }
     
     
+    
+    
     @IBAction func dismissBtn(_ sender: UIBarButtonItem) {
+        
+        //데이터 저장.
+        delegate?.positinData(lati: latitude!, longi: longitudue!, address: adress!, placeName: placeName!)
         dismiss(animated: true, completion: nil)
+        
+        
     }
     
 }
@@ -114,12 +135,14 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         placeLB.text = place.name
         addressLB.text = place.formattedAddress
         
-        
+        adress = place.formattedAddress
+        placeName = place.name
+        latitude = place.coordinate.latitude
+        longitudue = place.coordinate.longitude
         
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         
-        
-        
+    
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {
@@ -127,9 +150,10 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         print("Error : ", error.localizedDescription)
         
     }
+}
+
+protocol GooglePlaceDataDelegate {
     
-    
-    
-    
+    func positinData(lati: Double, longi: Double, address:String, placeName:String)
     
 }

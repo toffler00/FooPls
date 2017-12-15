@@ -78,6 +78,8 @@
 		CEB8997D1FD9C4A800BFFF3B /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899771FD9C4A800BFFF3B /* PopView.swift */; };
 		CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */; };
 		CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237379AD1FCEE4F200F5351E /* Extension.swift */; };
+		CEF3C2C61FE3E4510083511D /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF3C2C51FE3E4510083511D /* Setting.storyboard */; };
+		CEF3C2C81FE3FA4F0083511D /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3C2C71FE3FA4F0083511D /* SettingTableViewController.swift */; };
 		FC0E2CC41FDFB33600E32F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */; };
 		FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */; };
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
@@ -85,6 +87,7 @@
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
 		FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */; };
+		FCED14DC1FE2B6EF002C776F /* SK_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */; };
 		FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +170,8 @@
 		CEB899761FD9C4A700BFFF3B /* EmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
 		CEB899771FD9C4A800BFFF3B /* PopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 		CEB899801FD9C53600BFFF3B /* CalendarVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVCExtension.swift; sourceTree = "<group>"; };
+		CEF3C2C51FE3E4510083511D /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		CEF3C2C71FE3FA4F0083511D /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +181,7 @@
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
 		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
 		FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
+		FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,6 +557,8 @@
 				CEB8997F1FD9C4CE00BFFF3B /* Xib */,
 				CEB8997E1FD9C4B700BFFF3B /* VC */,
 				CEB899711FD9C47100BFFF3B /* View */,
+				CEF3C2C51FE3E4510083511D /* Setting.storyboard */,
+				CEF3C2C71FE3FA4F0083511D /* SettingTableViewController.swift */,
 			);
 			path = SY;
 			sourceTree = "<group>";
@@ -601,6 +609,7 @@
 				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
 				FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */,
+				FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -689,6 +698,7 @@
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */,
+				CEF3C2C61FE3E4510083511D /* Setting.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */,
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
@@ -815,7 +825,9 @@
 				CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */,
 				230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */,
 				FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */,
+				FCED14DC1FE2B6EF002C776F /* SK_TestViewController.swift in Sources */,
 				23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */,
+
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
@@ -839,6 +851,7 @@
 				230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
+				CEF3C2C81FE3FA4F0083511D /* SettingTableViewController.swift in Sources */,
 				231F59CE1FDAC2EA00580D69 /* RAMItemAnimationProtocol.swift in Sources */,
 				62E1FF581FD924BF00E1FEAE /* Ih_PostVC.swift in Sources */,
 				230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */,

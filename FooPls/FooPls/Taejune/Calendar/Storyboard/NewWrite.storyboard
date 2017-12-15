@@ -267,11 +267,20 @@
                         <outlet property="customNaviBar" destination="MQ2-6f-gVq" id="dNv-ok-U97"/>
                         <outlet property="dateLabel" destination="bI9-eU-7qR" id="8XG-i1-7mi"/>
                         <outlet property="locationTitle" destination="5Ts-CO-nbl" id="tR9-8P-X7I"/>
+                        <segue destination="yhR-Za-qcU" kind="show" identifier="NewWriteViewController" id="US6-gz-xZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSR-RF-4eV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-34.399999999999999" y="96.7016491754123"/>
+        </scene>
+        <!--googlePlacePickerVC-->
+        <scene sceneID="wCj-LY-5TY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SKMain" referencedIdentifier="googlePlacePickerVC" id="yhR-Za-qcU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iP-nw-QTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729" y="90"/>
         </scene>
     </scenes>
     <resources>
