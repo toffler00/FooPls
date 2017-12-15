@@ -25,10 +25,10 @@ class TJTimelineViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadTiemlineDate()
+        loadDate()
     }
     
-    private func loadTiemlineDate() {
+    private func loadDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : [String: Any]] {
