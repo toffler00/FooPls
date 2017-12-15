@@ -27,13 +27,12 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedKey!)
-        loadData()
+        loadDetailData()
     }
     
-    private func loadData() {
-        reference.child("users").child(userID!).child("calendar").child(selectedKey!).observe(.value) { [unowned self] (snapshot) in
-            print(self.selectedKey!)
+    private func loadDetailData() {
+        reference.child("users").child(userID!).child("calendar").child(selectedKey!).observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
             if let value = snapshot.value as? [String: Any] {
                 self.detailDateLabel.text = value["date"] as? String
                 self.detailTitleTextField.text = value["title"] as? String

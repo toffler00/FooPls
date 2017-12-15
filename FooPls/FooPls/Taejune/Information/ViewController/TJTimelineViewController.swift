@@ -25,10 +25,10 @@ class TJTimelineViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadDate()
+        loadTimelineDate()
     }
     
-    private func loadDate() {
+    private func loadTimelineDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { [unowned self] (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 self.myPostingTitles.removeAll()
