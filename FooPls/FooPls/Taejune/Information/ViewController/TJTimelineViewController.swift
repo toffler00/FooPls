@@ -49,7 +49,6 @@ class TJTimelineViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension TJTimelineViewController: UICollectionViewDataSource {
