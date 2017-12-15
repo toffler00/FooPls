@@ -77,15 +77,16 @@ extension CalendarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
+        print("contentKeys: ", self.contentKeys)
+        print("titleList: ", self.contentTitleList)
         // 델리게이트를 이용해서 넘길 예정
         let testTitle = contentTitleList[index]
         postDelegate?.selectedPostCellData(controller: self, data: testTitle)
-        self.performSegue(withIdentifier: "NewWrite", sender: self)
+//        self.performSegue(withIdentifier: "NewWrite", sender: self)
         let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
         let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
-        present(detailVC, animated: true) {
-//            detailVC.selectedKey = ses
-        }
+        detailVC.selectedKey = self.contentKeys[index]
+        present(detailVC, animated: true, completion: nil)
  
     }
     

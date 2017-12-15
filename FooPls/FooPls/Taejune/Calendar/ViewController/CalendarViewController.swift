@@ -54,7 +54,7 @@ class CalendarViewController: UIViewController {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
-                    self.contentKeys.append(key)
+                    print(self.contentKeys)
                     let date = calendarDic["date"] as! String
                     print("~~~~~~~", calendarDic)
                     self.contentDates.append(date)
@@ -170,10 +170,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
                 self.contentTitleList.removeAll()
                 if let value = snapshot.value as? [String : [String: Any]] {
                     print(value) // 원하는 시점에 불리는지 확인
-                    for (_, calendarDic) in value {
+                    for (key, calendarDic) in value {
                         guard let date = calendarDic["date"] as? String else { return }
                         if date == self.selectedDate {
                             guard let title = calendarDic["title"] as? String else { return }
+                            guard let key = key as? String else { return }
+                            self.contentKeys.insert(key, at: 0)
                             self.contentTitleList.insert(title, at: 0)
                         }
                     }
