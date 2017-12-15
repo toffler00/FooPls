@@ -24,6 +24,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var latitude: Double?
     var address: String?
     
+    @IBOutlet weak var customNaviBar: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTitle: UITextField!
     @IBOutlet weak var contentImgView: UIImageView!
@@ -46,6 +47,12 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(view.frame.height)
+        print(customNaviBar.frame.height)
     }
     
     //MARK: - 뒤로 가기 버튼

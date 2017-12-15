@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         // Facebook Login
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+      
         GMSServices.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
         GMSPlacesClient.provideAPIKey("AIzaSyCK_mUEG0l9-ADYfsuZduyqjL0yub6HHEY")
         
@@ -33,8 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SDKApplicationDelegate.shared.application(app, open: url, options: options)
             return true
         }
-       
-        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
