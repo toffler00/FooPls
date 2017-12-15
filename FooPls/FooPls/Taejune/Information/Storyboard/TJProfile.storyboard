@@ -23,7 +23,7 @@
                 <viewControllerPlaceholder storyboardName="TJSettings" id="RCd-J1-Jzb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpI-nl-Csa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="762"/>
+            <point key="canvasLocation" x="694" y="786"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="5ta-oc-ZAf">
@@ -195,10 +195,17 @@
                                 <rect key="frame" x="0.0" y="330.5" width="375" height="5.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCr-ri-tng">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zCr-ri-tng" secondAttribute="trailing" id="3SP-jg-Occ"/>
+                            <constraint firstItem="mGL-7s-aKC" firstAttribute="top" secondItem="zCr-ri-tng" secondAttribute="bottom" id="7Hc-BT-3cy"/>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="height" secondItem="xoJ-rx-uTZ" secondAttribute="height" multiplier="0.4" id="7w3-XA-A6r"/>
+                            <constraint firstItem="zCr-ri-tng" firstAttribute="top" secondItem="zzc-f1-LGk" secondAttribute="top" id="D07-1b-eec"/>
                             <constraint firstItem="0oG-M5-8wW" firstAttribute="leading" secondItem="xoJ-rx-uTZ" secondAttribute="leading" id="IUa-Ax-tox"/>
                             <constraint firstItem="0oG-M5-8wW" firstAttribute="top" secondItem="Z0m-R8-7sV" secondAttribute="bottom" id="JQQ-nf-Wld"/>
                             <constraint firstItem="Z0m-R8-7sV" firstAttribute="width" secondItem="zzc-f1-LGk" secondAttribute="width" id="LUa-pk-Fwr"/>
@@ -209,6 +216,7 @@
                             <constraint firstItem="wAC-3I-GcZ" firstAttribute="width" secondItem="zzc-f1-LGk" secondAttribute="width" id="jK2-gs-hh8"/>
                             <constraint firstItem="wAC-3I-GcZ" firstAttribute="centerX" secondItem="zzc-f1-LGk" secondAttribute="centerX" id="jKm-X8-782"/>
                             <constraint firstItem="wAC-3I-GcZ" firstAttribute="centerY" secondItem="zzc-f1-LGk" secondAttribute="centerY" multiplier="1.5" id="lu6-mm-4ed"/>
+                            <constraint firstItem="zCr-ri-tng" firstAttribute="leading" secondItem="zzc-f1-LGk" secondAttribute="leading" id="maV-9D-pe0"/>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="trailing" secondItem="xoJ-rx-uTZ" secondAttribute="trailing" id="mg0-ua-Z6a"/>
                             <constraint firstItem="mGL-7s-aKC" firstAttribute="leading" secondItem="xoJ-rx-uTZ" secondAttribute="leading" id="oIa-xu-1SR"/>
                             <constraint firstItem="Z0m-R8-7sV" firstAttribute="height" secondItem="xoJ-rx-uTZ" secondAttribute="height" multiplier="0.08" id="ox4-x6-gGO"/>
