@@ -160,7 +160,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationImg" translatesAutoresizingMaskIntoConstraints="NO" id="RNP-cQ-hOh">
-                                                        <rect key="frame" x="20.5" y="4" width="30.5" height="29.5"/>
+                                                        <rect key="frame" x="21" y="4" width="29.5" height="29.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="RNP-cQ-hOh" secondAttribute="height" multiplier="1:1" id="Oar-Az-ExC"/>
                                                         </constraints>
@@ -259,7 +259,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="LocationAdress" destination="B7r-GH-VgB" id="q2v-09-zBu"/>
+                        <outlet property="LocationAddress" destination="B7r-GH-VgB" id="dqO-t5-T9C"/>
                         <outlet property="contentImgView" destination="SA3-cm-osn" id="JfY-bW-PIj"/>
                         <outlet property="contentTitle" destination="Rh8-J6-cId" id="eYU-95-J1N"/>
                         <outlet property="contentTxtView" destination="zM7-Md-gR6" id="Cfo-Ao-QeP"/>

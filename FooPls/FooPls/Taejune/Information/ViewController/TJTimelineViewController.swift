@@ -12,14 +12,15 @@ class TJTimelineViewController: UIViewController {
     var myPostingIndex: [String] = []
     var myPostingImgs: [URL] = []
     var myPostingTitles: [String] = []
-    var myPostingAdress: [String] = []
+    var myPostingAddress: [String] = []
+    var myPostingDate: [String] = []
+    var selectedKey: String?
     
     @IBOutlet weak var myPostingCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = Database.database().reference()
-//        loadDate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,19 +29,22 @@ class TJTimelineViewController: UIViewController {
     }
     
     private func loadDate() {
-        myPostingTitles.removeAll()
-        myPostingAdress.removeAll()
-        myPostingImgs.removeAll()
-        myPostingIndex.removeAll()
-        reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
+        reference.child("users").child(userID!).child("calendar").observe(.value) { [unowned self] (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
+                self.myPostingTitles.removeAll()
+                self.myPostingAddress.removeAll()
+                self.myPostingImgs.removeAll()
+                self.myPostingIndex.removeAll()
                 for (key, postingDic) in value {
                     let postingTitle = postingDic["title"] as! String
-                    let postingAdress = postingDic["adress"] as! String
+                    let postingAddress = postingDic["address"] as! String
+                    let postingDate = postingDic["date"] as! String
                     let postingImgURL = URL(string: postingDic["photoID"] as! String)
                     self.myPostingTitles.append(postingTitle)
-                    self.myPostingAdress.append(postingAdress)
+                    print("title: ", self.myPostingTitles)
+                    self.myPostingAddress.append(postingAddress)
                     self.myPostingImgs.append(postingImgURL!)
+                    self.myPostingDate.append(postingDate)
                     self.myPostingIndex.append(key)
                     self.myPostingCollectionView.reloadData()
                 }
@@ -52,15 +56,34 @@ class TJTimelineViewController: UIViewController {
 extension TJTimelineViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("count: ",myPostingIndex.count)
         return myPostingIndex.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPostingCell", for: indexPath) as! MyPostingCell
         cell.postingTitle.text = myPostingTitles[indexPath.item]
-        cell.postingAdress.text = myPostingAdress[indexPath.item]
+        cell.postingAddress.text = myPostingAddress[indexPath.item]
         cell.myPostingImgVIew.kf.setImage(with: myPostingImgs[indexPath.item])
+        cell.postingDate.text = myPostingDate[indexPath.item]
         return cell
+    }
+}
+
+extension TJTimelineViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+        selectedKey = myPostingIndex[indexPath.item]
+        performSegue(withIdentifier: "TJDetailTimeline", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TJDetailTimeline" {
+            let destinationVC = segue.destination as! TJDetailTimelineViewController
+            
+            destinationVC.selectedKey = self.selectedKey
+        }
     }
 }
 
