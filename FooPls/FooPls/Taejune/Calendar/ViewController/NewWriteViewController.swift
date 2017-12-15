@@ -33,8 +33,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(view.frame.height)
-        print(customNaviBar.frame.height)
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -137,7 +135,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - 장소를 선택하지 않았을 때 실행하는 메소드
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
         viewController.dismiss(animated: true, completion: nil)
-        print("장소가 선택되지 않았습니다.")
     }
 }
 

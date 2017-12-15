@@ -7,7 +7,5 @@ class MyPostingCell: UICollectionViewCell {
     @IBOutlet weak var postingTitle: UILabel!
     @IBOutlet weak var postingAddress: UILabel!    
     @IBOutlet weak var postingDate: UILabel!
-    
-    @IBAction func deleteBtnAction(_ sender: UIButton) {
-    }
+    @IBOutlet weak var deleteBtn: UIButton!
 }
