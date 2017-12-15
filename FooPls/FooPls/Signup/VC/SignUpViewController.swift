@@ -80,7 +80,8 @@ class SignUpViewController: UIViewController {
                     let userNickname = user?.displayName ?? ""
                     let defaultProfile = UIImage(named: "defaultProfile")
                     let uploadImg = UIImageJPEGRepresentation(defaultProfile!, 0.3)
-                    Storage.storage().reference().putData(uploadImg!, metadata: nil, completion: { [unowned self] (metadata, error) in
+                    Storage.storage().reference().putData(uploadImg!, metadata: nil, completion: { [weak self] (metadata, error) in
+                        guard let `self` = self else { return }
                         if error != nil {
                             print(error!.localizedDescription)
                         }else {

@@ -27,10 +27,10 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDetailData()
+        loadData()
     }
     
-    private func loadDetailData() {
+    private func loadData() {
         reference.child("users").child(userID!).child("calendar").child(selectedKey!).observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String: Any] {
@@ -62,10 +62,12 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         guard let contentTxtView = detailContentTextView.text else { return }
         
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 수정하시겠습니까?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "네", style: .default) { [unowned self] (action) in
+        let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
+            guard let `self` = self else { return }
             guard let uploadImg = UIImageJPEGRepresentation(self.detailImgView.image!, 0.3) else { return }
 
-            Storage.storage().reference().child("calendar_images").child(self.photoName!).putData(uploadImg, metadata: nil, completion: { [unowned self] (metaData, error) in
+            Storage.storage().reference().child("calendar_images").child(self.photoName!).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
+                guard let `self` = self else { return }
                 if error != nil {
                     print(error!.localizedDescription)
                 }else {

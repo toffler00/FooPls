@@ -25,11 +25,12 @@ class TJTimelineViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadTimelineDate()
+        loadDate()
     }
     
-    private func loadTimelineDate() {
-        reference.child("users").child(userID!).child("calendar").observe(.value) { [unowned self] (snapshot) in
+    private func loadDate() {
+        reference.child("users").child(userID!).child("calendar").observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
             if let value = snapshot.value as? [String : [String: Any]] {
                 self.myPostingTitles.removeAll()
                 self.myPostingAddress.removeAll()
@@ -56,7 +57,6 @@ class TJTimelineViewController: UIViewController {
 extension TJTimelineViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("count: ",myPostingIndex.count)
         return myPostingIndex.count
     }
     
@@ -72,7 +72,6 @@ extension TJTimelineViewController: UICollectionViewDataSource {
 
 extension TJTimelineViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
         selectedKey = myPostingIndex[indexPath.item]
         performSegue(withIdentifier: "TJDetailTimeline", sender: nil)
         
