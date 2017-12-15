@@ -13,13 +13,13 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var selectedDate: String = ""
     var longitude: Double?
     var latitude: Double?
-    var adress: String?
+    var address: String?
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTitle: UITextField!
     @IBOutlet weak var contentImgView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
-    @IBOutlet weak var LocationAdress: UILabel!
+    @IBOutlet weak var LocationAddress: UILabel!
     @IBOutlet weak var contentTxtView: UITextView!
     
     //MARK: - Life Cycle
@@ -54,10 +54,11 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "author": self.userID!,
                                        "content": contentTxtView,
                                        "photoID": photoID,
+                                       "photoName": uuid,
                                        "locationTitle": locationTitle,
                                        "longitude": self.longitude!,
                                        "latitude": self.latitude!,
-                                       "adress": self.adress!,
+                                       "address": self.address!,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
                     // MARK: Noti
@@ -80,23 +81,23 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     @IBAction func locationBtnAction(_ sender: UIButton) {
         
         //잠시 주석처리함.
-//        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-//        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-//        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-//        let config = GMSPlacePickerConfig(viewport: viewport)
-//        let placePicker = GMSPlacePickerViewController(config: config)
-//        placePicker.delegate = self
-//        present(placePicker, animated: true, completion: nil)
-//
-//        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-//        placePicker.navigationController?.navigationBar.isTranslucent = false
+        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
+        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
+        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
+        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        let config = GMSPlacePickerConfig(viewport: viewport)
+        let placePicker = GMSPlacePickerViewController(config: config)
+        placePicker.delegate = self
+        present(placePicker, animated: true, completion: nil)
+
+        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
+        placePicker.navigationController?.navigationBar.isTranslucent = false
         
         //구글 PlacePicker와 연결함
-        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
-        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
-            present(googlePicekerVC, animated: true, completion: nil)
-        }
+//        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
+//        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
+//            present(googlePicekerVC, animated: true, completion: nil)
+//        }
         
     }
     
@@ -106,8 +107,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         self.longitude = place.coordinate.longitude
         self.latitude = place.coordinate.latitude
         self.locationTitle.text = place.name
-        self.LocationAdress.text = place.formattedAddress
-        self.adress = place.formattedAddress
+        self.LocationAddress.text = place.formattedAddress
+        self.address = place.formattedAddress
     }
     
     @IBAction func photoSelectAction(_ sender: UIButton) {
