@@ -11,7 +11,7 @@ let emptyCell = "EmptyCell"
 
 // MARK: CalendarViewController extension
 extension CalendarViewController {
-
+    
     // MARK: 팝업뷰 세팅
     func setUpPopUpView() {
         // 팝업뷰 생성
@@ -34,13 +34,13 @@ extension CalendarViewController {
 
 // MARK: UITableViewDataSource
 extension CalendarViewController: UITableViewDataSource {
-
+    
     // MARK: 데이터 개수에 따른 테이블 뷰 row 생성
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = contentTitleList.count
         return (count > 0) ? count : 1
     }
-
+    
     // MARK: 데이터 개수에 따라 사용하는 cell다름
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch contentTitleList.count {
@@ -52,14 +52,13 @@ extension CalendarViewController: UITableViewDataSource {
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
             if let cell = cell as? PostCell {
-//                cell.postDelegate = self
                 let text = contentTitleList[indexPath.row]
                 cell.postLB.text = text
-//                tableView.separatorStyle = .singleLine
+                //                tableView.separatorStyle = .singleLine
             }
             return cell
         }
-
+        
     }
 }
 
@@ -78,14 +77,19 @@ extension CalendarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        
-        
-        
+        print("contentKeys: ", self.contentKeys)
+        print("titleList: ", self.contentTitleList)
         // 델리게이트를 이용해서 넘길 예정
-//        if let contentTitle: String = contentTitleList[index] {
-//            postDelegate?.selectedPostCellData(data: contentTitle)
-//        }
+        let testTitle = contentTitleList[index]
+        postDelegate?.selectedPostCellData(controller: self, data: testTitle)
+//        self.performSegue(withIdentifier: "NewWrite", sender: self)
+        let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
+        let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
+        detailVC.selectedKey = self.contentKeys[index]
+        present(detailVC, animated: true, completion: nil)
+ 
     }
+    
 }
 
 // MARK: EmptyCellDelegate
@@ -95,19 +99,15 @@ extension CalendarViewController: EmptyCellDelegate {
         print("\(#function)")
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
-
+    
 }
 
-//// MARK: PostCellDelegate
-//extension CalendarViewController: PostCellDelegate {
-//    // MARK: PostList
-//    func postCellData(_ cell: PostCell) {
-//        
-//    }
-//}
 
 // MARK: PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
+    
+ 
+    
     // 포스팅버튼
     func postWritingButton(button: UIButton) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )

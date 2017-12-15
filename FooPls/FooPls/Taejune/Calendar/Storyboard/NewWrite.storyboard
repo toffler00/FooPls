@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-6f-gVq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooPls" translatesAutoresizingMaskIntoConstraints="NO" id="zaf-Ak-hjC">
-                                        <rect key="frame" x="131.5" y="30" width="112.5" height="27"/>
+                                        <rect key="frame" x="131.5" y="40" width="112.5" height="32"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-cV-o8z" userLabel="Back">
-                                        <rect key="frame" x="9" y="33.5" width="20" height="20"/>
+                                        <rect key="frame" x="9" y="46.5" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="eft-Xz-QRU"/>
                                             <constraint firstAttribute="width" secondItem="XNX-cV-o8z" secondAttribute="height" multiplier="1:1" id="r5V-1n-s1u"/>
@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u15-cF-cvi" userLabel="Write">
-                                        <rect key="frame" x="346.5" y="33" width="20" height="20"/>
+                                        <rect key="frame" x="346.5" y="46" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="u15-cF-cvi" secondAttribute="height" multiplier="1:1" id="3NS-AK-fZk"/>
                                             <constraint firstAttribute="width" constant="20" id="fnl-RU-kfX"/>
@@ -60,15 +60,16 @@
                                     <constraint firstItem="zaf-Ak-hjC" firstAttribute="height" secondItem="MQ2-6f-gVq" secondAttribute="height" multiplier="0.4" id="BEA-O2-cBw"/>
                                     <constraint firstItem="zaf-Ak-hjC" firstAttribute="centerX" secondItem="MQ2-6f-gVq" secondAttribute="centerX" id="Ibf-4r-M0M"/>
                                     <constraint firstItem="XNX-cV-o8z" firstAttribute="centerX" secondItem="MQ2-6f-gVq" secondAttribute="centerX" multiplier="0.1" id="T7E-oh-8lK"/>
-                                    <constraint firstItem="zaf-Ak-hjC" firstAttribute="centerY" secondItem="MQ2-6f-gVq" secondAttribute="centerY" multiplier="1.3" id="Txd-IV-unu"/>
+                                    <constraint firstItem="zaf-Ak-hjC" firstAttribute="centerY" secondItem="MQ2-6f-gVq" secondAttribute="centerY" multiplier="1.4" id="Txd-IV-unu"/>
                                     <constraint firstItem="u15-cF-cvi" firstAttribute="centerX" secondItem="MQ2-6f-gVq" secondAttribute="centerX" multiplier="1.9" id="a26-K7-xbO"/>
                                     <constraint firstItem="u15-cF-cvi" firstAttribute="width" secondItem="u15-cF-cvi" secondAttribute="height" multiplier="1:1" id="gHB-jh-qwB"/>
+                                    <constraint firstAttribute="height" constant="80" id="mso-oo-tjE"/>
                                     <constraint firstItem="u15-cF-cvi" firstAttribute="centerY" secondItem="zaf-Ak-hjC" secondAttribute="centerY" id="qEi-bO-0Ij"/>
                                     <constraint firstItem="XNX-cV-o8z" firstAttribute="centerY" secondItem="zaf-Ak-hjC" secondAttribute="centerY" id="yUt-yd-40v"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0w-p5-XPm">
-                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yec-jm-el7" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
@@ -245,7 +246,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MQ2-6f-gVq" firstAttribute="height" secondItem="UFJ-Am-JvE" secondAttribute="height" multiplier="0.1" id="2ul-Uq-cwq"/>
+                            <constraint firstItem="MQ2-6f-gVq" firstAttribute="height" secondItem="UFJ-Am-JvE" secondAttribute="height" multiplier="0.1" priority="999" id="2ul-Uq-cwq"/>
                             <constraint firstItem="MQ2-6f-gVq" firstAttribute="top" secondItem="UFJ-Am-JvE" secondAttribute="top" multiplier="0.1" id="9lD-lY-JnR"/>
                             <constraint firstItem="MQ2-6f-gVq" firstAttribute="width" secondItem="UFJ-Am-JvE" secondAttribute="width" id="FkH-yK-s3g"/>
                             <constraint firstItem="Yec-jm-el7" firstAttribute="width" secondItem="UFJ-Am-JvE" secondAttribute="width" id="YUW-xt-iUa"/>
@@ -259,10 +260,11 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="LocationAdress" destination="B7r-GH-VgB" id="q2v-09-zBu"/>
+                        <outlet property="LocationAddress" destination="B7r-GH-VgB" id="dqO-t5-T9C"/>
                         <outlet property="contentImgView" destination="SA3-cm-osn" id="JfY-bW-PIj"/>
                         <outlet property="contentTitle" destination="Rh8-J6-cId" id="eYU-95-J1N"/>
                         <outlet property="contentTxtView" destination="zM7-Md-gR6" id="Cfo-Ao-QeP"/>
+                        <outlet property="customNaviBar" destination="MQ2-6f-gVq" id="dNv-ok-U97"/>
                         <outlet property="dateLabel" destination="bI9-eU-7qR" id="8XG-i1-7mi"/>
                         <outlet property="locationTitle" destination="5Ts-CO-nbl" id="tR9-8P-X7I"/>
                         <segue destination="yhR-Za-qcU" kind="show" identifier="NewWriteViewController" id="US6-gz-xZS"/>
