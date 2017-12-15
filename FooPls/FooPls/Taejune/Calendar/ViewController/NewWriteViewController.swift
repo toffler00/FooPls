@@ -15,13 +15,13 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var selectedDate: String = ""
     var longitude: Double?
     var latitude: Double?
-    var adress: String?
+    var address: String?
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTitle: UITextField!
     @IBOutlet weak var contentImgView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
-    @IBOutlet weak var LocationAdress: UILabel!
+    @IBOutlet weak var LocationAddress: UILabel!
     @IBOutlet weak var contentTxtView: UITextView!
     
     //MARK: - Life Cycle
@@ -56,10 +56,11 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "author": self.userID!,
                                        "content": contentTxtView,
                                        "photoID": photoID,
+                                       "photoName": uuid,
                                        "locationTitle": locationTitle,
                                        "longitude": self.longitude!,
                                        "latitude": self.latitude!,
-                                       "adress": self.adress!,
+                                       "address": self.address!,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
@@ -89,16 +90,15 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         let placePicker = GMSPlacePickerViewController(config: config)
         placePicker.delegate = self
         present(placePicker, animated: true, completion: nil)
-        
+
         placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
         placePicker.navigationController?.navigationBar.isTranslucent = false
         
-        //        //구글 PlacePicker와 연결함
-        //        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
-        //        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
-        //            present(googlePicekerVC, animated: true, completion: nil)
-        //        }
-        
+        //구글 PlacePicker와 연결함
+//        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
+//        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
+//            present(googlePicekerVC, animated: true, completion: nil)
+//        }
     }
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드
@@ -107,8 +107,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         self.longitude = place.coordinate.longitude
         self.latitude = place.coordinate.latitude
         self.locationTitle.text = place.name
-        self.LocationAdress.text = place.formattedAddress
-        self.adress = place.formattedAddress
+        self.LocationAddress.text = place.formattedAddress
+        self.address = place.formattedAddress
     }
     
     @IBAction func photoSelectAction(_ sender: UIButton) {

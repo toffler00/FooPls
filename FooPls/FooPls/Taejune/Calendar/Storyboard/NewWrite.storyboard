@@ -259,7 +259,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="LocationAdress" destination="B7r-GH-VgB" id="q2v-09-zBu"/>
+                        <outlet property="LocationAddress" destination="B7r-GH-VgB" id="dqO-t5-T9C"/>
                         <outlet property="contentImgView" destination="SA3-cm-osn" id="JfY-bW-PIj"/>
                         <outlet property="contentTitle" destination="Rh8-J6-cId" id="eYU-95-J1N"/>
                         <outlet property="contentTxtView" destination="zM7-Md-gR6" id="Cfo-Ao-QeP"/>

@@ -262,14 +262,14 @@
                         <outlet property="detailContentTextView" destination="4Cc-qW-OG7" id="vZu-L4-h4R"/>
                         <outlet property="detailDateLabel" destination="4nB-iV-0qb" id="x8x-ZR-Jjx"/>
                         <outlet property="detailImgView" destination="hCq-rr-Mb1" id="TNt-ZQ-iUg"/>
-                        <outlet property="detailLocationAdressLabel" destination="0Z7-zL-tIl" id="XYX-bU-Xgd"/>
+                        <outlet property="detailLocationAddressLabel" destination="0Z7-zL-tIl" id="qQg-vr-IP4"/>
                         <outlet property="detailLocationTitleLabel" destination="4lq-M5-D8h" id="esJ-9t-eFo"/>
                         <outlet property="detailTitleTextField" destination="m4i-dn-azR" id="QfM-Zs-dCo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shd-xd-cF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34.399999999999999" y="96.7016491754123"/>
+            <point key="canvasLocation" x="-46" y="99"/>
         </scene>
     </scenes>
     <resources>

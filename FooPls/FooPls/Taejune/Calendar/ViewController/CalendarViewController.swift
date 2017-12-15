@@ -8,6 +8,7 @@ class CalendarViewController: UIViewController {
     // 사용자 정의 팝업
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
     var contentTitleList: [String] = []
+    var contentKeys: [String] = []
     weak var postDelegate: PostCellDelegate?
     
     var reference: DatabaseReference!
@@ -15,7 +16,7 @@ class CalendarViewController: UIViewController {
     let formater = DateFormatter()
     var oldDate: String = ""
     var selectedDate: String?
-    var contentArray: [String] = []
+    var contentDates: [String] = []
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
@@ -53,10 +54,10 @@ class CalendarViewController: UIViewController {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
-                    self.contentArray.append(key)
+                    self.contentKeys.append(key)
                     let date = calendarDic["date"] as! String
-                    self.contentArray.append(date)
                     print("~~~~~~~", calendarDic)
+                    self.contentDates.append(date)
                     self.calendarView.reloadData()
                 }
             }
@@ -126,7 +127,7 @@ class CalendarViewController: UIViewController {
         guard let validCell = cell as? CalendarCell else { return }
         formater.dateFormat = "yyyy년 MM월 dd일"
         let cellStateDay = formater.string(from: cellState.date)
-        if contentArray.contains(cellStateDay) {
+        if contentDates.contains(cellStateDay) {
             validCell.isContentImgView.isHidden = false
         }else {
             validCell.isContentImgView.isHidden = true

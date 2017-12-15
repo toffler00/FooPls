@@ -23,7 +23,7 @@
                 <viewControllerPlaceholder storyboardName="TJSettings" id="RCd-J1-Jzb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpI-nl-Csa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="762"/>
+            <point key="canvasLocation" x="694" y="786"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="5ta-oc-ZAf">

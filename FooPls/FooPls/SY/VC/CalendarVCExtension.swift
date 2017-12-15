@@ -84,7 +84,7 @@ extension CalendarViewController: UITableViewDelegate {
         let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
         let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
         present(detailVC, animated: true) {
-            detailVC.selectedKey = ses
+//            detailVC.selectedKey = ses
         }
  
     }

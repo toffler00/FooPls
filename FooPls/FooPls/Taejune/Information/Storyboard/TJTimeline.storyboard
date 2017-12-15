@@ -61,8 +61,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s87-5p-iEn">
-                                                    <rect key="frame" x="106" y="190" width="66" height="14"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <rect key="frame" x="106" y="191.5" width="71" height="9.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -73,12 +73,15 @@
                                                         <constraint firstAttribute="height" constant="25" id="vQE-lL-uFx"/>
                                                     </constraints>
                                                     <state key="normal" image="list"/>
+                                                    <connections>
+                                                        <action selector="deleteBtnAction:" destination="9Yy-bE-upZ" eventType="touchUpInside" id="LSg-PS-ZuY"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="s87-5p-iEn" firstAttribute="trailing" secondItem="9Yy-bE-upZ" secondAttribute="trailing" constant="-5" id="0ID-F2-16c"/>
+                                            <constraint firstItem="s87-5p-iEn" firstAttribute="trailing" secondItem="9Yy-bE-upZ" secondAttribute="trailing" id="0ID-F2-16c"/>
                                             <constraint firstItem="s87-5p-iEn" firstAttribute="leading" secondItem="qDn-d8-fZd" secondAttribute="trailing" id="5Ke-UI-c6v"/>
                                             <constraint firstAttribute="trailing" secondItem="ccP-rd-j1L" secondAttribute="trailing" constant="5" id="9pY-wF-ePe"/>
                                             <constraint firstItem="qDn-d8-fZd" firstAttribute="centerY" secondItem="9Yy-bE-upZ" secondAttribute="centerY" multiplier="1.65" id="Dzb-z9-tPA"/>
@@ -95,7 +98,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="myPostingImgVIew" destination="0xp-Xn-24y" id="vOA-TG-nIM"/>
-                                            <outlet property="postingAdress" destination="b1O-KK-gtx" id="nU5-aU-CKq"/>
+                                            <outlet property="postingAddress" destination="b1O-KK-gtx" id="cp4-kn-CJu"/>
+                                            <outlet property="postingDate" destination="s87-5p-iEn" id="dgy-o0-ede"/>
                                             <outlet property="postingTitle" destination="qDn-d8-fZd" id="38Z-BU-Xl3"/>
                                         </connections>
                                     </collectionViewCell>
