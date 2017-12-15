@@ -73,7 +73,8 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func modifyBtnAction(_ sender: CustomButton) {
-        UIAlertController.presentAlertController(target: self, title: "수정하시겠습니까?", massage: nil, cancelBtn: true) { [unowned self] (action) in
+        UIAlertController.presentAlertController(target: self, title: "수정하시겠습니까?", massage: nil, cancelBtn: true) { [weak self] (action) in
+            guard let `self` = self else { return }
             let nickname = self.nicknameTextField.text ?? ""
             let email = self.emailTextField.text ?? ""
             let phone = self.phoneTextField.text ?? ""

@@ -43,10 +43,12 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         guard let contentTxtView = contentTxtView.text else { return }
         
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "네", style: .default) { [unowned self] (action) in
+        let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
+            guard let `self` = self else { return }
             guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
             let uuid = UUID().uuidString
-            Storage.storage().reference().child("calendar_images").child(uuid).putData(uploadImg, metadata: nil, completion: { [unowned self] (metaData, error) in
+            Storage.storage().reference().child("calendar_images").child(uuid).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
+                guard let `self` = self else { return }
                 if error != nil {
                     print(error!.localizedDescription)
                 }else {
