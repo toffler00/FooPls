@@ -207,33 +207,6 @@
             </objects>
             <point key="canvasLocation" x="-290" y="1003"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="Nj0-bV-Llh">
-            <objects>
-                <viewController id="owu-Li-RJg" customClass="SK_TestViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="myw-rx-x84">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odi-4N-kDw">
-                                <rect key="frame" x="56" y="350" width="269" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="t7T-kw-TEp"/>
-                    </view>
-                    <connections>
-                        <outlet property="Label" destination="odi-4N-kDw" id="NIK-ep-esG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYF-Od-HSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="758" y="1766"/>
-        </scene>
         <!--Post View Controller-->
         <scene sceneID="xTr-ca-HZR">
             <objects>
@@ -327,7 +300,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="867-3h-r0P">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="867-3h-r0P" customClass="CustomButton" customModule="FooPls" customModuleProvider="target">
                                 <rect key="frame" x="165" y="606" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="POST!"/>
@@ -342,34 +315,36 @@
                                     <constraint firstAttribute="height" constant="340" id="OaF-Ep-IbE"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-AC-KH4" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
-                                <rect key="frame" x="62" y="438" width="250" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-AC-KH4" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
+                                <rect key="frame" x="56" y="434" width="262.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="krT-1x-5Q4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-TJ-z2b" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
-                                <rect key="frame" x="62" y="498" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-TJ-z2b" customClass="CustomLabel" customModule="FooPls" customModuleProvider="target">
+                                <rect key="frame" x="56" y="499" width="262.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kab-xL-EiK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-jB-KP1">
-                                <rect key="frame" x="313" y="606" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="owu-Li-RJg" kind="show" id="Dbs-1h-44X"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="centerX" secondItem="3IB-QE-wvZ" secondAttribute="centerX" id="5j5-Xg-pwg"/>
                             <constraint firstItem="xCl-Z3-EIi" firstAttribute="trailing" secondItem="fOg-QS-zWw" secondAttribute="trailing" id="Dd3-WH-AU5"/>
                             <constraint firstItem="xCl-Z3-EIi" firstAttribute="top" secondItem="fOg-QS-zWw" secondAttribute="top" id="O9e-Jo-f95"/>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="centerX" secondItem="3IB-QE-wvZ" secondAttribute="centerX" id="TCH-T2-YSf"/>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="width" secondItem="3IB-QE-wvZ" secondAttribute="width" multiplier="0.7" id="d2b-Gk-sAx"/>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="width" secondItem="3IB-QE-wvZ" secondAttribute="width" multiplier="0.7" id="dcb-RB-l8j"/>
+                            <constraint firstItem="GI8-AC-KH4" firstAttribute="top" secondItem="xCl-Z3-EIi" secondAttribute="bottom" constant="30" id="ekF-Wg-gmH"/>
                             <constraint firstItem="xCl-Z3-EIi" firstAttribute="leading" secondItem="fOg-QS-zWw" secondAttribute="leading" id="g1U-Jb-4IK"/>
+                            <constraint firstItem="51Z-TJ-z2b" firstAttribute="top" secondItem="GI8-AC-KH4" secondAttribute="bottom" constant="25" id="zu3-ee-N2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fOg-QS-zWw"/>
                     </view>

@@ -107,7 +107,7 @@ class SK_AutoSearchViewController: UIViewController {
         
         searchController?.hidesNavigationBarDuringPresentation = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
-        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.tintColor = .black
         
     }
     
