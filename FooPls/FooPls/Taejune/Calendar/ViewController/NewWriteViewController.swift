@@ -9,6 +9,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
     
+    weak var testDelegate: PopViewDelegate?
+    
     //MARK: - Property
     var selectedDate: String = ""
     var longitude: Double?
@@ -49,7 +51,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     print(error!.localizedDescription)
                 }else {
                     guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
-            
+                    
                     let calendarDic = ["title": contentTitle,
                                        "author": self.userID!,
                                        "content": contentTxtView,
@@ -60,8 +62,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "adress": self.adress!,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
-                    // MARK: Noti
-                    NotificationCenter.default.post(name: .reload, object: contentTitle)
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
                     let key = self.reference.child("users").childByAutoId().key
                     let postKey = NSArray(array: [key])
@@ -70,6 +70,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                 }
             })
         }
+        
         let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
         alertSheet.addAction(okAction)
         alertSheet.addAction(cancelAction)
@@ -80,23 +81,23 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     @IBAction func locationBtnAction(_ sender: UIButton) {
         
         //잠시 주석처리함.
-//        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-//        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-//        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-//        let config = GMSPlacePickerConfig(viewport: viewport)
-//        let placePicker = GMSPlacePickerViewController(config: config)
-//        placePicker.delegate = self
-//        present(placePicker, animated: true, completion: nil)
-//
-//        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-//        placePicker.navigationController?.navigationBar.isTranslucent = false
+        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
+        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
+        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
+        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        let config = GMSPlacePickerConfig(viewport: viewport)
+        let placePicker = GMSPlacePickerViewController(config: config)
+        placePicker.delegate = self
+        present(placePicker, animated: true, completion: nil)
         
-        //구글 PlacePicker와 연결함
-        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
-        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
-            present(googlePicekerVC, animated: true, completion: nil)
-        }
+        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
+        placePicker.navigationController?.navigationBar.isTranslucent = false
+        
+        //        //구글 PlacePicker와 연결함
+        //        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
+        //        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
+        //            present(googlePicekerVC, animated: true, completion: nil)
+        //        }
         
     }
     

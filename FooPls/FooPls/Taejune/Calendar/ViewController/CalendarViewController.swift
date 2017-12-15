@@ -9,6 +9,7 @@ class CalendarViewController: UIViewController {
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
     var contentTitleList: [String] = []
     weak var postDelegate: PostCellDelegate?
+    
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
@@ -37,13 +38,6 @@ class CalendarViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView(_:)))
         gesture.delegate = self
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
-        // MARK: 데이터 변경시 noti
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] (noti) in
-            guard let `self` = self else { return }
-            let contentTitle = noti.object as! String
-            self.contentTitleList.append(contentTitle)
-            self.popUpView.tableView.reloadData()
-        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +56,7 @@ class CalendarViewController: UIViewController {
                     self.contentArray.append(key)
                     let date = calendarDic["date"] as! String
                     self.contentArray.append(date)
+                    print("~~~~~~~", calendarDic)
                     self.calendarView.reloadData()
                 }
             }

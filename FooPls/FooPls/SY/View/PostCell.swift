@@ -23,6 +23,6 @@ class PostCell: UITableViewCell {
 }
 // MARK: 프로토콜
 protocol PostCellDelegate: class {
-    func selectedPostCellData(data: String)
+    func selectedPostCellData(controller: UIViewController, data: String)
 }
 
