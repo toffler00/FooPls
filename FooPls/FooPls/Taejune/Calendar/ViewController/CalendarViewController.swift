@@ -8,13 +8,15 @@ class CalendarViewController: UIViewController {
     // 사용자 정의 팝업
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
     var contentTitleList: [String] = []
+    var contentKeys: [String] = []
     weak var postDelegate: PostCellDelegate?
+    
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
     var oldDate: String = ""
     var selectedDate: String?
-    var contentArray: [String] = []
+    var contentDates: [String] = []
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
@@ -37,13 +39,6 @@ class CalendarViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopUpView(_:)))
         gesture.delegate = self
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
-        // MARK: 데이터 변경시 noti
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.reload, object: nil, queue: nil, using: { [weak self] (noti) in
-            guard let `self` = self else { return }
-            let contentTitle = noti.object as! String
-            self.contentTitleList.append(contentTitle)
-            self.popUpView.tableView.reloadData()
-        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,9 +54,10 @@ class CalendarViewController: UIViewController {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
                 for (key, calendarDic) in value {
-                    self.contentArray.append(key)
+                    print(self.contentKeys)
                     let date = calendarDic["date"] as! String
-                    self.contentArray.append(date)
+                    print("~~~~~~~", calendarDic)
+                    self.contentDates.append(date)
                     self.calendarView.reloadData()
                 }
             }
@@ -131,7 +127,7 @@ class CalendarViewController: UIViewController {
         guard let validCell = cell as? CalendarCell else { return }
         formater.dateFormat = "yyyy년 MM월 dd일"
         let cellStateDay = formater.string(from: cellState.date)
-        if contentArray.contains(cellStateDay) {
+        if contentDates.contains(cellStateDay) {
             validCell.isContentImgView.isHidden = false
         }else {
             validCell.isContentImgView.isHidden = true
@@ -174,10 +170,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
                 self.contentTitleList.removeAll()
                 if let value = snapshot.value as? [String : [String: Any]] {
                     print(value) // 원하는 시점에 불리는지 확인
-                    for (_, calendarDic) in value {
+                    for (key, calendarDic) in value {
                         guard let date = calendarDic["date"] as? String else { return }
                         if date == self.selectedDate {
                             guard let title = calendarDic["title"] as? String else { return }
+                            guard let key = key as? String else { return }
+                            self.contentKeys.insert(key, at: 0)
                             self.contentTitleList.insert(title, at: 0)
                         }
                     }
@@ -200,7 +198,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     }
     //MARK: - 아직은 잘 모름
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        
     }
     
     //MARK: - 스크롤 했을 때 보이는 날짜정보를 업데이트 하기 위한 메소드 (스크롤을 했을 때 불림)

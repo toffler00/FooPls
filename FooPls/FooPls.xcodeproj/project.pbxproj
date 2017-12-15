@@ -48,6 +48,8 @@
 		234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234302E71FD63B9200501C46 /* TJCalendar.storyboard */; };
 		234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234302E91FD63BB200501C46 /* CalendarViewController.swift */; };
 		23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB811FD525C000B993C9 /* SKMain.storyboard */; };
+		23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */; };
+		23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
 		62E1FF531FD924BF00E1FEAE /* Ih_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF401FD924BF00E1FEAE /* Ih_Main.storyboard */; };
@@ -131,6 +133,8 @@
 		234302E91FD63BB200501C46 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		237379AD1FCEE4F200F5351E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23B317981FCFF7E600C0A078 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJDetailTimeline.storyboard; sourceTree = "<group>"; };
+		23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJDetailTimelineViewController.swift; sourceTree = "<group>"; };
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_Posting.storyboard; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
 				230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */,
 				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
+				23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */,
 				230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */,
 				230EDD801FDFC58F00FF26CC /* TJListViewController.swift */,
 				230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */,
@@ -311,6 +316,7 @@
 				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
 				230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */,
 				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
+				23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */,
 				230EDD781FDFC54000FF26CC /* TJLike.storyboard */,
 				230EDD7A1FDFC55900FF26CC /* TJList.storyboard */,
 				230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */,
@@ -687,6 +693,7 @@
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
+				23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */,
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
 				232D49FA1FDE507C0094DA1A /* TJTimeline.storyboard in Resources */,
@@ -812,6 +819,8 @@
 				230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */,
 				FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */,
 				FCED14DC1FE2B6EF002C776F /* SK_TestViewController.swift in Sources */,
+				23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */,
+
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,

@@ -17,10 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         FirebaseApp.configure()
-//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//        FBSDKApplicationDelegate.initialize()
         // Facebook Login
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         GMSServices.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
@@ -39,11 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         return false
     }
-    
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-//        let faceBook = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-        return true
-    }
 
     func applicationWillResignActive(_ application: UIApplication) {
     }
@@ -57,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         KOSession.handleDidBecomeActive()
-//        FBSDKAppEvents.activateApp()
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
