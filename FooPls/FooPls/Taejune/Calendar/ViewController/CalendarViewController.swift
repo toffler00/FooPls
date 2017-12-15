@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController {
     var selectedDate: String?
     var contentDates: [String] = []
     
+    @IBOutlet weak var customNaviBar: UIView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
@@ -30,6 +31,7 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         reference = Database.database().reference()
         userID = Auth.auth().currentUser?.uid
         loadDate()
@@ -46,6 +48,11 @@ class CalendarViewController: UIViewController {
         setupCalendar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(customNaviBar.frame.height)
+    }
+    
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
         self.popUpView.alpha = 0
     }
@@ -53,10 +60,8 @@ class CalendarViewController: UIViewController {
     private func loadDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
-                for (key, calendarDic) in value {
-                    print(self.contentKeys)
+                for (_, calendarDic) in value {
                     let date = calendarDic["date"] as! String
-                    print("~~~~~~~", calendarDic)
                     self.contentDates.append(date)
                     self.calendarView.reloadData()
                 }
