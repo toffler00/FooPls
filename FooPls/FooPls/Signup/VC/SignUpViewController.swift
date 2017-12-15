@@ -78,17 +78,25 @@ class SignUpViewController: UIViewController {
                 guard let `self` = self else { return }
                 if error == nil && user != nil {
                     let userNickname = user?.displayName ?? ""
-                    let userDictionary : [String: Any] = ["email": email, "nickname": userNickname]
-                    self.reference.child("users").child(user!.uid).setValue(userDictionary)
-                    UIAlertController.presentAlertController(target: self,
-                                                             title: "가입축하",
-                                                             massage: "가입을 축하드립니다.",
-                                                             actionStyle: .default,
-                                                             cancelBtn: false,
-                                                             completion: { _ in
-                                                                
-                                                                self.performSegue(withIdentifier: "mainSegue", sender: nil)
-                                                                
+                    let defaultProfile = UIImage(named: "defaultProfile")
+                    let uploadImg = UIImageJPEGRepresentation(defaultProfile!, 0.3)
+                    Storage.storage().reference().putData(uploadImg!, metadata: nil, completion: { [weak self] (metadata, error) in
+                        guard let `self` = self else { return }
+                        if error != nil {
+                            print(error!.localizedDescription)
+                        }else {
+                            guard let profilePhotoID = metadata?.downloadURL()?.absoluteString else { return }
+                            let userDictionary : [String: Any] = ["email": email, "nickname": userNickname, "phone" : "", "profilePhotoID": profilePhotoID]
+                            self.reference.child("users").child(user!.uid).setValue(userDictionary)
+                            UIAlertController.presentAlertController(target: self,
+                                                                     title: "가입축하",
+                                                                     massage: "가입을 축하드립니다.",
+                                                                     actionStyle: .default,
+                                                                     cancelBtn: false,
+                                                                     completion: { _ in
+                                                                        self.performSegue(withIdentifier: "mainSegue", sender: nil)
+                            })
+                        }
                     })
                 }
             })

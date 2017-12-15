@@ -42,6 +42,7 @@ class PopView: UIView {
 protocol PopViewDelegate: class {
     func popUpWritingDelegate(date: String)
     func postWritingButton(button: UIButton)
+//    func editingPostData(_ controller: UIViewController, data: String)
 }
 
 

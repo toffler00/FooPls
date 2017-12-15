@@ -1,10 +1,3 @@
-//
-//  TJSettingViewController.swift
-//  FooPls
-//
-//  Created by SIMA on 2017. 12. 13..
-//  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
-//
 
 import UIKit
 

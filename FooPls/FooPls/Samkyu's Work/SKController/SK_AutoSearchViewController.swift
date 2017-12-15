@@ -35,7 +35,7 @@ class SK_AutoSearchViewController: UIViewController {
         
         makeGoogleSearchBar()
         startGoogleMap()
-        view.backgroundColor = UIColor(red: 248/255, green: 239/255, blue: 106/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 250/255, green: 239/255, blue: 75/255, alpha: 1)
     }
     
     @IBAction func postToFirebase(_ sender: Any) {
