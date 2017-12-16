@@ -214,17 +214,12 @@ extension LoginViewController : LoginButtonDelegate{
         default:
             break
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-=======
->>>>>>> a86e535cbf16f61f4651a3522435663487d051d3
-        
-=======
->>>>>>> 086b616360af71fc8de9cf39ab78dfdbd7aec4fb
-    }
+//    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+//
+//    }
 }
 
 // MARK: UITextFieldDelegate

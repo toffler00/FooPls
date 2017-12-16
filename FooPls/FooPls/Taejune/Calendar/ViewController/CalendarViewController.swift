@@ -59,21 +59,10 @@ class CalendarViewController: UIViewController {
     private func loadDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String : [String: Any]] {
-<<<<<<< HEAD
-                for (key, calendarDic) in value {
-<<<<<<< HEAD
-                    print(key)
-                    guard let date = calendarDic["date"] as? String else {return}
-=======
-                    self.contentArray.append(key)
-                    let date = calendarDic["date"] as! String
->>>>>>> a86e535cbf16f61f4651a3522435663487d051d3
-                    self.contentArray.append(date)
-=======
+
                 for (_, calendarDic) in value {
-                    let date = calendarDic["date"] as! String
+                    guard let date = calendarDic["date"] as? String else {return}
                     self.contentDates.append(date)
->>>>>>> 086b616360af71fc8de9cf39ab78dfdbd7aec4fb
                     self.calendarView.reloadData()
                 }
             }
