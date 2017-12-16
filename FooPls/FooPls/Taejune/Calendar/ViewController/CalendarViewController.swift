@@ -50,7 +50,6 @@ class CalendarViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(customNaviBar.frame.height)
     }
     
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
@@ -178,7 +177,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         formater.dateFormat = "yyyy년 MM월 dd일"
         selectedDate = formater.string(from: date)
-        print("같은 날짜가 찍혔습니다.", selectedDate!, oldDate)
         // 데이트를 선택하면 그 날짜에 해당하는 데이터가 테이블 뷰에 나타남
         if oldDate == selectedDate {
             self.reference.child("users").child(self.userID!).child("calendar").queryOrdered(byChild: "date").queryEqual(toValue: self.selectedDate).observe(.value, with: { [weak self] (snapshot) in

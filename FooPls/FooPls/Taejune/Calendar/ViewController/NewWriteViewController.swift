@@ -3,7 +3,14 @@ import UIKit
 import Firebase
 import GooglePlacePicker
 
-class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate{
+class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
+    
+    let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
+    var autoNavi: UINavigationController?
+    var autoVC: SK_AutoSearchViewController?
+    
+    
+    var sample:String?
     
     //MARK: - Firebase
     var reference = Database.database().reference()
@@ -29,12 +36,16 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabel.text = selectedDate
+        
+        //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
+        autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
+        autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
+        autoVC?.delegate = self
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(view.frame.height)
-        print(customNaviBar.frame.height)
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -87,28 +98,37 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         present(alertSheet, animated: true, completion: nil)
     }
     
+
     //MARK: - 장소 버튼을 누르면 GooglePlacePickerController로 들어감
     @IBAction func locationBtnAction(_ sender: UIButton) {
         
         //잠시 주석처리함.
-        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-        let config = GMSPlacePickerConfig(viewport: viewport)
-        let placePicker = GMSPlacePickerViewController(config: config)
-        placePicker.delegate = self
-        present(placePicker, animated: true, completion: nil)
-
-        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-        placePicker.navigationController?.navigationBar.isTranslucent = false
+//        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
+//        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
+//        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
+//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+//        let config = GMSPlacePickerConfig(viewport: viewport)
+//        let placePicker = GMSPlacePickerViewController(config: config)
+//        placePicker.delegate = self
+//        present(placePicker, animated: true, completion: nil)
+//
+//        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
+//        placePicker.navigationController?.navigationBar.isTranslucent = false
         
         //구글 PlacePicker와 연결함
-//        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
-//        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
-//            present(googlePicekerVC, animated: true, completion: nil)
-//        }
+
+        present(autoNavi!, animated: true, completion: nil)
+        
+        
     }
+    
+    //GooglePickerView에 있는 값을 Delegate값으로 가져옴
+    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+        print("불림?")
+        locationTitle.text = placeName
+    }
+    
+    
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드
     func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
@@ -137,7 +157,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - 장소를 선택하지 않았을 때 실행하는 메소드
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
         viewController.dismiss(animated: true, completion: nil)
-        print("장소가 선택되지 않았습니다.")
     }
 }
 
