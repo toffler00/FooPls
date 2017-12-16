@@ -4,11 +4,16 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 
+protocol  SendSelectedCellIntfo {
+    func selectedCellInfo(nickName : String, uid : String)
+}
 
-class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
+    var delegate : SendSelectedCellIntfo?
     // MARK: - Variable
-
+    
+    
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var cell : CustomCell!
@@ -24,7 +29,9 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
-    
+    func sendToDetailPageView() {
+        delegate?.selectedCellInfo(nickName: "toffler", uid: "uid")
+    }
     //MARK: - loadData To Main CollectionView
     func loadDataToMainCollectionView() {
         print("self.postData.count")
@@ -53,7 +60,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: (view.frame.width - 24) / 2, height: 216)
+        let size = CGSize(width: (view.frame.width - 24) / 2, height: 240)
         return size
     }
     
@@ -87,16 +94,30 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        toDetailPage()
-    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+       
+        
+        
+        
+        print("이건불림?")
+//        if let nextVC = segue.destination as? DetailPageView {
+//            for temp in self.postData {
+//                nextVC.postData.append(temp)
+//            }
+//        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("불림?")
+       
+    }
+  
     // CollectionView Delegate & Datasource_End
     
     func toDetailPage() {
         //need data list : nickname , adress, date, content, image
-        
         
         performSegue(withIdentifier: "ToDetailContent", sender: self)
     }
