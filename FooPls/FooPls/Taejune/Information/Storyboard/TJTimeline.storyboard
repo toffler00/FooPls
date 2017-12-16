@@ -28,7 +28,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QQJ-k9-W0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nEQ-Ss-mjc">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="nEQ-Ss-mjc">
                                     <size key="itemSize" width="177" height="238"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -49,34 +49,57 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이틀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-d8-fZd">
-                                                    <rect key="frame" x="0.0" y="187.5" width="177" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <rect key="frame" x="0.0" y="188" width="106" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1O-KK-gtx">
-                                                    <rect key="frame" x="0.0" y="213.5" width="177" height="14"/>
+                                                    <rect key="frame" x="0.0" y="213.5" width="124" height="14"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s87-5p-iEn">
+                                                    <rect key="frame" x="106" y="191.5" width="71" height="9.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccP-rd-j1L">
+                                                    <rect key="frame" x="147" y="208" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ccP-rd-j1L" secondAttribute="height" multiplier="1:1" id="XaJ-r6-v86"/>
+                                                        <constraint firstAttribute="height" constant="25" id="vQE-lL-uFx"/>
+                                                    </constraints>
+                                                    <state key="normal" image="list"/>
+                                                    <connections>
+                                                        <action selector="deleteBtnAction:" destination="9Yy-bE-upZ" eventType="touchUpInside" id="LSg-PS-ZuY"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="s87-5p-iEn" firstAttribute="trailing" secondItem="9Yy-bE-upZ" secondAttribute="trailing" id="0ID-F2-16c"/>
+                                            <constraint firstItem="s87-5p-iEn" firstAttribute="leading" secondItem="qDn-d8-fZd" secondAttribute="trailing" id="5Ke-UI-c6v"/>
+                                            <constraint firstAttribute="trailing" secondItem="ccP-rd-j1L" secondAttribute="trailing" constant="5" id="9pY-wF-ePe"/>
                                             <constraint firstItem="qDn-d8-fZd" firstAttribute="centerY" secondItem="9Yy-bE-upZ" secondAttribute="centerY" multiplier="1.65" id="Dzb-z9-tPA"/>
                                             <constraint firstAttribute="trailing" secondItem="0xp-Xn-24y" secondAttribute="trailing" id="L81-Dy-QwP"/>
-                                            <constraint firstItem="qDn-d8-fZd" firstAttribute="width" secondItem="9Yy-bE-upZ" secondAttribute="width" id="PHf-fO-hvy"/>
+                                            <constraint firstItem="qDn-d8-fZd" firstAttribute="width" secondItem="9Yy-bE-upZ" secondAttribute="width" multiplier="0.6" id="PHf-fO-hvy"/>
+                                            <constraint firstItem="ccP-rd-j1L" firstAttribute="centerY" secondItem="b1O-KK-gtx" secondAttribute="centerY" id="Rer-qW-V2h"/>
                                             <constraint firstItem="0xp-Xn-24y" firstAttribute="top" secondItem="9Yy-bE-upZ" secondAttribute="top" id="d1f-hO-mZl"/>
-                                            <constraint firstItem="qDn-d8-fZd" firstAttribute="centerX" secondItem="9Yy-bE-upZ" secondAttribute="centerX" id="j04-RE-9ZB"/>
+                                            <constraint firstItem="qDn-d8-fZd" firstAttribute="centerX" secondItem="9Yy-bE-upZ" secondAttribute="centerX" multiplier="0.6" id="j04-RE-9ZB"/>
                                             <constraint firstItem="b1O-KK-gtx" firstAttribute="centerY" secondItem="9Yy-bE-upZ" secondAttribute="centerY" multiplier="1.85" id="jXg-o0-CmF"/>
-                                            <constraint firstItem="b1O-KK-gtx" firstAttribute="centerX" secondItem="9Yy-bE-upZ" secondAttribute="centerX" id="kUR-3M-CBj"/>
-                                            <constraint firstItem="b1O-KK-gtx" firstAttribute="width" secondItem="9Yy-bE-upZ" secondAttribute="width" id="pgK-px-Xvn"/>
+                                            <constraint firstItem="b1O-KK-gtx" firstAttribute="centerX" secondItem="9Yy-bE-upZ" secondAttribute="centerX" multiplier="0.7" id="kUR-3M-CBj"/>
+                                            <constraint firstItem="b1O-KK-gtx" firstAttribute="width" secondItem="9Yy-bE-upZ" secondAttribute="width" multiplier="0.7" id="pgK-px-Xvn"/>
+                                            <constraint firstItem="s87-5p-iEn" firstAttribute="centerY" secondItem="qDn-d8-fZd" secondAttribute="centerY" id="tM7-Un-iTZ"/>
                                             <constraint firstItem="0xp-Xn-24y" firstAttribute="leading" secondItem="9Yy-bE-upZ" secondAttribute="leading" id="uf5-gK-bdA"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="myPostingImgVIew" destination="0xp-Xn-24y" id="vOA-TG-nIM"/>
-                                            <outlet property="postingAdress" destination="b1O-KK-gtx" id="nU5-aU-CKq"/>
+                                            <outlet property="postingAddress" destination="b1O-KK-gtx" id="cp4-kn-CJu"/>
+                                            <outlet property="postingDate" destination="s87-5p-iEn" id="dgy-o0-ede"/>
                                             <outlet property="postingTitle" destination="qDn-d8-fZd" id="38Z-BU-Xl3"/>
                                         </connections>
                                     </collectionViewCell>
@@ -100,14 +123,24 @@
                     <size key="freeformSize" width="375" height="330"/>
                     <connections>
                         <outlet property="myPostingCollectionView" destination="QQJ-k9-W0Q" id="Lq5-sU-sfj"/>
+                        <segue destination="xzX-O9-x6N" kind="presentation" identifier="TJDetailTimeline" id="Piy-7I-VN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgI-sJ-wgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="149.59999999999999" y="155.62218890554723"/>
         </scene>
+        <!--TJDetailTimeline-->
+        <scene sceneID="jvE-dn-vcv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TJDetailTimeline" id="xzX-O9-x6N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEq-I1-uTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="156"/>
+        </scene>
     </scenes>
     <resources>
         <image name="food1" width="564" height="792"/>
+        <image name="list" width="300" height="300"/>
     </resources>
 </document>

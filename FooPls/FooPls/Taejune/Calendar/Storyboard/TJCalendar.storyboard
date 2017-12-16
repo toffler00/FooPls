@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cm1-tt-yxf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cm1-tt-yxf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeP-qJ-yeh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooPls" translatesAutoresizingMaskIntoConstraints="NO" id="1Dz-uM-ty3">
-                                        <rect key="frame" x="131.5" y="30.5" width="112.5" height="26.5"/>
+                                        <rect key="frame" x="131.5" y="40.5" width="112.5" height="31.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOl-SK-8hE">
-                                        <rect key="frame" x="339.5" y="28.5" width="30" height="30"/>
+                                        <rect key="frame" x="339.5" y="41.5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Nei-Vz-e4D"/>
                                             <constraint firstAttribute="height" constant="30" id="lSM-KP-GDL"/>
@@ -43,19 +43,20 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="XOl-SK-8hE" firstAttribute="centerX" secondItem="QeP-qJ-yeh" secondAttribute="centerX" multiplier="1.89" id="5cg-gw-Q2J"/>
                                     <constraint firstItem="1Dz-uM-ty3" firstAttribute="centerX" secondItem="QeP-qJ-yeh" secondAttribute="centerX" id="QjN-IF-gpQ"/>
-                                    <constraint firstItem="1Dz-uM-ty3" firstAttribute="centerY" secondItem="QeP-qJ-yeh" secondAttribute="centerY" multiplier="1.3" id="WIl-7T-ck6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Sq8-ZO-tH3"/>
+                                    <constraint firstItem="1Dz-uM-ty3" firstAttribute="centerY" secondItem="QeP-qJ-yeh" secondAttribute="centerY" multiplier="1.4" id="WIl-7T-ck6"/>
                                     <constraint firstItem="1Dz-uM-ty3" firstAttribute="width" secondItem="QeP-qJ-yeh" secondAttribute="width" multiplier="0.3" id="WO0-8K-RV2"/>
                                     <constraint firstItem="1Dz-uM-ty3" firstAttribute="height" secondItem="QeP-qJ-yeh" secondAttribute="height" multiplier="0.4" id="eFO-QF-iS2"/>
                                     <constraint firstItem="XOl-SK-8hE" firstAttribute="centerY" secondItem="1Dz-uM-ty3" secondAttribute="centerY" id="ocF-8E-Ieh"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUS-Lx-vTn">
-                                <rect key="frame" x="0.0" y="67" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년 1월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb8-xj-dLQ">
                                         <rect key="frame" x="-0.5" y="0.0" width="375" height="40"/>
@@ -75,7 +76,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-kx-d3y">
-                                <rect key="frame" x="0.0" y="107" width="375" height="511"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ccn-ud-Jst">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -129,7 +130,7 @@
                                         </constraints>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lSr-Ce-ohA" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="481"/>
+                                        <rect key="frame" x="0.0" y="30" width="375" height="468"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Hb-dP-a6c">
                                             <size key="itemSize" width="53.57" height="79.25"/>
@@ -215,7 +216,7 @@
                             <constraint firstItem="QeP-qJ-yeh" firstAttribute="top" secondItem="06U-QR-Z10" secondAttribute="top" multiplier="0.1" id="nS9-Eb-vgx"/>
                             <constraint firstItem="b0o-R6-RhR" firstAttribute="bottom" secondItem="vgY-kx-d3y" secondAttribute="bottom" id="o4S-nF-k6I"/>
                             <constraint firstItem="vgY-kx-d3y" firstAttribute="top" secondItem="UUS-Lx-vTn" secondAttribute="bottom" id="qPa-ar-Zzn"/>
-                            <constraint firstItem="QeP-qJ-yeh" firstAttribute="height" secondItem="06U-QR-Z10" secondAttribute="height" multiplier="0.1" id="t0E-BO-V07"/>
+                            <constraint firstItem="QeP-qJ-yeh" firstAttribute="height" secondItem="06U-QR-Z10" secondAttribute="height" multiplier="0.1" priority="999" id="t0E-BO-V07"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0o-R6-RhR"/>
                     </view>
@@ -223,6 +224,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="lSr-Ce-ohA" id="qB9-i0-ecD"/>
+                        <outlet property="customNaviBar" destination="QeP-qJ-yeh" id="nmN-5X-cUc"/>
                         <outlet property="yearMonthLb" destination="Pb8-xj-dLQ" id="dsy-CM-eV6"/>
                         <segue destination="28d-cd-HdP" kind="presentation" identifier="NewWrite" id="SCb-AO-cGW"/>
                     </connections>
@@ -237,7 +239,7 @@
                 <viewControllerPlaceholder storyboardName="NewWrite" id="28d-cd-HdP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbc-7e-zJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="-400.29985007496254"/>
+            <point key="canvasLocation" x="439" y="-288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xqk-55-2dJ">

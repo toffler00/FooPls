@@ -164,13 +164,22 @@ class LoginViewController: UIViewController {
             guard let `self` = self else { return }
             let userEmail = user?.email ?? ""
             let userNickname = user?.displayName ?? ""
-            let userDic = ["email": userEmail, "nickname": userNickname]
-            if let authError = error {
-                print("authError",authError)
-            } else {
-                self.reference.child("users").child(user!.uid).setValue(userDic)
-                self.performSegue(withIdentifier: "mainSegue", sender: self)
-            }
+            let defaultProfile = UIImage(named: "defaultProfile")
+            let uploadImg = UIImageJPEGRepresentation(defaultProfile!, 0.3)
+            Storage.storage().reference().putData(uploadImg!, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }else {
+                    guard let profilePhotoID = metadata?.downloadURL()?.absoluteString else { return }
+                    let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "profilePhotoID": profilePhotoID]
+                    if let authError = error {
+                        print("authError",authError)
+                    } else {
+                        self.reference.child("users").child(user!.uid).setValue(userDic)
+                        self.performSegue(withIdentifier: "mainSegue", sender: self)
+                    }
+                }
+            })
         }
     }
 }
@@ -191,27 +200,28 @@ extension LoginViewController : LoginButtonDelegate{
             Auth.auth().signIn(with: credentials, completion: { (user, error) in
                 if error == nil, user != nil{
                     let userEmail = user?.email ?? ""
-                    let userDic = ["email" : userEmail]
+                    let userNickname = user?.displayName ?? ""
+                    let userDic = ["email": userEmail, "nickname": userNickname, "phone": ""]
                     self.reference.child("users").child(user!.uid).setValue(userDic)
                 }else{
                     if let errors = error {
                         print(errors.localizedDescription)
                         return
                     }
-
                 }
             })
             self.performSegue(withIdentifier: "mainSegue", sender: self)
         default:
             break
         }
+
+
     }
     
 //    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
 //
-//        
 //    }
-    
+
 }
 
 // MARK: UITextFieldDelegate
