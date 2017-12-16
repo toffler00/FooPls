@@ -38,7 +38,7 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     //MARK: fetchassets Option
    fileprivate func fetchOptions() -> PHFetchOptions {
         let fetchOptions = PHFetchOptions()
-        fetchOptions.fetchLimit = 10
+        fetchOptions.fetchLimit = 20
         return fetchOptions
     }
 
@@ -95,6 +95,7 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         
         header.photoImgView.image = selectImg
         
+        
         if let selectImg = selectImg {
             if let index = self.photos.index(of: selectImg) {
                 let selectasset = self.assets[index]
@@ -139,10 +140,6 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     
     // MARK: UICollectionViewDelegate
 
-//    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectImg = photos[indexPath.item]
         self.collectionView?.reloadData()
@@ -151,6 +148,9 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         
     }
     
+    override func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

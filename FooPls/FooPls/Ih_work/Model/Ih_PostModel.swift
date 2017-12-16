@@ -13,7 +13,7 @@ struct  PostModel {
     
     //MARK : - Variable
     var storeName : String
-    var storeAdress : String
+    var storeAddress : String
     
     
     var storeLati : Double?
@@ -32,23 +32,23 @@ struct  PostModel {
     
     var postData : [PostModel] = []
     
-    init(storeName : String, storeAdress : String,
+    init(storeName : String, storeAddress : String,
          contentText : String, storeImgUrl : String){
         self.storeName = storeName
-        self.storeAdress = storeAdress
+        self.storeAddress = storeAddress
         self.contentsText = contentText
         self.storeImgUrl = storeImgUrl
     }
-    init(storeName : String, StoreAdress : String, contentText : String, storeImg : UIImage) {
+    init(storeName : String, StoreAddress : String, contentText : String, storeImg : UIImage) {
         self.storeName = storeName
-        self.storeAdress = StoreAdress
+        self.storeAddress = StoreAddress
         self.contentsText = contentText
         self.storeImg = storeImg
     }
     
     mutating func addPostInfo(widh dic : (key : String, value: String)){
         self.storeName = dic.value
-        self.storeAdress = dic.value
+        self.storeAddress = dic.value
         self.storeImgUrl = dic.value
         self.contentsText = dic.value
     }

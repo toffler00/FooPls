@@ -120,7 +120,6 @@ class SK_AutoSearchViewController: UIViewController {
         delegate?.positinData(lati: latitude!, longi: longitudue!, address: adress!, placeName: placeName!)
         dismiss(animated: true, completion: nil)
         
-        
     }
     
 }

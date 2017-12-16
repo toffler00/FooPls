@@ -322,7 +322,7 @@
         <!--Auto Search View Controller-->
         <scene sceneID="nc0-Ng-2E4">
             <objects>
-                <viewController id="xgl-bk-aAc" customClass="SK_AutoSearchViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AutoSearch" id="xgl-bk-aAc" customClass="SK_AutoSearchViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3IB-QE-wvZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -214,13 +214,15 @@ extension LoginViewController : LoginButtonDelegate{
         default:
             break
         }
+
     }
 
     
 //    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
 //
-//        
+
 //    }
+
 
 }
 
