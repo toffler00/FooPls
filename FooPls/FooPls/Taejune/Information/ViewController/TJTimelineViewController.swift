@@ -52,7 +52,7 @@ class TJTimelineViewController: UIViewController {
         }
     }
     
-    //MARK: - 자기가 쓴 글을 지우는데 지운 후에 다시 데이터를 로드할 때 순서가 가끔씩 뒤바뀜
+    //MARK: - 자기가 쓴 글을 지우는데 지운 후에 다시 데이터를 로드할 때 순서가 가끔씩 뒤바뀜, 지울 때 Storage에 있는 사진 파일도 삭제 해야 함
     @IBAction func deleteBtnAction(_ sender: UIButton) {
         let alertSheet = UIAlertController(title: "삭제", message: "정말로 삭제하시겠습니끼?", preferredStyle: UIAlertControllerStyle.actionSheet)
         let okAction = UIAlertAction(title: "예", style: .default) { [weak self]  (action) in
@@ -90,8 +90,6 @@ extension TJTimelineViewController: UICollectionViewDataSource {
 extension TJTimelineViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedKey = myPostingIndex[indexPath.item]
-        
-        
         performSegue(withIdentifier: "TJDetailTimeline", sender: nil)
         
     }
