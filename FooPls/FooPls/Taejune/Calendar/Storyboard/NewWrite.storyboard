@@ -267,6 +267,7 @@
                         <outlet property="customNaviBar" destination="MQ2-6f-gVq" id="dNv-ok-U97"/>
                         <outlet property="dateLabel" destination="bI9-eU-7qR" id="8XG-i1-7mi"/>
                         <outlet property="locationTitle" destination="5Ts-CO-nbl" id="tR9-8P-X7I"/>
+                        <outlet property="writeScrollView" destination="r0w-p5-XPm" id="6cm-el-3xi"/>
                         <segue destination="yhR-Za-qcU" kind="show" identifier="NewWriteViewController" id="US6-gz-xZS"/>
                     </connections>
                 </viewController>

@@ -9,7 +9,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var autoNavi: UINavigationController?
     var autoVC: SK_AutoSearchViewController?
     
-    
+    //이건 어디에 쓰이는거지?
     var sample:String?
     
     //MARK: - Firebase
@@ -24,6 +24,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var latitude: Double?
     var address: String?
     
+    @IBOutlet weak var writeScrollView: UIScrollView!
     @IBOutlet weak var customNaviBar: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTitle: UITextField!
@@ -36,7 +37,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabel.text = selectedDate
-        
+        writeScrollView.bounces = false
         //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
@@ -55,10 +56,17 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     
     //MARK: - 글쓰기 버튼
     @IBAction func writeBtnAction(_ sender: UIButton) {
-        guard let contentTitle = contentTitle.text else { return }
+        guard let contentTitle = contentTitle.text else {
+            UIAlertController.presentAlertController(target: self, title: "제목을 입력해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
+            return
+        }
         guard let _ = contentImgView.image else { return }
         guard let locationTitle = locationTitle.text else { return }
         guard let contentTxtView = contentTxtView.text else { return }
+        guard let longitude = self.longitude, let latitude = self.latitude, let address = self.address else {
+            UIAlertController.presentAlertController(target: self, title: "장소를 선택해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
+            return
+        }
         
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
@@ -78,13 +86,16 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "photoID": photoID,
                                        "photoName": uuid,
                                        "locationTitle": locationTitle,
-                                       "longitude": self.longitude!,
-                                       "latitude": self.latitude!,
-                                       "address": self.address!,
+                                       "longitude": longitude,
+                                       "latitude": latitude,
+                                       "address": address,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
+                    
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
+                    
                     let key = self.reference.child("users").childByAutoId().key
+                    
                     let postKey = NSArray(array: [key])
                     self.reference.child("posts").setValue(postKey)                    
                     self.dismiss(animated: true, completion: nil)
