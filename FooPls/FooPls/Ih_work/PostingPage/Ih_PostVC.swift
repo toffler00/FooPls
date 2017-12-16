@@ -1,15 +1,22 @@
 
 import UIKit
+import GooglePlaces
+import GoogleMaps
 import Photos
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 class PostVC: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate, ImagePickerDelegate {
+UINavigationControllerDelegate, ImagePickerDelegate, GooglePlaceDataDelegate {
     
     
-
+    //MARK: - UI
+    var postPageScrollView : UIScrollView = {
+        let scroll = UIScrollView()
+        return scroll
+    }()
     
-    //MARK: - Property
     var addImageBtn : UIButton = {
         let btn = UIButton()
         btn.addTarget(self, action: #selector(selectImg(sender:)), for: .touchUpInside)
@@ -35,7 +42,7 @@ UINavigationControllerDelegate, ImagePickerDelegate {
         let nameTF = UITextField()
         return nameTF
     }()
-   
+    
     
     var storeAdressLb : UILabel = {
         let adressLb = UILabel()
@@ -49,6 +56,7 @@ UINavigationControllerDelegate, ImagePickerDelegate {
     
     var toSearchBtn : UIButton = {
         let sbtn = UIButton()
+        sbtn.addTarget(self, action: #selector(presentGplace), for: .touchUpInside)
         return sbtn
     }()
     
@@ -57,16 +65,15 @@ UINavigationControllerDelegate, ImagePickerDelegate {
         done.addTarget(self, action: #selector(handlerDone), for: .touchUpInside)
         return done
     }()
-
+    
     var backToMainBtn : UIButton = {
         let back = UIButton()
         back.addTarget(self, action: #selector(handlerBack), for: .touchUpInside)
         return back
     }()
+
     
-    var dataCenter : DataCenter!
-    var userInfo = Auth.auth().currentUser
-    
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var postHeader: UIView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet var postImgView: UIImageView!
@@ -74,11 +81,23 @@ UINavigationControllerDelegate, ImagePickerDelegate {
     @IBOutlet weak var storeNameBackView: UIView!
     @IBOutlet weak var contentBackView: UIView!
     
+    //MARK : - variable
+    var dataCenter : DataCenter!
+    var userInfo = Auth.auth().currentUser
     
+    
+
+
+    
+    //MARK : rifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         hideKeyboardWhenTappedAround()
+        NotificationCenter.default.addObserver(self, selector: #selector(kyeboardAppear(_:)), name: .UIKeyboardWillShow , object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(_:)), name: .UIKeyboardDidHide, object: nil)
+       
     }
     
     // MARK: - show Photolibrary
@@ -88,9 +107,19 @@ UINavigationControllerDelegate, ImagePickerDelegate {
         let navi = UINavigationController(rootViewController: imagePicker)
         imagePicker.delegate = self
         present(navi, animated: true, completion: nil)
+        print("DDDDDD")
     }
     
+    @objc func presentGplace() {
+        presentAutoSearch()
+        
+        
+    }
     
+    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+       storeNameTF.text = placeName
+       adressLb.text = address
+    }
     
     // MARK: image pick Delegate
     func photoSelected(_ seletedImges: UIImage) {
@@ -110,30 +139,101 @@ UINavigationControllerDelegate, ImagePickerDelegate {
     // MARK: Post upload
     @objc func handlerDone() {
         guard let uid = userInfo?.uid else {return}
-        guard let image = postImgView.image, let name = storeNameTF.text,
-            let adress = storeAdressLb.text, let contents = contentTextview.text else {return}
-        DispatchQueue.main.async {
-            self.dataCenter?.postUpload(uid: uid, storeimg: image, storeName: name, storeAdress: adress, contents: contents)
+        guard let name = storeNameTF.text, let adress = adressLb.text, let content = contentTextview.text,
+            let image = postImgView.image else {return}
+        let img = UIImageJPEGRepresentation(image, 0.5)
+        let autoID = NSUUID().uuidString
+        Storage.storage().reference().child(uid).child(autoID).putData(img!, metadata: nil)
+        { (metadata, error) in
+            guard let imgUrl = metadata?.downloadURL()?.absoluteString
+                else {return}
+            let dic = ["storename" : name,
+                       "storeaddress" : adress,
+                       "content" : content,
+                       "imageurl" : imgUrl] as [String : Any]
+            Database.database().reference().child("users").child(uid).child("posts")
+                .childByAutoId().updateChildValues(dic) { (error, ref) in
+                    if error != nil {
+                        print(error.debugDescription)
+                    }else {
+                        print("업로드성공")
+                    }
+            }
         }
-        self.dismiss(animated: true, completion: nil)
+    
+    }
+    func toProfilePage() {
+        
     }
     
     @objc func handlerBack() {
-        dismiss(animated: true, completion: nil)
-
+        
     }
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }
 extension PostVC {
+    func presentAutoSearch() {
+        let autoSearch = UIStoryboard(name: "SKMain", bundle: nil)
+        var navigationCon: UINavigationController?
+        var autoSearchVC : SK_AutoSearchViewController?
+        
+        navigationCon = autoSearch.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
+        autoSearchVC = navigationCon?.visibleViewController as? SK_AutoSearchViewController
+        autoSearchVC?.delegate = self
+        
+        present(navigationCon!, animated: true, completion: nil)
+    }
     
+
+    
+    //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
+    @objc func kyeboardAppear(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+//        postPageScrollView.frame = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+        postPageScrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width,
+                                          height: (self.view.frame.height) + keyboardFrame.height)
+    }
+    
+    //MARK: - 키보드가 내려갈 경우 원래의 크기대로 돌림
+    @objc func keyboardDisappear(_ noti: Notification) {
+        postPageScrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width,
+                                          height: self.view.frame.height)
+    }
+
     func setUI() {
         
-        view.addSubview(addImageBtn)
+        self.view.addSubview(postPageScrollView)
+        postPageScrollView.frame = CGRect(x: 0, y: 0,
+                                        width: self.view.frame.width,
+                                        height: self.view.frame.height)
+        
+        postPageScrollView.addSubview(backgroundView)
+        backgroundView.bounds = CGRect(x: 0, y: 0, width: postPageScrollView.frame.width,
+                                       height: postPageScrollView.frame.height)
+        
+        backgroundView.addSubview(postHeader)
+        postHeader.topAnchor.constraint(equalTo: backgroundView.topAnchor).isActive = true
+        postHeader.leftAnchor.constraint(equalTo: backgroundView.leftAnchor).isActive = true
+        postHeader.rightAnchor.constraint(equalTo: backgroundView.rightAnchor).isActive = true
+        postHeader.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        
+        backgroundView.addSubview(backView)
+        backView.topAnchor.constraint(equalTo: postHeader.bottomAnchor, constant: 1).isActive = true
+        backView.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 1).isActive = true
+        backView.heightAnchor.constraint(equalTo: backView.widthAnchor , multiplier: 1).isActive = true
+        
+        backView.addSubview(postImgView)
+        postImgView.translatesAutoresizingMaskIntoConstraints = false
+        postImgView.topAnchor.constraint(equalTo: backView.topAnchor).isActive = true
+        postImgView.bottomAnchor.constraint(equalTo: backView.bottomAnchor).isActive = true
+        postImgView.leftAnchor.constraint(equalTo: backView.leftAnchor).isActive = true
+        postImgView.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
+        
+        
+        backView.addSubview(addImageBtn)
         addImageBtn.translatesAutoresizingMaskIntoConstraints = false
         addImageBtn.bottomAnchor.constraint(equalTo: postImgView.bottomAnchor).isActive = true
         addImageBtn.centerXAnchor.constraint(equalTo: postImgView.centerXAnchor).isActive = true
@@ -150,6 +250,21 @@ extension PostVC {
         addImageBtn.layer.borderColor = UIColor.lightGray.cgColor
         addImageBtn.layer.borderWidth = 1
         
+        backgroundView.addSubview(storeNameBackView)
+        storeNameBackView.topAnchor.constraint(equalTo: backView.bottomAnchor, constant: -1)
+        storeNameBackView.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 1)
+        storeNameBackView.heightAnchor.constraint(equalToConstant: 40)
+        
+        backgroundView.addSubview(placeBackView)
+        placeBackView.topAnchor.constraint(equalTo: storeNameBackView.bottomAnchor, constant: -1)
+        placeBackView.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 1)
+        placeBackView.heightAnchor.constraint(equalToConstant: 48)
+        
+        backgroundView.addSubview(contentBackView)
+        contentBackView.topAnchor.constraint(equalTo: placeBackView.bottomAnchor, constant: -1)
+        contentBackView.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 1)
+        contentBackView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor)
+       
         placeBackView.addSubview(googlePlaceBtn)
         googlePlaceBtn.translatesAutoresizingMaskIntoConstraints = false
         googlePlaceBtn.widthAnchor.constraint(equalToConstant: 40).isActive = true
@@ -213,6 +328,5 @@ extension PostVC {
         backToMainBtn.heightAnchor.constraint(equalToConstant: 24).isActive = true
         backToMainBtn.setImage(#imageLiteral(resourceName: "back_black"), for: .normal)
     }
-    
 
 }

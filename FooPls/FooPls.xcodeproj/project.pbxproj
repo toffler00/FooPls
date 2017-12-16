@@ -92,6 +92,7 @@
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
 		FCDCFB8B1FD696AD00B993C9 /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */; };
+		FCED14DC1FE2B6EF002C776F /* SK_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */; };
 		FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +191,7 @@
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
 		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
 		FCDCFB8A1FD696AD00B993C9 /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
+		FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +395,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		626C66DD1FE4F33D00C4378C /* MainViewCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				62E1FF451FD924BF00E1FEAE /* MainCollectionView.swift */,
+				62E1FF441FD924BF00E1FEAE /* CustomCell.swift */,
+			);
+			path = MainViewCollectionView;
+			sourceTree = "<group>";
+		};
+		626C66DE1FE4F37600C4378C /* MainViewDetailpage */ = {
+			isa = PBXGroup;
+			children = (
+				62F1B7361FDFE13B0084D68F /* DetailPageCell.swift */,
+				62F1B7341FDFE0CA0084D68F /* DetailPageView.swift */,
+			);
+			path = MainViewDetailpage;
+			sourceTree = "<group>";
+		};
 		628E5B201FE259BD00CBEA16 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,9 +427,9 @@
 			children = (
 				62E1FF461FD924BF00E1FEAE /* LaunchScreen.storyboard */,
 				62E1FF3E1FD924BF00E1FEAE /* StoryBoard */,
-				62E1FF431FD924BF00E1FEAE /* CollectionVC */,
-				62E1FF481FD924BF00E1FEAE /* VC */,
-				62E1FF501FD924BF00E1FEAE /* Data */,
+				62E1FF431FD924BF00E1FEAE /* MainView */,
+				62E1FF481FD924BF00E1FEAE /* PostingPage */,
+				62E1FF501FD924BF00E1FEAE /* DataCenter */,
 				62E1FF4C1FD924BF00E1FEAE /* Model */,
 			);
 			name = Ih_work;
@@ -425,19 +445,16 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
-		62E1FF431FD924BF00E1FEAE /* CollectionVC */ = {
+		62E1FF431FD924BF00E1FEAE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				62E1FF441FD924BF00E1FEAE /* CustomCell.swift */,
-				62E1FF451FD924BF00E1FEAE /* MainCollectionView.swift */,
-				62F1B7361FDFE13B0084D68F /* DetailPageCell.swift */,
-				62F1B7341FDFE0CA0084D68F /* DetailPageView.swift */,
-				62F1B7401FDFFEFA0084D68F /* SlideOut.swift */,
+				626C66DD1FE4F33D00C4378C /* MainViewCollectionView */,
+				626C66DE1FE4F37600C4378C /* MainViewDetailpage */,
 			);
-			path = CollectionVC;
+			path = MainView;
 			sourceTree = "<group>";
 		};
-		62E1FF481FD924BF00E1FEAE /* VC */ = {
+		62E1FF481FD924BF00E1FEAE /* PostingPage */ = {
 			isa = PBXGroup;
 			children = (
 				628E5B201FE259BD00CBEA16 /* ImagePicker */,
@@ -445,7 +462,7 @@
 				62E1FF4A1FD924BF00E1FEAE /* Ih_DetailInfoVC.swift */,
 				62E1FF4B1FD924BF00E1FEAE /* Ih_MapVC.swift */,
 			);
-			path = VC;
+			path = PostingPage;
 			sourceTree = "<group>";
 		};
 		62E1FF4C1FD924BF00E1FEAE /* Model */ = {
@@ -459,12 +476,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		62E1FF501FD924BF00E1FEAE /* Data */ = {
+		62E1FF501FD924BF00E1FEAE /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
 				62E1FF511FD924BF00E1FEAE /* Ih_DataCenter.swift */,
 			);
-			path = Data;
+			path = DataCenter;
 			sourceTree = "<group>";
 		};
 		96A13FB02113034E7BE8EA69 /* Frameworks */ = {
@@ -546,6 +563,7 @@
 			children = (
 				FC0E2CC31FDFB33500E32F14 /* Assets.xcassets */,
 				237379AD1FCEE4F200F5351E /* Extension.swift */,
+				62F1B7401FDFFEFA0084D68F /* SlideOut.swift */,
 				CE0A7F031FCE8EDA009C884F /* AppDelegate.swift */,
 				23E6F40A1FD5C50200543A84 /* FooPlsView.swift */,
 				23B317981FCFF7E600C0A078 /* Bridging-Header.h */,
@@ -630,6 +648,7 @@
 				FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */,
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
 				FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */,
+				FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -845,6 +864,7 @@
 				CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */,
 				230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */,
 				FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */,
+				FCED14DC1FE2B6EF002C776F /* SK_TestViewController.swift in Sources */,
 				23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */,
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,

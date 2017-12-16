@@ -29,30 +29,39 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.mainCollectionView.reloadData()
+    }
     func sendToDetailPageView() {
         delegate?.selectedCellInfo(nickName: "toffler", uid: "uid")
     }
+    
     //MARK: - loadData To Main CollectionView
     func loadDataToMainCollectionView() {
         print("self.postData.count")
         guard let uid = self.currentUser?.uid else {return}
+        print(uid)
         ref = Database.database().reference()
         ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [ String: [String : String]] else {return}
             for (_, dic) in data {
-                guard let name = dic["sotrename"], let adress = dic["adress"],
+                guard let name = dic["storename"], let address = dic["storeaddress"],
                     let url = dic["imageurl"], let content = dic["content"] else {return}
-                let posts = PostModel(storeName: name, storeAdress: adress, contentText: content, storeImgUrl: url)
+                let posts = PostModel(storeName: name, storeAddress: address, contentText: content, storeImgUrl: url)
                 self.postData.append(posts)
                 self.mainCollectionView.reloadData()
             }
-            print(self.postData.count)
+            
         }
+        
     }
+    
     
     // MARK: - CollectionView Delegate & Datasource
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
+        print(self.postData.count)
         return self.postData.count
     }
     
@@ -83,7 +92,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         setUpCell()
         
         cell.cellTitleLb.text = self.postData[indexPath.row].storeName
-        cell.cellAdressLb.text = self.postData[indexPath.row].storeAdress
+        cell.cellAdressLb.text = self.postData[indexPath.row].storeAddress
         
         // url to image - FirebaseUI
         let storeImgUrl = self.postData[indexPath.row].storeImgUrl

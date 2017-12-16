@@ -11,9 +11,6 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-
-
-
 class DataCenter {
     
     
@@ -28,7 +25,6 @@ class DataCenter {
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
 
 
-    
     // MARK: - load location Data
     func load(completion: @escaping ([LocationModel]) -> Void) {//[Position] 을 파라미터로 받는 completion 탈출클로저를 사용, 함수가 완료되는 시점에 클로저를 실행함.
         ref.child("latiAndLongi").observeSingleEvent(of: .value) { (snapshot) in //observeSingleEvent 사용

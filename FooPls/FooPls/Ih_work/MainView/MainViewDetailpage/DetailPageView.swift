@@ -32,7 +32,7 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailPageCell", for: indexPath) as! DetailPageCell
         cell.storeNameLb.text = postData[indexPath.item].storeName
-        cell.adressLb.text = postData[indexPath.item].storeAdress
+        cell.adressLb.text = postData[indexPath.item].storeAddress
         cell.showStoryLb.text = postData[indexPath.item].contentsText
         return cell
     }

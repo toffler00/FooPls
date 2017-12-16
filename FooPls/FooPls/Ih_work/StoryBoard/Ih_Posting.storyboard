@@ -33,17 +33,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-tM-eqM" userLabel="PhotoBackgroundView">
                                 <rect key="frame" x="0.0" y="68" width="375" height="375"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpw-OP-Y83">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpw-OP-Y83">
                                         <rect key="frame" x="8" y="8" width="359" height="359"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="fpw-OP-Y83" firstAttribute="top" secondItem="BLV-tM-eqM" secondAttribute="top" constant="8" id="E6c-YL-oi1"/>
-                                    <constraint firstItem="fpw-OP-Y83" firstAttribute="leading" secondItem="BLV-tM-eqM" secondAttribute="leading" constant="8" id="Mqf-Yt-KIU"/>
-                                    <constraint firstAttribute="trailing" secondItem="fpw-OP-Y83" secondAttribute="trailing" constant="8" id="QFC-Pl-wiy"/>
                                     <constraint firstAttribute="width" secondItem="BLV-tM-eqM" secondAttribute="height" multiplier="1:1" id="VEV-Ec-sbR"/>
-                                    <constraint firstAttribute="bottom" secondItem="fpw-OP-Y83" secondAttribute="bottom" constant="8" id="ZHg-lB-cco"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pV-W4-Q6u">
@@ -92,6 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="backView" destination="BLV-tM-eqM" id="Mv0-8s-hVx"/>
+                        <outlet property="backgroundView" destination="yTr-Xw-arv" id="vOD-u9-3xn"/>
                         <outlet property="contentBackView" destination="N1v-CQ-LX2" id="cmD-fE-8dI"/>
                         <outlet property="placeBackView" destination="2jo-KZ-SCL" id="Lcz-WF-N4k"/>
                         <outlet property="postHeader" destination="FWI-WA-MDO" id="UnY-y7-rKg"/>
