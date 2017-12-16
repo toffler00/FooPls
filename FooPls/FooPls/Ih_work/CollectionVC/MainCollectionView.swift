@@ -4,27 +4,37 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 
+protocol  SendSelectedCellIntfo {
+    func selectedCellInfo(nickName : String, uid : String)
+}
 
-class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
+    var delegate : SendSelectedCellIntfo?
     // MARK: - Variable
-    @IBOutlet weak var introImgView: UIImageView!
+    
+    
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var cell : CustomCell!
-    var dataCenter : DataCenter?
-    var postData : [PostModel] = []
+    var dataCenter = DataCenter()
+    var postData = [PostModel]()
     var currentUser = Auth.auth().currentUser
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        DispatchQueue.main.async {
             self.loadDataToMainCollectionView()
-   
+        }
+        
     }
+    func sendToDetailPageView() {
+        delegate?.selectedCellInfo(nickName: "toffler", uid: "uid")
+    }
+    //MARK: - loadData To Main CollectionView
     func loadDataToMainCollectionView() {
+        print("self.postData.count")
         guard let uid = self.currentUser?.uid else {return}
         ref = Database.database().reference()
         ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
@@ -39,11 +49,10 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             print(self.postData.count)
         }
     }
-
+    
     // MARK: - CollectionView Delegate & Datasource
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-       
         return self.postData.count
     }
     
@@ -51,19 +60,19 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: (view.frame.width - 30) / 2, height: 205)
+        let size = CGSize(width: (view.frame.width - 24) / 2, height: 240)
         return size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8)
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -72,6 +81,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         
         // setUPCell
         setUpCell()
+        
         cell.cellTitleLb.text = self.postData[indexPath.row].storeName
         cell.cellAdressLb.text = self.postData[indexPath.row].storeAdress
         
@@ -79,16 +89,39 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         let storeImgUrl = self.postData[indexPath.row].storeImgUrl
         let url = URL(string: storeImgUrl!)
         cell.cellImageView.sd_setImage(with: url!)
+        
 
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+       
+        
+        
+        
+        print("이건불림?")
+//        if let nextVC = segue.destination as? DetailPageView {
+//            for temp in self.postData {
+//                nextVC.postData.append(temp)
+//            }
+//        }
         
     }
-    // CollectionView Delegate & Datasource_End
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("불림?")
+       
+    }
   
+    // CollectionView Delegate & Datasource_End
+    
+    func toDetailPage() {
+        //need data list : nickname , adress, date, content, image
+        
+        performSegue(withIdentifier: "ToDetailContent", sender: self)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -99,6 +132,9 @@ extension MainCollectionView {
     func setUpCell() {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
+        
+        cell.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        cell.layer.borderWidth = 1
 
         cell.cellImageView.layer.cornerRadius = 5
         cell.cellImageView.layer.masksToBounds = true
