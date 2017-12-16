@@ -279,7 +279,7 @@
         <!--Navigation Controller-->
         <scene sceneID="NpU-IJ-nc6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s2t-6l-thE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProfilePage" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s2t-6l-thE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7fx-05-JCs">
                         <autoresizingMask key="autoresizingMask"/>

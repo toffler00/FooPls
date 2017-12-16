@@ -18,6 +18,6 @@ struct UserModel{
         self.email = email
         self.uid = uid
     }
-
+    
 }
 
