@@ -14,15 +14,15 @@ import FirebaseStorage
 
 class SettingTableViewController: UITableViewController {
     
-    // MARK: IBOulet
+    // MARK: - IBOulet
     @IBOutlet weak var versionLB: UILabel!
     
-    // MARK: property
+    // MARK: - property
     private let appVersion = "CFBundleShortVersionString"
     private let performSegueID = "Login"
     let reference = Database.database().reference()
     
-    // MARK: IBAction
+    // MARK: - IBAction
     // 카카오톡 로그아웃
     @IBAction func kakaotalkLogOut(_ sender: UISwitch) {
         switch sender.isOn {
@@ -45,7 +45,7 @@ class SettingTableViewController: UITableViewController {
             break
         }
     }
-    // 페이스북 로그아웃
+    // MARK: 페이스북 로그아웃
     @IBAction func facbookLogOut(_ sender: UISwitch) {
         let loginManager = LoginManager()
         switch sender.isOn {
@@ -80,7 +80,7 @@ class SettingTableViewController: UITableViewController {
             }
         }
     }
-    // 파이어베이스 로그아웃
+    // MARK: 파이어베이스 로그아웃
     @IBAction func firebaseLogOut(_ sender: UIButton) {
         UIAlertController.presentAlertController(target: self, title: "로그아웃", massage: "정말 로그아웃 하시겠습니까?", actionStyle: .destructive, cancelBtn: true) { [weak self] _ in
             guard let `self` = self else { return }
