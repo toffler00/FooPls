@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="-1055" y="1431"/>
         </scene>
-        <!--PostPage-->
+        <!--Ih_Posting-->
         <scene sceneID="6YS-B5-3W8">
             <objects>
-                <viewControllerPlaceholder storyboardName="PostPage" id="nRi-5n-Ndb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Ih_Posting" id="nRi-5n-Ndb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="n6v-fb-SRg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlP-jK-fRi" userLabel="First Responder" sceneMemberID="firstResponder"/>

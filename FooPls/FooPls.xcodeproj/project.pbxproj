@@ -51,8 +51,6 @@
 		23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */; };
 		23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
-		6266F0B71FE63A5500F308DF /* PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6266F0B61FE63A5500F308DF /* PostPage.storyboard */; };
-		627672F71FE65527006EDC10 /* PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627672F61FE65527006EDC10 /* PostingPage.swift */; };
 		628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */; };
 		628E5B1F1FE259B700CBEA16 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
@@ -145,8 +143,6 @@
 		23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJDetailTimelineViewController.swift; sourceTree = "<group>"; };
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6266F0B61FE63A5500F308DF /* PostPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostPage.storyboard; sourceTree = "<group>"; };
-		627672F61FE65527006EDC10 /* PostingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingPage.swift; sourceTree = "<group>"; };
 		628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_Posting.storyboard; sourceTree = "<group>"; };
@@ -442,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */,
-				6266F0B61FE63A5500F308DF /* PostPage.storyboard */,
 				62E1FF421FD924BF00E1FEAE /* Ih_MainView.storyboard */,
 			);
 			path = StoryBoard;
@@ -464,7 +459,6 @@
 				62E1FF491FD924BF00E1FEAE /* Ih_PostVC.swift */,
 				62E1FF4A1FD924BF00E1FEAE /* Ih_DetailInfoVC.swift */,
 				62E1FF4B1FD924BF00E1FEAE /* Ih_MapVC.swift */,
-				627672F61FE65527006EDC10 /* PostingPage.swift */,
 			);
 			path = PostingPage;
 			sourceTree = "<group>";
@@ -749,7 +743,6 @@
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
-				6266F0B71FE63A5500F308DF /* PostPage.storyboard in Resources */,
 				62E1FF541FD924BF00E1FEAE /* Ih_MainView.storyboard in Resources */,
 				230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
@@ -795,7 +788,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D32F1333C676D2B10543C474 /* [CP] Embed Pods Frameworks */ = {
@@ -874,7 +867,6 @@
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
 				62E1FF5C1FD924BF00E1FEAE /* Ih_LocationModel.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
-				627672F71FE65527006EDC10 /* PostingPage.swift in Sources */,
 				231F59D31FDAC2EA00580D69 /* RAMBounceAnimation.swift in Sources */,
 				62E1FF591FD924BF00E1FEAE /* Ih_DetailInfoVC.swift in Sources */,
 				CE0A7F061FCE8EDA009C884F /* SignUpViewController.swift in Sources */,

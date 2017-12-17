@@ -112,7 +112,8 @@ UINavigationControllerDelegate, ImagePickerDelegate, GooglePlaceDataDelegate {
     
     @objc func presentGplace() {
         presentAutoSearch()
-    
+        
+        
     }
     
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
