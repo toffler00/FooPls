@@ -3,8 +3,12 @@ import UIKit
 import Firebase
 import GooglePlacePicker
 
-class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate {
-
+class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
+    
+    let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
+    var autoNavi: UINavigationController?
+    var autoVC: SK_AutoSearchViewController?
+    
     //MARK: - Firebase
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
@@ -18,6 +22,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     var selectedKey: String?
     var photoName: String?
     
+    @IBOutlet weak var writeScrollView: UIScrollView!
     @IBOutlet weak var detailDateLabel: UILabel!
     @IBOutlet weak var detailTitleTextField: UITextField!
     @IBOutlet weak var detailImgView: UIImageView!
@@ -28,6 +33,11 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        writeScrollView.bounces = false
+        //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
+        autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
+        autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
+        autoVC?.delegate = self
     }
     
     private func loadData() {
@@ -56,10 +66,14 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     
     //MARK: - 글쓰기 버튼
     @IBAction func writeBtnAction(_ sender: UIButton) {
-        guard let contentTitle = detailTitleTextField.text else { return }
+        guard let contentTitle = detailTitleTextField.text else {
+            UIAlertController.presentAlertController(target: self, title: "제목을 입력해주세요", massage: nil, actionStyle: .default, cancelBtn: false, completion: nil)
+            return
+        }
         guard let _ = detailImgView.image else { return }
         guard let locationTitle = detailLocationTitleLabel.text else { return }
         guard let contentTxtView = detailContentTextView.text else { return }
+        
         
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 수정하시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
@@ -115,24 +129,12 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     }
     
     @IBAction func detailLocationBtnAction(_ sender: UIButton) {
-        //잠시 주석처리함.
-        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-        let config = GMSPlacePickerConfig(viewport: viewport)
-        let placePicker = GMSPlacePickerViewController(config: config)
-        placePicker.delegate = self
-        present(placePicker, animated: true, completion: nil)
-        
-        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-        placePicker.navigationController?.navigationBar.isTranslucent = false
-        
         //구글 PlacePicker와 연결함
-        //        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
-        //        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
-        //            present(googlePicekerVC, animated: true, completion: nil)
-        //        }
+        present(autoNavi!, animated: true, completion: nil)        
+    }
+    
+    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+        detailLocationTitleLabel.text = placeName
     }
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드

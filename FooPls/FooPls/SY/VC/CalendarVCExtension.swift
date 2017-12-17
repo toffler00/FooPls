@@ -13,7 +13,7 @@ let emptyCell = "EmptyCell"
 extension CalendarViewController {
     
     // MARK: 팝업뷰 세팅
-    func setUpPopUpView() {
+   public func setUpPopUpView() {
         // 팝업뷰 생성
         let viewColor = UIColor.black
         // 부모뷰 투명
@@ -95,7 +95,7 @@ extension CalendarViewController: UITableViewDelegate {
 // MARK: EmptyCellDelegate
 extension CalendarViewController: EmptyCellDelegate {
     // MARK: 빈셀의 버튼을 눌렀을 경우 글쓰기 VC로 이동
-    func emptyCellButton(_ cell: EmptyCell) {
+    internal func emptyCellButton(_ cell: EmptyCell) {
         print("\(#function)")
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
@@ -106,14 +106,12 @@ extension CalendarViewController: EmptyCellDelegate {
 // MARK: PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
     
- 
-    
     // 포스팅버튼
-    func postWritingButton(button: UIButton) {
+    internal func postWritingButton(button: UIButton) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
     // 선택한 날짜 레이블에 표시
-    func popUpWritingDelegate(date: String) {
+    internal func popUpWritingDelegate(date: String) {
         popUpView.dateLB.text = date
     }
     
