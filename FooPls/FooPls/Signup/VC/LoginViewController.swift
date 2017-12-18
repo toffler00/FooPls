@@ -186,11 +186,8 @@ class LoginViewController: UIViewController {
 
 // MARK: FacebookLoginButtonDelegate
 extension LoginViewController : LoginButtonDelegate{
-    
-    func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        
-    }
-    
+
+    // MARK: 페이스북 로그인
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         switch result{
         case .success:
@@ -214,6 +211,12 @@ extension LoginViewController : LoginButtonDelegate{
         default:
             break
         }
+
+    }
+
+    // MARK: 페이스북 로그아웃시
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
     }
 }
 

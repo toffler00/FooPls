@@ -61,7 +61,7 @@ extension UIAlertController {
         let okAction = UIAlertAction(title: "확인", style: actionStyle, handler: completion)
         alert.addAction(okAction)
         if cancelBtn {
-            let cancelAction = UIAlertAction(title: "취소", style: actionStyle, handler: completion)
+            let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
             alert.addAction(cancelAction)
         }
         target.present(alert, animated: true, completion: nil)

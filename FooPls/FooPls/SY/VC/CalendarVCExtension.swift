@@ -9,11 +9,11 @@ let postCell = "PostCell"
 // EmptyCell의 xib 파일명, cell ID
 let emptyCell = "EmptyCell"
 
-// MARK: CalendarViewController extension
+// MARK: - CalendarViewController extension
 extension CalendarViewController {
     
     // MARK: 팝업뷰 세팅
-    func setUpPopUpView() {
+   public func setUpPopUpView() {
         // 팝업뷰 생성
         let viewColor = UIColor.black
         // 부모뷰 투명
@@ -32,7 +32,7 @@ extension CalendarViewController {
     }
 }
 
-// MARK: UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension CalendarViewController: UITableViewDataSource {
     
     // MARK: 데이터 개수에 따른 테이블 뷰 row 생성
@@ -62,10 +62,9 @@ extension CalendarViewController: UITableViewDataSource {
     }
 }
 
-// MARK: UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension CalendarViewController: UITableViewDelegate {
     // MARK: 테이블 뷰 컨텐츠에 따라서 row 높이 설정
-    // 테이블 뷰의 셀 값이 유동적이게 해야하는데;;
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch contentTitleList.count {
         case 0:
@@ -74,7 +73,7 @@ extension CalendarViewController: UITableViewDelegate {
             return 50
         }
     }
-    
+    // MARK: 셀 선택했을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         print("contentKeys: ", self.contentKeys)
@@ -82,20 +81,42 @@ extension CalendarViewController: UITableViewDelegate {
         // 델리게이트를 이용해서 넘길 예정
         let testTitle = contentTitleList[index]
         postDelegate?.selectedPostCellData(controller: self, data: testTitle)
-//        self.performSegue(withIdentifier: "NewWrite", sender: self)
         let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
         let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
         detailVC.selectedKey = self.contentKeys[index]
         present(detailVC, animated: true, completion: nil)
  
     }
+    // MARK: ios 11부터 셀 삭제
+    @available (iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let indexPathRow = indexPath.row
+        let deleteAction = UIContextualAction(style: .destructive, title: "삭제") { [weak self] (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
+            guard let `self` = self else { return }
+            success(true)
+            self.contentTitleList.remove(at: indexPathRow)
+            // 한 개만 남은 데이터를 없애면 크러시 -> 처리예정
+            // 원인: 테이블 뷰에서 로우 삭제 뒤 reloadData 자동호출되면서
+            // 데이터 소스인 객체와 개수가 맞지 않는데...
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
     
+    // MARK: 그냥 ios 버전 셀 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let indexPathRow = indexPath.row
+        if editingStyle == .delete {
+            self.contentTitleList.remove(at: indexPathRow)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
 
-// MARK: EmptyCellDelegate
+// MARK: - EmptyCellDelegate
 extension CalendarViewController: EmptyCellDelegate {
     // MARK: 빈셀의 버튼을 눌렀을 경우 글쓰기 VC로 이동
-    func emptyCellButton(_ cell: EmptyCell) {
+    internal func emptyCellButton(_ cell: EmptyCell) {
         print("\(#function)")
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
@@ -103,23 +124,21 @@ extension CalendarViewController: EmptyCellDelegate {
 }
 
 
-// MARK: PopViewDelegate
+// MARK: - PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
     
- 
-    
     // 포스팅버튼
-    func postWritingButton(button: UIButton) {
+    internal func postWritingButton(button: UIButton) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
     // 선택한 날짜 레이블에 표시
-    func popUpWritingDelegate(date: String) {
+    internal func popUpWritingDelegate(date: String) {
         popUpView.dateLB.text = date
     }
     
 }
 
-// MARK: UIGestureRecognizerDelegate
+// MARK: - UIGestureRecognizerDelegate
 extension CalendarViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if popUpView.bounds.contains(touch.location(in: popUpView.baseView)){

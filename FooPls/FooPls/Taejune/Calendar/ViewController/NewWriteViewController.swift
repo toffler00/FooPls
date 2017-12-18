@@ -9,7 +9,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var autoNavi: UINavigationController?
     var autoVC: SK_AutoSearchViewController?
     
-    
+    //이건 어디에 쓰이는거지?
     var sample:String?
     
     //MARK: - Firebase
@@ -24,6 +24,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var latitude: Double?
     var address: String?
     
+    @IBOutlet weak var writeScrollView: UIScrollView!
     @IBOutlet weak var customNaviBar: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTitle: UITextField!
@@ -36,7 +37,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabel.text = selectedDate
-        
+        writeScrollView.bounces = false
         //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
@@ -45,14 +46,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(view.frame.height)
-        print(customNaviBar.frame.height)
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -62,10 +56,17 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     
     //MARK: - 글쓰기 버튼
     @IBAction func writeBtnAction(_ sender: UIButton) {
-        guard let contentTitle = contentTitle.text else { return }
+        guard let contentTitle = contentTitle.text else {
+            UIAlertController.presentAlertController(target: self, title: "제목을 입력해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
+            return
+        }
         guard let _ = contentImgView.image else { return }
         guard let locationTitle = locationTitle.text else { return }
         guard let contentTxtView = contentTxtView.text else { return }
+        guard let longitude = self.longitude, let latitude = self.latitude, let address = self.address else {
+            UIAlertController.presentAlertController(target: self, title: "장소를 선택해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
+            return
+        }
         
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
@@ -85,13 +86,16 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "photoID": photoID,
                                        "photoName": uuid,
                                        "locationTitle": locationTitle,
-                                       "longitude": self.longitude!,
-                                       "latitude": self.latitude!,
-                                       "address": self.address!,
+                                       "longitude": longitude,
+                                       "latitude": latitude,
+                                       "address": address,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
+                    
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
+                    
                     let key = self.reference.child("users").childByAutoId().key
+                    
                     let postKey = NSArray(array: [key])
                     self.reference.child("posts").setValue(postKey)                    
                     self.dismiss(animated: true, completion: nil)
@@ -110,20 +114,24 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     @IBAction func locationBtnAction(_ sender: UIButton) {
         
         //잠시 주석처리함.
-        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-        let config = GMSPlacePickerConfig(viewport: viewport)
-        let placePicker = GMSPlacePickerViewController(config: config)
-        placePicker.delegate = self
-        present(placePicker, animated: true, completion: nil)
-
-        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-        placePicker.navigationController?.navigationBar.isTranslucent = false
+//        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
+//        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
+//        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
+//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+//        let config = GMSPlacePickerConfig(viewport: viewport)
+//        let placePicker = GMSPlacePickerViewController(config: config)
+//        placePicker.delegate = self
+//        present(placePicker, animated: true, completion: nil)
+//
+//        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
+//        placePicker.navigationController?.navigationBar.isTranslucent = false
         
         //구글 PlacePicker와 연결함
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         present(autoNavi!, animated: true, completion: nil)
         
         
@@ -131,6 +139,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     
     //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+<<<<<<< HEAD
         
         locationTitle.text = placeName
         longitude = longi
@@ -142,6 +151,10 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
 //        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
 //            present(googlePicekerVC, animated: true, completion: nil)
 //        }
+>>>>>>> master
+=======
+        
+        locationTitle.text = placeName
 >>>>>>> master
     }
     
@@ -174,7 +187,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - 장소를 선택하지 않았을 때 실행하는 메소드
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
         viewController.dismiss(animated: true, completion: nil)
-        print("장소가 선택되지 않았습니다.")
     }
 }
 

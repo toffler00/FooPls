@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="rCy-Wo-ZxS">
             <objects>
-                <viewController id="hhD-Me-bFx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="hhD-Me-bFx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hx1-pP-6p4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,20 +80,20 @@
             </objects>
             <point key="canvasLocation" x="-1055.2" y="1007.9460269865068"/>
         </scene>
-        <!--Ih_CollectionView-->
+        <!--Ih_MainView-->
         <scene sceneID="SH1-ha-C1A">
             <objects>
-                <viewControllerPlaceholder storyboardName="Ih_CollectionView" id="kZF-Zg-1en" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Ih_MainView" id="kZF-Zg-1en" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="VQn-ad-p2i"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elC-Gd-8ve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1719" y="1452"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--SKMain-->
         <scene sceneID="Q1a-Da-q72">
             <objects>
-                <viewControllerPlaceholder id="sdq-m7-1RZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SKMain" id="sdq-m7-1RZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Eei-pC-Sli"/>
                     <navigationItem key="navigationItem" id="1KL-P6-Hcn"/>
                 </viewControllerPlaceholder>
@@ -177,7 +177,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrO-3b-Gcl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <connections>
-                                    <segue destination="nRi-5n-Ndb" kind="embed" id="yod-4F-12k"/>
+                                    <segue destination="nRi-5n-Ndb" kind="embed" id="pjW-Jo-aBZ"/>
                                 </connections>
                             </containerView>
                         </subviews>

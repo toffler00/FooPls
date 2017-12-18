@@ -5,79 +5,114 @@
 //  Created by SONGYEE SHIN on 2017. 12. 15..
 //  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
 //
-
 import UIKit
+import Firebase
+import FirebaseAuth
+import FacebookLogin
+import FacebookCore
+import FirebaseStorage
 
 class SettingTableViewController: UITableViewController {
+    
+    // MARK: - IBOulet
+    @IBOutlet weak var versionLB: UILabel!
+    
+    // MARK: - property
+    private let appVersion = "CFBundleShortVersionString"
+    private let performSegueID = "Login"
+    let reference = Database.database().reference()
+    
+    // MARK: - IBAction
+    // 카카오톡 로그아웃
+    @IBAction func kakaotalkLogOut(_ sender: UISwitch) {
+        switch sender.isOn {
+        case false:
+            KOSession.shared().logoutAndClose(completionHandler: { [weak self](success, error) in
+                guard let `self` = self else { return }
+                if error != nil{
+                    return
+                }else {
+                    if success {
+                        self.firebaseAuthlogOut()
+                        self.performSegue(withIdentifier: self.performSegueID, sender: nil)
 
+                    }else {
+                        print("Failed to LogOut.")
+                    }
+                }
+            })
+        default:
+            break
+        }
+    }
+    // MARK: 페이스북 로그아웃
+    @IBAction func facbookLogOut(_ sender: UISwitch) {
+        let loginManager = LoginManager()
+        switch sender.isOn {
+        case false:
+            loginManager.logOut()
+            self.firebaseAuthlogOut()
+        default:
+            loginManager.logIn(readPermissions: [.email], viewController: self) { [weak self] (result) in
+                guard let `self` = self else { return }
+                switch result {
+                case .success:
+                    let accessToken = AccessToken.current
+                    guard let accessTokenString = accessToken?.authenticationToken else { return }
+                    let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+                    Auth.auth().signIn(with: credentials, completion: { (user, error) in
+                        if error == nil, user != nil{
+                            let userEmail = user?.email ?? ""
+                            let userDic = ["email" : userEmail]
+                            self.reference.child("users").child(user!.uid).setValue(userDic)
+                        }else{
+                            if let errors = error {
+                                print(errors.localizedDescription)
+                                return
+                            }
+                            
+                        }
+                    })
+                    self.performSegue(withIdentifier: "mainSegue", sender: self)
+                default:
+                    break
+                }
+            }
+        }
+    }
+    // MARK: 파이어베이스 로그아웃
+    @IBAction func firebaseLogOut(_ sender: UIButton) {
+        UIAlertController.presentAlertController(target: self, title: "로그아웃", massage: "정말 로그아웃 하시겠습니까?", actionStyle: .destructive, cancelBtn: true) { [weak self] _ in
+            guard let `self` = self else { return }
+            self.firebaseAuthlogOut()
+            self.performSegue(withIdentifier: self.performSegueID, sender: nil)
+        }
+    }
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK:  viewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 앱버전 정보
+        let versionText = Bundle.main.object(forInfoDictionaryKey: appVersion) as? String
+        versionLB.text = versionText ?? "정보를 읽어 올 수 없습니다."
     }
+    
+}
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+// MARK: - Extension
+extension SettingTableViewController {
+    // MARK: Common FiebaseAuth Logout
+    private func firebaseAuthlogOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch (let error) {
+            print("error: \(error.localizedDescription)")
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

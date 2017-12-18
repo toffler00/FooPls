@@ -11,10 +11,18 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-
-
-
 class DataCenter {
+    
+    
+    static var main = DataCenter()
+
+    //GooglePlacePicker의 기본 데이터
+    //37.5156778,127.0191916
+
+    var latitude:Double = 37.5156778
+    var longitude:Double = 127.0191916
+    var placeAddress:String = "서울특별시 강남구 논현동"
+    var placeName:String = "FooPls!"
     
     
     //MARK: - Property
@@ -23,34 +31,12 @@ class DataCenter {
     let userInfo = Auth.auth().currentUser
     var postModel : PostModel?
     var currentUser : UserModel?
-    var mainView : MainCollectionView?
-    init() { }
+    
+    init() {}
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
 
-    
-    func loadDataToMainCollectionView() {
-        guard let uid = self.currentUser?.uid else {return}
-        ref = Database.database().reference()
-        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
-            guard let data = snapshot.value as? [ String: [String : String]] else {return}
-            var datas = [self.postModel]
-            for (_, dic) in data {
-                guard let name = dic["sotrename"], let adress = dic["adress"],
-                    let url = dic["imageurl"], let content = dic["content"] else {return}
-                let urlString = URL(string: url)
-                let imgData = try! Data(contentsOf: urlString!)
-                let image = UIImage(data: imgData)
-                let posts = PostModel(storeName: name, StoreAdress: adress, contentText: content, storeImg: image!)
-                datas.append(posts)
-               print(datas)
-                
-            }
-        }
-    }
-    
-    
-    
+
     // MARK: - load location Data
     func load(completion: @escaping ([LocationModel]) -> Void) {//[Position] 을 파라미터로 받는 completion 탈출클로저를 사용, 함수가 완료되는 시점에 클로저를 실행함.
         ref.child("latiAndLongi").observeSingleEvent(of: .value) { (snapshot) in //observeSingleEvent 사용
@@ -67,9 +53,7 @@ class DataCenter {
             }
         }
     }
-    
-    
-//    // MARK: - fetchUser
+    //    // MARK: - fetchUser
 //    func fetchUserUidAndPostsKey(completion : @escaping (_ key : String) -> Void) {
 //        guard let uid = userInfo?.uid else {return}
 //        let key = ref.child("users").child(uid).child("posts").childByAutoId().key
@@ -99,10 +83,6 @@ class DataCenter {
             }
         }
     }
-    
-   
-    
-    
     
 }
  

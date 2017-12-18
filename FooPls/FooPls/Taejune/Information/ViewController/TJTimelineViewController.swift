@@ -3,7 +3,6 @@ import UIKit
 import PagingKit
 import Firebase
 import Kingfisher
-import SDWebImage
 
 class TJTimelineViewController: UIViewController {
     
@@ -52,6 +51,21 @@ class TJTimelineViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - 자기가 쓴 글을 지우는데 지운 후에 다시 데이터를 로드할 때 순서가 가끔씩 뒤바뀜, 지울 때 Storage에 있는 사진 파일도 삭제 해야 함
+    @IBAction func deleteBtnAction(_ sender: UIButton) {
+        let alertSheet = UIAlertController(title: "삭제", message: "정말로 삭제하시겠습니끼?", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let okAction = UIAlertAction(title: "예", style: .default) { [weak self]  (action) in
+            guard let `self` = self else { return }
+            let removeKey = self.myPostingIndex[sender.tag]
+            self.reference.child("users").child(self.userID!).child("calendar").child(removeKey).removeValue()
+            self.myPostingCollectionView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
+        alertSheet.addAction(okAction)
+        alertSheet.addAction(cancelAction)
+        present(alertSheet, animated: true, completion: nil)
+    }
 }
 
 extension TJTimelineViewController: UICollectionViewDataSource {
@@ -62,6 +76,9 @@ extension TJTimelineViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPostingCell", for: indexPath) as! MyPostingCell
+        
+        cell.deleteBtn.tag = indexPath.item
+        
         cell.postingTitle.text = myPostingTitles[indexPath.item]
         cell.postingAddress.text = myPostingAddress[indexPath.item]
         cell.myPostingImgVIew.kf.setImage(with: myPostingImgs[indexPath.item])
