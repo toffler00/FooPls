@@ -124,7 +124,7 @@
         <!--Profile-->
         <scene sceneID="ViR-vo-M4z">
             <objects>
-                <viewController restorationIdentifier="Profile" storyboardIdentifier="Profile" id="cro-Cv-VkI" sceneMemberID="viewController">
+                <viewController id="cro-Cv-VkI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Us1-31-nwz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
