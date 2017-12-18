@@ -58,8 +58,12 @@ class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerD
                     UIAlertController.presentAlertController(target: self, title: "업로드성공",
                                                              massage: "업로드 성공하였습니다.",
                                                              cancelBtn: false, completion: nil)
+<<<<<<< HEAD
 >>>>>>> toffler
                         print("업로드성공")
+=======
+                    
+>>>>>>> toffler
                     }
             }
         }
