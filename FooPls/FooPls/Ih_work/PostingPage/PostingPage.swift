@@ -7,8 +7,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
-GooglePlaceDataDelegate {
+class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate, GooglePlaceDataDelegate {
  
     
     var dataCenter : DataCenter!
@@ -18,18 +17,15 @@ GooglePlaceDataDelegate {
     
     @IBOutlet weak var postDataLb: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var placeNameTF: UITextField!
-    @IBOutlet weak var addressTF: UITextField!
+    @IBOutlet weak var placeNameLb: UILabel!
+    @IBOutlet weak var addressLb: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var profileImgView: UIImageView!
-    @IBOutlet weak var nickNameLb: UILabel!
-    @IBOutlet weak var postingDateLb: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        
         hideKeyboardWhenTappedAround()
 
         NotificationCenter.default.addObserver(self, selector: #selector(kyeboardAppear(_:)), name: .UIKeyboardWillShow , object: nil)
@@ -40,8 +36,8 @@ GooglePlaceDataDelegate {
     
     @IBAction func handleDone(_ sender: Any) {
         guard let uid = userInfo?.uid else {return}
-        guard let name = placeNameTF.text, let adress = addressTF.text, let content = contentTextView.text,
-            let image = postImageView.image, let date = postingDateLb.text else {return}
+        guard let name = placeNameLb.text, let adress = addressLb.text, let content = contentTextView.text,
+            let image = postImageView.image else {return}
         let img = UIImageJPEGRepresentation(image, 0.5)
         let autoID = NSUUID().uuidString
         Storage.storage().reference().child(uid).child(autoID).putData(img!, metadata: nil)
@@ -51,17 +47,13 @@ GooglePlaceDataDelegate {
             let dic = ["storename" : name,
                        "storeaddress" : adress,
                        "content" : content,
-                       "imageurl" : imgUrl,
-                       "date" : date] as [String : Any]
+                       "imageurl" : imgUrl] as [String : Any]
             Database.database().reference().child("users").child(uid).child("posts")
                 .childByAutoId().updateChildValues(dic) { (error, ref) in
                     if error != nil {
                         print(error.debugDescription)
                     }else {
-                    UIAlertController.presentAlertController(target: self, title: "업로드성공",
-                                                             massage: "업로드 성공하였습니다.",
-                                                             cancelBtn: false, completion: nil)
-                
+                        print("업로드성공")
                     }
             }
         }
@@ -92,11 +84,11 @@ GooglePlaceDataDelegate {
         present(navigationCon!, animated: true, completion: nil)
     }
     
-    
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
-        placeNameTF.text = placeName
-        addressTF.text = address
+        placeNameLb.text = placeName
+        addressLb.text = address
     }
+    
     
     func photoSelected(_ seletedImges: UIImage) {
         postImageView.image = seletedImges
@@ -128,11 +120,4 @@ GooglePlaceDataDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
-extension PostingPage {
-    func setUI() {
-        profileImgView.layer.cornerRadius = 25
-        profileImgView.image = #imageLiteral(resourceName: "defaultProfile") //default image
-    }
-
 }
