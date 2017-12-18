@@ -60,6 +60,9 @@ class SK_AutoSearchViewController: UIViewController {
         DataCenter.main.longitude = longitudue
         DataCenter.main.placeName = placeName
         
+        let positionPost = PostModel(lati: latitude, longi: longitudue, address: adress, placename: placeName)
+        NotificationCenter.default.post(name: Notification.Name.newPosi, object: positionPost)
+        
         dismiss(animated: true, completion: nil)
     }
     

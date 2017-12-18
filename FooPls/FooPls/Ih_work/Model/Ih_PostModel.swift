@@ -30,6 +30,9 @@ struct  PostModel {
         return nil
     }
     
+    var latitude : Double?
+    var longitude : Double?
+    
     var postData : [PostModel] = []
     
     init(storeName : String, storeAddress : String,
@@ -46,10 +49,10 @@ struct  PostModel {
         self.storeImg = storeImg
     }
     
-    mutating func addPostInfo(widh dic : (key : String, value: String)){
-        self.storeName = dic.value
-        self.storeAddress = dic.value
-        self.storeImgUrl = dic.value
-        self.contentsText = dic.value
+    init (lati : Double, longi : Double, address : String, placename : String ) {
+        self.storeName = placename
+        self.storeAddress = address
+        self.latitude = lati
+        self.longitude = longi
     }
 }
