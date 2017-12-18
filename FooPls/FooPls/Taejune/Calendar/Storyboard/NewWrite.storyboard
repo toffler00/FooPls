@@ -160,7 +160,7 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationImg" translatesAutoresizingMaskIntoConstraints="NO" id="RNP-cQ-hOh">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GMarker" translatesAutoresizingMaskIntoConstraints="NO" id="RNP-cQ-hOh">
                                                         <rect key="frame" x="21" y="4" width="29.5" height="29.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="RNP-cQ-hOh" secondAttribute="height" multiplier="1:1" id="Oar-Az-ExC"/>
@@ -189,10 +189,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-jh-6wf" userLabel="Content">
-                                                <rect key="frame" x="10" y="462.5" width="356.5" height="222"/>
+                                                <rect key="frame" x="10" y="462.5" width="356.5" height="259"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="글 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-Md-gR6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="222"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="259"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
@@ -209,7 +209,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="d7W-jh-6wf" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="85P-DR-SDL"/>
-                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.55" id="8Jl-Ps-0uP"/>
+                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.6" id="8Jl-Ps-0uP"/>
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="EZ3-w6-fWo"/>
                                             <constraint firstItem="8tQ-Ac-uOu" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="Fu3-0L-eNa"/>
                                             <constraint firstItem="sgg-Cq-XNn" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="0.075" id="IGu-ix-ITT"/>
@@ -227,7 +227,7 @@
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.05" id="brh-f2-ZWA"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.175" id="fNV-bj-6IA"/>
                                             <constraint firstItem="sgg-Cq-XNn" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="fUE-9Z-fsf"/>
-                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.3" id="gW7-fk-qHy"/>
+                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.35" id="gW7-fk-qHy"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="kcE-xl-Rdm"/>
                                             <constraint firstItem="8tQ-Ac-uOu" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="0.2" id="mMZ-ne-TCK"/>
                                             <constraint firstItem="JhR-Rk-w9W" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.35" id="mwT-Dc-syf"/>
@@ -286,9 +286,9 @@
     </scenes>
     <resources>
         <image name="FooPls" width="198" height="73"/>
+        <image name="GMarker" width="48" height="48"/>
         <image name="back_black" width="64" height="64"/>
         <image name="check" width="494" height="344"/>
-        <image name="locationImg" width="550" height="550"/>
         <image name="picture" width="5000" height="5000"/>
     </resources>
 </document>
