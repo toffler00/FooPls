@@ -123,7 +123,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         locationTitle.text = placeName
         longitude = longi
         latitude = lati
-        self.adress = address
+        self.address = address
         
 
 //        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
