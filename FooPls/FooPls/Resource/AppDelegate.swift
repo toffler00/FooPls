@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         // Facebook Login
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-      
+
         GMSServices.provideAPIKey("AIzaSyCK_mUEG0l9-ADYfsuZduyqjL0yub6HHEY")
         GMSPlacesClient.provideAPIKey("AIzaSyCK_mUEG0l9-ADYfsuZduyqjL0yub6HHEY")
         
