@@ -119,11 +119,11 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
 
-        
+        print(address)
         locationTitle.text = placeName
         longitude = longi
         latitude = lati
-        self.adress = address
+        self.address = address
         
 
 //        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
