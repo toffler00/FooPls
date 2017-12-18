@@ -68,3 +68,10 @@ extension UIAlertController {
     }
 }
 
+extension UIImageView {
+    func tintImageColor(color : UIColor) {
+        self.image = self.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.tintColor = color
+    }
+}
+

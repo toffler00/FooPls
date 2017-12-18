@@ -159,7 +159,7 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationImg" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-B2-0B2">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GMarker" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-B2-0B2">
                                                         <rect key="frame" x="21" y="4" width="29.5" height="29.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="2ay-B2-0B2" secondAttribute="height" multiplier="1:1" id="UZl-xJ-NFG"/>
@@ -188,10 +188,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="job-aW-QdK" userLabel="Content">
-                                                <rect key="frame" x="10" y="462.5" width="356.5" height="222"/>
+                                                <rect key="frame" x="10" y="462.5" width="356.5" height="259"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="글 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-qW-OG7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="222"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="259"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
@@ -211,7 +211,7 @@
                                             <constraint firstItem="t10-ER-edl" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="1Xo-ia-tHI"/>
                                             <constraint firstAttribute="height" constant="740" id="1zd-mR-Ws0"/>
                                             <constraint firstItem="rfB-1E-gwY" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.05" id="2Fu-3t-3gf"/>
-                                            <constraint firstItem="job-aW-QdK" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.3" id="2Pr-c1-Agi"/>
+                                            <constraint firstItem="job-aW-QdK" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.35" id="2Pr-c1-Agi"/>
                                             <constraint firstItem="D8p-pR-OR8" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.05" id="4c8-3j-TiP"/>
                                             <constraint firstItem="D8p-pR-OR8" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.05" id="5uB-ms-wAb"/>
                                             <constraint firstItem="t10-ER-edl" firstAttribute="height" secondItem="ac7-pE-fDb" secondAttribute="height" id="D8o-NH-mgu"/>
@@ -222,7 +222,7 @@
                                             <constraint firstItem="job-aW-QdK" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="Kk3-U0-0ot"/>
                                             <constraint firstItem="5eE-5Y-r0G" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.35" id="LdF-m9-UFF"/>
                                             <constraint firstItem="5eE-5Y-r0G" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="O6u-42-xJf"/>
-                                            <constraint firstItem="job-aW-QdK" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.55" id="aCB-Yl-oPk"/>
+                                            <constraint firstItem="job-aW-QdK" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.6" id="aCB-Yl-oPk"/>
                                             <constraint firstItem="t10-ER-edl" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="b9d-TZ-c7J"/>
                                             <constraint firstItem="5eE-5Y-r0G" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="bDc-CW-ctC"/>
                                             <constraint firstItem="t10-ER-edl" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="0.2" id="k36-lN-sfD"/>
@@ -275,9 +275,9 @@
     </scenes>
     <resources>
         <image name="FooPls" width="198" height="73"/>
+        <image name="GMarker" width="48" height="48"/>
         <image name="back_black" width="64" height="64"/>
         <image name="check" width="494" height="344"/>
-        <image name="locationImg" width="550" height="550"/>
         <image name="picture" width="5000" height="5000"/>
     </resources>
 </document>
