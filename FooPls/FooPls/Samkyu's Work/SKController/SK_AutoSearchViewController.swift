@@ -17,6 +17,9 @@ class SK_AutoSearchViewController: UIViewController {
     
     var delegate : GooglePlaceDataDelegate?
     
+    //GooglePlacePickerDataCenter 진행
+    var dataCenter = DataCenter()
+    
     
     @IBOutlet weak var placeLB: UILabel!
     @IBOutlet weak var addressLB: UILabel!
@@ -27,10 +30,10 @@ class SK_AutoSearchViewController: UIViewController {
     var ref:DatabaseReference!
     
     //Delegate 관련 업로드 자료
-    var adress:String?
-    var placeName:String?
-    var latitude:Double?
-    var longitudue:Double?
+    var adress:String = DataCenter.main.placeAddress
+    var placeName:String = DataCenter.main.placeName
+    var latitude:Double = DataCenter.main.latitude
+    var longitudue:Double = DataCenter.main.longitude
     
     
     
@@ -52,6 +55,12 @@ class SK_AutoSearchViewController: UIViewController {
     
     @IBAction func postToFirebase(_ sender: Any) {
         
+        DataCenter.main.placeAddress = adress
+        DataCenter.main.latitude = latitude
+        DataCenter.main.longitude = longitudue
+        DataCenter.main.placeName = placeName
+        
+        dismiss(animated: true, completion: nil)
     }
     
     func startGoogleMap(){
@@ -60,17 +69,17 @@ class SK_AutoSearchViewController: UIViewController {
         googleMapView.isMyLocationEnabled = true
         googleMapView.settings.myLocationButton = true
         
-        let camera = GMSCameraPosition.camera(withLatitude: 37.515, longitude: 127.019, zoom: zoom)
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitudue, zoom: zoom)
         self.googleMapView.camera = camera
         
         let marker = GMSMarker()
         marker.map = googleMapView
         marker.position = camera.target
         marker.icon = UIImage(named: "GMarker")
-        marker.snippet = "FooPls Center"
+        marker.snippet = placeName
         
-        placeLB.text = "FooPls Center"
-        addressLB.text = "서울시 강남구 신사동"
+        placeLB.text = placeName
+        addressLB.text = adress
         addressLB.textAlignment = .center
         
     }
@@ -132,16 +141,37 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         
         addressLB.textAlignment = .left
         placeLB.text = place.name
-        addressLB.text = place.formattedAddress
         
-        adress = place.formattedAddress
+        
+        shortAddress(addressTracker: place.formattedAddress!)
+        
+        addressLB.text = adress
+
+        
         placeName = place.name
         latitude = place.coordinate.latitude
         longitudue = place.coordinate.longitude
         
+
+        
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         
+        //"대한민국 서울특별시 강남구 신사동 ~~~"
+        
+        
     
+    }
+    
+    func shortAddress(addressTracker: String) -> String {
+        
+        let fullAddress = addressTracker
+        let fullAddressArr = fullAddress.components(separatedBy: " ")
+        
+        self.adress = fullAddressArr[2] + " " + fullAddressArr[3]
+        print(self.adress)
+        
+        return adress
+        
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {

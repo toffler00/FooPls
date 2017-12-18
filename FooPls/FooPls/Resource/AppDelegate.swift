@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Facebook Login
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
-        GMSServices.provideAPIKey("AIzaSyCK_mUEG0l9-ADYfsuZduyqjL0yub6HHEY")
+        GMSServices.provideAPIKey("AIzaSyB_5hqqGu1K6ZtzyTfU22szh_AS5j4fzHI")
         GMSPlacesClient.provideAPIKey("AIzaSyCK_mUEG0l9-ADYfsuZduyqjL0yub6HHEY")
         
         return true
