@@ -42,7 +42,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
-    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,25 +111,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
 
     //MARK: - 장소 버튼을 누르면 GooglePlacePickerController로 들어감
     @IBAction func locationBtnAction(_ sender: UIButton) {
-        
-        //잠시 주석처리함.
-//        let center = CLLocationCoordinate2D(latitude: 37.566627, longitude: 126.978432)
-//        let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.001, longitude: center.longitude + 0.001)
-//        let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.001, longitude: center.longitude - 0.001)
-//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-//        let config = GMSPlacePickerConfig(viewport: viewport)
-//        let placePicker = GMSPlacePickerViewController(config: config)
-//        placePicker.delegate = self
-//        present(placePicker, animated: true, completion: nil)
-//
-//        placePicker.navigationController?.navigationBar.barTintColor = UIColor.black
-//        placePicker.navigationController?.navigationBar.isTranslucent = false
-        
         //구글 PlacePicker와 연결함
-
         present(autoNavi!, animated: true, completion: nil)
-        
-        
     }
     
     //GooglePickerView에 있는 값을 Delegate값으로 가져옴
@@ -138,8 +120,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         
         locationTitle.text = placeName
     }
-    
-    
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드
     func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
