@@ -60,7 +60,6 @@ class DataCenter {
 //        completion(key)
 //    }
     
-    
     // MARK: - upload
     func postUpload(uid : String?, storeimg : UIImage, storeName : String,
                     storeAdress : String, contents : String) {

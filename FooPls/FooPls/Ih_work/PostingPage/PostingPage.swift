@@ -53,6 +53,12 @@ class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerD
                     if error != nil {
                         print(error.debugDescription)
                     }else {
+<<<<<<< HEAD
+=======
+                    UIAlertController.presentAlertController(target: self, title: "업로드성공",
+                                                             massage: "업로드 성공하였습니다.",
+                                                             cancelBtn: false, completion: nil)
+>>>>>>> toffler
                         print("업로드성공")
                     }
             }
