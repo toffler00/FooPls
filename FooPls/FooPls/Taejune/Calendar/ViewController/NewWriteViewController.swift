@@ -112,13 +112,28 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - 장소 버튼을 누르면 GooglePlacePickerController로 들어감
     @IBAction func locationBtnAction(_ sender: UIButton) {
         //구글 PlacePicker와 연결함
+
         present(autoNavi!, animated: true, completion: nil)
     }
     
-    //GooglePickerView에 있는 값을 Delegate값으로 가져옴
+    //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+
         
         locationTitle.text = placeName
+        longitude = longi
+        latitude = lati
+        self.adress = address
+        
+
+//        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
+//        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
+//            present(googlePicekerVC, animated: true, completion: nil)
+//        }
+
+
+
+
     }
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드

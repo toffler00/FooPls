@@ -14,13 +14,25 @@ import FirebaseStorage
 class DataCenter {
     
     
+    static var main = DataCenter()
+
+    //GooglePlacePicker의 기본 데이터
+    //37.5156778,127.0191916
+
+    var latitude:Double = 37.5156778
+    var longitude:Double = 127.0191916
+    var placeAddress:String = "서울특별시 강남구 논현동"
+    var placeName:String = "FooPls!"
+    
+    
     //MARK: - Property
     let reference = Database.database().reference()
     let storage = Storage.storage().reference()
     let userInfo = Auth.auth().currentUser
     var postModel : PostModel?
     var currentUser : UserModel?
-    init() { }
+    
+    init() {}
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
 
