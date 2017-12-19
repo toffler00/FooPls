@@ -35,7 +35,7 @@ class TJProfileViewController: UIViewController {
     private func setupUI() {
         profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
-        profileView.layer.cornerRadius = profileView.frame.size.width / 2
+        profileView.layer.cornerRadius = profileView.frame.width / 2
         
     }
     

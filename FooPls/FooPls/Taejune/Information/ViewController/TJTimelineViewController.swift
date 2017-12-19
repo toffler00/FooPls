@@ -28,13 +28,14 @@ class TJTimelineViewController: UIViewController {
     }
     
     private func loadDate() {
-        reference.child("users").child(userID!).child("calendar").observe(.value) { [weak self] (snapshot) in
+        reference.child("users").child(userID!).child("calendar").observeSingleEvent(of: .value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : [String: Any]] {
                 self.myPostingTitles.removeAll()
                 self.myPostingAddress.removeAll()
                 self.myPostingImgs.removeAll()
                 self.myPostingIndex.removeAll()
+                self.myPostingDate.removeAll()
                 for (key, postingDic) in value {
                     let postingTitle = postingDic["title"] as! String
                     let postingAddress = postingDic["address"] as! String

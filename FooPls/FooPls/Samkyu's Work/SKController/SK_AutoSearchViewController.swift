@@ -141,28 +141,19 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         
         searchController?.isActive = false
-        
         addressLB.textAlignment = .center
         placeLB.text = place.name
-        
         
         shortAddress(addressTracker: place.formattedAddress!)
         
         addressLB.text = adress
-
-        
         placeName = place.name
         latitude = place.coordinate.latitude
         longitudue = place.coordinate.longitude
-        
 
-        
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         
         //"대한민국 서울특별시 강남구 신사동 ~~~"
-        
-        
-    
     }
     
     func shortAddress(addressTracker: String) -> String {
@@ -185,7 +176,8 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
 }
 
 protocol GooglePlaceDataDelegate {
-    
+
     func positinData(lati: Double, longi: Double, address:String, placeName:String)
-    
+
 }
+
