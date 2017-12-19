@@ -93,37 +93,36 @@ extension CalendarViewController: UITableViewDelegate {
         var swipeActionsConfigure = UISwipeActionsConfiguration()
         switch contentTitleList.count {
         case 0:
-            break // ToDo
+            break
         default:
-            let indexPathRow = indexPath.row
             let deleteAction = UIContextualAction(style: .destructive, title: "삭제") { [weak self] (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
                 guard let `self` = self else { return }
                 success(true)
-                //                self.removeObjectFromFireBase()
-                
+                self.removeDatabase(tableView, indexPath)
             }
             swipeActionsConfigure = UISwipeActionsConfiguration(actions: [deleteAction])
         }
         return swipeActionsConfigure
     }
-    
-    func removeObjectFromFireBase() {
-        guard let uid = userID else { return }
-//                let removeObjectRef = reference.child("users").child(uid).child("calendar").re
-        let removeObjectRef = reference.observe(.childRemoved) { (snapshot) in
-            reference.child("users").removeObserver(withHandle: <#T##UInt#>)
+
+    fileprivate func removeDatabase( _ tableView: UITableView, _ indexPath: IndexPath) {
+        guard let uid = self.userID else { return }
+        self.reference.child("users").child(uid).child("calendar")
+            .child(self.contentKeys[indexPath.item]).removeValue()
+        self.reference.observe(.childRemoved) { (snapshot) in
+            print("snapshot:\(snapshot)")
+            let indexPathRow = indexPath.row
+            self.contentKeys.remove(at: indexPathRow)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-//                removeObjectRef.removeValue()
     }
     
-    // MARK: ios 11버전 미만 셀 삭제
-    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    //        let indexPathRow = indexPath.row
-    //        if editingStyle == .delete {
-    //            self.contentTitleList.remove(at: indexPathRow)
-    //            tableView.deleteRows(at: [indexPath], with: .automatic)
-    //        }
-    //    }
+    // MARK: ios 11버전 이전 셀 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+           self.removeDatabase(tableView, indexPath)
+        }
+    }
 }
 
 // MARK: - EmptyCellDelegate
@@ -159,5 +158,4 @@ extension CalendarViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
-
 
