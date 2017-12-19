@@ -23,6 +23,11 @@ class SettingTableViewController: UITableViewController {
     let reference = Database.database().reference()
     
     // MARK: - IBAction
+    // 설정창 닫기
+    @IBAction func closeButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // 카카오톡 로그아웃
     @IBAction func kakaotalkLogOut(_ sender: UISwitch) {
         switch sender.isOn {
