@@ -14,6 +14,7 @@ struct UserModel{
     var token : String?
     var nickName : String?
     var profileImg : UIImage?
+    var profileImgurl : String?
     
     
     init(email : String, uid : String){

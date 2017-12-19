@@ -11,8 +11,7 @@ class CustomCell: UICollectionViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellTitleLb: UILabel!
     @IBOutlet weak var cellAdressLb: UILabel!
-    @IBOutlet weak var cellPointLb: UILabel!
-    @IBOutlet weak var cellTagLb: UILabel!
     @IBOutlet weak var nickNameLb: UILabel!
+    @IBOutlet weak var thoughtsLb: UILabel!
     
 }
