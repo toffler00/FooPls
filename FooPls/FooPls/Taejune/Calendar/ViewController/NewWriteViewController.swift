@@ -48,6 +48,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
 
+        //플레이스 뷰를 내릴때 노티
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
                                                object: nil, queue: nil) {[weak self] (noti) in
                                                 
@@ -73,9 +74,9 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         latitude = DataCenter.main.latitude
         address = DataCenter.main.placeAddress
         
-        print("longi : ", longitude)
-        print("lati : ", latitude)
-        print("address : ", address)
+//        print("longi : ", longitude)
+//        print("lati : ", latitude)
+//        print("address : ", address)
         
         
         
