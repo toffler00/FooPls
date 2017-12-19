@@ -86,6 +86,7 @@ class SettingTableViewController: UITableViewController {
             guard let `self` = self else { return }
             self.firebaseAuthlogOut()
             self.performSegue(withIdentifier: self.performSegueID, sender: nil)
+            
         }
     }
     

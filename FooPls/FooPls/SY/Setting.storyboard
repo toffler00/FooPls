@@ -178,7 +178,7 @@
                     </tableView>
                     <connections>
                         <outlet property="versionLB" destination="kgb-aW-H1d" id="1WC-Ru-ZcB"/>
-                        <segue destination="gGM-4q-ge7" kind="show" identifier="Login" id="Gqh-BA-tJV"/>
+                        <segue destination="gGM-4q-ge7" kind="modal" identifier="Login" id="Gqh-BA-tJV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeA-RF-h7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
