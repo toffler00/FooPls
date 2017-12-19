@@ -53,11 +53,23 @@ class DataCenter {
             }
         }
     }
-    //    // MARK: - fetchUser
-//    func fetchUserUidAndPostsKey(completion : @escaping (_ key : String) -> Void) {
-//        guard let uid = userInfo?.uid else {return}
-//        let key = ref.child("users").child(uid).child("posts").childByAutoId().key
-//        completion(key)
+
+//    func dbValueObserver() {
+//        ref.child("users").observe(DataEventType.childAdded) { (snapshot) in
+//            if let users = snapshot.value as? [String : [String : [String : String]]] {
+//                if let posts = users["users"] as? [String : [String : String]] {
+//                    for (_ , value) in posts {
+//                        var name = value["storename"]
+//                        var address = value["storeadress"]
+//                        var content = value["content"]
+//                        var imgurl = value["storeimgurl"]
+//
+//
+//                    }
+//
+//                }
+//            }
+//        }
 //    }
     
     // MARK: - upload

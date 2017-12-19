@@ -47,6 +47,18 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
+
+        //플레이스 뷰를 내릴때 노티
+        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
+                                               object: nil, queue: nil) {[weak self] (noti) in
+                                                
+                                                self?.latitude = DataCenter.main.latitude
+                                                self?.longitude = DataCenter.main.longitude
+                                                self?.locationTitle.text = DataCenter.main.placeName
+                                                self?.LocationAddress.text = DataCenter.main.placeAddress
+                                                self?.address = DataCenter.main.placeAddress
+        }
+
         
     }
     
@@ -132,6 +144,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         present(autoNavi!, animated: true, completion: nil)
     }
     
+    
     //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
 
@@ -141,6 +154,14 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         longitude = longi
         latitude = lati
         self.address = address
+        
+        func positionDataLoad() {
+         self.latitude = DataCenter.main.latitude
+         self.longitude = DataCenter.main.longitude
+         locationTitle.text = DataCenter.main.placeName
+         LocationAddress.text = DataCenter.main.placeAddress
+        }
+        
         
 
 //        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)

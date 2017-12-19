@@ -38,8 +38,9 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func returnMainView(_ sender: Any) {
+        print("눌리긴하는거야?")
         
-        performSegue(withIdentifier: "returnMainView", sender: self)
+        
     }
    
     func selectedCellInfo(nickName: String, uid: String) {
