@@ -51,6 +51,9 @@
 		23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */; };
 		23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
+		624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */; };
+		624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */; };
+		627672F81FE7BFFA006EDC10 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */; };
 		628E5B1F1FE259B700CBEA16 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
@@ -92,8 +95,6 @@
 		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
-
-
 		FCF45A2C1FD936AD00D99E85 /* SK_AutoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,8 @@
 		23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJDetailTimelineViewController.swift; sourceTree = "<group>"; };
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_PostPage.storyboard; sourceTree = "<group>"; };
+		624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ih_PostingPage.swift; sourceTree = "<group>"; };
 		628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_Posting.storyboard; sourceTree = "<group>"; };
@@ -192,9 +195,6 @@
 		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
 		FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_DetailViewController.swift; sourceTree = "<group>"; };
-
-		FCED14DB1FE2B6EF002C776F /* SK_TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_TestViewController.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */,
+				624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */,
 				62E1FF421FD924BF00E1FEAE /* Ih_MainView.storyboard */,
 			);
 			path = StoryBoard;
@@ -464,6 +465,7 @@
 				62E1FF491FD924BF00E1FEAE /* Ih_PostVC.swift */,
 				62E1FF4A1FD924BF00E1FEAE /* Ih_DetailInfoVC.swift */,
 				62E1FF4B1FD924BF00E1FEAE /* Ih_MapVC.swift */,
+				624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */,
 			);
 			path = PostingPage;
 			sourceTree = "<group>";
@@ -748,6 +750,7 @@
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
+				624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */,
 				62E1FF541FD924BF00E1FEAE /* Ih_MainView.storyboard in Resources */,
 				230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
@@ -851,6 +854,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627672F81FE7BFFA006EDC10 /* BuildFile in Sources */,
 				FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */,
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				62F1B7331FDFCC0D0084D68F /* Ih_AllPostsData.swift in Sources */,
@@ -861,6 +865,7 @@
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
+				624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				230EDD871FE0F6AC00FF26CC /* TJSettingViewController.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,

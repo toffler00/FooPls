@@ -13,11 +13,15 @@ struct UserModel{
     var password : String?
     var token : String?
     var nickName : String?
+    var profileImg : UIImage?
+    
     
     init(email : String, uid : String){
         self.email = email
         self.uid = uid
     }
+    
+    
     
 }
 
