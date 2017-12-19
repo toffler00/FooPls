@@ -13,7 +13,7 @@ let emptyCell = "EmptyCell"
 extension CalendarViewController {
     
     // MARK: 팝업뷰 세팅
-   public func setUpPopUpView() {
+    public func setUpPopUpView() {
         // 팝업뷰 생성
         let viewColor = UIColor.black
         // 부모뷰 투명
@@ -85,32 +85,45 @@ extension CalendarViewController: UITableViewDelegate {
         let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
         detailVC.selectedKey = self.contentKeys[index]
         present(detailVC, animated: true, completion: nil)
- 
+        
     }
     // MARK: ios 11부터 셀 삭제
     @available (iOS 11.0, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let indexPathRow = indexPath.row
-        let deleteAction = UIContextualAction(style: .destructive, title: "삭제") { [weak self] (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
-            guard let `self` = self else { return }
-            success(true)
-            self.contentTitleList.remove(at: indexPathRow)
-            // 한 개만 남은 데이터를 없애면 크러시 -> 처리예정
-            // 원인: 테이블 뷰에서 로우 삭제 뒤 reloadData 자동호출되면서
-            // 데이터 소스인 객체와 개수가 맞지 않는데...
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        var swipeActionsConfigure = UISwipeActionsConfiguration()
+        switch contentTitleList.count {
+        case 0:
+            break // ToDo
+        default:
+            let indexPathRow = indexPath.row
+            let deleteAction = UIContextualAction(style: .destructive, title: "삭제") { [weak self] (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
+                guard let `self` = self else { return }
+                success(true)
+                //                self.removeObjectFromFireBase()
+                
+            }
+            swipeActionsConfigure = UISwipeActionsConfiguration(actions: [deleteAction])
         }
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeActionsConfigure
     }
     
-    // MARK: 그냥 ios 버전 셀 삭제
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let indexPathRow = indexPath.row
-        if editingStyle == .delete {
-            self.contentTitleList.remove(at: indexPathRow)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+    func removeObjectFromFireBase() {
+        guard let uid = userID else { return }
+//                let removeObjectRef = reference.child("users").child(uid).child("calendar").re
+        let removeObjectRef = reference.observe(.childRemoved) { (snapshot) in
+            reference.child("users").removeObserver(withHandle: <#T##UInt#>)
         }
+//                removeObjectRef.removeValue()
     }
+    
+    // MARK: ios 11버전 미만 셀 삭제
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    //        let indexPathRow = indexPath.row
+    //        if editingStyle == .delete {
+    //            self.contentTitleList.remove(at: indexPathRow)
+    //            tableView.deleteRows(at: [indexPath], with: .automatic)
+    //        }
+    //    }
 }
 
 // MARK: - EmptyCellDelegate
@@ -122,7 +135,6 @@ extension CalendarViewController: EmptyCellDelegate {
     }
     
 }
-
 
 // MARK: - PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
@@ -147,9 +159,5 @@ extension CalendarViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
-
-
-
-
 
 
