@@ -140,7 +140,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
 
         print(address)
-        //locationTitle.text = placeName
+        locationTitle.text = placeName
+        LocationAddress.text = address
         longitude = longi
         latitude = lati
         self.address = address
