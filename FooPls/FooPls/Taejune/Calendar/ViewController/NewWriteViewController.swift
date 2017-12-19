@@ -66,15 +66,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         super.viewDidAppear(animated)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        locationTitle.text = DataCenter.main.placeName
-        LocationAddress.text = DataCenter.main.placeAddress
-        longitude = DataCenter.main.longitude
-        latitude = DataCenter.main.latitude
-        address = DataCenter.main.placeAddress
-    }
     
     //MARK: - 뒤로 가기 버튼
     @IBAction func backBtnAction(_ sender: UIButton) {
