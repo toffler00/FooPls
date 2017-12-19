@@ -86,7 +86,7 @@ class DataCenter {
     }
     //MARK : -user Uid and nickname
     func userUidAndNickNameLoad() {
-        reference.child("users").observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>)
+//        reference.child("users").observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>)
     }
 
 //    func dbValueObserver() {
