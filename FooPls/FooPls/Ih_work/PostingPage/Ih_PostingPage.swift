@@ -7,8 +7,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
-GooglePlaceDataDelegate {
+class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate {
  
     
     var dataCenter : DataCenter!
@@ -87,7 +86,7 @@ GooglePlaceDataDelegate {
         
         navigationCon = autoSearch.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoSearchVC = navigationCon?.visibleViewController as? SK_AutoSearchViewController
-        autoSearchVC?.delegate = self
+//        autoSearchVC?.delegate = self
         
         present(navigationCon!, animated: true, completion: nil)
     }

@@ -37,7 +37,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
-        autoVC?.delegate = self
+//        autoVC?.delegate = self
     }
     
     private func loadData() {
