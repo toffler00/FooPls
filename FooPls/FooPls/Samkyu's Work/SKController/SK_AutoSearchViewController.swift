@@ -139,7 +139,7 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         
         searchController?.isActive = false
         
-        addressLB.textAlignment = .left
+        addressLB.textAlignment = .center
         placeLB.text = place.name
         
         
@@ -167,7 +167,7 @@ extension SK_AutoSearchViewController : GMSAutocompleteResultsViewControllerDele
         let fullAddress = addressTracker
         let fullAddressArr = fullAddress.components(separatedBy: " ")
         
-        self.adress = fullAddressArr[2] + " " + fullAddressArr[3]
+        self.adress = fullAddressArr[1] + " " + fullAddressArr[2] + " " + fullAddressArr[3]
         print(self.adress)
         
         return adress
