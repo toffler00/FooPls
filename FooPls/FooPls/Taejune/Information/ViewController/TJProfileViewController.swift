@@ -40,12 +40,12 @@ class TJProfileViewController: UIViewController {
     }
     
     private func loadData() {
-        reference.child("users").child(userID!).observe(.value) { [weak self] (snapshot) in
+        reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : Any] {
                 self.userNickname = value["nickname"] as? String
                 self.profileNickname.text = self.userNickname
-                let profileImg = value["profilePhotoID"] as? String
+                let profileImg = value["photoID"] as? String
                 self.profileImgView.kf.setImage(with: URL(string: profileImg!))
                 self.profileBGImgView.kf.setImage(with: URL(string: profileImg!))
             }

@@ -38,6 +38,17 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
+        
+        //플레이스 뷰를 내릴때 노티
+        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
+                                               object: nil, queue: nil) {[weak self] (noti) in
+                                                guard let `self` = self else { return }
+                                                self.latitude = DataCenter.main.latitude
+                                                self.longitude = DataCenter.main.longitude
+                                                self.detailLocationTitleLabel.text = DataCenter.main.placeName
+                                                self.detailLocationAddressLabel.text = DataCenter.main.placeAddress
+                                                self.address = DataCenter.main.placeAddress
+        }
     }
     
     private func loadData() {
