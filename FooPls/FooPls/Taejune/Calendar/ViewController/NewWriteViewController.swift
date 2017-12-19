@@ -58,16 +58,10 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         super.viewWillAppear(true)
         
         locationTitle.text = DataCenter.main.placeName
+        LocationAddress.text = DataCenter.main.placeAddress
         longitude = DataCenter.main.longitude
         latitude = DataCenter.main.latitude
         address = DataCenter.main.placeAddress
-        
-        print("longi : ", longitude)
-        print("lati : ", latitude)
-        print("address : ", address)
-        
-        
-        
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -142,7 +136,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
 
         print(address)
-        //locationTitle.text = placeName
+        locationTitle.text = placeName
+        LocationAddress.text = address
         longitude = longi
         latitude = lati
         self.address = address
