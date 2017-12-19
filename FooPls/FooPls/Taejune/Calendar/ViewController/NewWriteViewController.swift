@@ -23,6 +23,11 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var longitude: Double?
     var latitude: Double?
     var address: String?
+    var addressTitle:String = "가게 이름" {
+        didSet {
+            locationTitle.text = DataCenter.main.placeName
+        }
+    }
     
     @IBOutlet weak var writeScrollView: UIScrollView!
     @IBOutlet weak var customNaviBar: UIView!
@@ -42,6 +47,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
+
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
                                                object: nil, queue: nil) {[weak self] (noti) in
                                                 
@@ -51,11 +57,28 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                                 self?.LocationAddress.text = DataCenter.main.placeAddress
                                                 self?.address = DataCenter.main.placeAddress
         }
+
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        locationTitle.text = DataCenter.main.placeName
+        longitude = DataCenter.main.longitude
+        latitude = DataCenter.main.latitude
+        address = DataCenter.main.placeAddress
+        
+        print("longi : ", longitude)
+        print("lati : ", latitude)
+        print("address : ", address)
+        
+        
+        
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -131,7 +154,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
 
         print(address)
-        locationTitle.text = placeName
+        //locationTitle.text = placeName
         longitude = longi
         latitude = lati
         self.address = address
