@@ -18,14 +18,12 @@ class SplashViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {        
         super.viewDidLoad()
+
         getTimeStamp()
-        try! Auth.auth().signOut()
-        FBSDKLoginManager().logOut()
         DataCenter.main.dataLoadSingleEvent() //{ (mainVCPostData) in
 //            let mainVCData = mainVCPostData
 //            NotificationCenter.default.post(name: Notification.Name.mainVCData, object: mainVCData)
 //        }
-        
         //MARK: - 애니메이션 동작, 동작 후 후행 클로저를 통해 현재 로그인이 되어 있는지 확인
         fooplsLoadingView.addSplashLoadingAnimation { [weak self] (action) in
             guard let `self` = self else { return }

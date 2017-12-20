@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     var kakaoServerURL = ""
     var userInfo : UserModel?
 
+    
+    
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
@@ -27,6 +29,15 @@ class LoginViewController: UIViewController {
     
     // MARK: Life Cycle
     override func viewDidLoad() {
+        ///////////////
+        
+        
+        
+        
+        
+        
+        
+        
         super.viewDidLoad()
 
         // MARK: 페이스북 버튼
@@ -232,3 +243,5 @@ extension LoginViewController : UITextFieldDelegate {
         return true
     }
 }
+
+

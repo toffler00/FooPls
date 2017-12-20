@@ -208,10 +208,10 @@
                                                         <rect key="frame" x="28.5" y="167.5" width="319" height="400"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Wt-Pp-TSn">
-                                                                <rect key="frame" x="47.5" y="100.5" width="225" height="160"/>
+                                                                <rect key="frame" x="97.5" y="100.5" width="125" height="160"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디를 입려해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="310-lx-Ijz" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="33.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="33.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -220,7 +220,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-l6-HYe" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="63.5" width="225" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="63.5" width="125" height="33"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -229,7 +229,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다시 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-7d-Yp8" customClass="CustomTextField" customModule="FooPls" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="126.5" width="225" height="33.5"/>
+                                                                        <rect key="frame" x="0.0" y="126.5" width="125" height="33.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -244,7 +244,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-bf-56b" customClass="CustomButton" customModule="FooPls" customModuleProvider="target">
-                                                                <rect key="frame" x="47.5" y="326" width="225" height="29"/>
+                                                                <rect key="frame" x="97.5" y="326" width="125" height="29"/>
                                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                                 <state key="normal" title="확인">
