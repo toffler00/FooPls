@@ -53,6 +53,41 @@ class DataCenter {
             }
         }
     }
+    
+    //MARK: - Data singleEvent
+    func dataLoadSingleEvent(completion : @escaping ([PostModel]) -> Void) {
+        reference.child("users").observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            if let users = snapshot.value as? [String : [String : [String : String]]] {
+                var mainVCpostsData : [PostModel] = []
+                for (_ , value) in users {
+                    if mainVCpostsData.count <= 30 {
+                        if let posts = value["posts"] {
+                            let name = posts["storename"]
+                            let address = posts["storeaddress"]
+                            let content = posts["content"]
+                            let imgurl = posts["storeimgurl"]
+                            let lati = posts["latitude"]
+                            let longi = posts["longitude"]
+                            let thoughts = posts["thoughts"]
+                            let date = posts["data"]
+                            let timeStamp = posts["timestamp"]
+                            let photoname = posts["photoname"]
+                            let nickname = posts["nickname"]
+                            let datas = PostModel(storeName: name!, storeAddress: address!, content: content!, latitude: lati!, longitude: longi!, storeImgurl: imgurl!, date: date!, timeStamp: timeStamp!, photoName: photoname!, thoughts : thoughts!, nickname : nickname!)
+                            mainVCpostsData.append(datas)
+                        }
+                    }else {
+                        return
+                    }
+                }
+                completion(mainVCpostsData)
+            }
+        }
+    }
+    //MARK : -user Uid and nickname
+    func userUidAndNickNameLoad() {
+//        reference.child("users").observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>)
+    }
 
 //    func dbValueObserver() {
 //        ref.child("users").observe(DataEventType.childAdded) { (snapshot) in
@@ -63,6 +98,8 @@ class DataCenter {
 //                        var address = value["storeadress"]
 //                        var content = value["content"]
 //                        var imgurl = value["storeimgurl"]
+//                        var lati = value["latitude"]
+//                        var longi = value["longitude"]
 //
 //
 //                    }
@@ -95,5 +132,14 @@ class DataCenter {
         }
     }
     
+    
 }
- 
+
+
+
+
+
+
+
+
+

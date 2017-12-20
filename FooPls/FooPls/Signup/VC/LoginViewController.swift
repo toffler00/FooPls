@@ -8,6 +8,7 @@ import SnapKit
 class LoginViewController: UIViewController {
     
     // MARK: 프로퍼티
+    let defaultProfileURL = "https://firebasestorage.googleapis.com/v0/b/foopls-84f76.appspot.com/o/profile_images%2FdefaultProfile.png?alt=media&token=7bca209f-50c9-4b5f-91ed-b651ded3b57f"
     let reference = Database.database().reference()
     var kakaoServerURL = ""
     var userInfo : UserModel?
@@ -162,24 +163,21 @@ class LoginViewController: UIViewController {
     func signInToFirebaseWithToken(firebaseToken: String) {
         Auth.auth().signIn(withCustomToken: firebaseToken) { [weak self] (user, error) in
             guard let `self` = self else { return }
-            let userEmail = user?.email ?? ""
-            let userNickname = user?.displayName ?? ""
-            let defaultProfile = UIImage(named: "defaultProfile")
-            let uploadImg = UIImageJPEGRepresentation(defaultProfile!, 0.3)
-            Storage.storage().reference().putData(uploadImg!, metadata: nil, completion: { (metadata, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                }else {
-                    guard let profilePhotoID = metadata?.downloadURL()?.absoluteString else { return }
-                    let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "profilePhotoID": profilePhotoID]
-                    if let authError = error {
-                        print("authError",authError)
-                    } else {
-                        self.reference.child("users").child(user!.uid).setValue(userDic)
-                        self.performSegue(withIdentifier: "mainSegue", sender: self)
-                    }
+            if error == nil && user != nil {
+                let userEmail = user?.email ?? ""
+                let userNickname = user?.displayName ?? ""
+                let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
+                print(userDic)
+                if let authError = error {
+                    print("authError",authError)
+                } else {
+                    self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
+                    self.performSegue(withIdentifier: "mainSegue", sender: self)
                 }
-            })
+            }else {
+                print(error!.localizedDescription)
+            }
+            
         }
     }
 }
@@ -198,9 +196,8 @@ extension LoginViewController : LoginButtonDelegate{
                 if error == nil, user != nil{
                     let userEmail = user?.email ?? ""
                     let userNickname = user?.displayName ?? ""
-                    let userDic = ["email": userEmail, "nickname": userNickname, "phone": ""]
-                    self.reference.child("users").child(user!.uid).setValue(userDic)
-                
+                    let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
+                    self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
                 }else{
                     if let errors = error {
                         print(errors.localizedDescription)

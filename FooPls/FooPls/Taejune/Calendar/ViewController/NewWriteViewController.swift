@@ -9,9 +9,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     var autoNavi: UINavigationController?
     var autoVC: SK_AutoSearchViewController?
     
-    //이건 어디에 쓰이는거지?
-    var sample:String?
-    
     //MARK: - Firebase
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
@@ -19,6 +16,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     weak var testDelegate: PopViewDelegate?
     
     //MARK: - Property
+    var userNickname: String = ""
     var selectedDate: String = ""
     var longitude: Double?
     var latitude: Double?
@@ -47,7 +45,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
-
+        loadData()
         //플레이스 뷰를 내릴때 노티
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
                                                object: nil, queue: nil) {[weak self] (noti) in
@@ -58,22 +56,21 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                                 self?.LocationAddress.text = DataCenter.main.placeAddress
                                                 self?.address = DataCenter.main.placeAddress
         }
-
-        
+    }
+    
+    private func loadData() {
+        reference.child("users").child(userID!).child("profile").observeSingleEvent(of: .value) { [weak self](snapshot) in
+            guard let `self` = self else { return }
+            if let value = snapshot.value as? [String: Any] {
+                self.userNickname = value["nickname"] as! String
+            }
+            
+        }
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        locationTitle.text = DataCenter.main.placeName
-        LocationAddress.text = DataCenter.main.placeAddress
-        longitude = DataCenter.main.longitude
-        latitude = DataCenter.main.latitude
-        address = DataCenter.main.placeAddress
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -95,8 +92,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
             return
         }
         
-        let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
+        UIAlertController.presentAlertController(target: self, title: "이 글을 등록하시겠습니까?", massage: "이 글을 등록하시겠습니까?", cancelBtn: true) { [weak self] (action) in
             guard let `self` = self else { return }
             guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
             let uuid = UUID().uuidString
@@ -108,7 +104,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
                     
                     let calendarDic = ["title": contentTitle,
-                                       "author": self.userID!,
+                                       "author": self.userNickname,
                                        "content": contentTxtView,
                                        "photoID": photoID,
                                        "photoName": uuid,
@@ -123,17 +119,93 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     
                     let key = self.reference.child("users").childByAutoId().key
                     
-                    let postKey = NSArray(array: [key])
-                    self.reference.child("posts").setValue(postKey)                    
-                    self.dismiss(animated: true, completion: nil)
+                    let alertSheet = UIAlertController(title: nil, message: "이 글을 포스팅하시겠습니까?", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "예", style: .default, handler: { [weak self] (action) in
+                        guard let `self` = self else { return }
+                        let postDic = ["title": contentTitle,
+                                       "author": self.userNickname,
+                                       "content": contentTxtView,
+                                       "imageurl": photoID,
+                                       "photoName": uuid,
+                                       "storename": locationTitle,
+                                       "longitude": longitude,
+                                       "latitude": latitude,
+                                       "storeaddress": address,
+                                       "date": self.selectedDate,
+                                       "postTime": ServerValue.timestamp()] as [String: Any]
+                        self.reference.child("users").child(self.userID!).child("posts").child(key).updateChildValues(postDic)
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: { [weak self] (action) in
+                        guard let `self` = self else { return }
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    alertSheet.addAction(okAction)
+                    alertSheet.addAction(cancelAction)
+                    self.present(alertSheet, animated: true, completion: nil)
+                    
+                    
+                    
+                    
+                    
+                    
+//                    UIAlertController.presentAlertController(target: self, title: nil, massage: "이 글을 포스팅하시겠습니까?", cancelBtn: true, completion: { [weak self] (action) in
+//                        guard let `self` = self else { return }
+//
+//                        let postDic = ["title": contentTitle,
+//                                           "author": self.userNickname,
+//                                           "content": contentTxtView,
+//                                           "photoID": photoID,
+//                                           "photoName": uuid,
+//                                           "locationTitle": locationTitle,
+//                                           "longitude": longitude,
+//                                           "latitude": latitude,
+//                                           "address": address,
+//                                           "date": self.selectedDate,
+//                                           "postTime": ServerValue.timestamp()] as [String: Any]
+//                        self.reference.child("users").child(self.userID!).child("posts").child(key).setValue(postDic)
+//                    })
                 }
             })
         }
-        
-        let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
-        alertSheet.addAction(okAction)
-        alertSheet.addAction(cancelAction)
-        present(alertSheet, animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+//        let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
+//            guard let `self` = self else { return }
+//            guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
+//            let uuid = UUID().uuidString
+//            Storage.storage().reference().child("calendar_images").child(uuid).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
+//                guard let `self` = self else { return }
+//                if error != nil {
+//                    print(error!.localizedDescription)
+//                }else {
+//                    guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
+//
+//                    let calendarDic = ["title": contentTitle,
+//                                       "author": self.userNickname,
+//                                       "content": contentTxtView,
+//                                       "photoID": photoID,
+//                                       "photoName": uuid,
+//                                       "locationTitle": locationTitle,
+//                                       "longitude": longitude,
+//                                       "latitude": latitude,
+//                                       "address": address,
+//                                       "date": self.selectedDate,
+//                                       "postTime": ServerValue.timestamp()] as [String: Any]
+//
+//                    self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
+//
+//                    let key = self.reference.child("users").childByAutoId().key
+//
+//
+//                }
+//            })
+//        }
+
+//        let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
+//        alertSheet.addAction(okAction)
+//        alertSheet.addAction(cancelAction)
+//        present(alertSheet, animated: true, completion: nil)
     }
     
 

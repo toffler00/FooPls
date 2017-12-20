@@ -24,9 +24,21 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.loadDataToMainCollectionView()
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name.mainVCData,
+                                               object: nil, queue: nil) { (mainVCData) in
+            let mainVCPostData = mainVCData.object as! [PostModel]
+            for temp in mainVCPostData {
+                self.postData.append(temp)
+            }
+            DispatchQueue.main.async {
+                self.mainCollectionView.reloadData()
+            }
         }
+        
+//        DispatchQueue.main.async {
+//            self.loadDataToMainCollectionView()
+//        }
         
     }
     
@@ -38,24 +50,24 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     //MARK: - loadData To Main CollectionView
-    func loadDataToMainCollectionView() {
-        print("self.postData.count")
-        guard let uid = self.currentUser?.uid else {return}
-        print(uid)
-        ref = Database.database().reference()
-        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
-            guard let data = snapshot.value as? [ String: [String : String]] else {return}
-            for (_, dic) in data {
-                guard let name = dic["storename"], let address = dic["storeaddress"],
-                    let url = dic["imageurl"], let content = dic["content"] else {return}
-                let posts = PostModel(storeName: name, storeAddress: address, contentText: content, storeImgUrl: url)
-                self.postData.append(posts)
-                self.mainCollectionView.reloadData()
-            }
-            
-        }
-        
-    }
+//    func loadDataToMainCollectionView() {
+//        print("self.postData.count")
+//        guard let uid = self.currentUser?.uid else {return}
+//        print(uid)
+//        ref = Database.database().reference()
+//        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
+//            guard let data = snapshot.value as? [ String: [String : String]] else {return}
+//            for (_, dic) in data {
+//                guard let name = dic["storename"], let address = dic["storeaddress"],
+//                    let url = dic["imageurl"], let content = dic["content"] else {return}
+//                let posts = PostModel(storeName: name, storeAddress: address, contentText: content, storeImgUrl: url)
+//                self.postData.append(posts)
+//                self.mainCollectionView.reloadData()
+//            }
+//            
+//        }
+//
+//    }
     
     
     // MARK: - CollectionView Delegate & Datasource
@@ -69,7 +81,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: (view.frame.width - 24) / 2, height: 240)
+        let size = CGSize(width: (view.frame.width - 24) / 2, height: 300)
         return size
     }
     
@@ -93,6 +105,8 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         
         cell.cellTitleLb.text = self.postData[indexPath.row].storeName
         cell.cellAdressLb.text = self.postData[indexPath.row].storeAddress
+        cell.nickNameLb.text = self.postData[indexPath.row].nickName
+        cell.thoughtsLb.text = self.postData[indexPath.row].thoughts
         
         // url to image - FirebaseUI
         let storeImgUrl = self.postData[indexPath.row].storeImgUrl

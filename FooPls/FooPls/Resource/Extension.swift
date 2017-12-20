@@ -6,6 +6,7 @@ import UIKit
 extension Notification.Name {
     static let reload = Notification.Name(rawValue: "reload")
     static let newPosi = Notification.Name("newPosi")
+    static let mainVCData = Notification.Name("mainVCData")
 }
 
 extension UIViewController {
