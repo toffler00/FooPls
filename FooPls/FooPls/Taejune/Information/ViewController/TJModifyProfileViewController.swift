@@ -34,7 +34,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     }
     
     private func loadData() {
-        reference.child("users").child(userID!).observe(.value) { [weak self] (snapshot) in
+        reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : Any] {
                 
@@ -49,7 +49,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
                 }else if phone == "" {
                     phone = nil
                 }
-                let profileImg = value["profilePhotoID"] as? String
+                let profileImg = value["photoID"] as? String
                 self.profileImgView.kf.setImage(with: URL(string: profileImg!))
                 self.profileBGImgView.kf.setImage(with: URL(string: profileImg!))
                 self.nicknameTextField.text = nickname
@@ -79,7 +79,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
             let email = self.emailTextField.text ?? ""
             let phone = self.phoneTextField.text ?? ""
             let profileDic = ["nickname": nickname, "email": email, "phone": phone]
-            self.reference.child("users").child(self.userID!).updateChildValues(profileDic)
+            self.reference.child("users").child(self.userID!).child("profile").updateChildValues(profileDic)
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -94,8 +94,8 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
             // Save imageData
             Storage.storage().reference().child("profile_images").child(userID!).putData(uploadData, metadata: nil, completion: { [weak self] (metadata, error) in
                 guard let `self` = self else { return }
-                guard let profilePhotoID = metadata?.downloadURL()?.absoluteString else { return }
-                self.reference.child("users").child(self.userID!).updateChildValues(["profilePhotoID": profilePhotoID], withCompletionBlock: { (error, databaseRef) in
+                guard let photoID = metadata?.downloadURL()?.absoluteString else { return }
+                self.reference.child("users").child(self.userID!).child("profile").updateChildValues(["photoID": photoID], withCompletionBlock: { (error, databaseRef) in
                 })
             })
         }

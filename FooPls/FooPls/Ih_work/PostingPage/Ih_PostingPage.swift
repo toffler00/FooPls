@@ -7,7 +7,10 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate {
+
+class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
+GooglePlaceDataDelegate, UITextViewDelegate {
+
  
     
     var dataCenter : DataCenter!
@@ -30,7 +33,7 @@ class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerD
         super.viewDidLoad()
         setUI()
         hideKeyboardWhenTappedAround()
-
+        contentTextView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(kyeboardAppear(_:)), name: .UIKeyboardWillShow , object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(_:)), name: .UIKeyboardWillHide, object: nil)
@@ -91,6 +94,9 @@ class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerD
         present(navigationCon!, animated: true, completion: nil)
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+       contentTextView.text = ""
+    }
     
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
         placeNameTF.text = placeName
@@ -113,6 +119,8 @@ class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerD
     @objc func keyboardDisappear(_ noti: Notification) {
         postPageScrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
+    
+    
     
     /*
     // MARK: - Navigation

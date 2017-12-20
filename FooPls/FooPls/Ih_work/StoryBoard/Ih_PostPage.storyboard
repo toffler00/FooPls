@@ -23,7 +23,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="qNu-YF-D9n" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQq-Yo-p2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-584" y="-148"/>
+            <point key="canvasLocation" x="-35" y="578"/>
         </scene>
         <!--Posting Page-->
         <scene sceneID="fmC-sT-Bie">
@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooPls" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-QM-GBH">
-                                        <rect key="frame" x="131.5" y="40" width="112.5" height="32"/>
+                                        <rect key="frame" x="131" y="40" width="113" height="32"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQM-bP-lag" userLabel="Back">
                                         <rect key="frame" x="9" y="46.5" width="20" height="20"/>
@@ -83,7 +83,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-GT-Tda" userLabel="Date">
-                                                <rect key="frame" x="9.5" y="-1.5" width="356.5" height="59"/>
+                                                <rect key="frame" x="0.5" y="-1.5" width="375" height="59"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kW7-zW-7cO">
                                                         <rect key="frame" x="8" y="7.5" width="50" height="50"/>
@@ -123,16 +123,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-5M-hMq" userLabel="Image">
-                                                <rect key="frame" x="9.5" y="57.5" width="356.5" height="185"/>
+                                                <rect key="frame" x="0.5" y="57.5" width="375" height="185"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-f9-hCN">
-                                                        <rect key="frame" x="86" y="0.0" width="185" height="185"/>
+                                                        <rect key="frame" x="95" y="0.0" width="185" height="185"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="GQv-f9-hCN" secondAttribute="height" multiplier="1:1" id="nhW-LV-4OP"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-9D-SHd">
-                                                        <rect key="frame" x="86.5" y="0.5" width="185" height="185"/>
+                                                        <rect key="frame" x="95.5" y="0.5" width="185" height="185"/>
                                                         <connections>
                                                             <action selector="imagePick:" destination="Obd-8O-oSo" eventType="touchUpInside" id="zoQ-6A-d4W"/>
                                                         </connections>
@@ -150,22 +150,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuV-i9-jiw" userLabel="Location Title">
-                                                <rect key="frame" x="9.5" y="251.5" width="356.5" height="37"/>
+                                                <rect key="frame" x="0.5" y="244.5" width="375" height="37"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="장소를 입력하여 주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-4E-0X6">
-                                                        <rect key="frame" x="18" y="0.0" width="213.5" height="37"/>
+                                                        <rect key="frame" x="18.5" y="0.0" width="225" height="37"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소찾기" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0x-w0-I1F">
-                                                        <rect key="frame" x="250" y="12" width="71.5" height="14.5"/>
+                                                        <rect key="frame" x="262" y="12" width="78" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ac-rF-6uj">
-                                                        <rect key="frame" x="326.5" y="6.5" width="24" height="24"/>
+                                                        <rect key="frame" x="345" y="6.5" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="RoT-j4-SRj"/>
                                                             <constraint firstAttribute="width" secondItem="8ac-rF-6uj" secondAttribute="height" multiplier="1:1" id="Vt0-Gx-Ttt"/>
@@ -179,8 +179,8 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="8ac-rF-6uj" firstAttribute="centerX" secondItem="yuV-i9-jiw" secondAttribute="centerX" multiplier="1.9" id="Cej-Fb-8Gs"/>
+                                                    <constraint firstItem="tR5-4E-0X6" firstAttribute="leading" secondItem="yuV-i9-jiw" secondAttribute="leading" constant="18.5" id="FQl-vs-pdf"/>
                                                     <constraint firstItem="n0x-w0-I1F" firstAttribute="leading" secondItem="tR5-4E-0X6" secondAttribute="trailing" constant="19" id="aRr-XT-VtL"/>
-                                                    <constraint firstItem="tR5-4E-0X6" firstAttribute="centerX" secondItem="yuV-i9-jiw" secondAttribute="centerX" multiplier="0.7" id="ibe-je-dj2"/>
                                                     <constraint firstItem="tR5-4E-0X6" firstAttribute="height" secondItem="yuV-i9-jiw" secondAttribute="height" id="jTZ-OO-Pcs"/>
                                                     <constraint firstItem="n0x-w0-I1F" firstAttribute="centerY" secondItem="yuV-i9-jiw" secondAttribute="centerY" id="rbl-wo-JNy"/>
                                                     <constraint firstItem="tR5-4E-0X6" firstAttribute="centerY" secondItem="yuV-i9-jiw" secondAttribute="centerY" id="s6H-Gm-j8v"/>
@@ -190,10 +190,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-Eg-Vyv" userLabel="Location">
-                                                <rect key="frame" x="10" y="298" width="356.5" height="37"/>
+                                                <rect key="frame" x="0.0" y="283.5" width="375" height="37"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Es-4z-mJv">
-                                                        <rect key="frame" x="322.5" y="6" width="28" height="25.5"/>
+                                                        <rect key="frame" x="341" y="6" width="28" height="25.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="2Es-4z-mJv" secondAttribute="height" multiplier="1.1:1" id="O68-yI-A7y"/>
                                                             <constraint firstAttribute="width" constant="28" id="RFv-cp-2eE"/>
@@ -206,13 +206,13 @@
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="주소를 입력하여 주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSa-8V-Xej">
-                                                        <rect key="frame" x="18" y="0.5" width="213.5" height="37"/>
+                                                        <rect key="frame" x="19" y="0.5" width="225" height="37"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지도에서 찾기" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPK-1V-Jg9">
-                                                        <rect key="frame" x="230.5" y="11" width="90" height="16"/>
+                                                        <rect key="frame" x="249" y="11" width="90" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="gsP-YF-qwK"/>
                                                             <constraint firstAttribute="height" constant="16" id="w5j-2X-i2h"/>
@@ -224,7 +224,6 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="qSa-8V-Xej" firstAttribute="centerX" secondItem="xwb-Eg-Vyv" secondAttribute="centerX" multiplier="0.7" id="158-AA-KFS"/>
                                                     <constraint firstItem="qSa-8V-Xej" firstAttribute="width" secondItem="xwb-Eg-Vyv" secondAttribute="width" multiplier="0.6" id="1Fo-NR-iPY"/>
                                                     <constraint firstItem="2Es-4z-mJv" firstAttribute="top" secondItem="xwb-Eg-Vyv" secondAttribute="top" constant="6" id="Czc-l5-VR2"/>
                                                     <constraint firstItem="qSa-8V-Xej" firstAttribute="height" secondItem="xwb-Eg-Vyv" secondAttribute="height" id="bXn-RT-ufB"/>
@@ -232,55 +231,82 @@
                                                     <constraint firstItem="2Es-4z-mJv" firstAttribute="leading" secondItem="hPK-1V-Jg9" secondAttribute="trailing" constant="2" id="j2h-je-swS"/>
                                                     <constraint firstItem="qSa-8V-Xej" firstAttribute="centerY" secondItem="xwb-Eg-Vyv" secondAttribute="centerY" id="pPZ-ad-KB1"/>
                                                     <constraint firstItem="hPK-1V-Jg9" firstAttribute="centerY" secondItem="xwb-Eg-Vyv" secondAttribute="centerY" id="wEF-aI-na5"/>
+                                                    <constraint firstItem="qSa-8V-Xej" firstAttribute="leading" secondItem="xwb-Eg-Vyv" secondAttribute="leading" constant="18.5" id="weq-GD-KlU"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-dm-QkS" userLabel="Tag">
+                                                <rect key="frame" x="0.0" y="322.5" width="375" height="37"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiJ-fL-fqq">
+                                                        <rect key="frame" x="346" y="7" width="20.5" height="24"/>
+                                                        <state key="normal" image="chat-1"/>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄평을 남겨주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRD-pY-dWB">
+                                                        <rect key="frame" x="19" y="0.0" width="319" height="37"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="fRD-pY-dWB" firstAttribute="centerY" secondItem="uvm-dm-QkS" secondAttribute="centerY" id="1FM-EA-ydn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="BiJ-fL-fqq" secondAttribute="bottom" constant="6" id="BKa-ld-hc7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BiJ-fL-fqq" secondAttribute="trailing" constant="8.5" id="Cf9-2w-vhQ"/>
+                                                    <constraint firstItem="BiJ-fL-fqq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fRD-pY-dWB" secondAttribute="trailing" constant="8" id="Ij6-wA-zCZ"/>
+                                                    <constraint firstItem="fRD-pY-dWB" firstAttribute="width" secondItem="uvm-dm-QkS" secondAttribute="width" multiplier="0.85" id="o1Y-UR-qC9"/>
+                                                    <constraint firstItem="fRD-pY-dWB" firstAttribute="height" secondItem="uvm-dm-QkS" secondAttribute="height" id="wSA-28-Kiu"/>
+                                                    <constraint firstItem="BiJ-fL-fqq" firstAttribute="top" secondItem="uvm-dm-QkS" secondAttribute="top" constant="7" id="ySF-CA-Xq7"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-KV-Awk" userLabel="Content">
-                                                <rect key="frame" x="10" y="388.5" width="356.5" height="185"/>
+                                                <rect key="frame" x="0.0" y="361.5" width="375" height="224"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="설명 입력하기.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-XW-CPc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="185"/>
+                                                        <rect key="frame" x="14" y="0.0" width="347" height="224"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                                     </textView>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="yBN-XW-CPc" firstAttribute="leading" secondItem="rRt-KV-Awk" secondAttribute="leading" id="8Gm-ZL-R1f"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yBN-XW-CPc" secondAttribute="trailing" id="R2m-eK-X8g"/>
                                                     <constraint firstItem="yBN-XW-CPc" firstAttribute="top" secondItem="rRt-KV-Awk" secondAttribute="top" id="dx5-Ir-FvC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yBN-XW-CPc" secondAttribute="trailing" constant="14" id="jxu-Xo-tUk"/>
+                                                    <constraint firstItem="yBN-XW-CPc" firstAttribute="leading" secondItem="rRt-KV-Awk" secondAttribute="leading" constant="14" id="lLv-Gg-4Je"/>
                                                     <constraint firstAttribute="bottom" secondItem="yBN-XW-CPc" secondAttribute="bottom" id="wq0-DP-exT"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-dm-QkS" userLabel="Tag">
-                                                <rect key="frame" x="10" y="343" width="356.5" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.98039215686274506" green="0.93725490196078431" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="xYx-5M-hMq" firstAttribute="centerX" secondItem="mIK-UA-yr2" secondAttribute="centerX" id="4MI-Te-0oF"/>
+                                            <constraint firstItem="uvm-dm-QkS" firstAttribute="top" secondItem="xwb-Eg-Vyv" secondAttribute="bottom" constant="1.5" id="4Sm-b3-T2y"/>
                                             <constraint firstItem="Uku-GT-Tda" firstAttribute="centerX" secondItem="mIK-UA-yr2" secondAttribute="centerX" id="8aA-ri-e18"/>
-                                            <constraint firstItem="xwb-Eg-Vyv" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" multiplier="0.95" id="8eo-rY-Pmd"/>
-                                            <constraint firstItem="rRt-KV-Awk" firstAttribute="centerY" secondItem="mIK-UA-yr2" secondAttribute="centerY" multiplier="1.3" id="9kP-kH-0uk"/>
-                                            <constraint firstItem="rRt-KV-Awk" firstAttribute="height" secondItem="mIK-UA-yr2" secondAttribute="height" multiplier="0.25" id="EXJ-pe-uxF"/>
-                                            <constraint firstItem="yuV-i9-jiw" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" multiplier="0.95" id="GPl-aF-DJg"/>
-                                            <constraint firstItem="yuV-i9-jiw" firstAttribute="centerY" secondItem="mIK-UA-yr2" secondAttribute="centerY" multiplier="0.73" id="Ngp-j0-X9i"/>
-                                            <constraint firstItem="Uku-GT-Tda" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" multiplier="0.95" id="Qf0-pB-E6Q"/>
+                                            <constraint firstItem="xwb-Eg-Vyv" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" id="8eo-rY-Pmd"/>
+                                            <constraint firstItem="uvm-dm-QkS" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" id="8sz-XX-QE1"/>
+                                            <constraint firstItem="rRt-KV-Awk" firstAttribute="height" secondItem="mIK-UA-yr2" secondAttribute="height" multiplier="0.303" id="EXJ-pe-uxF"/>
+                                            <constraint firstItem="yuV-i9-jiw" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" id="GPl-aF-DJg"/>
+                                            <constraint firstItem="rRt-KV-Awk" firstAttribute="top" secondItem="uvm-dm-QkS" secondAttribute="bottom" constant="1.5" id="PtG-cH-sDg"/>
+                                            <constraint firstItem="Uku-GT-Tda" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" id="Qf0-pB-E6Q"/>
                                             <constraint firstItem="xwb-Eg-Vyv" firstAttribute="height" secondItem="mIK-UA-yr2" secondAttribute="height" multiplier="0.05" id="SLp-V2-tcw"/>
-                                            <constraint firstItem="xYx-5M-hMq" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" multiplier="0.95" id="T1f-nc-63y"/>
+                                            <constraint firstItem="xYx-5M-hMq" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" id="T1f-nc-63y"/>
+                                            <constraint firstItem="fRD-pY-dWB" firstAttribute="leading" secondItem="qSa-8V-Xej" secondAttribute="leading" id="WJ7-Am-I9e"/>
                                             <constraint firstAttribute="height" constant="740" id="Wgy-cZ-4LZ"/>
                                             <constraint firstItem="xYx-5M-hMq" firstAttribute="height" secondItem="mIK-UA-yr2" secondAttribute="height" multiplier="0.25" id="agj-Nu-UpA"/>
                                             <constraint firstItem="rRt-KV-Awk" firstAttribute="centerX" secondItem="mIK-UA-yr2" secondAttribute="centerX" id="cot-pc-w1z"/>
+                                            <constraint firstItem="yuV-i9-jiw" firstAttribute="top" secondItem="xYx-5M-hMq" secondAttribute="bottom" constant="1.5" id="hzs-Nl-1zw"/>
                                             <constraint firstItem="yuV-i9-jiw" firstAttribute="height" secondItem="mIK-UA-yr2" secondAttribute="height" multiplier="0.05" id="kzh-rO-nsm"/>
+                                            <constraint firstItem="xwb-Eg-Vyv" firstAttribute="top" secondItem="yuV-i9-jiw" secondAttribute="bottom" constant="1.5" id="p0U-xX-FjH"/>
+                                            <constraint firstItem="uvm-dm-QkS" firstAttribute="height" secondItem="mIK-UA-yr2" secondAttribute="height" multiplier="0.05" id="rQs-PH-KdE"/>
                                             <constraint firstItem="yuV-i9-jiw" firstAttribute="centerX" secondItem="mIK-UA-yr2" secondAttribute="centerX" id="rvn-yt-xx8"/>
                                             <constraint firstItem="Uku-GT-Tda" firstAttribute="centerY" secondItem="mIK-UA-yr2" secondAttribute="centerY" multiplier="0.075" id="snh-6y-BvE"/>
                                             <constraint firstItem="xYx-5M-hMq" firstAttribute="top" secondItem="Uku-GT-Tda" secondAttribute="bottom" id="so4-YJ-BdK"/>
-                                            <constraint firstItem="rRt-KV-Awk" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" multiplier="0.95" id="ubZ-KO-YNr"/>
+                                            <constraint firstItem="rRt-KV-Awk" firstAttribute="width" secondItem="mIK-UA-yr2" secondAttribute="width" id="ubZ-KO-YNr"/>
                                             <constraint firstItem="xYx-5M-hMq" firstAttribute="centerY" secondItem="mIK-UA-yr2" secondAttribute="centerY" multiplier="0.405" id="vIb-be-bt3"/>
-                                            <constraint firstItem="xwb-Eg-Vyv" firstAttribute="centerY" secondItem="mIK-UA-yr2" secondAttribute="centerY" multiplier="0.855" id="vrb-LV-LDI"/>
                                             <constraint firstItem="xwb-Eg-Vyv" firstAttribute="centerX" secondItem="mIK-UA-yr2" secondAttribute="centerX" id="y7e-EM-txp"/>
+                                            <constraint firstItem="uvm-dm-QkS" firstAttribute="centerX" secondItem="mIK-UA-yr2" secondAttribute="centerX" id="zrY-cu-xN9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -328,6 +354,7 @@
         <image name="001-map-1" width="128" height="128"/>
         <image name="FooPls" width="198" height="73"/>
         <image name="back_black" width="64" height="64"/>
+        <image name="chat-1" width="512" height="512"/>
         <image name="check" width="494" height="344"/>
         <image name="picture" width="5000" height="5000"/>
         <image name="right-arrow-2" width="512" height="512"/>
