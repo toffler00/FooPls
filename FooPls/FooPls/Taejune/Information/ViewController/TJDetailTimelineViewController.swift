@@ -28,6 +28,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     @IBOutlet weak var detailImgView: UIImageView!
     @IBOutlet weak var detailLocationTitleLabel: UILabel!
     @IBOutlet weak var detailLocationAddressLabel: UILabel!
+    @IBOutlet weak var detailThoughtTextField: UITextField!
     @IBOutlet weak var detailContentTextView: UITextView!
     
     override func viewDidLoad() {
@@ -62,11 +63,13 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
                 self.detailLocationTitleLabel.text = value["locationTitle"] as? String
                 self.detailLocationAddressLabel.text = value["address"] as? String
                 self.detailContentTextView.text = value["content"] as? String
+                self.detailThoughtTextField.text = value["thought"] as? String
                 self.photoName = value["photoName"] as? String
                 self.date = value["date"] as? String
                 self.longitude = value["longitude"] as? Double
                 self.latitude = value["latitude"] as? Double
                 self.address = value["address"] as? String
+                
             }
         }
     }
@@ -84,7 +87,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         guard let _ = detailImgView.image else { return }
         guard let locationTitle = detailLocationTitleLabel.text else { return }
         guard let contentTxtView = detailContentTextView.text else { return }
-        
+        guard let thought = detailThoughtTextField.text else { return }
         
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 수정하시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
@@ -107,6 +110,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
                                        "longitude": self.longitude!,
                                        "latitude": self.latitude!,
                                        "address": self.address!,
+                                       "thought": thought,
                                        "date": self.date!,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
                     // MARK: Noti
