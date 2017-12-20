@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // MARK: 페이스북 버튼
-        let fbLoginButton = LoginButton(readPermissions: [.email])
+        let fbLoginButton = LoginButton(readPermissions: [.publicProfile, .email])
         view.addSubview(fbLoginButton)
         // 페이스북 버튼 레이아웃
         fbLoginButton.snp.makeConstraints {

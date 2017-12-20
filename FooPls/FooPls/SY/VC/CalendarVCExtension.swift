@@ -30,17 +30,27 @@ extension CalendarViewController {
         popUpView.tableView.register(UINib.init(nibName: emptyCell, bundle: nil), forCellReuseIdentifier: emptyCell)
         self.view.addSubview(popUpView)
     }
+    // MARK: 파이어베이스에서 데이터삭제 함수
+    fileprivate func removeDatabase( _ tableView: UITableView, _ indexPath: IndexPath) {
+        guard let uid = self.userID else { return }
+        self.reference.child("users").child(uid).child("calendar")
+            .child(self.contentKeys[indexPath.item]).removeValue()
+        self.reference.observe(.childRemoved) { (snapshot) in
+            print("snapshot:\(snapshot)")
+            let indexPathRow = indexPath.row
+            self.contentKeys.remove(at: indexPathRow)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension CalendarViewController: UITableViewDataSource {
-    
     // MARK: 데이터 개수에 따른 테이블 뷰 row 생성
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = contentTitleList.count
         return (count > 0) ? count : 1
     }
-    
     // MARK: 데이터 개수에 따라 사용하는 cell다름
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch contentTitleList.count {
@@ -76,8 +86,6 @@ extension CalendarViewController: UITableViewDelegate {
     // MARK: 셀 선택했을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        print("contentKeys: ", self.contentKeys)
-        print("titleList: ", self.contentTitleList)
         // 델리게이트를 이용해서 넘길 예정
         let testTitle = contentTitleList[index]
         postDelegate?.selectedPostCellData(controller: self, data: testTitle)
@@ -104,19 +112,6 @@ extension CalendarViewController: UITableViewDelegate {
         }
         return swipeActionsConfigure
     }
-
-    fileprivate func removeDatabase( _ tableView: UITableView, _ indexPath: IndexPath) {
-        guard let uid = self.userID else { return }
-        self.reference.child("users").child(uid).child("calendar")
-            .child(self.contentKeys[indexPath.item]).removeValue()
-        self.reference.observe(.childRemoved) { (snapshot) in
-            print("snapshot:\(snapshot)")
-            let indexPathRow = indexPath.row
-            self.contentKeys.remove(at: indexPathRow)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-    }
-    
     // MARK: ios 11버전 이전 셀 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -137,7 +132,6 @@ extension CalendarViewController: EmptyCellDelegate {
 
 // MARK: - PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
-    
     // 포스팅버튼
     internal func postWritingButton(button: UIButton) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )

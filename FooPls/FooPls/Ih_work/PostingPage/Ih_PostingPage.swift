@@ -7,8 +7,10 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
+
 class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
-GooglePlaceDataDelegate {
+GooglePlaceDataDelegate, UITextViewDelegate {
+
  
     
     var dataCenter : DataCenter!
@@ -31,7 +33,7 @@ GooglePlaceDataDelegate {
         super.viewDidLoad()
         setUI()
         hideKeyboardWhenTappedAround()
-
+        contentTextView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(kyeboardAppear(_:)), name: .UIKeyboardWillShow , object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(_:)), name: .UIKeyboardWillHide, object: nil)
@@ -87,11 +89,14 @@ GooglePlaceDataDelegate {
         
         navigationCon = autoSearch.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoSearchVC = navigationCon?.visibleViewController as? SK_AutoSearchViewController
-        autoSearchVC?.delegate = self
+//        autoSearchVC?.delegate = self
         
         present(navigationCon!, animated: true, completion: nil)
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+       contentTextView.text = ""
+    }
     
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
         placeNameTF.text = placeName
@@ -114,6 +119,8 @@ GooglePlaceDataDelegate {
     @objc func keyboardDisappear(_ noti: Notification) {
         postPageScrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
+    
+    
     
     /*
     // MARK: - Navigation
