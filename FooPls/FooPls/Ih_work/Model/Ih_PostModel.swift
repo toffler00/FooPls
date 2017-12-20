@@ -56,3 +56,4 @@ struct  PostModel {
         self.longitude = longi
     }
 }
+

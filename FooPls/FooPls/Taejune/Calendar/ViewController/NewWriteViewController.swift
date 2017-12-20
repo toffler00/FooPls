@@ -34,6 +34,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     @IBOutlet weak var contentImgView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var LocationAddress: UILabel!
+    @IBOutlet weak var thoughtTextField: UITextField!
     @IBOutlet weak var contentTxtView: UITextView!
     
     //MARK: - Life Cycle
