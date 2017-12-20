@@ -28,6 +28,7 @@ class SK_SearchListViewController: UIViewController {
     var ref: DatabaseReference!
     
     var sampleData:SearchedData?
+    var searchedPlaces:[AddressData] = []
     
     @IBOutlet weak var googleMapView: GMSMapView!
     @IBOutlet weak var tableView: UITableView!
@@ -42,16 +43,26 @@ class SK_SearchListViewController: UIViewController {
         
         makeGoogleSearchBar()
         startGoogleMap()
-        
         findInFirebaseDatabase()
+        
+        
+        
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        print("리로드 됩니다!")
+        tableView.reloadData()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
-        sampleData = SearchedData()
-        print(sampleData)
-        
+        tableView.reloadData()
     }
     
     func startGoogleMap(){
@@ -128,6 +139,17 @@ extension SK_SearchListViewController : GMSAutocompleteResultsViewControllerDele
         searchController?.isActive = false
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         
+        //searchedPlaces = []
+        
+        //let downloadData = SearchedData(data: place.name)
+        let data = SearchedData()
+        data.loadToFirebase(address: "FooPls!") { (downloadData) in
+            for data in downloadData {
+                self.searchedPlaces.append(data)
+            }
+            self.tableView.reloadData()
+        }
+        
         
         
         
@@ -147,12 +169,20 @@ extension SK_SearchListViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        let rows = searchedPlaces.count
+        print("서치에서 실행되는중 ! : rows", rows)
+        
+        return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let downloadrows = searchedPlaces[indexPath.row]
+        print("서치에서 실행되는중 ! : downloadrows", downloadrows)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = downloadrows.placeName
+        
         
         return cell
         
