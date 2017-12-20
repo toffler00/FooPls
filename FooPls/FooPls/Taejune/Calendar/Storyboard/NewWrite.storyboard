@@ -188,11 +188,28 @@
                                                     <constraint firstAttribute="bottom" secondItem="ZpW-vC-EPq" secondAttribute="bottom" id="kXQ-9s-rtS"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOU-XR-dgd" userLabel="Thought">
+                                                <rect key="frame" x="9.5" y="462.5" width="356.5" height="37"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄 평을 남겨주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-0D-QSZ">
+                                                        <rect key="frame" x="0.0" y="8.5" width="356.5" height="20"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="centerY" secondItem="cOU-XR-dgd" secondAttribute="centerY" id="Fdh-jS-hrZ"/>
+                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="centerX" secondItem="cOU-XR-dgd" secondAttribute="centerX" id="HB2-bS-ae4"/>
+                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="width" secondItem="cOU-XR-dgd" secondAttribute="width" id="hga-Ew-1UZ"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-jh-6wf" userLabel="Content">
-                                                <rect key="frame" x="10" y="462.5" width="356.5" height="259"/>
+                                                <rect key="frame" x="10" y="509" width="356.5" height="185"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="글 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-Md-gR6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="259"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="185"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
@@ -209,7 +226,8 @@
                                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="d7W-jh-6wf" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="85P-DR-SDL"/>
-                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.6" id="8Jl-Ps-0uP"/>
+                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.625" id="8Jl-Ps-0uP"/>
+                                            <constraint firstItem="cOU-XR-dgd" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.3" id="CLg-Cm-TOF"/>
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="EZ3-w6-fWo"/>
                                             <constraint firstItem="8tQ-Ac-uOu" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="Fu3-0L-eNa"/>
                                             <constraint firstItem="sgg-Cq-XNn" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="0.075" id="IGu-ix-ITT"/>
@@ -219,15 +237,18 @@
                                             <constraint firstItem="JhR-Rk-w9W" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="TBN-1n-HCv"/>
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.05" id="TVM-1q-NAT"/>
                                             <constraint firstAttribute="height" constant="740" id="UEP-6d-qn0"/>
+                                            <constraint firstItem="cOU-XR-dgd" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="Vyu-m9-O9e"/>
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="Y47-c7-C25"/>
                                             <constraint firstItem="JhR-Rk-w9W" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="0.625" id="Z7f-2N-fQM"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.05" id="Zj1-kJ-2bC"/>
                                             <constraint firstItem="sgg-Cq-XNn" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="bMI-ym-ySJ"/>
+                                            <constraint firstItem="cOU-XR-dgd" firstAttribute="height" secondItem="acO-qI-ayS" secondAttribute="height" id="bRV-bn-i3z"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="bml-HA-SBn"/>
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.05" id="brh-f2-ZWA"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.175" id="fNV-bj-6IA"/>
                                             <constraint firstItem="sgg-Cq-XNn" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="fUE-9Z-fsf"/>
-                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.35" id="gW7-fk-qHy"/>
+                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.25" id="gW7-fk-qHy"/>
+                                            <constraint firstItem="cOU-XR-dgd" firstAttribute="width" secondItem="acO-qI-ayS" secondAttribute="width" id="hhN-b9-i4d"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="kcE-xl-Rdm"/>
                                             <constraint firstItem="8tQ-Ac-uOu" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="0.2" id="mMZ-ne-TCK"/>
                                             <constraint firstItem="JhR-Rk-w9W" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.35" id="mwT-Dc-syf"/>
@@ -267,6 +288,7 @@
                         <outlet property="customNaviBar" destination="MQ2-6f-gVq" id="dNv-ok-U97"/>
                         <outlet property="dateLabel" destination="bI9-eU-7qR" id="8XG-i1-7mi"/>
                         <outlet property="locationTitle" destination="5Ts-CO-nbl" id="tR9-8P-X7I"/>
+                        <outlet property="thoughtTextField" destination="Esj-0D-QSZ" id="Gte-mh-a97"/>
                         <outlet property="writeScrollView" destination="r0w-p5-XPm" id="6cm-el-3xi"/>
                         <segue destination="yhR-Za-qcU" kind="show" identifier="NewWriteViewController" id="US6-gz-xZS"/>
                     </connections>
