@@ -12,15 +12,15 @@ import Photos
 struct  PostModel {
     
     //MARK : - Variable
-    var storeName : String
-    var storeAddress : String
+    var storeName : String?
+    var storeAddress : String?
     var nickName : String?
     
     //Optional
     var contentsText : String?
     var postTitle : String?
     var storeImg : UIImage?
-    var storeImgUrl : String?
+    var imageurl : String?
     var thoughts : String?
     var date : String?
     var timeStamp : String?
@@ -44,7 +44,7 @@ struct  PostModel {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = contentText
-        self.storeImgUrl = storeImgUrl
+        self.imageurl = storeImgUrl
         self.date = date
         self.timeStamp = timeStamp
         self.latitude = lati
@@ -55,13 +55,13 @@ struct  PostModel {
     }
     
     //포스팅 모델
-    init(storeName : String, storeAddress : String, content : String, latitude : String, longitude : String, storeImgurl : String, date : String, timeStamp : String, photoName : String, thoughts : String , nickname : String) {
+    init(storeName : String, storeAddress : String, content : String, latitude : Double, longitude : Double, storeImgurl : String, date : String, timeStamp : String, photoName : String, thoughts : String , nickname : String) {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = content
-        self.latitude = Double(latitude)
-        self.longitude = Double(longitude)
-        self.storeImgUrl = storeImgurl
+        self.latitude = latitude
+        self.longitude = longitude
+        self.imageurl = storeImgurl
         self.date = date
         self.timeStamp = timeStamp
         self.photoName = photoName
@@ -74,7 +74,7 @@ struct  PostModel {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = contentText
-        self.storeImgUrl = storeImgurl
+        self.imageurl = storeImgurl
         self.latitude = lati
         self.longitude = longi
         self.thoughts = thoughts
@@ -88,4 +88,31 @@ struct  PostModel {
         self.latitude = lati
         self.longitude = longi
     }
+    
+    init (imageUrl : String, photoname : String) {
+        self.imageurl = imageUrl
+        self.photoName = photoname
+    }
+    
+    //Any = [String : [ String : [String : String]]]
+    init(dictionary : [String : Any]) {
+            for (_ , data) in dictionary {
+                if let posts = data as? [String : Any] {
+                    self.storeName = posts["storename"] as? String
+                    self.storeAddress = posts["storeaddress"] as? String
+                    self.contentsText = posts["content"] as? String
+                    self.imageurl = posts["storeimgurl"] as? String
+                    self.latitude = posts["latitude"] as? Double
+                    self.longitude = posts["longitude"] as? Double
+                    self.thoughts = posts["thoughts"] as? String
+                    self.date = posts["date"] as? String
+                    self.timeStamp = posts["timestamp"] as? String
+                    self.photoName = posts["photoname"] as? String
+                    self.nickName = posts["nickname"] as? String
+                }
+            }
+        
+   
+    }
+    
 }

@@ -10,6 +10,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import Firebase
 
 class DataCenter {
     
@@ -31,7 +32,9 @@ class DataCenter {
     let userInfo = Auth.auth().currentUser
     var postModel : PostModel?
     var currentUser : UserModel?
-    
+    var imageInfo : PostModel?
+    var postsData : PostModel?
+     var mainVCpostsData : [PostModel] = []
     init() {}
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
@@ -54,38 +57,43 @@ class DataCenter {
         }
     }
     
+    //MARK : - get user uid and nickName
+    func getUserUidAndNickName() {
+        guard let user = Auth.auth().currentUser else {return}
+        let uid = user.uid
+        let email = user.email
+        reference.child("users").child(uid).child("profile").observeSingleEvent(of: .value) { (snapshot) in
+            guard let data = snapshot.value as? [String : String] else {return}
+            guard let nickName = data["nickname"] else {return}
+            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)
+           
+        }
+    }
+    
     //MARK: - Data singleEvent
-    func dataLoadSingleEvent(completion : @escaping ([PostModel]) -> Void) {
-        reference.child("users").observeSingleEvent(of: DataEventType.value) { (snapshot) in
-            if let users = snapshot.value as? [String : [String : [String : String]]] {
-                var mainVCpostsData : [PostModel] = []
-                for (_ , value) in users {
-                    if mainVCpostsData.count <= 30 {
-                        if let posts = value["posts"] {
-                            let name = posts["storename"]
-                            let address = posts["storeaddress"]
-                            let content = posts["content"]
-                            let imgurl = posts["storeimgurl"]
-                            let lati = posts["latitude"]
-                            let longi = posts["longitude"]
-                            let thoughts = posts["thoughts"]
-                            let date = posts["data"]
-                            let timeStamp = posts["timestamp"]
-                            let photoname = posts["photoname"]
-                            let nickname = posts["nickname"]
-                            let datas = PostModel(storeName: name!, storeAddress: address!, content: content!, latitude: lati!, longitude: longi!, storeImgurl: imgurl!, date: date!, timeStamp: timeStamp!, photoName: photoname!, thoughts : thoughts!, nickname : nickname!)
-                            mainVCpostsData.append(datas)
+    func dataLoadSingleEvent() {
+        reference.child("users").observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+            //Any = [String : [ String : [String : String]]]
+            
+            var dataDic : [[String : Any]] = []
+            if let dic = snapshot.value as? [String : Any] {
+                for (_ , temp) in dic {
+                    if let posts = temp as? [String : Any] {
+                        if let autoIDs = posts["posts"] as? [String : Any] {
+                            dataDic.append(autoIDs)
+                            print(dataDic.count)
                         }
-                    }else {
-                        return
                     }
                 }
-                completion(mainVCpostsData)
+                for temp in dataDic {
+                    let datas = PostModel(dictionary: temp)
+                    self.mainVCpostsData.append(datas)
+                    print(self.mainVCpostsData.count)
+                }
             }
         }
     }
-    //MARK : -user Uid and nickname
-    
 
 //    func dbValueObserver() {
 //        ref.child("users").observe(DataEventType.childAdded) { (snapshot) in
@@ -108,8 +116,19 @@ class DataCenter {
 //    }
     
     // MARK: - upload
-    func postingUpload() {
+    func postingUpload(uid : String, storeName: String, storeAddress: String, content: String, latitude: String, longitude: String, storeImgurl: String, date: String, timeStamp: String, photoName: String, thoughts: String, nickname: String) {
         
+        let postDic = ["storename" : storeName, "storeaddress" : storeAddress,
+                       "content" : content, "latitude" : latitude, "longitude" : longitude,
+                       "storeimgurl" : storeImgurl, "date" : date, "timeStamp" : timeStamp,
+        "photoname" : photoName, "thoughts" : thoughts, "nickname" : nickname] as [String: String]
+        reference.child("users").child(uid).child("posts").childByAutoId().updateChildValues(postDic) { (error, ref) in
+            if error != nil {
+                print(error.debugDescription)
+            }else {
+                print("업로드성공")
+            }
+        }
     }
     
     func postUpload(uid : String?, storeimg : UIImage, storeName : String,
@@ -134,6 +153,18 @@ class DataCenter {
         }
     }
     
+    //MARK : - Upload Image to firebase storage and get url
+    func uploadImgAndgetUrl(selectedImg : UIImage){
+        let img = UIImageJPEGRepresentation(selectedImg, 0.5)
+        let autoID = NSUUID().uuidString
+        let uid = currentUser?.uid
+        print(uid!)
+        Storage.storage().reference().child(uid!).child(autoID).putData(img!, metadata: nil) { (metadata, error) in
+            guard let photoName = metadata?.name,
+                let imageUrl = metadata?.downloadURL()?.absoluteString else {return}
+            self.imageInfo = PostModel(imageUrl: imageUrl, photoname: photoName)
+        }
+    }
     
 }
 

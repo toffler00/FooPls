@@ -63,6 +63,8 @@ class SK_AutoSearchViewController: UIViewController {
         let positionPost = PostModel(lati: latitude, longi: longitudue, address: adress, placename: placeName)
         NotificationCenter.default.post(name: Notification.Name.newPosi, object: positionPost)
         
+        delegate?.positinData(lati: latitude, longi: longitudue, address: adress, placeName: placeName)
+
         dismiss(animated: true, completion: nil)
     }
     
@@ -129,7 +131,6 @@ class SK_AutoSearchViewController: UIViewController {
     @IBAction func dismissBtn(_ sender: UIBarButtonItem) {
         
         //데이터 저장.
-        //delegate?.positinData(lati: latitude!, longi: longitudue!, address: adress!, placeName: placeName!)
         dismiss(animated: true, completion: nil)
         
     }

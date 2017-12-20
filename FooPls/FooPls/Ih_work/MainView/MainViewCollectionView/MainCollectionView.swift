@@ -18,13 +18,13 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     var cell : CustomCell!
     var dataCenter = DataCenter()
-    var postData = [PostModel]()
+    var postData : [PostModel] = DataCenter.main.mainVCpostsData
     var currentUser = Auth.auth().currentUser
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DataCenter.main.getUserUidAndNickName()
         NotificationCenter.default.addObserver(forName: Notification.Name.mainVCData,
                                                object: nil, queue: nil) { (mainVCData) in
             let mainVCPostData = mainVCData.object as! [PostModel]
@@ -34,6 +34,8 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
             }
+                                                
+                                                
         }
         
 //        DispatchQueue.main.async {
@@ -109,9 +111,9 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         cell.thoughtsLb.text = self.postData[indexPath.row].thoughts
         
         // url to image - FirebaseUI
-        let storeImgUrl = self.postData[indexPath.row].storeImgUrl
-        let url = URL(string: storeImgUrl!)
-        cell.cellImageView.sd_setImage(with: url!)
+//        let storeImgUrl = self.postData[indexPath.row].imageurl
+//        let url = URL(string: storeImgUrl!)
+//        cell.cellImageView.sd_setImage(with: url!)
         
 
         return cell

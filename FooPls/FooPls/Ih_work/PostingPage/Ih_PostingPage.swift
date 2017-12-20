@@ -3,6 +3,7 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 import Photos
+import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
@@ -11,14 +12,18 @@ import FirebaseDatabase
 class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
 GooglePlaceDataDelegate, UITextViewDelegate {
 
- 
+    //MARK : - Variable
     
-    var dataCenter : DataCenter!
+    
     var userInfo = Auth.auth().currentUser
+    var lati : Double?
+    var longi : Double?
+    var timeStamp : String?
+    var imageUrl : String?
+    var photoName : String?
     
     @IBOutlet weak var postPageScrollView: UIScrollView!
-    
-    @IBOutlet weak var postDataLb: UILabel!
+    @IBOutlet weak var postDateLb: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var placeNameTF: UITextField!
     @IBOutlet weak var addressTF: UITextField!
@@ -26,19 +31,68 @@ GooglePlaceDataDelegate, UITextViewDelegate {
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var nickNameLb: UILabel!
     @IBOutlet weak var postingDateLb: UILabel!
+    @IBOutlet weak var thoughtsLb: UITextField!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        getDate()
+        setUserInfo()
         hideKeyboardWhenTappedAround()
         contentTextView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(kyeboardAppear(_:)), name: .UIKeyboardWillShow , object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(_:)), name: .UIKeyboardWillHide, object: nil)
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi, object: nil, queue: nil) { (newPosi) in
+            let latitu = DataCenter.main.latitude
+            let longitu = DataCenter.main.longitude
+            self.lati = latitu
+            self.longi = longitu
+            self.placeNameTF.text = DataCenter.main.placeName
+            self.addressTF.text = DataCenter.main.placeAddress
+        }
 
     }
+    
+    
+    
+    @IBAction func postingDone(_ sender : Any) {
+        let time = ServerValue.timestamp()
+        let timeStamp = String(describing: time)
+        let nickName = DataCenter.main.currentUser?.nickName
+        let imageinfo = DataCenter.main.imageInfo
+        let url = imageinfo?.imageurl
+        let photoname = imageinfo?.photoName
+        let uid = DataCenter.main.currentUser?.uid
+        
+        guard let name = placeNameTF.text, let address = addressTF.text ,
+            let content = contentTextView.text, let date = postingDateLb.text,
+            let thoughts = thoughtsLb.text else {return}
+        
+      let postDic = ["storename" : name, "storeaddress" : address,
+                       "content" : content, "latitude" : self.lati!, "longitude" : self.longi!,
+                       "imageurl" : url!, "date" : date, "timeStamp" : timeStamp,
+                       "photoname" : photoname!, "thoughts" : thoughts, "nickname" : nickName! ] as [String : Any]
+            let AutoIDkey = Database.database().reference().childByAutoId().key
+        Database.database().reference().child("users").child(uid!).child("posts").child(AutoIDkey).updateChildValues(postDic) { (error, ref) in
+            if error != nil {
+                print(error.debugDescription)
+            }else {
+                print("업로드성공")
+            }
+        }
+        
+//            DataCenter.main.postingUpload(uid : uid!, storeName: name, storeAddress: address, content: content, latitude: self.lati!, longitude: self.longi!, storeImgurl: url!, date: date, timeStamp: timeStamp, photoName: photoname!, thoughts: thoughts, nickname: nickName!)
+       
+        UIAlertController.presentAlertController(target: self, title: "업로드성공",
+                                                 massage: "업로드 성공하였습니다.",
+                                                 cancelBtn: false, completion: nil)
+        print("업로드성공")
+    }
+    
     
     @IBAction func handleDone(_ sender: Any) {
         guard let uid = userInfo?.uid else {return}
@@ -85,10 +139,8 @@ GooglePlaceDataDelegate, UITextViewDelegate {
     func presentAutoSearch() {
         let autoSearch = UIStoryboard(name: "SKMain", bundle: nil)
         var navigationCon: UINavigationController?
-        var autoSearchVC : SK_AutoSearchViewController?
         
         navigationCon = autoSearch.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
-        autoSearchVC = navigationCon?.visibleViewController as? SK_AutoSearchViewController
 //        autoSearchVC?.delegate = self
         
         present(navigationCon!, animated: true, completion: nil)
@@ -96,15 +148,19 @@ GooglePlaceDataDelegate, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
        contentTextView.text = ""
+       contentTextView.textColor = .black
     }
     
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
         placeNameTF.text = placeName
         addressTF.text = address
+        self.lati = lati
+        self.longi = longi
     }
     
     func photoSelected(_ seletedImges: UIImage) {
         postImageView.image = seletedImges
+        DataCenter.main.uploadImgAndgetUrl(selectedImg: seletedImges)
     }
     
     //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
@@ -137,9 +193,18 @@ GooglePlaceDataDelegate, UITextViewDelegate {
     }
 }
 extension PostingPage {
+    func setUserInfo() {
+        self.nickNameLb.text = DataCenter.main.currentUser?.nickName
+    }
+    
     func setUI() {
         profileImgView.layer.cornerRadius = 25
         profileImgView.image = #imageLiteral(resourceName: "defaultProfile") //default image
     }
-
+    func getDate() {
+        let postdate = DateFormatter()
+        postdate.dateFormat = "YYYY년 MM월 DD일"
+        let postDate = String(describing: postdate)
+        self.postDateLb.text = postDate
+    }
 }
