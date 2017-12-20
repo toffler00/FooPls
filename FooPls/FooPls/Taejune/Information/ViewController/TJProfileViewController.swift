@@ -39,7 +39,7 @@ class TJProfileViewController: UIViewController {
         
     }
     
-    private func loadData() {
+    private func loadData(){
         reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : Any] {

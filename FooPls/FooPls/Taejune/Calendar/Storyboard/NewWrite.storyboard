@@ -143,13 +143,22 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-er-Rud">
+                                                        <rect key="frame" x="12.5" y="4.5" width="28" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="3L2-er-Rud" secondAttribute="height" multiplier="1:1" id="268-uE-fSu"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="3L2-er-Rud" firstAttribute="centerY" secondItem="acO-qI-ayS" secondAttribute="centerY" id="9OC-jh-Jed"/>
                                                     <constraint firstItem="5Ts-CO-nbl" firstAttribute="width" secondItem="acO-qI-ayS" secondAttribute="width" id="9fG-im-bwN"/>
                                                     <constraint firstItem="5Ts-CO-nbl" firstAttribute="height" secondItem="acO-qI-ayS" secondAttribute="height" id="CGK-2k-s8y"/>
+                                                    <constraint firstItem="3L2-er-Rud" firstAttribute="centerX" secondItem="acO-qI-ayS" secondAttribute="centerX" multiplier="0.15" id="DZy-Y3-1fM"/>
                                                     <constraint firstItem="5Ts-CO-nbl" firstAttribute="centerX" secondItem="acO-qI-ayS" secondAttribute="centerX" id="EZY-pO-mWp"/>
                                                     <constraint firstItem="5Ts-CO-nbl" firstAttribute="centerY" secondItem="acO-qI-ayS" secondAttribute="centerY" id="VRl-hj-enz"/>
+                                                    <constraint firstItem="3L2-er-Rud" firstAttribute="height" secondItem="acO-qI-ayS" secondAttribute="height" multiplier="0.75" id="elQ-gy-2sL"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YC-9e-sDG" userLabel="Location">
@@ -161,7 +170,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GMarker" translatesAutoresizingMaskIntoConstraints="NO" id="RNP-cQ-hOh">
-                                                        <rect key="frame" x="21" y="4" width="29.5" height="29.5"/>
+                                                        <rect key="frame" x="12" y="4" width="29.5" height="29.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="RNP-cQ-hOh" secondAttribute="height" multiplier="1:1" id="Oar-Az-ExC"/>
                                                         </constraints>
@@ -183,7 +192,7 @@
                                                     <constraint firstItem="B7r-GH-VgB" firstAttribute="width" secondItem="1YC-9e-sDG" secondAttribute="width" multiplier="0.8" id="ZyI-PI-9nK"/>
                                                     <constraint firstItem="RNP-cQ-hOh" firstAttribute="centerY" secondItem="1YC-9e-sDG" secondAttribute="centerY" id="bui-nt-equ"/>
                                                     <constraint firstItem="ZpW-vC-EPq" firstAttribute="top" secondItem="1YC-9e-sDG" secondAttribute="top" id="e3O-U4-1Ul"/>
-                                                    <constraint firstItem="RNP-cQ-hOh" firstAttribute="centerX" secondItem="1YC-9e-sDG" secondAttribute="centerX" multiplier="0.2" id="ejs-ln-xzj"/>
+                                                    <constraint firstItem="RNP-cQ-hOh" firstAttribute="centerX" secondItem="1YC-9e-sDG" secondAttribute="centerX" multiplier="0.15" id="ejs-ln-xzj"/>
                                                     <constraint firstItem="B7r-GH-VgB" firstAttribute="height" secondItem="1YC-9e-sDG" secondAttribute="height" id="gwP-kh-6kv"/>
                                                     <constraint firstAttribute="bottom" secondItem="ZpW-vC-EPq" secondAttribute="bottom" id="kXQ-9s-rtS"/>
                                                 </constraints>
@@ -192,17 +201,26 @@
                                                 <rect key="frame" x="9.5" y="462.5" width="356.5" height="37"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄 평을 남겨주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-0D-QSZ">
-                                                        <rect key="frame" x="0.0" y="8.5" width="356.5" height="20"/>
+                                                        <rect key="frame" x="53" y="8.5" width="303.5" height="20"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coment" translatesAutoresizingMaskIntoConstraints="NO" id="oG6-0n-Pi4">
+                                                        <rect key="frame" x="13.5" y="6" width="26" height="26"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="oG6-0n-Pi4" secondAttribute="height" multiplier="1:1" id="gew-fk-pvG"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="oG6-0n-Pi4" firstAttribute="height" secondItem="cOU-XR-dgd" secondAttribute="height" multiplier="0.7" id="6GQ-Rw-1dX"/>
                                                     <constraint firstItem="Esj-0D-QSZ" firstAttribute="centerY" secondItem="cOU-XR-dgd" secondAttribute="centerY" id="Fdh-jS-hrZ"/>
-                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="centerX" secondItem="cOU-XR-dgd" secondAttribute="centerX" id="HB2-bS-ae4"/>
-                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="width" secondItem="cOU-XR-dgd" secondAttribute="width" id="hga-Ew-1UZ"/>
+                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="centerX" secondItem="cOU-XR-dgd" secondAttribute="centerX" multiplier="1.15" id="HB2-bS-ae4"/>
+                                                    <constraint firstItem="oG6-0n-Pi4" firstAttribute="centerX" secondItem="cOU-XR-dgd" secondAttribute="centerX" multiplier="0.15" id="gsV-8g-Btp"/>
+                                                    <constraint firstItem="Esj-0D-QSZ" firstAttribute="width" secondItem="cOU-XR-dgd" secondAttribute="width" multiplier="0.85" id="hga-Ew-1UZ"/>
+                                                    <constraint firstItem="oG6-0n-Pi4" firstAttribute="centerY" secondItem="cOU-XR-dgd" secondAttribute="centerY" id="qqm-HP-QXj"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-jh-6wf" userLabel="Content">
@@ -311,6 +329,8 @@
         <image name="GMarker" width="48" height="48"/>
         <image name="back_black" width="64" height="64"/>
         <image name="check" width="494" height="344"/>
+        <image name="coment" width="100" height="100"/>
         <image name="picture" width="5000" height="5000"/>
+        <image name="store" width="600" height="600"/>
     </resources>
 </document>

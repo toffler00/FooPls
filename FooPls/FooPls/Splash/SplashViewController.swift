@@ -18,9 +18,6 @@ class SplashViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {        
         super.viewDidLoad()
-        
-        try! Auth.auth().signOut()
-        FBSDKLoginManager().logOut()
         DataCenter.main.dataLoadSingleEvent { (mainVCPostData) in
             let mainVCData = mainVCPostData
             NotificationCenter.default.post(name: Notification.Name.mainVCData, object: mainVCData)

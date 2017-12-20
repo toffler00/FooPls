@@ -40,8 +40,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.text = selectedDate
-        writeScrollView.bounces = false
+        setupUI()
+        
         //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
@@ -57,6 +57,14 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                                 self?.LocationAddress.text = DataCenter.main.placeAddress
                                                 self?.address = DataCenter.main.placeAddress
         }
+    }
+    
+    private func setupUI() {
+        contentTxtView.delegate = self
+        contentTxtView.text = "내용을 입력해주세요."
+        contentTxtView.textColor = .lightGray
+        dateLabel.text = selectedDate
+        writeScrollView.bounces = false
     }
     
     private func loadData() {
@@ -85,10 +93,11 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
             UIAlertController.presentAlertController(target: self, title: "제목을 입력해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
             return
         }
+        //글쓰기에 필요한 요소들 중 nil값이 있는 확인
         guard let _ = contentImgView.image else { return }
         guard let locationTitle = locationTitle.text else { return }
         guard let contentTxtView = contentTxtView.text else { return }
-        guard let thought = thoughtTextField.text else { return }
+        guard let thoughts = thoughtTextField.text else { return }
         guard let longitude = self.longitude, let latitude = self.latitude, let address = self.address else {
             UIAlertController.presentAlertController(target: self, title: "장소를 선택해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
             return
@@ -106,15 +115,15 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
                     
                     let calendarDic = ["title": contentTitle,
-                                       "author": self.userNickname,
+                                       "nickname": self.userNickname,
                                        "content": contentTxtView,
-                                       "photoID": photoID,
-                                       "photoName": uuid,
-                                       "locationTitle": locationTitle,
+                                       "imageurl": photoID,
+                                       "photoname": uuid,
+                                       "storename": locationTitle,
                                        "longitude": longitude,
                                        "latitude": latitude,
-                                       "address": address,
-                                       "thought": thought,
+                                       "storeaddress": address,
+                                       "thought": thoughts,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
                     
@@ -126,16 +135,18 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     let okAction = UIAlertAction(title: "예", style: .default, handler: { [weak self] (action) in
                         guard let `self` = self else { return }
                         let postDic = ["title": contentTitle,
-                                       "author": self.userNickname,
+                                       "nickname": self.userNickname,
                                        "content": contentTxtView,
                                        "imageurl": photoID,
-                                       "photoName": uuid,
+                                       "photoname": uuid,
                                        "storename": locationTitle,
                                        "longitude": longitude,
                                        "latitude": latitude,
                                        "storeaddress": address,
+                                       "autoKey": key,
+                                       "thoughts": thoughts,
                                        "date": self.selectedDate,
-                                       "postTime": ServerValue.timestamp()] as [String: Any]
+                                       "timeStamp": ServerValue.timestamp()] as [String: Any]
                         self.reference.child("users").child(self.userID!).child("posts").child(key).updateChildValues(postDic)
                         self.dismiss(animated: true, completion: nil)
                     })
@@ -146,69 +157,9 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     alertSheet.addAction(okAction)
                     alertSheet.addAction(cancelAction)
                     self.present(alertSheet, animated: true, completion: nil)
-                    
-                    
-                    
-                    
-                    
-                    
-//                    UIAlertController.presentAlertController(target: self, title: nil, massage: "이 글을 포스팅하시겠습니까?", cancelBtn: true, completion: { [weak self] (action) in
-//                        guard let `self` = self else { return }
-//
-//                        let postDic = ["title": contentTitle,
-//                                           "author": self.userNickname,
-//                                           "content": contentTxtView,
-//                                           "photoID": photoID,
-//                                           "photoName": uuid,
-//                                           "locationTitle": locationTitle,
-//                                           "longitude": longitude,
-//                                           "latitude": latitude,
-//                                           "address": address,
-//                                           "date": self.selectedDate,
-//                                           "postTime": ServerValue.timestamp()] as [String: Any]
-//                        self.reference.child("users").child(self.userID!).child("posts").child(key).setValue(postDic)
-//                    })
                 }
             })
         }
-//        dismiss(animated: true, completion: nil)
-//        let alertSheet = UIAlertController(title: "등록", message: "이 글을 등록하시겠습니까?", preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
-//            guard let `self` = self else { return }
-//            guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
-//            let uuid = UUID().uuidString
-//            Storage.storage().reference().child("calendar_images").child(uuid).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
-//                guard let `self` = self else { return }
-//                if error != nil {
-//                    print(error!.localizedDescription)
-//                }else {
-//                    guard let photoID = metaData?.downloadURL()?.absoluteString else { return }
-//
-//                    let calendarDic = ["title": contentTitle,
-//                                       "author": self.userNickname,
-//                                       "content": contentTxtView,
-//                                       "photoID": photoID,
-//                                       "photoName": uuid,
-//                                       "locationTitle": locationTitle,
-//                                       "longitude": longitude,
-//                                       "latitude": latitude,
-//                                       "address": address,
-//                                       "date": self.selectedDate,
-//                                       "postTime": ServerValue.timestamp()] as [String: Any]
-//
-//                    self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
-//
-//                    let key = self.reference.child("users").childByAutoId().key
-//
-//
-//                }
-//            })
-//        }
-
-//        let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
-//        alertSheet.addAction(okAction)
-//        alertSheet.addAction(cancelAction)
-//        present(alertSheet, animated: true, completion: nil)
     }
     
 
@@ -236,17 +187,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
          locationTitle.text = DataCenter.main.placeName
          LocationAddress.text = DataCenter.main.placeAddress
         }
-        
-        
-
-//        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
-//        if let googlePicekerVC = storyboard.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController {
-//            present(googlePicekerVC, animated: true, completion: nil)
-//        }
-
-
-
-
     }
     
     //MARK: - 장소를 선택했을 때 실행되는 메소드
@@ -276,6 +216,21 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     //MARK: - 장소를 선택하지 않았을 때 실행하는 메소드
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
         viewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewWriteViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "내용을 입력해주세요."
+            textView.textColor = .lightGray
+        }
     }
 }
 
