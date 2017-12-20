@@ -74,6 +74,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         super.viewDidAppear(animated)
     }
     
+
     //MARK: - 뒤로 가기 버튼
     @IBAction func backBtnAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

@@ -22,7 +22,11 @@ struct UserModel{
         self.uid = uid
     }
     
-    
+    init(uid : String , nickname : String, email : String) {
+        self.uid = uid
+        self.nickName = nickname
+        self.email = email
+    }
     
 }
 
