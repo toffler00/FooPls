@@ -14,7 +14,8 @@ struct  PostModel {
     //MARK : - Variable
     var storeName : String
     var storeAddress : String
-    var nickName : String
+    var nickName : String?
+    
     //Optional
     var contentsText : String?
     var postTitle : String?
@@ -69,7 +70,7 @@ struct  PostModel {
     }
     
     //포스팅 이벤트 수신대기 메소드에서 대응해줄 모델
-    init(storeName : String, storeAddress : String, contentText : String, storeImgurl : String, lati : Double, longi : Double, thoughts : String) {
+    init(storeName : String, storeAddress : String, contentText : String, storeImgurl : String, lati : Double, longi : Double, thoughts : String, nickname : String) {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = contentText
@@ -77,6 +78,7 @@ struct  PostModel {
         self.latitude = lati
         self.longitude = longi
         self.thoughts = thoughts
+        self.nickName = nickname
     }
     
     //구글플레이스에서 정보가져올때

@@ -85,9 +85,7 @@ class DataCenter {
         }
     }
     //MARK : -user Uid and nickname
-    func userUidAndNickNameLoad() {
-        reference.child("users").observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>)
-    }
+    
 
 //    func dbValueObserver() {
 //        ref.child("users").observe(DataEventType.childAdded) { (snapshot) in
@@ -110,6 +108,10 @@ class DataCenter {
 //    }
     
     // MARK: - upload
+    func postingUpload() {
+        
+    }
+    
     func postUpload(uid : String?, storeimg : UIImage, storeName : String,
                     storeAdress : String, contents : String) {
         guard ((postModel?.storeImg = storeimg) != nil) else {return}
