@@ -137,8 +137,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acO-qI-ayS" userLabel="Location Title">
                                                 <rect key="frame" x="9.5" y="370" width="356.5" height="37"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ts-CO-nbl">
-                                                        <rect key="frame" x="0.0" y="-0.5" width="356.5" height="37"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ts-CO-nbl">
+                                                        <rect key="frame" x="53" y="-0.5" width="303.5" height="37"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -153,10 +153,10 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="3L2-er-Rud" firstAttribute="centerY" secondItem="acO-qI-ayS" secondAttribute="centerY" id="9OC-jh-Jed"/>
-                                                    <constraint firstItem="5Ts-CO-nbl" firstAttribute="width" secondItem="acO-qI-ayS" secondAttribute="width" id="9fG-im-bwN"/>
+                                                    <constraint firstItem="5Ts-CO-nbl" firstAttribute="width" secondItem="acO-qI-ayS" secondAttribute="width" multiplier="0.85" id="9fG-im-bwN"/>
                                                     <constraint firstItem="5Ts-CO-nbl" firstAttribute="height" secondItem="acO-qI-ayS" secondAttribute="height" id="CGK-2k-s8y"/>
                                                     <constraint firstItem="3L2-er-Rud" firstAttribute="centerX" secondItem="acO-qI-ayS" secondAttribute="centerX" multiplier="0.15" id="DZy-Y3-1fM"/>
-                                                    <constraint firstItem="5Ts-CO-nbl" firstAttribute="centerX" secondItem="acO-qI-ayS" secondAttribute="centerX" id="EZY-pO-mWp"/>
+                                                    <constraint firstItem="5Ts-CO-nbl" firstAttribute="centerX" secondItem="acO-qI-ayS" secondAttribute="centerX" multiplier="1.15" id="EZY-pO-mWp"/>
                                                     <constraint firstItem="5Ts-CO-nbl" firstAttribute="centerY" secondItem="acO-qI-ayS" secondAttribute="centerY" id="VRl-hj-enz"/>
                                                     <constraint firstItem="3L2-er-Rud" firstAttribute="height" secondItem="acO-qI-ayS" secondAttribute="height" multiplier="0.75" id="elQ-gy-2sL"/>
                                                 </constraints>
@@ -165,7 +165,7 @@
                                                 <rect key="frame" x="10" y="416.5" width="356.5" height="37"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기를 눌러 위치를 찾아주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7r-GH-VgB">
-                                                        <rect key="frame" x="71.5" y="0.0" width="285" height="37"/>
+                                                        <rect key="frame" x="53.5" y="0.0" width="303" height="37"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -185,11 +185,11 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="ZpW-vC-EPq" secondAttribute="trailing" id="3ek-QP-XlY"/>
-                                                    <constraint firstItem="B7r-GH-VgB" firstAttribute="centerX" secondItem="1YC-9e-sDG" secondAttribute="centerX" multiplier="1.2" id="6PL-zC-c3v"/>
+                                                    <constraint firstItem="B7r-GH-VgB" firstAttribute="centerX" secondItem="1YC-9e-sDG" secondAttribute="centerX" multiplier="1.15" id="6PL-zC-c3v"/>
                                                     <constraint firstItem="ZpW-vC-EPq" firstAttribute="leading" secondItem="1YC-9e-sDG" secondAttribute="leading" id="D9t-95-SZR"/>
                                                     <constraint firstItem="RNP-cQ-hOh" firstAttribute="height" secondItem="1YC-9e-sDG" secondAttribute="height" multiplier="0.8" id="KVD-Yc-dj4"/>
                                                     <constraint firstItem="B7r-GH-VgB" firstAttribute="centerY" secondItem="1YC-9e-sDG" secondAttribute="centerY" id="Xia-Vr-TZo"/>
-                                                    <constraint firstItem="B7r-GH-VgB" firstAttribute="width" secondItem="1YC-9e-sDG" secondAttribute="width" multiplier="0.8" id="ZyI-PI-9nK"/>
+                                                    <constraint firstItem="B7r-GH-VgB" firstAttribute="width" secondItem="1YC-9e-sDG" secondAttribute="width" multiplier="0.85" id="ZyI-PI-9nK"/>
                                                     <constraint firstItem="RNP-cQ-hOh" firstAttribute="centerY" secondItem="1YC-9e-sDG" secondAttribute="centerY" id="bui-nt-equ"/>
                                                     <constraint firstItem="ZpW-vC-EPq" firstAttribute="top" secondItem="1YC-9e-sDG" secondAttribute="top" id="e3O-U4-1Ul"/>
                                                     <constraint firstItem="RNP-cQ-hOh" firstAttribute="centerX" secondItem="1YC-9e-sDG" secondAttribute="centerX" multiplier="0.15" id="ejs-ln-xzj"/>
@@ -200,7 +200,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOU-XR-dgd" userLabel="Thought">
                                                 <rect key="frame" x="9.5" y="462.5" width="356.5" height="37"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄 평을 남겨주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-0D-QSZ">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄 평을 남겨주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-0D-QSZ">
                                                         <rect key="frame" x="53" y="8.5" width="303.5" height="20"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>

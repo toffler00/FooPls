@@ -2,6 +2,7 @@
 import UIKit
 import Firebase
 import GooglePlacePicker
+import PKHUD
 
 class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
     
@@ -34,7 +35,8 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        
+        HUD.allowsInteraction = false
+        HUD.dimsBackground = false
         detailContentTextView.delegate = self
         writeScrollView.bounces = false
         //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
@@ -100,6 +102,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
             //사진이 만약 변경이 되었을 경우, 그리고 다른 내용은 바뀌고 사진은 안바뀌는 경우에도 사진을 덮어쓰기로 저장
             Storage.storage().reference().child("calendar_images").child(self.photoName!).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
                 guard let `self` = self else { return }
+                HUD.show(.labeledProgress(title: "수정중", subtitle: "잠시만 기다려주세요"))
                 if error != nil {
                     print(error!.localizedDescription)
                 }else {
@@ -121,6 +124,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
                     // MARK: Noti
                     NotificationCenter.default.post(name: .reload, object: contentTitle)
                     self.reference.child("users").child(self.userID!).child("calendar").child(self.selectedKey!).updateChildValues(calendarDic)
+                    HUD.hide()
                     //let key = self.reference.child("users").childByAutoId().key
                     self.dismiss(animated: true, completion: nil)
                 }

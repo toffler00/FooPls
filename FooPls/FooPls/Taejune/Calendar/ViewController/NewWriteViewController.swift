@@ -2,6 +2,7 @@
 import UIKit
 import Firebase
 import GooglePlacePicker
+import PKHUD
 
 class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
     
@@ -65,6 +66,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         contentTxtView.textColor = .lightGray
         dateLabel.text = selectedDate
         writeScrollView.bounces = false
+        HUD.allowsInteraction = false
+        HUD.dimsBackground = false
     }
     
     private func loadData() {
@@ -106,6 +109,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         
         UIAlertController.presentAlertController(target: self, title: "이 글을 등록하시겠습니까?", massage: "이 글을 등록하시겠습니까?", cancelBtn: true) { [weak self] (action) in
             guard let `self` = self else { return }
+            HUD.show(.labeledProgress(title: "글 등록중", subtitle: "잠시만 기다려주세요"))
             guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
             let uuid = UUID().uuidString
             Storage.storage().reference().child("calendar_images").child(uuid).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
@@ -129,9 +133,8 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "postTime": ServerValue.timestamp()] as [String: Any]
                     
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
-                    
                     let key = self.reference.child("users").childByAutoId().key
-                    
+                    HUD.hide(animated: true)
                     let alertSheet = UIAlertController(title: nil, message: "이 글을 포스팅하시겠습니까?", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "예", style: .default, handler: { [weak self] (action) in
                         guard let `self` = self else { return }
@@ -157,6 +160,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                     })
                     alertSheet.addAction(okAction)
                     alertSheet.addAction(cancelAction)
+                    
                     self.present(alertSheet, animated: true, completion: nil)
                 }
             })
