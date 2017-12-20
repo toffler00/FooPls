@@ -93,6 +93,7 @@
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
 		FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */; };
 		FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */; };
+		FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */; };
 		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
@@ -193,6 +194,7 @@
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
 		FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListViewController.swift; sourceTree = "<group>"; };
+		FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListData.swift; sourceTree = "<group>"; };
 		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
 		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 			children = (
 				FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */,
 				FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */,
+				FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */,
 			);
 			path = SKModel;
 			sourceTree = "<group>";
@@ -906,6 +909,7 @@
 				FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */,
 				FC1CED901FE3FE78006FBE4B /* SK_CustomButton.swift in Sources */,
 				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
+				FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */,
 				231F59D01FDAC2EA00580D69 /* RAMFrameItemAnimation.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
 				62F1B7371FDFE13B0084D68F /* DetailPageCell.swift in Sources */,
