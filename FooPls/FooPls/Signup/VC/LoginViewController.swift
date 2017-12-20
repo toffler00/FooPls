@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // MARK: 페이스북 버튼
-        let fbLoginButton = LoginButton(readPermissions: [.email])
+        let fbLoginButton = LoginButton(readPermissions: [.publicProfile, .email])
         view.addSubview(fbLoginButton)
         // 페이스북 버튼 레이아웃
         fbLoginButton.snp.makeConstraints {
@@ -200,6 +200,7 @@ extension LoginViewController : LoginButtonDelegate{
                     let userNickname = user?.displayName ?? ""
                     let userDic = ["email": userEmail, "nickname": userNickname, "phone": ""]
                     self.reference.child("users").child(user!.uid).setValue(userDic)
+                
                 }else{
                     if let errors = error {
                         print(errors.localizedDescription)

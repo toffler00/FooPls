@@ -191,12 +191,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="versionLB" destination="kgb-aW-H1d" id="1WC-Ru-ZcB"/>
-                        <segue destination="gGM-4q-ge7" kind="modal" identifier="Login" id="Gqh-BA-tJV"/>
+                        <segue destination="gGM-4q-ge7" kind="modal" identifier="GoToLogin" id="Gqh-BA-tJV"/>
+                        <segue destination="v5i-Sz-g2P" kind="presentation" identifier="GoToMain" id="PTT-hg-Twn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeA-RF-h7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.8" y="-231.63418290854574"/>
+            <point key="canvasLocation" x="1449" y="-233"/>
         </scene>
         <!--Login-->
         <scene sceneID="g6B-zc-yCd">
@@ -204,7 +205,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="Login" id="gGM-4q-ge7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuz-XD-fG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="-413.79310344827587"/>
+            <point key="canvasLocation" x="2124" y="-418"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="U8I-gx-hPM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="v5i-Sz-g2P" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5XO-ft-Wtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="-82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FFf-rV-bxE">
