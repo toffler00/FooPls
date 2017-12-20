@@ -56,6 +56,7 @@ class MapVC: UIViewController, GMSMapViewDelegate, UITextFieldDelegate{
     
     func loadPositionData() {
         
+        
        dataCenter?.load(completion: { positions in //completion 클로저의 [Position]을 positions 라는 파라미터로 받아 실행.
             for position in positions {
                 self.showMap(latitude: position.latitude, longitude: position.longitude, title: position.title, zoom: self.zoom)
