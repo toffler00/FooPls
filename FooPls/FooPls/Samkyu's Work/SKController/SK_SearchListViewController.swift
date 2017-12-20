@@ -24,7 +24,10 @@ class SK_SearchListViewController: UIViewController {
     var placeName:String = DataCenter.main.placeName
     var latitude:Double = DataCenter.main.latitude
     var longitudue:Double = DataCenter.main.longitude
-
+    
+    var ref: DatabaseReference!
+    
+    var sampleData:SearchedData?
     
     @IBOutlet weak var googleMapView: GMSMapView!
     @IBOutlet weak var tableView: UITableView!
@@ -32,12 +35,23 @@ class SK_SearchListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = Database.database().reference()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         makeGoogleSearchBar()
         startGoogleMap()
-
+        
+        findInFirebaseDatabase()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        sampleData = SearchedData()
+        print(sampleData)
+        
     }
     
     func startGoogleMap(){
@@ -94,12 +108,28 @@ class SK_SearchListViewController: UIViewController {
         
     }
     
+    func findInFirebaseDatabase(){
+        
+        let isSearchedAddress = ref.child("users").queryEqual(toValue: "FooPls!")
+        print("결과값 확인하세요! : ", isSearchedAddress)
+        
+        
+        
+        
+    }
+    
 }
 
 extension SK_SearchListViewController : GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         
         print("필요한 정보를 습득하십시오.")
+        
+        searchController?.isActive = false
+        showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
+        
+        
+        
         
     }
     
