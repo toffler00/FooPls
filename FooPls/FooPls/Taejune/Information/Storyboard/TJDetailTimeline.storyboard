@@ -187,11 +187,28 @@
                                                     <constraint firstAttribute="bottom" secondItem="diE-Gg-kyo" secondAttribute="bottom" id="tzG-27-DeY"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hra-BH-vx3" userLabel="thought">
+                                                <rect key="frame" x="9" y="462.5" width="356.5" height="37"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄평을 남겨주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-Ud-X6c">
+                                                        <rect key="frame" x="-0.5" y="8.5" width="356.5" height="20"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="VWg-Ud-X6c" firstAttribute="centerX" secondItem="hra-BH-vx3" secondAttribute="centerX" id="Jsh-Yt-k4j"/>
+                                                    <constraint firstItem="VWg-Ud-X6c" firstAttribute="width" secondItem="hra-BH-vx3" secondAttribute="width" id="MN7-Rf-pJg"/>
+                                                    <constraint firstItem="VWg-Ud-X6c" firstAttribute="centerY" secondItem="hra-BH-vx3" secondAttribute="centerY" id="xY9-SL-fJ4"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="job-aW-QdK" userLabel="Content">
-                                                <rect key="frame" x="10" y="462.5" width="356.5" height="259"/>
+                                                <rect key="frame" x="10" y="509" width="356.5" height="222"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="글 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-qW-OG7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="259"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="222"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
@@ -211,18 +228,21 @@
                                             <constraint firstItem="t10-ER-edl" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="1Xo-ia-tHI"/>
                                             <constraint firstAttribute="height" constant="740" id="1zd-mR-Ws0"/>
                                             <constraint firstItem="rfB-1E-gwY" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.05" id="2Fu-3t-3gf"/>
-                                            <constraint firstItem="job-aW-QdK" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.35" id="2Pr-c1-Agi"/>
+                                            <constraint firstItem="job-aW-QdK" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.3" id="2Pr-c1-Agi"/>
                                             <constraint firstItem="D8p-pR-OR8" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.05" id="4c8-3j-TiP"/>
                                             <constraint firstItem="D8p-pR-OR8" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.05" id="5uB-ms-wAb"/>
+                                            <constraint firstItem="hra-BH-vx3" firstAttribute="width" secondItem="D8p-pR-OR8" secondAttribute="width" id="Cs6-Ba-3LU"/>
                                             <constraint firstItem="t10-ER-edl" firstAttribute="height" secondItem="ac7-pE-fDb" secondAttribute="height" id="D8o-NH-mgu"/>
                                             <constraint firstItem="D8p-pR-OR8" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="Fky-6h-Vp0"/>
                                             <constraint firstItem="job-aW-QdK" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="Fxl-gp-NqS"/>
+                                            <constraint firstItem="hra-BH-vx3" firstAttribute="height" secondItem="D8p-pR-OR8" secondAttribute="height" id="Gl8-pA-mS7"/>
                                             <constraint firstItem="D8p-pR-OR8" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="GxX-2h-lhg"/>
                                             <constraint firstItem="rfB-1E-gwY" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="I48-FA-0Rt"/>
                                             <constraint firstItem="job-aW-QdK" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="Kk3-U0-0ot"/>
                                             <constraint firstItem="5eE-5Y-r0G" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.35" id="LdF-m9-UFF"/>
                                             <constraint firstItem="5eE-5Y-r0G" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="O6u-42-xJf"/>
-                                            <constraint firstItem="job-aW-QdK" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.6" id="aCB-Yl-oPk"/>
+                                            <constraint firstItem="hra-BH-vx3" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.3" id="QRx-Th-fUX"/>
+                                            <constraint firstItem="job-aW-QdK" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.675" id="aCB-Yl-oPk"/>
                                             <constraint firstItem="t10-ER-edl" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="b9d-TZ-c7J"/>
                                             <constraint firstItem="5eE-5Y-r0G" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="bDc-CW-ctC"/>
                                             <constraint firstItem="t10-ER-edl" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="0.2" id="k36-lN-sfD"/>
@@ -230,6 +250,7 @@
                                             <constraint firstItem="ac7-pE-fDb" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="nnL-uC-ygw"/>
                                             <constraint firstItem="ac7-pE-fDb" firstAttribute="height" secondItem="R3D-WG-j0q" secondAttribute="height" multiplier="0.05" id="obw-z2-BWg"/>
                                             <constraint firstItem="ac7-pE-fDb" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="0.075" id="p0J-da-Qmb"/>
+                                            <constraint firstItem="hra-BH-vx3" firstAttribute="centerX" secondItem="R3D-WG-j0q" secondAttribute="centerX" id="tjx-4C-qvw"/>
                                             <constraint firstItem="rfB-1E-gwY" firstAttribute="width" secondItem="R3D-WG-j0q" secondAttribute="width" multiplier="0.95" id="wwO-HS-n2R"/>
                                             <constraint firstItem="rfB-1E-gwY" firstAttribute="centerY" secondItem="R3D-WG-j0q" secondAttribute="centerY" multiplier="1.175" id="zuy-Cb-Ix3"/>
                                         </constraints>
@@ -264,6 +285,7 @@
                         <outlet property="detailImgView" destination="hCq-rr-Mb1" id="TNt-ZQ-iUg"/>
                         <outlet property="detailLocationAddressLabel" destination="0Z7-zL-tIl" id="qQg-vr-IP4"/>
                         <outlet property="detailLocationTitleLabel" destination="4lq-M5-D8h" id="esJ-9t-eFo"/>
+                        <outlet property="detailThoughtTextField" destination="VWg-Ud-X6c" id="U4n-mg-LtG"/>
                         <outlet property="detailTitleTextField" destination="m4i-dn-azR" id="QfM-Zs-dCo"/>
                         <outlet property="writeScrollView" destination="GuK-4t-eiZ" id="whc-py-ZCI"/>
                     </connections>

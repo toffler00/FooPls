@@ -34,6 +34,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     @IBOutlet weak var contentImgView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var LocationAddress: UILabel!
+    @IBOutlet weak var thoughtTextField: UITextField!
     @IBOutlet weak var contentTxtView: UITextView!
     
     //MARK: - Life Cycle
@@ -88,6 +89,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         guard let _ = contentImgView.image else { return }
         guard let locationTitle = locationTitle.text else { return }
         guard let contentTxtView = contentTxtView.text else { return }
+        guard let thought = thoughtTextField.text else { return }
         guard let longitude = self.longitude, let latitude = self.latitude, let address = self.address else {
             UIAlertController.presentAlertController(target: self, title: "장소를 선택해주세요", massage: nil, actionStyle: UIAlertActionStyle.default, cancelBtn: false, completion: nil)
             return
@@ -113,6 +115,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "longitude": longitude,
                                        "latitude": latitude,
                                        "address": address,
+                                       "thought": thought,
                                        "date": self.selectedDate,
                                        "postTime": ServerValue.timestamp()] as [String: Any]
                     

@@ -12,10 +12,12 @@ import Photos
 struct  PostModel {
     
     //MARK : - Variable
+
     var storeName : String?
     var storeAddress : String?
     var nickName : String?
     
+
     //Optional
     var contentsText : String?
     var postTitle : String?
@@ -116,3 +118,4 @@ struct  PostModel {
     }
     
 }
+

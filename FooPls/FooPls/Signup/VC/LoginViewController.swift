@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // MARK: 페이스북 버튼
-        let fbLoginButton = LoginButton(readPermissions: [.email])
+        let fbLoginButton = LoginButton(readPermissions: [.publicProfile, .email])
         view.addSubview(fbLoginButton)
         // 페이스북 버튼 레이아웃
         fbLoginButton.snp.makeConstraints {
@@ -164,20 +164,20 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withCustomToken: firebaseToken) { [weak self] (user, error) in
             guard let `self` = self else { return }
             if error == nil && user != nil {
-                let userEmail = user?.email ?? ""
-                let userNickname = user?.displayName ?? ""
-                let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
-                print(userDic)
-                if let authError = error {
-                    print("authError",authError)
-                } else {
-                    self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
-                    self.performSegue(withIdentifier: "mainSegue", sender: self)
-                }
+                self.reference.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let _ = snapshot.value {
+                        self.performSegue(withIdentifier: "mainSegue", sender: self)
+                    }else {
+                        let userEmail = user?.email ?? ""
+                        let userNickname = user?.displayName ?? ""
+                        let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
+                        self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
+                        self.performSegue(withIdentifier: "mainSegue", sender: self)
+                    }
+                })
             }else {
                 print(error!.localizedDescription)
             }
-            
         }
     }
 }
@@ -192,20 +192,25 @@ extension LoginViewController : LoginButtonDelegate{
             let accessToken = AccessToken.current
             guard let accessTokenString = accessToken?.authenticationToken else { return }
             let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
-            Auth.auth().signIn(with: credentials, completion: { (user, error) in
+            Auth.auth().signIn(with: credentials, completion: { [weak self] (user, error) in
+                guard let `self` = self else { return }
                 if error == nil, user != nil{
-                    let userEmail = user?.email ?? ""
-                    let userNickname = user?.displayName ?? ""
-                    let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
-                    self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
+                    self.reference.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let _ = snapshot.value as? [String: Any] {
+                            self.performSegue(withIdentifier: "mainSegue", sender: self)
+                        }else {
+                            let userEmail = user?.email ?? ""
+                            let userNickname = user?.displayName ?? ""
+                            let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
+                            self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
+                            self.performSegue(withIdentifier: "mainSegue", sender: self)
+                        }
+                    })
                 }else{
-                    if let errors = error {
-                        print(errors.localizedDescription)
-                        return
-                    }
+                    print(error!.localizedDescription)
+                    return
                 }
             })
-            self.performSegue(withIdentifier: "mainSegue", sender: self)
         default:
             break
         }

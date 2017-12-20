@@ -402,7 +402,7 @@
                                 <rect key="frame" x="0.0" y="332" width="375" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="E78-Pe-nLI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="E78-Pe-nLI">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E78-Pe-nLI" id="hYA-9Q-uZk">
@@ -429,6 +429,10 @@
                     <navigationItem key="navigationItem" id="Nka-E9-jlj">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="ymO-SW-Jke"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="googleMapView" destination="mEg-Lw-a7X" id="S6m-SQ-Ipx"/>
+                        <outlet property="tableView" destination="Gfu-B2-dgH" id="tUz-8l-0XG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ok1-nI-UPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
