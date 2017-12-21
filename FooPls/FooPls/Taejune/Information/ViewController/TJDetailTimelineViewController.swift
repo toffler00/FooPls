@@ -23,6 +23,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     var selectedKey: String?
     var photoName: String?
     
+    //MARK: - IBOutlet
     @IBOutlet weak var writeScrollView: UIScrollView!
     @IBOutlet weak var detailDateLabel: UILabel!
     @IBOutlet weak var detailTitleTextField: UITextField!
@@ -32,6 +33,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     @IBOutlet weak var detailThoughtTextField: UITextField!
     @IBOutlet weak var detailContentTextView: UITextView!
     
+    //MARK: - Life Cycel
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -54,8 +56,24 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
                                                 self.detailLocationAddressLabel.text = DataCenter.main.placeAddress
                                                 self.address = DataCenter.main.placeAddress
         }
+        //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
+    //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
+    @objc func keyboardDidShow(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        writeScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    }
+    
+    //MARK: - 키보드가 내려갈 경우 원래의 크기대로 돌림
+    @objc func keyboardWillHide(_ noti: Notification) {
+        writeScrollView.contentInset = UIEdgeInsets.zero
+    }
+    
+    //MARK: - Method
     private func loadData() {
         reference.child("users").child(userID!).child("calendar").child(selectedKey!).observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
@@ -77,11 +95,32 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let photo = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.detailImgView.image = photo
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+        detailLocationTitleLabel.text = placeName
+    }
+    
+    //MARK: - 장소를 선택했을 때 실행되는 메소드
+    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+        viewController.dismiss(animated: true, completion: nil)
+        self.longitude = place.coordinate.longitude
+        self.latitude = place.coordinate.latitude
+        self.detailLocationTitleLabel.text = place.name
+        self.detailLocationAddressLabel.text = place.formattedAddress
+        self.address = place.formattedAddress
+    }
+    
+    //MARK: - IBAction
     @IBAction func backBtnAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK: - 글쓰기 버튼
+    //글쓰기 버튼
     @IBAction func writeBtnAction(_ sender: UIButton) {
         
         //글의 제목이 없을 경우  알럿 창 띄움
@@ -98,11 +137,12 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         let alertSheet = UIAlertController(title: "등록", message: "이 글을 수정하시겠습니까?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default) { [weak self] (action) in
             guard let `self` = self else { return }
+            HUD.show(.labeledProgress(title: "수정중", subtitle: "잠시만 기다려주세요"))
             guard let uploadImg = UIImageJPEGRepresentation(self.detailImgView.image!, 0.3) else { return }
             //사진이 만약 변경이 되었을 경우, 그리고 다른 내용은 바뀌고 사진은 안바뀌는 경우에도 사진을 덮어쓰기로 저장
             Storage.storage().reference().child("calendar_images").child(self.photoName!).putData(uploadImg, metadata: nil, completion: { [weak self] (metaData, error) in
                 guard let `self` = self else { return }
-                HUD.show(.labeledProgress(title: "수정중", subtitle: "잠시만 기다려주세요"))
+                
                 if error != nil {
                     print(error!.localizedDescription)
                 }else {
@@ -121,7 +161,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
                                        "thought": thought,
                                        "date": self.date!,
                                        "timeStamp": ServerValue.timestamp()] as [String: Any]
-                    // MARK: Noti
+                    //Noti
                     NotificationCenter.default.post(name: .reload, object: contentTitle)
                     self.reference.child("users").child(self.userID!).child("calendar").child(self.selectedKey!).updateChildValues(calendarDic)
                     HUD.hide()
@@ -149,27 +189,10 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
         present(autoNavi!, animated: true, completion: nil)        
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let photo = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.detailImgView.image = photo
-        self.dismiss(animated: true, completion: nil)
-    }
     
-    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
-        detailLocationTitleLabel.text = placeName
-    }
-    
-    //MARK: - 장소를 선택했을 때 실행되는 메소드
-    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
-        viewController.dismiss(animated: true, completion: nil)
-        self.longitude = place.coordinate.longitude
-        self.latitude = place.coordinate.latitude
-        self.detailLocationTitleLabel.text = place.name
-        self.detailLocationAddressLabel.text = place.formattedAddress
-        self.address = place.formattedAddress
-    }
 }
 
+//MARK: - Extension
 extension TJDetailTimelineViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {

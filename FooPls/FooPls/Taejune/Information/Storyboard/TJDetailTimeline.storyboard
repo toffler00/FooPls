@@ -136,8 +136,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8p-pR-OR8" userLabel="Location Title">
                                                 <rect key="frame" x="9.5" y="370" width="356.5" height="37"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lq-M5-D8h">
-                                                        <rect key="frame" x="0.0" y="-0.5" width="356.5" height="37"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lq-M5-D8h">
+                                                        <rect key="frame" x="53" y="-0.5" width="303.5" height="37"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -148,12 +148,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="4lq-M5-D8h" firstAttribute="centerX" secondItem="D8p-pR-OR8" secondAttribute="centerX" id="EcA-fw-Ho2"/>
+                                                    <constraint firstItem="4lq-M5-D8h" firstAttribute="centerX" secondItem="D8p-pR-OR8" secondAttribute="centerX" multiplier="1.15" id="EcA-fw-Ho2"/>
                                                     <constraint firstItem="4lq-M5-D8h" firstAttribute="centerY" secondItem="D8p-pR-OR8" secondAttribute="centerY" id="JJ3-XE-jEa"/>
                                                     <constraint firstItem="XLP-gp-Nx1" firstAttribute="height" secondItem="D8p-pR-OR8" secondAttribute="height" multiplier="0.85" id="gjL-g3-Cn8"/>
                                                     <constraint firstItem="4lq-M5-D8h" firstAttribute="height" secondItem="D8p-pR-OR8" secondAttribute="height" id="jBl-X1-giE"/>
                                                     <constraint firstItem="XLP-gp-Nx1" firstAttribute="width" secondItem="XLP-gp-Nx1" secondAttribute="height" multiplier="1:1" id="nsy-wd-k9B"/>
-                                                    <constraint firstItem="4lq-M5-D8h" firstAttribute="width" secondItem="D8p-pR-OR8" secondAttribute="width" id="p5f-PI-MDP"/>
+                                                    <constraint firstItem="4lq-M5-D8h" firstAttribute="width" secondItem="D8p-pR-OR8" secondAttribute="width" multiplier="0.85" id="p5f-PI-MDP"/>
                                                     <constraint firstItem="XLP-gp-Nx1" firstAttribute="centerY" secondItem="D8p-pR-OR8" secondAttribute="centerY" id="wJB-43-btH"/>
                                                     <constraint firstItem="XLP-gp-Nx1" firstAttribute="centerX" secondItem="D8p-pR-OR8" secondAttribute="centerX" multiplier="0.15" id="zDX-Ac-k12"/>
                                                 </constraints>
@@ -162,7 +162,7 @@
                                                 <rect key="frame" x="10" y="416.5" width="356.5" height="37"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기를 눌러 위치를 찾아주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z7-zL-tIl">
-                                                        <rect key="frame" x="71.5" y="0.0" width="285" height="37"/>
+                                                        <rect key="frame" x="53.5" y="0.0" width="303" height="37"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -188,9 +188,9 @@
                                                     <constraint firstItem="0Z7-zL-tIl" firstAttribute="height" secondItem="rfB-1E-gwY" secondAttribute="height" id="Uc1-2P-4fn"/>
                                                     <constraint firstAttribute="trailing" secondItem="diE-Gg-kyo" secondAttribute="trailing" id="Ut8-5a-CJa"/>
                                                     <constraint firstItem="2ay-B2-0B2" firstAttribute="height" secondItem="rfB-1E-gwY" secondAttribute="height" multiplier="0.8" id="dpo-Un-1so"/>
-                                                    <constraint firstItem="0Z7-zL-tIl" firstAttribute="centerX" secondItem="rfB-1E-gwY" secondAttribute="centerX" multiplier="1.2" id="f2P-nM-Dcp"/>
+                                                    <constraint firstItem="0Z7-zL-tIl" firstAttribute="centerX" secondItem="rfB-1E-gwY" secondAttribute="centerX" multiplier="1.15" id="f2P-nM-Dcp"/>
                                                     <constraint firstItem="2ay-B2-0B2" firstAttribute="centerY" secondItem="rfB-1E-gwY" secondAttribute="centerY" id="ibW-bO-ce4"/>
-                                                    <constraint firstItem="0Z7-zL-tIl" firstAttribute="width" secondItem="rfB-1E-gwY" secondAttribute="width" multiplier="0.8" id="kVU-1c-MiE"/>
+                                                    <constraint firstItem="0Z7-zL-tIl" firstAttribute="width" secondItem="rfB-1E-gwY" secondAttribute="width" multiplier="0.85" id="kVU-1c-MiE"/>
                                                     <constraint firstAttribute="bottom" secondItem="diE-Gg-kyo" secondAttribute="bottom" id="tzG-27-DeY"/>
                                                 </constraints>
                                             </view>
