@@ -10,7 +10,7 @@ import FirebaseDatabase
 
 
 class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
-GooglePlaceDataDelegate, UITextViewDelegate {
+GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
 
     //MARK : - Variable
     
@@ -129,11 +129,26 @@ GooglePlaceDataDelegate, UITextViewDelegate {
     }
     
     @IBAction func imagePick(_ sender: UIButton) {
-        let imagePicker = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())
-        let navi = UINavigationController(rootViewController: imagePicker)
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
         imagePicker.delegate = self
-        present(navi, animated: true, completion: nil)
-        print("DDDDDD")
+        self.present(imagePicker, animated: true, completion: nil)
+//        let imagePicker = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())
+//        let navi = UINavigationController(rootViewController: imagePicker)
+//        imagePicker.delegate = self
+//        present(navi, animated: true, completion: nil)
+//        print("DDDDDD")
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let photo = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.postImageView.image = photo
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func photoSelected(_ seletedImges: UIImage) {
+        postImageView.image = seletedImges
+        DataCenter.main.uploadImgAndgetUrl(selectedImg: seletedImges)
     }
     
     func presentAutoSearch() {
@@ -158,10 +173,7 @@ GooglePlaceDataDelegate, UITextViewDelegate {
         self.longi = longi
     }
     
-    func photoSelected(_ seletedImges: UIImage) {
-        postImageView.image = seletedImges
-        DataCenter.main.uploadImgAndgetUrl(selectedImg: seletedImges)
-    }
+    
     
     //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
     @objc func kyeboardAppear(_ noti: Notification) {
