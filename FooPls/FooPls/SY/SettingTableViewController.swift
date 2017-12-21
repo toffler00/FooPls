@@ -14,15 +14,23 @@ import FirebaseStorage
 
 class SettingTableViewController: UITableViewController {
     
+
+    
     // MARK: - IBOulet
     @IBOutlet weak var versionLB: UILabel!
     
     // MARK: - property
     private let appVersion = "CFBundleShortVersionString"
-    private let performSegueID = "Login"
+    private let loginSegueID = "GoToLogin"
+    private let mainSegueID = "GoToMain"
     let reference = Database.database().reference()
     
     // MARK: - IBAction
+    // 설정창 닫기
+    @IBAction func closeButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // 카카오톡 로그아웃
     @IBAction func kakaotalkLogOut(_ sender: UISwitch) {
         switch sender.isOn {
@@ -34,8 +42,7 @@ class SettingTableViewController: UITableViewController {
                 }else {
                     if success {
                         self.firebaseAuthlogOut()
-                        self.performSegue(withIdentifier: self.performSegueID, sender: nil)
-
+                        self.performSegue(withIdentifier: self.loginSegueID, sender: nil)
                     }else {
                         print("Failed to LogOut.")
                     }
@@ -53,7 +60,7 @@ class SettingTableViewController: UITableViewController {
             loginManager.logOut()
             self.firebaseAuthlogOut()
         default:
-            loginManager.logIn(readPermissions: [.email], viewController: self) { [weak self] (result) in
+            loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { [weak self] (result) in
                 guard let `self` = self else { return }
                 switch result {
                 case .success:
@@ -73,7 +80,7 @@ class SettingTableViewController: UITableViewController {
                             
                         }
                     })
-                    self.performSegue(withIdentifier: "mainSegue", sender: self)
+                    self.performSegue(withIdentifier: self.mainSegueID, sender: self)
                 default:
                     break
                 }
@@ -85,7 +92,7 @@ class SettingTableViewController: UITableViewController {
         UIAlertController.presentAlertController(target: self, title: "로그아웃", massage: "정말 로그아웃 하시겠습니까?", actionStyle: .destructive, cancelBtn: true) { [weak self] _ in
             guard let `self` = self else { return }
             self.firebaseAuthlogOut()
-            self.performSegue(withIdentifier: self.performSegueID, sender: nil)
+            self.performSegue(withIdentifier: self.loginSegueID, sender: nil)
             
         }
     }
