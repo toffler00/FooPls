@@ -8,7 +8,7 @@ import FirebaseStorage
 class DetailPageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,     UICollectionViewDelegate, SendSelectedCellIntfo {
 
 
-    
+    //MARK : - variable
     @IBOutlet weak var pageTitleLb: UILabel!
     @IBOutlet weak var detailPageCollectionView: UICollectionView!
     
@@ -16,6 +16,8 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
     var postData : [PostModel] = DataCenter.main.mainVCpostsData
     var cell : CustomCell!
     
+    
+    //MARK : - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let mainVCdelegate = MainCollectionView()
@@ -24,6 +26,7 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
         print("DetailViewPage \(postData.count)")
     }
 
+    //MARK : - collectionview layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height - 84)
     }
@@ -32,6 +35,7 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
         return 1
     }
     
+    //MARK : - collectionview datasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("타이밍이언제냐")
         return postData.count
