@@ -139,16 +139,19 @@ extension SK_SearchListViewController : GMSAutocompleteResultsViewControllerDele
         searchController?.isActive = false
         showSearchResult(lati: place.coordinate.latitude, longi: place.coordinate.longitude, placeName: place.name)
         
-        //searchedPlaces = []
+        searchedPlaces = []
         
         //let downloadData = SearchedData(data: place.name)
         let data = SearchedData()
         data.loadToFirebase(address: "FooPls!") { (downloadData) in
+            print(downloadData)
             for data in downloadData {
                 self.searchedPlaces.append(data)
+                print("여기에 안들어가나? :", self.searchedPlaces)
             }
             self.tableView.reloadData()
         }
+        
         
         
         
