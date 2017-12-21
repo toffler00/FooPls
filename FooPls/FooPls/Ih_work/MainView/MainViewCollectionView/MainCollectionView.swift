@@ -111,9 +111,14 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         cell.thoughtsLb.text = self.postData[indexPath.row].thoughts
         
         // url to image - FirebaseUI
-//        let storeImgUrl = self.postData[indexPath.row].imageurl
-//        let url = URL(string: storeImgUrl!)
-//        cell.cellImageView.sd_setImage(with: url!)
+        
+        if let storeImgUrl = self.postData[indexPath.row].imageurl {
+            let url = URL(string: storeImgUrl)
+            cell.cellImageView.sd_setImage(with: url!)
+        }else {
+            cell.cellImageView.image = #imageLiteral(resourceName: "noimage")
+        }
+        
         
 
         return cell
@@ -121,11 +126,6 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       
-        
-        
-        
         print("이건불림?")
 //        if let nextVC = segue.destination as? DetailPageView {
 //            for temp in self.postData {

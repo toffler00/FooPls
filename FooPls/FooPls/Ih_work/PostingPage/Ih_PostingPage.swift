@@ -202,9 +202,10 @@ extension PostingPage {
         profileImgView.image = #imageLiteral(resourceName: "defaultProfile") //default image
     }
     func getDate() {
-        let postdate = DateFormatter()
-        postdate.dateFormat = "YYYY년 MM월 DD일"
-        let postDate = String(describing: postdate)
-        self.postDateLb.text = postDate
+        let getToday = Date()
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "YYYY년 MM월 DD일"
+        let postingDate = dateFormat.string(from: getToday)
+        self.postDateLb.text = postingDate
     }
 }

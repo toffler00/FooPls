@@ -61,7 +61,12 @@ class DataCenter {
     func getUserUidAndNickName() {
         guard let user = Auth.auth().currentUser else {return}
         let uid = user.uid
-        let email = user.email
+        let email : String?
+        if user.email == nil {
+            email = ""
+        }else{
+            email = user.email
+        }
         reference.child("users").child(uid).child("profile").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
             guard let nickName = data["nickname"] else {return}
@@ -87,9 +92,13 @@ class DataCenter {
                     }
                 }
                 for temp in dataDic {
-                    let datas = PostModel(dictionary: temp)
-                    self.mainVCpostsData.append(datas)
-                    print(self.mainVCpostsData.count)
+                    for (_ , datas) in temp {
+                        if let param = datas as? [String : Any] {
+                            let posts = PostModel(dictionary: param)
+                            self.mainVCpostsData.append(posts)
+                            print(self.mainVCpostsData.count)
+                        }
+                    }
                 }
             }
         }
