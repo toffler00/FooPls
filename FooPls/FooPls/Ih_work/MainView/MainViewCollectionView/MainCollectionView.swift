@@ -45,7 +45,11 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.mainCollectionView.reloadData()
+        print("뷰윌어피어 불려지는가?")
+        DispatchQueue.main.async {
+            self.mainCollectionView.reloadData()
+        }
+        
     }
     func sendToDetailPageView() {
         delegate?.selectedCellInfo(nickName: "toffler", uid: "uid")
