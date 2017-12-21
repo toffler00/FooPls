@@ -163,6 +163,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                        "date": self.selectedDate,
                                        "timeStamp": ServerValue.timestamp()] as [String: Any]
                         self.reference.child("users").child(self.userID!).child("posts").child(key).updateChildValues(postDic)
+                        DataCenter.main.dataLoadSingleEvent()
                         self.dismiss(animated: true, completion: nil)
                     })
                     let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: { [weak self] (action) in
