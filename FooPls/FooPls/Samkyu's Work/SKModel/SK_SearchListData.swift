@@ -25,11 +25,11 @@ struct AddressData {
     {
         guard let placeName = firebaseData["storename"] as? String else { return nil }
         self.placeName = placeName
-        guard let placeAddress = firebaseData["address"] as? String else { return nil }
+        guard let placeAddress = firebaseData["storeaddress"] as? String else { return nil }
         self.placeAddress = placeAddress
         guard let writtenDate = firebaseData["date"] as? String else { return nil }
         self.writtenDate = writtenDate
-        guard let photoUrl = firebaseData["photoID"] as? String else { return nil }
+        guard let photoUrl = firebaseData["imageurl"] as? String else { return nil }
         self.photoUrl = photoUrl
         guard let comment = firebaseData["title"] as? String else { return nil }
         self.comment = comment
@@ -49,11 +49,12 @@ class SearchedData {
         let checker = address
         var dataFromFirebase = ""
         
+        
+        
         ref = Database.database().reference()
         ref.child("users").child("YoHvSrPEi7bMuS1GjI2bQi1yYOG2").child("posts").observe(.value) { (Data) in
             
             var foundDatas:[AddressData] = []
-            
             // 각 루트별로 데이터를 가져오는 아이템을 가져온다.
             for (_, rawData) in (Data.value as? [String:[String:Any]])! {
                 //print(rawData)
@@ -64,6 +65,7 @@ class SearchedData {
                 
                 if dataFromFirebase == checker {
                   print("대상이 있습니다.")
+                print(rawData)
                     if let downloadedData = AddressData(firebaseData: rawData) {
                         foundDatas.append(downloadedData)
                     }
@@ -71,8 +73,8 @@ class SearchedData {
                     //print("대상이 없습니다")
                 }
             }
-            completion(foundDatas)
-            print("클로저 동작?:", foundDatas)
+        completion(foundDatas)
+        print("클로저 동작?:", foundDatas)
         }
     }
 }

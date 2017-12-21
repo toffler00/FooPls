@@ -65,7 +65,7 @@ class DataCenter {
         reference.child("users").child(uid).child("profile").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
             guard let nickName = data["nickname"] else {return}
-            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)
+            self.currentUser = UserModel(uid: uid, nickname: nickName, email: "sky4411v@gmail.com")
            
         }
     }
