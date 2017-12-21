@@ -77,6 +77,7 @@ class DataCenter {
     
     //MARK: - Data singleEvent
     func dataLoadSingleEvent() {
+        mainVCpostsData.removeAll()
         reference.child("users").observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot)
             //Any = [String : [ String : [String : String]]]
