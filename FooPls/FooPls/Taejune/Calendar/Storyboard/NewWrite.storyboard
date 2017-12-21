@@ -224,10 +224,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-jh-6wf" userLabel="Content">
-                                                <rect key="frame" x="10" y="509" width="356.5" height="185"/>
+                                                <rect key="frame" x="10" y="509" width="356.5" height="222"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="글 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-Md-gR6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356.5" height="185"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="356.5" height="222"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
@@ -244,7 +244,7 @@
                                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="d7W-jh-6wf" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="85P-DR-SDL"/>
-                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.625" id="8Jl-Ps-0uP"/>
+                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.675" id="8Jl-Ps-0uP"/>
                                             <constraint firstItem="cOU-XR-dgd" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.3" id="CLg-Cm-TOF"/>
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="width" secondItem="Yec-jm-el7" secondAttribute="width" multiplier="0.95" id="EZ3-w6-fWo"/>
                                             <constraint firstItem="8tQ-Ac-uOu" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="Fu3-0L-eNa"/>
@@ -265,7 +265,7 @@
                                             <constraint firstItem="acO-qI-ayS" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.05" id="brh-f2-ZWA"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="1.175" id="fNV-bj-6IA"/>
                                             <constraint firstItem="sgg-Cq-XNn" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="fUE-9Z-fsf"/>
-                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.25" id="gW7-fk-qHy"/>
+                                            <constraint firstItem="d7W-jh-6wf" firstAttribute="height" secondItem="Yec-jm-el7" secondAttribute="height" multiplier="0.3" id="gW7-fk-qHy"/>
                                             <constraint firstItem="cOU-XR-dgd" firstAttribute="width" secondItem="acO-qI-ayS" secondAttribute="width" id="hhN-b9-i4d"/>
                                             <constraint firstItem="1YC-9e-sDG" firstAttribute="centerX" secondItem="Yec-jm-el7" secondAttribute="centerX" id="kcE-xl-Rdm"/>
                                             <constraint firstItem="8tQ-Ac-uOu" firstAttribute="centerY" secondItem="Yec-jm-el7" secondAttribute="centerY" multiplier="0.2" id="mMZ-ne-TCK"/>

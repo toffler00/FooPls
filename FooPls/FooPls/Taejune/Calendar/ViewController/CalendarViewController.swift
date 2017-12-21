@@ -5,12 +5,12 @@ import Firebase
 
 class CalendarViewController: UIViewController {
     
+    //MARK: - Property
     // 사용자 정의 팝업
     let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
     var contentTitleList: [String] = []
     var contentKeys: [String] = []
     weak var postDelegate: PostCellDelegate?
-    
     var reference: DatabaseReference!
     var userID: String!
     let formater = DateFormatter()
@@ -18,9 +18,11 @@ class CalendarViewController: UIViewController {
     var selectedDate: String?
     var contentDates: [String] = []
     
+    //MARK: - IBOutlet
     @IBOutlet weak var customNaviBar: UIView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearMonthLb: UILabel!
+    
     //MARK: - 셀의 내부의 텍스트와 선택 됐을 때의 뷰를 색 지정
     let outsideMonthColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0)
     let monthColor = UIColor.black
@@ -29,6 +31,7 @@ class CalendarViewController: UIViewController {
     let currentDayColor = UIColor(red: 1, green: 1, blue: 200.0/255.0, alpha: 1)
     let noCurrentDayColor = UIColor(red: 1, green: 254.0/255.0, blue: 245.0/255.0, alpha: 1.0)
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = Database.database().reference()
@@ -41,15 +44,19 @@ class CalendarViewController: UIViewController {
         self.popUpView.baseSuperView.addGestureRecognizer(gesture)
     }
     
+    //매번 캘린더를 셋업해줘야하기 때문에 viewWillAppear에서 실행
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupCalendar()
     }
     
+    //MARK: - @objc
+    //제스쳐를 통헤 팝업뷰 밖을 누르게 되면 빠져나오는 효과를 줌
     @objc func dismissPopUpView(_ tap: UITapGestureRecognizer){
         self.popUpView.alpha = 0
     }
     
+    //MARK: - Method
     private func loadDate() {
         reference.child("users").child(userID!).child("calendar").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
@@ -112,8 +119,8 @@ class CalendarViewController: UIViewController {
         }
     }
     
-    //MARK: - 셀이 선택 되었을 때 셀의 선택 뷰를 표현하기 위한 메소드
-    func handleCellSelected(cell: JTAppleCell?, cellState: CellState) {
+    //셀이 선택 되었을 때 셀의 선택 뷰를 표현하기 위한 메소드
+    private func handleCellSelected(cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CalendarCell else { return }
         if validCell.isSelected {
             validCell.selectedView.isHidden = false
@@ -121,8 +128,9 @@ class CalendarViewController: UIViewController {
             validCell.selectedView.isHidden = true
         }
     }
+    
     //해당 날짜에 기록된 글이 있는지 확인하고 있으면 해당 날짜 셀에 그림 표시
-    func handleCellisContents(cell: JTAppleCell?, cellState: CellState) {
+    private func handleCellisContents(cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CalendarCell else { return }
         formater.dateFormat = "yyyy년 MM월 dd일"
         let cellStateDay = formater.string(from: cellState.date)
@@ -142,6 +150,7 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    //MARK: - IBAction
     //글쓰기 버튼 눌렀을 때
     @IBAction func writeBtnAction(_ sender: UIButton) {
         if selectedDate != nil {
@@ -196,6 +205,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
     }
+    
     //MARK: - 캔린더가 다시 보이게 될때 불리는 메소드, 팝업이 사라진 뒤 불림
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         handleCellisContents(cell: cell, cellState: cellState)

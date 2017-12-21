@@ -28,6 +28,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         }
     }
     
+    //MARK: - IBOutlet
     @IBOutlet weak var writeScrollView: UIScrollView!
     @IBOutlet weak var customNaviBar: UIView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -42,12 +43,13 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        loadData()
         //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
         autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
         autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
         autoVC?.delegate = self
-        loadData()
+        
+        
         //플레이스 뷰를 내릴때 노티
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
                                                object: nil, queue: nil) {[weak self] (noti) in
@@ -58,8 +60,24 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
                                                 self?.LocationAddress.text = DataCenter.main.placeAddress
                                                 self?.address = DataCenter.main.placeAddress
         }
+        //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
+    //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
+    @objc func keyboardDidShow(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        writeScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    }
+    
+    //MARK: - 키보드가 내려갈 경우 원래의 크기대로 돌림
+    @objc func keyboardWillHide(_ noti: Notification) {
+        writeScrollView.contentInset = UIEdgeInsets.zero
+    }
+    
+    //MARK: - Method
     private func setupUI() {
         contentTxtView.delegate = self
         contentTxtView.text = "내용을 입력해주세요."
@@ -76,16 +94,9 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
             if let value = snapshot.value as? [String: Any] {
                 self.userNickname = value["nickname"] as! String
             }
-            
         }
-    
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-
     //MARK: - 뒤로 가기 버튼
     @IBAction func backBtnAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -166,8 +177,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
             })
         }
     }
-    
-
+    //MARK: - IBAction
     //MARK: - 장소 버튼을 누르면 GooglePlacePickerController로 들어감
     @IBAction func locationBtnAction(_ sender: UIButton) {
         //구글 PlacePicker와 연결함
@@ -175,6 +185,14 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         present(autoNavi!, animated: true, completion: nil)
     }
     
+    //MARK: - 사진 추가 버튼 눌렀을 때
+    @IBAction func photoSelectAction(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
     //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
@@ -204,14 +222,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
         self.address = place.formattedAddress
     }
     
-    @IBAction func photoSelectAction(_ sender: UIButton) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = false
-        imagePicker.delegate = self
-        self.present(imagePicker, animated: true, completion: nil)
-    }
-    
+    //MARK: - 사진을 선택했을 때
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let photo = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.contentImgView.image = photo
@@ -224,13 +235,18 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     }
 }
 
+//MARK: - Extension
+
 extension NewWriteViewController: UITextViewDelegate {
+    //텍스트뷰를 쓰려고할 때 기존에 있던 placeholder를 지움
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = .black
         }
     }
+    
+    //텍스트뷰에서 나왔을 때 비어 있다면 placeholder같은 효과를 주기 위함
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "내용을 입력해주세요."

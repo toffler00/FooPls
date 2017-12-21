@@ -6,7 +6,6 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     //MARK: - Property
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
-    
     let mainColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 75.0/255.0, alpha: 1.0)
     
     //MARK: - IBOutlet
@@ -17,7 +16,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
-    //MARK: - viewDidload
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -28,6 +27,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         loadData()
     }
     
+    //MARK: - Method
     private func setupUI() {
         profilePhotoView.layer.borderColor = mainColor.cgColor
         profilePhotoView.layer.borderWidth = 3
@@ -37,7 +37,6 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : Any] {
-                
                 //데이터를 받아서 값이 비어 있다면 nil값을 넣음
                 var nickname = value["nickname"] as? String
                 var email = value["email"] as? String
@@ -101,6 +100,4 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
