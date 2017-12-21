@@ -6,8 +6,8 @@ import FirebaseAuth
 struct UserModel{
     
     //Mark: Variable
-    var email : String
-    var uid : String
+    var email : String?
+    var uid : String?
     
     //optional
     var password : String?
@@ -26,6 +26,10 @@ struct UserModel{
         self.uid = uid
         self.nickName = nickname
         self.email = email
+    }
+    
+    init(url : String) {
+        self.profileImgurl = url
     }
     
 }
