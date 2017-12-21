@@ -82,6 +82,7 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
                 print(error.debugDescription)
             }else {
                 print("업로드성공")
+                DataCenter.main.dataLoadSingleEvent()
             }
         }
         

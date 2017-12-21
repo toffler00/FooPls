@@ -162,7 +162,7 @@ extension MainCollectionView {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
         
-        cell.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        cell.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         cell.layer.borderWidth = 1
 
         cell.cellImageView.layer.cornerRadius = 5
