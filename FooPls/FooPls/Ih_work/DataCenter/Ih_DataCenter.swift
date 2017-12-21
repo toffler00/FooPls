@@ -34,6 +34,7 @@ class DataCenter {
     var currentUser : UserModel?
     var imageInfo : PostModel?
     var postsData : PostModel?
+    var profileImgUrl : String?
      var mainVCpostsData : [PostModel] = []
     init() {}
     
@@ -70,10 +71,22 @@ class DataCenter {
         reference.child("users").child(uid).child("profile").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
             guard let nickName = data["nickname"] else {return}
-            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)
+            self.currentUser = UserModel(uid: uid, nickname: nickName, email: "sky4411v@gmail.com")
            
         }
     }
+    
+    //MARK : - Get profileimg url
+    func getProfileImgUrl() {
+        let uid = currentUser?.uid
+        reference.child("users").child(uid!).child("profile").observe(.value) { (snapshot) in
+            guard let data = snapshot.value as? [String : String] else {return}
+            if let imgurl = data["photoID"] {
+                self.profileImgUrl = imgurl
+            }
+        }
+    }
+    
     
     //MARK: - Data singleEvent
     func dataLoadSingleEvent() {

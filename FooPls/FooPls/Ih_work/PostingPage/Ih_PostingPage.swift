@@ -7,7 +7,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
-
+import SDWebImage
 
 class PostingPage: UIViewController,UINavigationControllerDelegate, ImagePickerDelegate,
 GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
@@ -207,11 +207,19 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
 extension PostingPage {
     func setUserInfo() {
         self.nickNameLb.text = DataCenter.main.currentUser?.nickName
+       
+        
     }
     
     func setUI() {
         profileImgView.layer.cornerRadius = 25
-        profileImgView.image = #imageLiteral(resourceName: "defaultProfile") //default image
+        if let imgurl = DataCenter.main.profileImgUrl {
+            let url = URL(string: imgurl)
+            self.profileImgView.sd_setImage(with: url)
+        }else {
+            profileImgView.image = #imageLiteral(resourceName: "defaultProfile") //default image
+        }
+        
     }
     func getDate() {
         let getToday = Date()
