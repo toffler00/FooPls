@@ -92,6 +92,7 @@ extension TJTimelineViewController: UICollectionViewDataSource {
 }
 
 extension TJTimelineViewController: UICollectionViewDelegate {
+    
     //셀이 선택되었을 때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedKey = myPostingIndex[indexPath.item]

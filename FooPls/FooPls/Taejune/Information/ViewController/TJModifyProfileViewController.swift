@@ -10,6 +10,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     
     //MARK: - IBOutlet
     @IBOutlet weak var profileBGImgView: UIImageView!
+    @IBOutlet weak var modifyScrollView: UIScrollView!
     @IBOutlet weak var profilePhotoView: UIView!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var nicknameTextField: UITextField!
@@ -20,6 +21,9 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,10 +31,23 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         loadData()
     }
     
+    //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
+    @objc func keyboardDidShow(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        modifyScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    }
+    
+    //MARK: - 키보드가 내려갈 경우 원래의 크기대로 돌림
+    @objc func keyboardWillHide(_ noti: Notification) {
+        modifyScrollView.contentInset = UIEdgeInsets.zero
+    }
+    
     //MARK: - Method
     private func setupUI() {
         profilePhotoView.layer.borderColor = mainColor.cgColor
         profilePhotoView.layer.borderWidth = 3
+        profilePhotoView.layer.cornerRadius = (profilePhotoView.frame.width / 2) - 3
     }
     
     private func loadData() {
