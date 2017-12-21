@@ -143,6 +143,7 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let photo = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.postImageView.image = photo
+        DataCenter.main.uploadImgAndgetUrl(selectedImg: photo!)
         self.dismiss(animated: true, completion: nil)
     }
     
