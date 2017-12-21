@@ -10,7 +10,7 @@ import UIKit
 
 class DetailPageCell: UICollectionViewCell {
     
-    
+    @IBOutlet weak var thoughtsBackView: UIView!
     @IBOutlet weak var storeNameLb: UILabel!
     @IBOutlet weak var writeDateLb: UILabel!
     @IBOutlet weak var adressLb: UILabel!

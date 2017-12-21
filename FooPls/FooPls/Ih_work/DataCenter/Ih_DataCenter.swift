@@ -87,9 +87,13 @@ class DataCenter {
                     }
                 }
                 for temp in dataDic {
-                    let datas = PostModel(dictionary: temp)
-                    self.mainVCpostsData.append(datas)
-                    print(self.mainVCpostsData.count)
+                    for (_ , datas) in temp {
+                        if let param = datas as? [String : Any] {
+                            let posts = PostModel(dictionary: param)
+                            self.mainVCpostsData.append(posts)
+                            print(self.mainVCpostsData.count)
+                        }
+                    }
                 }
             }
         }

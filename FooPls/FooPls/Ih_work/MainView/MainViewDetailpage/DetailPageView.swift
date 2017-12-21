@@ -6,6 +6,7 @@ import UIKit
 class DetailPageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,     UICollectionViewDelegate, SendSelectedCellIntfo {
 
 
+    
     @IBOutlet weak var pageTitleLb: UILabel!
     @IBOutlet weak var detailPageCollectionView: UICollectionView!
     

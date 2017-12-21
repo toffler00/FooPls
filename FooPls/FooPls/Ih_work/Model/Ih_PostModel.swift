@@ -96,23 +96,18 @@ struct  PostModel {
     
     //Any = [String : [ String : [String : String]]]
     init(dictionary : [String : Any]) {
-            for (_ , data) in dictionary {
-                if let posts = data as? [String : Any] {
-                    self.storeName = posts["storename"] as? String
-                    self.storeAddress = posts["storeaddress"] as? String
-                    self.contentsText = posts["content"] as? String
-                    self.imageurl = posts["storeimgurl"] as? String
-                    self.latitude = posts["latitude"] as? Double
-                    self.longitude = posts["longitude"] as? Double
-                    self.thoughts = posts["thoughts"] as? String
-                    self.date = posts["date"] as? String
-                    self.timeStamp = posts["timestamp"] as? String
-                    self.photoName = posts["photoname"] as? String
-                    self.nickName = posts["nickname"] as? String
+                    self.storeName = dictionary["storename"] as? String
+                    self.storeAddress = dictionary["storeaddress"] as? String
+                    self.contentsText = dictionary["content"] as? String
+                    self.imageurl = dictionary["imageurl"] as? String
+                    self.latitude = dictionary["latitude"] as? Double
+                    self.longitude = dictionary["longitude"] as? Double
+                    self.thoughts = dictionary["thoughts"] as? String
+                    self.date = dictionary["date"] as? String
+                    self.timeStamp = dictionary["timestamp"] as? String
+                    self.photoName = dictionary["photoname"] as? String
+                    self.nickName = dictionary["nickname"] as? String
                 }
-            }
-        
-   
-    }
-    
+
+
 }
