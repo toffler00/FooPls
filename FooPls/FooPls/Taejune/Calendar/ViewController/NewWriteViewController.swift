@@ -118,7 +118,7 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
             return
         }
         
-        UIAlertController.presentAlertController(target: self, title: "이 글을 등록하시겠습니까?", massage: "이 글을 등록하시겠습니까?", cancelBtn: true) { [weak self] (action) in
+        UIAlertController.presentAlertController(target: self, title: nil, massage: "이 글을 등록하시겠습니까?", cancelBtn: true) { [weak self] (action) in
             guard let `self` = self else { return }
             HUD.show(.labeledProgress(title: "글 등록중", subtitle: "잠시만 기다려주세요"))
             guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
