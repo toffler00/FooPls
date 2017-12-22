@@ -226,8 +226,9 @@ extension PostingPage {
     func getDate() {
         let getToday = Date()
         let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "YYYY년 MM월 DD일"
+        dateFormat.dateFormat = "YYYY년 MM월 dd일"
         let postingDate = dateFormat.string(from: getToday)
+        print(postingDate)
         self.postDateLb.text = postingDate
     }
 }

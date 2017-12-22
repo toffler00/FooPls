@@ -28,7 +28,7 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
 
     //MARK : - collectionview layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height - 104)
+        return CGSize(width: self.view.frame.size.width, height: (self.view.frame.size.height) * 0.8 )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
