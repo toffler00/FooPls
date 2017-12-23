@@ -58,7 +58,7 @@
                                         </constraints>
                                         <state key="normal" image="check"/>
                                         <connections>
-                                            <action selector="handleDone:" destination="Obd-8O-oSo" eventType="touchUpInside" id="YKM-9b-yO2"/>
+                                            <action selector="postingDone:" destination="Obd-8O-oSo" eventType="touchUpInside" id="Hnx-bb-9vT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -338,11 +338,12 @@
                         <outlet property="contentTextView" destination="yBN-XW-CPc" id="WY4-E6-S6i"/>
                         <outlet property="nickNameLb" destination="ckT-2p-Q3q" id="ed7-v0-bKB"/>
                         <outlet property="placeNameTF" destination="tR5-4E-0X6" id="ZMb-7Y-wie"/>
-                        <outlet property="postDataLb" destination="iR8-Ox-9Vc" id="SnX-UG-GSK"/>
+                        <outlet property="postDateLb" destination="iR8-Ox-9Vc" id="tW4-zj-AHr"/>
                         <outlet property="postImageView" destination="GQv-f9-hCN" id="BT3-TS-CRe"/>
                         <outlet property="postPageScrollView" destination="tof-NE-yNq" id="f1k-uG-Suh"/>
                         <outlet property="postingDateLb" destination="iR8-Ox-9Vc" id="o9E-Cp-LZj"/>
                         <outlet property="profileImgView" destination="kW7-zW-7cO" id="l2h-wN-UAy"/>
+                        <outlet property="thoughtsLb" destination="fRD-pY-dWB" id="FgV-OW-Ei6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Zh-4C-pJo" userLabel="First Responder" sceneMemberID="firstResponder"/>

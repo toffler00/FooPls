@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
+import FirebaseStorage
+import Firebase
 
 class DetailPageCell: UICollectionViewCell {
     
-    
+    @IBOutlet weak var postImgView: UIImageView!
+    @IBOutlet weak var postingDateLb: UILabel!
+    @IBOutlet weak var nickNameLb: UILabel!
+    @IBOutlet weak var thoughtsBackView: UIView!
     @IBOutlet weak var storeNameLb: UILabel!
     @IBOutlet weak var writeDateLb: UILabel!
     @IBOutlet weak var adressLb: UILabel!
     @IBOutlet weak var showStoryLb: UILabel!
+    @IBOutlet weak var thoughtsLb: UILabel!
     
     
 }

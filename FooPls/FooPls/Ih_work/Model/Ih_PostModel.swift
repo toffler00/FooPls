@@ -12,14 +12,17 @@ import Photos
 struct  PostModel {
     
     //MARK : - Variable
-    var storeName : String
-    var storeAddress : String
+
+    var storeName : String?
+    var storeAddress : String?
     var nickName : String?
+    
+
     //Optional
     var contentsText : String?
     var postTitle : String?
     var storeImg : UIImage?
-    var storeImgUrl : String?
+    var imageurl : String?
     var thoughts : String?
     var date : String?
     var timeStamp : String?
@@ -43,7 +46,7 @@ struct  PostModel {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = contentText
-        self.storeImgUrl = storeImgUrl
+        self.imageurl = storeImgUrl
         self.date = date
         self.timeStamp = timeStamp
         self.latitude = lati
@@ -54,13 +57,13 @@ struct  PostModel {
     }
     
     //포스팅 모델
-    init(storeName : String, storeAddress : String, content : String, latitude : String, longitude : String, storeImgurl : String, date : String, timeStamp : String, photoName : String, thoughts : String , nickname : String) {
+    init(storeName : String, storeAddress : String, content : String, latitude : Double, longitude : Double, storeImgurl : String, date : String, timeStamp : String, photoName : String, thoughts : String , nickname : String) {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = content
-        self.latitude = Double(latitude)
-        self.longitude = Double(longitude)
-        self.storeImgUrl = storeImgurl
+        self.latitude = latitude
+        self.longitude = longitude
+        self.imageurl = storeImgurl
         self.date = date
         self.timeStamp = timeStamp
         self.photoName = photoName
@@ -69,14 +72,15 @@ struct  PostModel {
     }
     
     //포스팅 이벤트 수신대기 메소드에서 대응해줄 모델
-    init(storeName : String, storeAddress : String, contentText : String, storeImgurl : String, lati : Double, longi : Double, thoughts : String) {
+    init(storeName : String, storeAddress : String, contentText : String, storeImgurl : String, lati : Double, longi : Double, thoughts : String, nickname : String) {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = contentText
-        self.storeImgUrl = storeImgurl
+        self.imageurl = storeImgurl
         self.latitude = lati
         self.longitude = longi
         self.thoughts = thoughts
+        self.nickName = nickname
     }
     
     //구글플레이스에서 정보가져올때
@@ -86,5 +90,27 @@ struct  PostModel {
         self.latitude = lati
         self.longitude = longi
     }
+    
+    init (imageUrl : String, photoname : String) {
+        self.imageurl = imageUrl
+        self.photoName = photoname
+    }
+    
+    //Any = [String : [ String : [String : String]]]
+    init(dictionary : [String : Any]) {
+                    self.storeName = dictionary["storename"] as? String
+                    self.storeAddress = dictionary["storeaddress"] as? String
+                    self.contentsText = dictionary["content"] as? String
+                    self.imageurl = dictionary["imageurl"] as? String
+                    self.latitude = dictionary["latitude"] as? Double
+                    self.longitude = dictionary["longitude"] as? Double
+                    self.thoughts = dictionary["thoughts"] as? String
+                    self.date = dictionary["date"] as? String
+                    self.timeStamp = dictionary["timestamp"] as? String
+                    self.photoName = dictionary["photoname"] as? String
+                    self.nickName = dictionary["nickname"] as? String
+                }
+
+
 }
 

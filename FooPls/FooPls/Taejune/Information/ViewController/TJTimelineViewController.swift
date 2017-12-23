@@ -5,7 +5,7 @@ import Firebase
 import Kingfisher
 
 class TJTimelineViewController: UIViewController {
-    
+    //MARK: - Property
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
     var myPostingIndex: [String] = []
@@ -15,8 +15,9 @@ class TJTimelineViewController: UIViewController {
     var myPostingDate: [String] = []
     var selectedKey: String?
     
+    //MARK: - IBOutlet
     @IBOutlet weak var myPostingCollectionView: UICollectionView!
-    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = Database.database().reference()
@@ -27,8 +28,9 @@ class TJTimelineViewController: UIViewController {
         loadDate()
     }
     
+    //MARK: - 파이어베이스에서 데이터 로드
     private func loadDate() {
-        reference.child("users").child(userID!).child("calendar").observeSingleEvent(of: .value) { [weak self] (snapshot) in
+        reference.child("users").child(userID!).child("calendar").observe( .value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : [String: Any]] {
                 self.myPostingTitles.removeAll()
@@ -36,11 +38,12 @@ class TJTimelineViewController: UIViewController {
                 self.myPostingImgs.removeAll()
                 self.myPostingIndex.removeAll()
                 self.myPostingDate.removeAll()
+                
                 for (key, postingDic) in value {
                     let postingTitle = postingDic["title"] as! String
-                    let postingAddress = postingDic["address"] as! String
+                    let postingAddress = postingDic["storeaddress"] as! String
                     let postingDate = postingDic["date"] as! String
-                    let postingImgURL = URL(string: postingDic["photoID"] as! String)
+                    let postingImgURL = URL(string: postingDic["imageurl"] as! String)
                     self.myPostingTitles.append(postingTitle)
                     print("title: ", self.myPostingTitles)
                     self.myPostingAddress.append(postingAddress)
@@ -60,7 +63,7 @@ class TJTimelineViewController: UIViewController {
             guard let `self` = self else { return }
             let removeKey = self.myPostingIndex[sender.tag]
             self.reference.child("users").child(self.userID!).child("calendar").child(removeKey).removeValue()
-            self.myPostingCollectionView.reloadData()
+            //self.myPostingCollectionView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
         alertSheet.addAction(okAction)
@@ -68,13 +71,13 @@ class TJTimelineViewController: UIViewController {
         present(alertSheet, animated: true, completion: nil)
     }
 }
-
+//MARK: - Extension
 extension TJTimelineViewController: UICollectionViewDataSource {
-    
+    //셀의 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myPostingIndex.count
     }
-    
+    //셀의 정보
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPostingCell", for: indexPath) as! MyPostingCell
         
@@ -89,12 +92,14 @@ extension TJTimelineViewController: UICollectionViewDataSource {
 }
 
 extension TJTimelineViewController: UICollectionViewDelegate {
+    
+    //셀이 선택되었을 때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedKey = myPostingIndex[indexPath.item]
         performSegue(withIdentifier: "TJDetailTimeline", sender: nil)
         
     }
-    
+    //셀이 선택되었을 때 다음 뷰에 선택된 날의 정보를 보냄
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TJDetailTimeline" {
             let destinationVC = segue.destination as! TJDetailTimelineViewController
@@ -105,6 +110,7 @@ extension TJTimelineViewController: UICollectionViewDelegate {
 }
 
 extension TJTimelineViewController: UICollectionViewDelegateFlowLayout {
+    //셀의 사이즈 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = CGSize(width: (self.view.frame.width - 60) / 2, height: (2 * self.view.frame.height) / 3)
         return cellSize

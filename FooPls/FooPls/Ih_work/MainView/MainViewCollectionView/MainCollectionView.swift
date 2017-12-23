@@ -18,13 +18,13 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     var cell : CustomCell!
     var dataCenter = DataCenter()
-    var postData = [PostModel]()
+    var postData : [PostModel] = DataCenter.main.mainVCpostsData
     var currentUser = Auth.auth().currentUser
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DataCenter.main.getUserUidAndNickName()
         NotificationCenter.default.addObserver(forName: Notification.Name.mainVCData,
                                                object: nil, queue: nil) { (mainVCData) in
             let mainVCPostData = mainVCData.object as! [PostModel]
@@ -34,6 +34,8 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
             }
+                                                
+                                                
         }
         
 //        DispatchQueue.main.async {
@@ -43,7 +45,11 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.mainCollectionView.reloadData()
+        print("뷰윌어피어 불려지는가?")
+        DispatchQueue.main.async {
+            self.mainCollectionView.reloadData()
+        }
+        
     }
     func sendToDetailPageView() {
         delegate?.selectedCellInfo(nickName: "toffler", uid: "uid")
@@ -109,9 +115,14 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         cell.thoughtsLb.text = self.postData[indexPath.row].thoughts
         
         // url to image - FirebaseUI
-        let storeImgUrl = self.postData[indexPath.row].storeImgUrl
-        let url = URL(string: storeImgUrl!)
-        cell.cellImageView.sd_setImage(with: url!)
+        
+        if let storeImgUrl = self.postData[indexPath.row].imageurl {
+            let url = URL(string: storeImgUrl)
+            cell.cellImageView.sd_setImage(with: url!)
+        }else {
+            cell.cellImageView.image = #imageLiteral(resourceName: "noimage")
+        }
+        
         
 
         return cell
@@ -119,11 +130,6 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       
-        
-        
-        
         print("이건불림?")
 //        if let nextVC = segue.destination as? DetailPageView {
 //            for temp in self.postData {
@@ -156,7 +162,7 @@ extension MainCollectionView {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
         
-        cell.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        cell.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         cell.layer.borderWidth = 1
 
         cell.cellImageView.layer.cornerRadius = 5

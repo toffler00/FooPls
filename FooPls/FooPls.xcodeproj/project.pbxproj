@@ -18,7 +18,6 @@
 		230EDD811FDFC58F00FF26CC /* TJListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD801FDFC58F00FF26CC /* TJListViewController.swift */; };
 		230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */; };
 		230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */; };
-		230EDD871FE0F6AC00FF26CC /* TJSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD861FE0F6AC00FF26CC /* TJSettingViewController.swift */; };
 		230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
@@ -30,7 +29,6 @@
 		231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59C71FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift */; };
 		231F59D21FDAC2EA00580D69 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59C91FDAC2EA00580D69 /* RAMRotationAnimation.swift */; };
 		231F59D31FDAC2EA00580D69 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59CB1FDAC2EA00580D69 /* RAMBounceAnimation.swift */; };
-		231F59D51FDC137800580D69 /* TJSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231F59D41FDC137800580D69 /* TJSettings.storyboard */; };
 		231F59D71FDC146400580D69 /* TJProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231F59D61FDC146400580D69 /* TJProfile.storyboard */; };
 		2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2328AB881FCE9FB5004B75C0 /* Splash.storyboard */; };
 		2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */; };
@@ -53,7 +51,7 @@
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */; };
 		624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */; };
-		627672F81FE7BFFA006EDC10 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		627672F81FE7BFFA006EDC10 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */; };
 		628E5B1F1FE259B700CBEA16 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
@@ -93,6 +91,7 @@
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
 		FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */; };
 		FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */; };
+		FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */; };
 		FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */; };
 		FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */; };
 		FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB851FD691FF00B993C9 /* SK_DetailViewController.swift */; };
@@ -111,7 +110,6 @@
 		230EDD801FDFC58F00FF26CC /* TJListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJListViewController.swift; sourceTree = "<group>"; };
 		230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJBookmarkViewController.swift; sourceTree = "<group>"; };
 		230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJModifyProfileViewController.swift; sourceTree = "<group>"; };
-		230EDD861FE0F6AC00FF26CC /* TJSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJSettingViewController.swift; sourceTree = "<group>"; };
 		230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJModifyProfile.storyboard; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		231F59C71FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimations.swift; sourceTree = "<group>"; };
 		231F59C91FDAC2EA00580D69 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
 		231F59CB1FDAC2EA00580D69 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
-		231F59D41FDC137800580D69 /* TJSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJSettings.storyboard; sourceTree = "<group>"; };
 		231F59D61FDC146400580D69 /* TJProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJProfile.storyboard; sourceTree = "<group>"; };
 		2328AB881FCE9FB5004B75C0 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		2328AB8B1FCE9FFC004B75C0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +190,7 @@
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
 		FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListViewController.swift; sourceTree = "<group>"; };
+		FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListData.swift; sourceTree = "<group>"; };
 		FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_MapDataCenter.swift; sourceTree = "<group>"; };
 		FCDCFB811FD525C000B993C9 /* SKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKMain.storyboard; sourceTree = "<group>"; };
 		FCDCFB831FD68AB000B993C9 /* SK_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_MainViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 		231A40561FD8E3850046F3D4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				230EDD861FE0F6AC00FF26CC /* TJSettingViewController.swift */,
 				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
 				230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */,
 				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
@@ -331,7 +328,6 @@
 		232D49FD1FDF7AA10094DA1A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				231F59D41FDC137800580D69 /* TJSettings.storyboard */,
 				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
 				230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */,
 				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
@@ -656,6 +652,7 @@
 			children = (
 				FCDCFB7C1FD525AE00B993C9 /* SK_MapDataCenter.swift */,
 				FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */,
+				FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */,
 			);
 			path = SKModel;
 			sourceTree = "<group>";
@@ -740,7 +737,6 @@
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
 				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
 				232D49FA1FDE507C0094DA1A /* TJTimeline.storyboard in Resources */,
-				231F59D51FDC137800580D69 /* TJSettings.storyboard in Resources */,
 				232D49F01FDE3F850094DA1A /* MenuCell.xib in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
 				233773E01FD6D80E006C28F0 /* NewWrite.storyboard in Resources */,
@@ -818,6 +814,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PagingKit/PagingKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -837,6 +834,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -857,7 +855,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627672F81FE7BFFA006EDC10 /* (null) in Sources */,
+				627672F81FE7BFFA006EDC10 /* BuildFile in Sources */,
 				FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */,
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				62F1B7331FDFCC0D0084D68F /* Ih_AllPostsData.swift in Sources */,
@@ -870,7 +868,6 @@
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
 				624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
-				230EDD871FE0F6AC00FF26CC /* TJSettingViewController.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */,
 				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
@@ -906,6 +903,7 @@
 				FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */,
 				FC1CED901FE3FE78006FBE4B /* SK_CustomButton.swift in Sources */,
 				234302EA1FD63BB200501C46 /* CalendarViewController.swift in Sources */,
+				FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */,
 				231F59D01FDAC2EA00580D69 /* RAMFrameItemAnimation.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
 				62F1B7371FDFE13B0084D68F /* DetailPageCell.swift in Sources */,

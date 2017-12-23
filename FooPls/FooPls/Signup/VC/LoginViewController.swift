@@ -4,6 +4,7 @@ import Firebase
 import FacebookLogin
 import FacebookCore
 import SnapKit
+import PKHUD
 
 class LoginViewController: UIViewController {
     
@@ -13,6 +14,8 @@ class LoginViewController: UIViewController {
     var kakaoServerURL = ""
     var userInfo : UserModel?
 
+    
+    
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
@@ -28,7 +31,8 @@ class LoginViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        HUD.allowsInteraction = false
+        HUD.dimsBackground = false
         // MARK: 페이스북 버튼
         let fbLoginButton = LoginButton(readPermissions: [.publicProfile, .email])
         view.addSubview(fbLoginButton)
@@ -123,6 +127,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - 커스텀 토큰을 만들기위해 만든 서버에 POST를 보내서 파이어베이스에 맞는 커스텀 토큰을 가져옴
     func requestFirebaseCustomToken(accessToken: String) {
+        HUD.show(.labeledProgress(title: "로그인 중", subtitle: "잠시만 기다려주세요"))
         //VALIDATION SERVER는 로컬 서버
         let url = URL(string: String(format: "%@/verifyToken", kakaoServerURL))!
         print(url)
@@ -166,12 +171,14 @@ class LoginViewController: UIViewController {
             if error == nil && user != nil {
                 self.reference.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                     if let _ = snapshot.value {
+                        HUD.hide()
                         self.performSegue(withIdentifier: "mainSegue", sender: self)
                     }else {
                         let userEmail = user?.email ?? ""
                         let userNickname = user?.displayName ?? ""
                         let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
                         self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
+                        HUD.hide(animated: true)
                         self.performSegue(withIdentifier: "mainSegue", sender: self)
                     }
                 })
@@ -189,6 +196,7 @@ extension LoginViewController : LoginButtonDelegate{
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         switch result{
         case .success:
+            HUD.show(.labeledProgress(title: "로그인 중", subtitle: "잠시만 기다려주세요"))
             let accessToken = AccessToken.current
             guard let accessTokenString = accessToken?.authenticationToken else { return }
             let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
@@ -197,12 +205,14 @@ extension LoginViewController : LoginButtonDelegate{
                 if error == nil, user != nil{
                     self.reference.child("users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                         if let _ = snapshot.value as? [String: Any] {
+                            HUD.hide()
                             self.performSegue(withIdentifier: "mainSegue", sender: self)
                         }else {
                             let userEmail = user?.email ?? ""
                             let userNickname = user?.displayName ?? ""
                             let userDic = ["email": userEmail, "nickname": userNickname, "phone": "", "photoID": self.defaultProfileURL]
                             self.reference.child("users").child(user!.uid).child("profile").setValue(userDic)
+                            HUD.hide()
                             self.performSegue(withIdentifier: "mainSegue", sender: self)
                         }
                     })
@@ -232,3 +242,5 @@ extension LoginViewController : UITextFieldDelegate {
         return true
     }
 }
+
+
