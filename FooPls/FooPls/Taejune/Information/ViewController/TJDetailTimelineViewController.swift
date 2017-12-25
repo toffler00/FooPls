@@ -4,7 +4,7 @@ import Firebase
 import GooglePlacePicker
 import PKHUD
 
-class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
+class TJDetailTimelineViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
     
     let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
     var autoNavi: UINavigationController?
@@ -104,17 +104,7 @@ class TJDetailTimelineViewController: UIViewController, GMSPlacePickerViewContro
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
         detailLocationTitleLabel.text = placeName
     }
-    
-    //MARK: - 장소를 선택했을 때 실행되는 메소드
-    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
-        viewController.dismiss(animated: true, completion: nil)
-        self.longitude = place.coordinate.longitude
-        self.latitude = place.coordinate.latitude
-        self.detailLocationTitleLabel.text = place.name
-        self.detailLocationAddressLabel.text = place.formattedAddress
-        self.address = place.formattedAddress
-    }
-    
+        
     //MARK: - IBAction
     @IBAction func backBtnAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

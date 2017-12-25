@@ -76,6 +76,7 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
     }
     
     //MARK: - ButtonAction
+    //프로필 버튼을 눌렀을 때 사진 선택하는 뷰 컨트롤러로 이동
     @IBAction func profilePhotoBtnAction(_ sender: UIButton) {
         let imgPicker = UIImagePickerController()
         imgPicker.allowsEditing = true
@@ -84,17 +85,21 @@ class TJModifyProfileViewController: UIViewController, UIImagePickerControllerDe
         self.present(imgPicker, animated: true, completion: nil)
     }
     
+    //백 버튼 눌렀을 때 pop 시킴
     @IBAction func backBtnAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    //수정 버튼을 눌렀을 때
     @IBAction func modifyBtnAction(_ sender: CustomButton) {
         UIAlertController.presentAlertController(target: self, title: "수정하시겠습니까?", massage: nil, cancelBtn: true) { [weak self] (action) in
             guard let `self` = self else { return }
+            //텍스트 필드에 입력된 값이 없을 경우 빈 문자열로 저장
             let nickname = self.nicknameTextField.text ?? ""
             let email = self.emailTextField.text ?? ""
             let phone = self.phoneTextField.text ?? ""
             let profileDic = ["nickname": nickname, "email": email, "phone": phone]
+            //수정된 값을 저장
             self.reference.child("users").child(self.userID!).child("profile").updateChildValues(profileDic)
             self.navigationController?.popViewController(animated: true)
         }

@@ -48,7 +48,6 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         //뷰가 로드 될때 카카오 서버값을 미리 받음
         reference.child("KakaoLoginServer").observe(.value, with: { (snapshot) in
-            print(snapshot)
             self.kakaoServerURL = snapshot.value as! String
         })
         //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
@@ -112,7 +111,6 @@ class LoginViewController: UIViewController {
             if error == nil, user != nil{
                 self.userInfo?.uid = (user?.uid)!
                 let uid = String(describing: user?.uid)
-                print(uid)
                 self.performSegue(withIdentifier: "mainSegue", sender: self)
             }else{
                 UIAlertController.presentAlertController(target: self,
@@ -130,7 +128,6 @@ class LoginViewController: UIViewController {
         HUD.show(.labeledProgress(title: "로그인 중", subtitle: "잠시만 기다려주세요"))
         //VALIDATION SERVER는 로컬 서버
         let url = URL(string: String(format: "%@/verifyToken", kakaoServerURL))!
-        print(url)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

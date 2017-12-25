@@ -35,9 +35,4 @@ class SplashViewController: UIViewController {
             }
         }
     }
-    func getTimeStamp() {
-        let timeStamp = ServerValue.timestamp()
-        print("타임스탬프")
-        print(timeStamp)
-    }
 }

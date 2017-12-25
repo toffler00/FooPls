@@ -20,7 +20,7 @@ class TJTimelineViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        reference = Database.database().reference()
+        //reference = Database.database().reference()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +45,6 @@ class TJTimelineViewController: UIViewController {
                     let postingDate = postingDic["date"] as! String
                     let postingImgURL = URL(string: postingDic["imageurl"] as! String)
                     self.myPostingTitles.append(postingTitle)
-                    print("title: ", self.myPostingTitles)
                     self.myPostingAddress.append(postingAddress)
                     self.myPostingImgs.append(postingImgURL!)
                     self.myPostingDate.append(postingDate)
@@ -71,6 +70,7 @@ class TJTimelineViewController: UIViewController {
         present(alertSheet, animated: true, completion: nil)
     }
 }
+
 //MARK: - Extension
 extension TJTimelineViewController: UICollectionViewDataSource {
     //셀의 갯수

@@ -4,7 +4,7 @@ import Firebase
 import GooglePlacePicker
 import PKHUD
 
-class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDelegate, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
+class NewWriteViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
     
     let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
     var autoNavi: UINavigationController?
@@ -197,8 +197,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
     
     //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
     func positinData(lati: Double, longi: Double, address: String, placeName: String) {
-
-        print(address)
         locationTitle.text = placeName
         LocationAddress.text = address
         longitude = longi
@@ -211,16 +209,6 @@ class NewWriteViewController: UIViewController, GMSPlacePickerViewControllerDele
          locationTitle.text = DataCenter.main.placeName
          LocationAddress.text = DataCenter.main.placeAddress
         }
-    }
-    
-    //MARK: - 장소를 선택했을 때 실행되는 메소드
-    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
-        viewController.dismiss(animated: true, completion: nil)
-        self.longitude = place.coordinate.longitude
-        self.latitude = place.coordinate.latitude
-        self.locationTitle.text = place.name
-        self.LocationAddress.text = place.formattedAddress
-        self.address = place.formattedAddress
     }
     
     //MARK: - 사진을 선택했을 때
