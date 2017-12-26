@@ -13,8 +13,6 @@ class LoginViewController: UIViewController {
     let reference = Database.database().reference()
     var kakaoServerURL = ""
     var userInfo : UserModel?
-
-    
     
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
