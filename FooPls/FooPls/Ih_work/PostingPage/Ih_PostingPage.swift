@@ -46,7 +46,7 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(_:)), name: .UIKeyboardWillHide, object: nil)
         
-        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi, object: nil, queue: nil) { (newPosi) in
+        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi, object: nil, queue: nil) {(newPosi) in
             let latitu = DataCenter.main.latitude
             let longitu = DataCenter.main.longitude
             self.lati = latitu
@@ -57,7 +57,10 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
 
     }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     @IBAction func postingDone(_ sender : Any) {
         let time = ServerValue.timestamp()
@@ -190,27 +193,13 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
         postPageScrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 }
 extension PostingPage {
+    
     func setUserInfo() {
         self.nickNameLb.text = DataCenter.main.currentUser?.nickName
        
-        
     }
     
     func setUI() {

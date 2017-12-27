@@ -29,7 +29,6 @@ class DataCenter {
     //MARK: - Property
     let reference = Database.database().reference()
     let storage = Storage.storage().reference()
-    let userInfo = Auth.auth().currentUser
     var postModel : PostModel?
     var currentUser : UserModel?
     var imageInfo : PostModel?
@@ -71,8 +70,7 @@ class DataCenter {
         reference.child("users").child(uid).child("profile").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
             guard let nickName = data["nickname"] else {return}
-            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)
-           
+            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)           
         }
     }
     
@@ -150,28 +148,6 @@ class DataCenter {
                 print(error.debugDescription)
             }else {
                 print("업로드성공")
-            }
-        }
-    }
-    
-    func postUpload(uid : String?, storeimg : UIImage, storeName : String,
-                    storeAdress : String, contents : String) {
-        guard ((postModel?.storeImg = storeimg) != nil) else {return}
-        guard let img = postModel?.storeImgData else {return}
-        Storage.storage().reference().child(uid!).child("storeimg").putData(img, metadata: nil) { (metadata, error) in
-            guard let imgUrl = metadata?.downloadURL()?.absoluteString
-                else {return}
-            let dic = ["storename" : storeName,
-                       "storeadress" : storeAdress,
-                       "content" : contents,
-                       "storeimgurl" : imgUrl] as [String : Any]
-            Database.database().reference().child("users").child(uid!).child("posts")
-                .childByAutoId().updateChildValues(dic) { (error, ref) in
-                    if error != nil {
-                        print(error.debugDescription)
-                    }else {
-                        print("업로드성공")
-                    }
             }
         }
     }
