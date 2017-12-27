@@ -73,7 +73,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCt-Fg-aiD">
-                                                    <rect key="frame" x="8" y="210" width="95" height="24"/>
+                                                    <rect key="frame" x="8" y="210" width="155.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -112,7 +112,7 @@
                                             <constraint firstItem="LLl-h5-OXg" firstAttribute="leading" secondItem="TBn-P7-aqY" secondAttribute="leading" constant="10" id="Oa0-OD-pug"/>
                                             <constraint firstItem="3dq-Wl-rWS" firstAttribute="top" secondItem="LLl-h5-OXg" secondAttribute="bottom" constant="1" id="Ur2-eO-GMT"/>
                                             <constraint firstItem="Cjm-c8-iCj" firstAttribute="top" secondItem="dMn-Wr-Jzy" secondAttribute="bottom" constant="1" id="UrP-Ve-wBS"/>
-                                            <constraint firstItem="rCt-Fg-aiD" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.55" id="XJQ-Xv-RmD"/>
+                                            <constraint firstItem="rCt-Fg-aiD" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.9" id="XJQ-Xv-RmD"/>
                                             <constraint firstItem="rCt-Fg-aiD" firstAttribute="top" secondItem="dpP-ff-1BQ" secondAttribute="bottom" id="czV-ZI-EDx"/>
                                             <constraint firstItem="dpP-ff-1BQ" firstAttribute="height" secondItem="TBn-P7-aqY" secondAttribute="height" multiplier="0.1" id="eDx-iN-rDE"/>
                                             <constraint firstItem="dpP-ff-1BQ" firstAttribute="leading" secondItem="TBn-P7-aqY" secondAttribute="leadingMargin" id="jbF-sg-Yxo"/>
