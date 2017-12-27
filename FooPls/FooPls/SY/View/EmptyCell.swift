@@ -6,9 +6,9 @@ import UIKit
 
 class EmptyCell: UITableViewCell {
     
-    @IBOutlet weak var writeButton: UIButton!
     weak var delegate: EmptyCellDelegate?
-    
+    // configure button ui
+    @IBOutlet weak var writeButton: UIButton!
     // 글쓰기 부분으로 넘어가는 버튼
     @IBAction func postWriting(_ sender: UIButton) {
         delegate?.emptyCellButton(self)
@@ -20,12 +20,6 @@ class EmptyCell: UITableViewCell {
         writeButton.imageEdgeInsets = UIEdgeInsetsMake(25, 25, 25, 15)
         // 버튼 원으로 만들기
         writeButton.layer.cornerRadius = writeButton.frame.width/2
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

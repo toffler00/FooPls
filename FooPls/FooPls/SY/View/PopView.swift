@@ -2,7 +2,6 @@
 //  PopView.swift
 //  FinalPopView
 
-
 import UIKit
 
 class PopView: UIView {
@@ -28,6 +27,7 @@ class PopView: UIView {
         setPopUpViewContents()
 
     }
+    
     // MARK: 팝뷰 컨텐츠 세팅
     private func setPopUpViewContents() {
         // baseView cornerRadius
@@ -42,7 +42,4 @@ class PopView: UIView {
 protocol PopViewDelegate: class {
     func popUpWritingDelegate(date: String)
     func postWritingButton(button: UIButton)
-//    func editingPostData(_ controller: UIViewController, data: String)
 }
-
-

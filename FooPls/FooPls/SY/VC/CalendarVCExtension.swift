@@ -12,8 +12,18 @@ let emptyCell = "EmptyCell"
 // MARK: - CalendarViewController extension
 extension CalendarViewController {
     
-    // MARK: 팝업뷰 세팅
+    // MARK: 팝업뷰
     public func setUpPopUpView() {
+        configurePopView()
+        popUpView.tableView.delegate = self
+        popUpView.tableView.dataSource = self
+        popUpView.popViewDelegate = self
+        popUpView.tableView.register(UINib.init(nibName: postCell, bundle: nil), forCellReuseIdentifier: postCell)
+        popUpView.tableView.register(UINib.init(nibName: emptyCell, bundle: nil), forCellReuseIdentifier: emptyCell)
+        self.view.addSubview(popUpView)
+    }
+    // MARK: 팝업뷰 기본 틀 세팅
+    private func configurePopView() {
         // 팝업뷰 생성
         let viewColor = UIColor.black
         // 부모뷰 투명
@@ -23,12 +33,6 @@ extension CalendarViewController {
         let baseViewColor = #colorLiteral(red: 1, green: 0.9967653155, blue: 0.9591305852, alpha: 1)
         // 팝업 배경
         popUpView.baseView.backgroundColor = baseViewColor.withAlphaComponent(0.8)
-        popUpView.tableView.delegate = self
-        popUpView.tableView.dataSource = self
-        popUpView.popViewDelegate = self
-        popUpView.tableView.register(UINib.init(nibName: postCell, bundle: nil), forCellReuseIdentifier: postCell)
-        popUpView.tableView.register(UINib.init(nibName: emptyCell, bundle: nil), forCellReuseIdentifier: emptyCell)
-        self.view.addSubview(popUpView)
     }
     // MARK: 파이어베이스에서 데이터삭제 함수
     fileprivate func removeDatabase( _ tableView: UITableView, _ indexPath: IndexPath) {
@@ -36,7 +40,6 @@ extension CalendarViewController {
         self.reference.child("users").child(uid).child("calendar")
             .child(self.contentKeys[indexPath.item]).removeValue()
         self.reference.observe(.childRemoved) { (snapshot) in
-            print("snapshot:\(snapshot)")
             let indexPathRow = indexPath.row
             self.contentKeys.remove(at: indexPathRow)
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -86,7 +89,6 @@ extension CalendarViewController: UITableViewDelegate {
     // MARK: 셀 선택했을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        // 델리게이트를 이용해서 넘길 예정
         let testTitle = contentTitleList[index]
         postDelegate?.selectedPostCellData(controller: self, data: testTitle)
         let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
@@ -115,7 +117,7 @@ extension CalendarViewController: UITableViewDelegate {
     // MARK: ios 11버전 이전 셀 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-           self.removeDatabase(tableView, indexPath)
+            self.removeDatabase(tableView, indexPath)
         }
     }
 }
@@ -123,8 +125,7 @@ extension CalendarViewController: UITableViewDelegate {
 // MARK: - EmptyCellDelegate
 extension CalendarViewController: EmptyCellDelegate {
     // MARK: 빈셀의 버튼을 눌렀을 경우 글쓰기 VC로 이동
-    internal func emptyCellButton(_ cell: EmptyCell) {
-        print("\(#function)")
+    func emptyCellButton(_ cell: EmptyCell) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
     
@@ -133,11 +134,11 @@ extension CalendarViewController: EmptyCellDelegate {
 // MARK: - PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
     // 포스팅버튼
-    internal func postWritingButton(button: UIButton) {
+    func postWritingButton(button: UIButton) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
     // 선택한 날짜 레이블에 표시
-    internal func popUpWritingDelegate(date: String) {
+    func popUpWritingDelegate(date: String) {
         popUpView.dateLB.text = date
     }
     
@@ -145,10 +146,9 @@ extension CalendarViewController: PopViewDelegate {
 
 // MARK: - UIGestureRecognizerDelegate
 extension CalendarViewController: UIGestureRecognizerDelegate {
+    // MARK: 팝업뷰 외에
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if popUpView.bounds.contains(touch.location(in: popUpView.baseView)){
-            return false
-        }
+        if touch.view != nil && touch.view!.isDescendant(of: popUpView.baseView) { return false }
         return true
     }
 }
