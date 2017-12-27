@@ -146,9 +146,8 @@ extension CalendarViewController: PopViewDelegate {
 
 // MARK: - UIGestureRecognizerDelegate
 extension CalendarViewController: UIGestureRecognizerDelegate {
-    // MARK: 팝업뷰 외에
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if touch.view != nil && touch.view!.isDescendant(of: popUpView.baseView) { return false }
+        if popUpView.baseView.frame.contains(touch.location(in: popUpView)){ return false }
         return true
     }
 }
