@@ -4,7 +4,7 @@ import Firebase
 import GooglePlacePicker
 import PKHUD
 
-class TJDetailTimelineViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
+class TJDetailTimelineViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     
     let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
     var autoNavi: UINavigationController?
@@ -41,10 +41,6 @@ class TJDetailTimelineViewController: UIViewController, UINavigationControllerDe
         HUD.dimsBackground = false
         detailContentTextView.delegate = self
         writeScrollView.bounces = false
-        //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
-        autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
-        autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
-        autoVC?.delegate = self
         
         //플레이스 뷰를 내릴때 노티
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,

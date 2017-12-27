@@ -4,7 +4,7 @@ import Firebase
 import GooglePlacePicker
 import PKHUD
 
-class NewWriteViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate, GooglePlaceDataDelegate {
+class NewWriteViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     
     let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
     var autoNavi: UINavigationController?
@@ -44,21 +44,16 @@ class NewWriteViewController: UIViewController, UINavigationControllerDelegate ,
         super.viewDidLoad()
         setupUI()
         loadData()
-        //GooglePlacePicker에서 Data를 가져오기 위하여, 작업을 진행하여 준다.(Delegate구현부)
-        autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
-        autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
-        autoVC?.delegate = self
-        
         
         //플레이스 뷰를 내릴때 노티
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
                                                object: nil, queue: nil) {[weak self] (noti) in
-                                                
-                                                self?.latitude = DataCenter.main.latitude
-                                                self?.longitude = DataCenter.main.longitude
-                                                self?.locationTitle.text = DataCenter.main.placeName
-                                                self?.LocationAddress.text = DataCenter.main.placeAddress
-                                                self?.address = DataCenter.main.placeAddress
+                                                guard let `self` = self else { return }
+                                                self.latitude = DataCenter.main.latitude
+                                                self.longitude = DataCenter.main.longitude
+                                                self.locationTitle.text = DataCenter.main.placeName
+                                                self.LocationAddress.text = DataCenter.main.placeAddress
+                                                self.address = DataCenter.main.placeAddress
         }
         //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
@@ -120,6 +115,7 @@ class NewWriteViewController: UIViewController, UINavigationControllerDelegate ,
         
         UIAlertController.presentAlertController(target: self, title: nil, massage: "이 글을 등록하시겠습니까?", cancelBtn: true) { [weak self] (action) in
             guard let `self` = self else { return }
+            //HUD Start - 글 등록 중
             HUD.show(.labeledProgress(title: "글 등록중", subtitle: "잠시만 기다려주세요"))
             guard let uploadImg = UIImageJPEGRepresentation(self.contentImgView.image!, 0.3) else { return }
             let uuid = UUID().uuidString
@@ -145,6 +141,7 @@ class NewWriteViewController: UIViewController, UINavigationControllerDelegate ,
                     
                     self.reference.child("users").child(self.userID!).child("calendar").childByAutoId().setValue(calendarDic)
                     let key = self.reference.child("users").childByAutoId().key
+                    //HUD End
                     HUD.hide(animated: true)
                     let alertSheet = UIAlertController(title: nil, message: "이 글을 포스팅하시겠습니까?", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "예", style: .default, handler: { [weak self] (action) in
@@ -195,21 +192,22 @@ class NewWriteViewController: UIViewController, UINavigationControllerDelegate ,
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
-    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
-        locationTitle.text = placeName
-        LocationAddress.text = address
-        longitude = longi
-        latitude = lati
-        self.address = address
-        
-        func positionDataLoad() {
-         self.latitude = DataCenter.main.latitude
-         self.longitude = DataCenter.main.longitude
-         locationTitle.text = DataCenter.main.placeName
-         LocationAddress.text = DataCenter.main.placeAddress
-        }
-    }
+//    //MARK: - GooglePickerView에 있는 값을 Delegate값으로 가져옴
+//    //현재 델리게이트 패턴을 쓰지 않음
+//    func positinData(lati: Double, longi: Double, address: String, placeName: String) {
+//        locationTitle.text = placeName
+//        LocationAddress.text = address
+//        longitude = longi
+//        latitude = lati
+//        self.address = address
+//
+//        func positionDataLoad() {
+//         self.latitude = DataCenter.main.latitude
+//         self.longitude = DataCenter.main.longitude
+//         locationTitle.text = DataCenter.main.placeName
+//         LocationAddress.text = DataCenter.main.placeAddress
+//        }
+//    }
     
     //MARK: - 사진을 선택했을 때
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -225,7 +223,6 @@ class NewWriteViewController: UIViewController, UINavigationControllerDelegate ,
 }
 
 //MARK: - Extension
-
 extension NewWriteViewController: UITextViewDelegate {
     //텍스트뷰를 쓰려고할 때 기존에 있던 placeholder를 지움
     func textViewDidBeginEditing(_ textView: UITextView) {
