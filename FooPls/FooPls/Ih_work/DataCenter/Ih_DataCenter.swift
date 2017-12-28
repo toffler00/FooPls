@@ -34,7 +34,7 @@ class DataCenter {
     var imageInfo : PostModel?
     var postsData : PostModel?
     var profileImgUrl : String?
-     var mainVCpostsData : [PostModel] = []
+    var mainVCpostsData : [PostModel] = []
     init() {}
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
@@ -75,13 +75,14 @@ class DataCenter {
     }
     
     //MARK : - Get profileimg url
-    func getProfileImgUrl() {
+    func getProfileImgUrl(uid : String) {
         let uid = currentUser?.uid
+        var imgurl : String = ""
         reference.child("users").child(uid!).child("profile").observe(.value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
-            if let imgurl = data["photoID"] {
-                self.profileImgUrl = imgurl
-            }
+            guard let url = data["photoID"] else {return}
+            imgurl = url
+            DataCenter.main.profileImgUrl = imgurl
         }
     }
     
@@ -137,13 +138,14 @@ class DataCenter {
 //    }
     
     // MARK: - upload
-    func postingUpload(uid : String, storeName: String, storeAddress: String, content: String, latitude: String, longitude: String, storeImgurl: String, date: String, timeStamp: String, photoName: String, thoughts: String, nickname: String) {
+    func postingUpload(uid : String, storeName: String, storeAddress: String, content: String, latitude: Double, longitude: Double, storeImgurl: String, date: String, timeStamp: Any, photoName: String, thoughts: String, nickname: String, autoIDkey : String) {
         
         let postDic = ["storename" : storeName, "storeaddress" : storeAddress,
                        "content" : content, "latitude" : latitude, "longitude" : longitude,
-                       "storeimgurl" : storeImgurl, "date" : date, "timeStamp" : timeStamp,
-        "photoname" : photoName, "thoughts" : thoughts, "nickname" : nickname] as [String: String]
-        reference.child("users").child(uid).child("posts").childByAutoId().updateChildValues(postDic) { (error, ref) in
+                       "imageurl" : storeImgurl, "date" : date, "timeStamp" : timeStamp,
+                       "photoname" : photoName, "thoughts" : thoughts, "nickname" : nickname,
+                       "uid" : uid] as [String : Any]
+        reference.child("posts").child(autoIDkey).updateChildValues(postDic) { (error, ref) in
             if error != nil {
                 print(error.debugDescription)
             }else {
