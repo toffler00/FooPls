@@ -24,6 +24,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         DataCenter.main.getUserUidAndNickName()
         NotificationCenter.default.addObserver(forName: Notification.Name.mainVCData,
                                                object: nil, queue: nil) { (mainVCData) in
@@ -56,24 +57,6 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     //MARK: - loadData To Main CollectionView
-//    func loadDataToMainCollectionView() {
-//        print("self.postData.count")
-//        guard let uid = self.currentUser?.uid else {return}
-//        print(uid)
-//        ref = Database.database().reference()
-//        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
-//            guard let data = snapshot.value as? [ String: [String : String]] else {return}
-//            for (_, dic) in data {
-//                guard let name = dic["storename"], let address = dic["storeaddress"],
-//                    let url = dic["imageurl"], let content = dic["content"] else {return}
-//                let posts = PostModel(storeName: name, storeAddress: address, contentText: content, storeImgUrl: url)
-//                self.postData.append(posts)
-//                self.mainCollectionView.reloadData()
-//            }
-//            
-//        }
-//
-//    }
     
     
     // MARK: - CollectionView Delegate & Datasource
@@ -109,20 +92,20 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         // setUPCell
         setUpCell()
        
-        cell.cellTitleLb.text = self.postData[indexPath.row].storeName
-        cell.cellAdressLb.text = self.postData[indexPath.row].storeAddress
+        cell.cellTitleLb.text = "\(indexPath.item + 1).\(self.postData[indexPath.item].storeName)"
+        cell.cellAdressLb.text = self.postData[indexPath.item].storeAddress
         
         if self.postData[indexPath.row].nickName == "" {
             cell.nickNameLb.text = "FooPls"
         }else {
-            cell.nickNameLb.text = self.postData[indexPath.row].nickName
+            cell.nickNameLb.text = self.postData[indexPath.item].nickName
         }
         
-        cell.thoughtsLb.text = self.postData[indexPath.row].thoughts
+        cell.thoughtsLb.text = self.postData[indexPath.item].thoughts
         
         // url to image - FirebaseUI
         
-        if let storeImgUrl = self.postData[indexPath.row].imageurl {
+        if let storeImgUrl = self.postData[indexPath.item].imageurl {
             let url = URL(string: storeImgUrl)
             cell.cellImageView.sd_setImage(with: url!)
         }else {

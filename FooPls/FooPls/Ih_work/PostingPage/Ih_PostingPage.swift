@@ -63,8 +63,7 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     }
     
     @IBAction func postingDone(_ sender : Any) {
-        let time = ServerValue.timestamp()
-        let timeStamp = String(describing: time)
+        let timeStamp = ServerValue.timestamp()
         let nickName = DataCenter.main.currentUser?.nickName
         let imageinfo = DataCenter.main.imageInfo
         let url = imageinfo?.imageurl
@@ -75,12 +74,13 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
             let content = contentTextView.text, let date = postingDateLb.text,
             let thoughts = thoughtsLb.text else {return}
         
-      let postDic = ["storename" : name, "storeaddress" : address,
+        let autoIDkey = Database.database().reference().childByAutoId().key
+        let postDic = ["storename" : name, "storeaddress" : address,
                        "content" : content, "latitude" : self.lati!, "longitude" : self.longi!,
                        "imageurl" : url!, "date" : date, "timeStamp" : timeStamp,
-                       "photoname" : photoname!, "thoughts" : thoughts, "nickname" : nickName! ] as [String : Any]
-            let AutoIDkey = Database.database().reference().childByAutoId().key
-        Database.database().reference().child("users").child(uid!).child("posts").child(AutoIDkey).updateChildValues(postDic) { (error, ref) in
+                       "photoname" : photoname!, "thoughts" : thoughts, "nickname" : nickName!, "postingautoid" : autoIDkey,  "uid" : uid!] as [String : Any]
+        
+        Database.database().reference().child("posts").child(autoIDkey).updateChildValues(postDic) { (error, ref) in
             if error != nil {
                 print(error.debugDescription)
             }else {
