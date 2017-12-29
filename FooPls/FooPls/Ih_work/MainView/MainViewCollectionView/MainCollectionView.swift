@@ -35,14 +35,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
             }
-                                                
-                                                
         }
-        
-//        DispatchQueue.main.async {
-//            self.loadDataToMainCollectionView()
-//        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
