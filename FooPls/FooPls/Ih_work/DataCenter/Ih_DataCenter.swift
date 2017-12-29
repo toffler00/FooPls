@@ -116,26 +116,21 @@ class DataCenter {
             }
         }
     }
-
-//    func dbValueObserver() {
-//        ref.child("users").observe(DataEventType.childAdded) { (snapshot) in
-//            if let users = snapshot.value as? [String : [String : [String : String]]] {
-//                if let posts = users["users"] as? [String : [String : String]] {
-//                    for (_ , value) in posts {
-//                        var name = value["storename"]
-//                        var address = value["storeadress"]
-//                        var content = value["content"]
-//                        var imgurl = value["storeimgurl"]
-//                        var lati = value["latitude"]
-//                        var longi = value["longitude"]
-//
-//
-//                    }
-//
-//                }
-//            }
-//        }
-//    }
+    
+    //MARK: - DataEventtype childAdded
+    func dbValueObserver() {
+        print("이벤트수신대기확인중")
+        ref.child("posts").observe(DataEventType.childAdded) { (snapshot) in
+            if let temp = snapshot.value as? [String : Any] {
+                for (_ , value) in temp {
+                    if let dic = value as? [String : Any] {
+                       let dataDic = PostModel(dbValueObserver: dic)
+                       DataCenter.main.mainVCpostsData.append(dataDic)
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: - upload
     func postingUpload(uid : String, storeName: String, storeAddress: String, content: String, latitude: Double, longitude: Double, storeImgurl: String, date: String, timeStamp: Any, photoName: String, thoughts: String, nickname: String, autoIDkey : String) {

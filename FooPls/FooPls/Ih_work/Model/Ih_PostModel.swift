@@ -16,7 +16,7 @@ struct  PostModel {
     var storeName : String = ""
     var storeAddress : String = ""
     var nickName : String = ""
-    
+    var writerUid : String = ""
 
     //Optional
     var postingAutoID : String?
@@ -58,7 +58,7 @@ struct  PostModel {
     }
     
     //포스팅 모델
-    init(storeName : String, storeAddress : String, content : String, latitude : Double, longitude : Double, storeImgurl : String, date : String, timeStamp : String, photoName : String, thoughts : String , nickname : String, autoID : String) {
+    init(storeName : String, storeAddress : String, content : String, latitude : Double, longitude : Double, storeImgurl : String, date : String, timeStamp : Any, photoName : String, thoughts : String , nickname : String, autoID : String) {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = content
@@ -71,6 +71,22 @@ struct  PostModel {
         self.thoughts = thoughts
         self.nickName = nickname
         self.postingAutoID = autoID
+    }
+    
+    //포스팅 이벤트 수신대기 메소드에서 대응해줄 모델
+    init(dbValueObserver dic : [String : Any]) {
+        self.storeName = (dic["storename"] as? String)!
+        self.storeAddress = (dic["storeaddress"] as? String)!
+        self.contentsText = dic["content"] as? String
+        self.latitude = dic["latitude"] as? Double
+        self.longitude = dic["longitude"] as? Double
+        self.thoughts = dic["thoughts"] as? String
+        self.date = dic["date"] as? String
+        self.timeStamp = dic["timestamp"]
+        self.photoName = dic["photoname"] as? String
+        self.nickName = (dic["nickname"] as? String)!
+        self.postingAutoID = dic["postingautoid"] as? String
+        self.writerUid = (dic["uid"] as? String)!
     }
     
     //포스팅 이벤트 수신대기 메소드에서 대응해줄 모델
@@ -112,7 +128,6 @@ struct  PostModel {
         self.photoName = dictionary["photoname"] as? String
         self.nickName = (dictionary["nickname"] as? String)!
     }
-    
     
 }
 
