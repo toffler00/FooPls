@@ -62,16 +62,14 @@ class TJProfileViewController: UIViewController {
         let timelineVC = timelineSB.instantiateViewController(withIdentifier: "TJTimelineViewController")
         let likeSB = UIStoryboard(name: "TJLike", bundle: nil)
         let likeVC = likeSB.instantiateViewController(withIdentifier: "TJLikeViewController")
-        let listSB = UIStoryboard(name: "TJList", bundle: nil)
-        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
-        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
-        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
+//        let listSB = UIStoryboard(name: "TJList", bundle: nil)
+//        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
+//        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
+//        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
         
         //페이징에 해당하는 뷰컨트롤러와 이미지 타이틀을 저장
         dataSource = [(titleImg: "timeline",title: "타임라인", vc: timelineVC),
-                      (titleImg: "like",title: "좋아요", vc: likeVC),
-                      (titleImg: "list",title: "리스트", vc: listVC),
-                      (titleImg: "bookmark",title: "북마크", vc: bookmarkVC)]
+                      (titleImg: "like",title: "좋아요", vc: likeVC)]
         
         //페이징 메뉴셀과 메뉴 포커싱 뷰를 등록
         menuViewController.register(nib: UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")
