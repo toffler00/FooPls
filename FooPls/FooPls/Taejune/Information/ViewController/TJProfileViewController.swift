@@ -21,6 +21,7 @@ class TJProfileViewController: UIViewController {
     let mainColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 75.0/255.0, alpha: 1.0)
     let normalColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0)
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPaging()
@@ -32,13 +33,15 @@ class TJProfileViewController: UIViewController {
         loadData()
     }
     
+    //MARK: - Method
+    //기본 UI인 요소를 초기화 시킴
     private func setupUI() {
         profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
         profileView.layer.cornerRadius = (profileView.frame.width / 2) - 3
         
     }
-    
+    //파이어베이스 데이터 베이스 저장된 프로파일 값을 불러옴
     private func loadData(){
         reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
@@ -52,21 +55,21 @@ class TJProfileViewController: UIViewController {
         }
     }
     
-    //MARK: - 페이징킷 초기 셋업
+    //페이징킷 초기 셋업
     private func setupPaging() {
+        //페이징에 들어갈 뷰 컨트롤러 설정
         let timelineSB = UIStoryboard(name: "TJTimeline", bundle: nil)
         let timelineVC = timelineSB.instantiateViewController(withIdentifier: "TJTimelineViewController")
         let likeSB = UIStoryboard(name: "TJLike", bundle: nil)
         let likeVC = likeSB.instantiateViewController(withIdentifier: "TJLikeViewController")
-        let listSB = UIStoryboard(name: "TJList", bundle: nil)
-        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
-        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
-        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
+//        let listSB = UIStoryboard(name: "TJList", bundle: nil)
+//        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
+//        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
+//        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
         
+        //페이징에 해당하는 뷰컨트롤러와 이미지 타이틀을 저장
         dataSource = [(titleImg: "timeline",title: "타임라인", vc: timelineVC),
-                      (titleImg: "like",title: "좋아요", vc: likeVC),
-                      (titleImg: "list",title: "리스트", vc: listVC),
-                      (titleImg: "bookmark",title: "북마크", vc: bookmarkVC)]
+                      (titleImg: "like",title: "좋아요", vc: likeVC)]
         
         //페이징 메뉴셀과 메뉴 포커싱 뷰를 등록
         menuViewController.register(nib: UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")
@@ -81,6 +84,7 @@ class TJProfileViewController: UIViewController {
         initialCell.titleImgView.tintImageColor(color: mainColor)
         initialCell.titleLabel.textColor = mainColor
     }
+    
     //메뉴나 컨텐츠는 segue로 되어 있고 각각 프로토콜을 지정해줘야 한다.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PagingMenuViewController {
@@ -93,6 +97,7 @@ class TJProfileViewController: UIViewController {
             contentViewController.delegate = self
         }
     }
+    
     //MARK: - 페이지가 바뀔때마다 메뉴에 해당하는 색을 결정하는 메소드
     private func pagingColorHandler (viewController: PagingMenuViewController, page: Int) {
         for index in 0...(dataSource!.count - 1) {
@@ -111,15 +116,17 @@ class TJProfileViewController: UIViewController {
 //MARK: - extension
 //MARK: - PagingMenuViewControllerDataSource
 extension TJProfileViewController: PagingMenuViewControllerDataSource {
-    //PagingKit의 메뉴 갯수
+    //PagingKit의 메뉴 갯수 - 초기에 4개로 지정.
     func numberOfItemsForMenuViewController(viewController: PagingMenuViewController) -> Int {
         return dataSource?.count ?? 0
     }
-    //PagingKit 하나의 셀의 너비
+    
+    //PagingKit 하나의 셀의 너비 - 셀의 너비는 전체 뷰의 넓이에서 페이지의 갯수로 나눠준 값을 넣어주었다. 정확한게 등분이 되게 하기 위해
     func menuViewController(viewController: PagingMenuViewController, widthForItemAt index: Int) -> CGFloat {
         return self.view.frame.width / CGFloat(dataSource!.count)
     }
-    //셀의 정보
+    
+    //셀의 정보 - 각 셀마다의 이미지와 레이블에 기존에 데이터를 읽은 배열의 값을 넣어준다.
     func menuViewController(viewController: PagingMenuViewController, cellForItemAt index: Int) -> PagingMenuViewCell {
         let cell = viewController.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: index) as! MenuCell
         cell.titleImgView.image = UIImage(named: dataSource![index].titleImg)
@@ -127,17 +134,20 @@ extension TJProfileViewController: PagingMenuViewControllerDataSource {
         return cell
     }
 }
+
 //MARK: - PagingContentViewControllerDataSource
 extension TJProfileViewController: PagingContentViewControllerDataSource {
     //PagingKit의 컨텐츠 갯수
     func numberOfItemsForContentViewController(viewController: PagingContentViewController) -> Int {
         return dataSource?.count ?? 0
     }
+    
     //각각 인덱스에 해당하는 컨텐츠가 무엇인지 결정
     func contentViewController(viewController: PagingContentViewController, viewControllerAt index: Int) -> UIViewController {
         return dataSource![index].vc
     }
 }
+
 //MARK: - PagingMenuViewControllerDelegate
 extension TJProfileViewController: PagingMenuViewControllerDelegate {
     //페이지가 이동할 때마다 불림, 메뉴뷰에 해당
@@ -145,6 +155,7 @@ extension TJProfileViewController: PagingMenuViewControllerDelegate {
         pagingColorHandler(viewController: viewController, page: page)
     }
 }
+
 //MARK: - PagingContentViewControllerDelegate
 extension TJProfileViewController: PagingContentViewControllerDelegate {
     //페이지가 이동할 때마다 불림, 컨텐츠 뷰에 해당

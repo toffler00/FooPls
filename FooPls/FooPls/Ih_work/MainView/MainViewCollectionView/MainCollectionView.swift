@@ -24,6 +24,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         DataCenter.main.getUserUidAndNickName()
         NotificationCenter.default.addObserver(forName: Notification.Name.mainVCData,
                                                object: nil, queue: nil) { (mainVCData) in
@@ -34,14 +35,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
             }
-                                                
-                                                
         }
-        
-//        DispatchQueue.main.async {
-//            self.loadDataToMainCollectionView()
-//        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,24 +50,6 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     //MARK: - loadData To Main CollectionView
-//    func loadDataToMainCollectionView() {
-//        print("self.postData.count")
-//        guard let uid = self.currentUser?.uid else {return}
-//        print(uid)
-//        ref = Database.database().reference()
-//        ref.child("users").child(uid).child("posts").observeSingleEvent(of: .value) { (snapshot) in
-//            guard let data = snapshot.value as? [ String: [String : String]] else {return}
-//            for (_, dic) in data {
-//                guard let name = dic["storename"], let address = dic["storeaddress"],
-//                    let url = dic["imageurl"], let content = dic["content"] else {return}
-//                let posts = PostModel(storeName: name, storeAddress: address, contentText: content, storeImgUrl: url)
-//                self.postData.append(posts)
-//                self.mainCollectionView.reloadData()
-//            }
-//            
-//        }
-//
-//    }
     
     
     // MARK: - CollectionView Delegate & Datasource
@@ -108,15 +84,21 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         
         // setUPCell
         setUpCell()
+       
+        cell.cellTitleLb.text = "\(indexPath.item + 1).\(self.postData[indexPath.item].storeName)"
+        cell.cellAdressLb.text = self.postData[indexPath.item].storeAddress
         
-        cell.cellTitleLb.text = self.postData[indexPath.row].storeName
-        cell.cellAdressLb.text = self.postData[indexPath.row].storeAddress
-        cell.nickNameLb.text = self.postData[indexPath.row].nickName
-        cell.thoughtsLb.text = self.postData[indexPath.row].thoughts
+        if self.postData[indexPath.row].nickName == "" {
+            cell.nickNameLb.text = "FooPls"
+        }else {
+            cell.nickNameLb.text = self.postData[indexPath.item].nickName
+        }
+        
+        cell.thoughtsLb.text = self.postData[indexPath.item].thoughts
         
         // url to image - FirebaseUI
         
-        if let storeImgUrl = self.postData[indexPath.row].imageurl {
+        if let storeImgUrl = self.postData[indexPath.item].imageurl {
             let url = URL(string: storeImgUrl)
             cell.cellImageView.sd_setImage(with: url!)
         }else {
@@ -143,6 +125,7 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
        
     }
   
+    
     // CollectionView Delegate & Datasource_End
     
     func toDetailPage() {
@@ -159,14 +142,29 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
 
 extension MainCollectionView {
     func setUpCell() {
-        cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
-        
-        cell.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        cell.layer.borderWidth = 1
+        cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        cell.layer.shadowColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds , cornerRadius: 1).cgPath
 
-        cell.cellImageView.layer.cornerRadius = 5
+        cell.cellImageView.layer.cornerRadius = 2
+        cell.cellImageView.contentMode = .scaleAspectFill
         cell.cellImageView.layer.masksToBounds = true
+        
+        cell.nickNameLb.lineBreakMode = .byWordWrapping
+        cell.nickNameLb.font = UIFont.systemFont(ofSize: 12)
+        
+        cell.cellTitleLb.font = UIFont.systemFont(ofSize: 14)
+        cell.cellTitleLb.lineBreakMode = .byClipping
+        
+        cell.cellAdressLb.lineBreakMode = .byWordWrapping
+        cell.cellAdressLb.font = UIFont.systemFont(ofSize: 12)
+        
+        cell.thoughtsLb.font = UIFont.boldSystemFont(ofSize: 12)
+        cell.thoughtsLb.numberOfLines = 0
     }
 }
 

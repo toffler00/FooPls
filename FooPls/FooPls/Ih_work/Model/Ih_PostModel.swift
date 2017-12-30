@@ -13,19 +13,20 @@ struct  PostModel {
     
     //MARK : - Variable
 
-    var storeName : String?
-    var storeAddress : String?
-    var nickName : String?
-    
+    var storeName : String = ""
+    var storeAddress : String = ""
+    var nickName : String = ""
+    var writerUid : String = ""
 
     //Optional
+    var postingAutoID : String?
     var contentsText : String?
     var postTitle : String?
     var storeImg : UIImage?
     var imageurl : String?
     var thoughts : String?
     var date : String?
-    var timeStamp : String?
+    var timeStamp : Any?
     var photoName : String?
     var author : String?
     var storeImgData : Data?{
@@ -57,7 +58,7 @@ struct  PostModel {
     }
     
     //포스팅 모델
-    init(storeName : String, storeAddress : String, content : String, latitude : Double, longitude : Double, storeImgurl : String, date : String, timeStamp : String, photoName : String, thoughts : String , nickname : String) {
+    init(storeName : String, storeAddress : String, content : String, latitude : Double, longitude : Double, storeImgurl : String, date : String, timeStamp : Any, photoName : String, thoughts : String , nickname : String, autoID : String) {
         self.storeName = storeName
         self.storeAddress = storeAddress
         self.contentsText = content
@@ -69,6 +70,23 @@ struct  PostModel {
         self.photoName = photoName
         self.thoughts = thoughts
         self.nickName = nickname
+        self.postingAutoID = autoID
+    }
+    
+    //포스팅 이벤트 수신대기 메소드에서 대응해줄 모델
+    init(dbValueObserver dic : [String : Any]) {
+        self.storeName = (dic["storename"] as? String)!
+        self.storeAddress = (dic["storeaddress"] as? String)!
+        self.contentsText = dic["content"] as? String
+        self.latitude = dic["latitude"] as? Double
+        self.longitude = dic["longitude"] as? Double
+        self.thoughts = dic["thoughts"] as? String
+        self.date = dic["date"] as? String
+        self.timeStamp = dic["timestamp"]
+        self.photoName = dic["photoname"] as? String
+        self.nickName = (dic["nickname"] as? String)!
+        self.postingAutoID = dic["postingautoid"] as? String
+        self.writerUid = (dic["uid"] as? String)!
     }
     
     //포스팅 이벤트 수신대기 메소드에서 대응해줄 모델
@@ -98,19 +116,18 @@ struct  PostModel {
     
     //Any = [String : [ String : [String : String]]]
     init(dictionary : [String : Any]) {
-                    self.storeName = dictionary["storename"] as? String
-                    self.storeAddress = dictionary["storeaddress"] as? String
-                    self.contentsText = dictionary["content"] as? String
-                    self.imageurl = dictionary["imageurl"] as? String
-                    self.latitude = dictionary["latitude"] as? Double
-                    self.longitude = dictionary["longitude"] as? Double
-                    self.thoughts = dictionary["thoughts"] as? String
-                    self.date = dictionary["date"] as? String
-                    self.timeStamp = dictionary["timestamp"] as? String
-                    self.photoName = dictionary["photoname"] as? String
-                    self.nickName = dictionary["nickname"] as? String
-                }
-
-
+        self.storeName = (dictionary["storename"] as? String)!
+        self.storeAddress = (dictionary["storeaddress"] as? String)!
+        self.contentsText = dictionary["content"] as? String
+        self.imageurl = dictionary["imageurl"] as? String
+        self.latitude = dictionary["latitude"] as? Double
+        self.longitude = dictionary["longitude"] as? Double
+        self.thoughts = dictionary["thoughts"] as? String
+        self.date = dictionary["date"] as? String
+        self.timeStamp = dictionary["timestamp"] as? String
+        self.photoName = dictionary["photoname"] as? String
+        self.nickName = (dictionary["nickname"] as? String)!
+    }
+    
 }
 

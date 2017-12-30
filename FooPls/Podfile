@@ -25,6 +25,7 @@ target 'FooPls' do
   pod 'PagingKit'
   pod 'SnapKit', '~> 4.0.0'
   pod 'PKHUD', '~> 5.0'
+  pod 'hkGraddiant'
   # Pods for FooPls
 
 end

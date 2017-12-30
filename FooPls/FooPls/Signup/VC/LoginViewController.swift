@@ -9,17 +9,15 @@ import PKHUD
 class LoginViewController: UIViewController {
     
     // MARK: 프로퍼티
+    //가입을 할 때 프로파일 이미지를 default주소를 지정하여 기본 프로파일 이미지를 저장하고 나중에 프로파일을 이미지를 바꾸도록 함
     let defaultProfileURL = "https://firebasestorage.googleapis.com/v0/b/foopls-84f76.appspot.com/o/profile_images%2FdefaultProfile.png?alt=media&token=7bca209f-50c9-4b5f-91ed-b651ded3b57f"
     let reference = Database.database().reference()
     var kakaoServerURL = ""
     var userInfo : UserModel?
-
-    
     
     // @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
-    @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField! {
         didSet {
@@ -27,30 +25,34 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         HUD.allowsInteraction = false
         HUD.dimsBackground = false
+        
         // MARK: 페이스북 버튼
         let fbLoginButton = LoginButton(readPermissions: [.publicProfile, .email])
         view.addSubview(fbLoginButton)
+        
         // 페이스북 버튼 레이아웃
         fbLoginButton.snp.makeConstraints {
-            $0.bottom.equalTo(facebookBtn.snp.bottom)
-            $0.top.equalTo(facebookBtn.snp.top)
-            $0.left.equalTo(facebookBtn.snp.left)
-            $0.right.equalTo(facebookBtn.snp.right)
+            $0.width.equalTo(kakaoBtn)
+            $0.height.equalTo(kakaoBtn)
+            $0.centerX.equalTo(view)
+            $0.centerY.equalTo(view).multipliedBy(1.8)
         }
+        
         fbLoginButton.delegate = self
+        
         loginScrollView.bounces = false
         self.hideKeyboardWhenTappedAround()
+        
         //뷰가 로드 될때 카카오 서버값을 미리 받음
         reference.child("KakaoLoginServer").observe(.value, with: { (snapshot) in
-            print(snapshot)
             self.kakaoServerURL = snapshot.value as! String
         })
+        
         //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
@@ -111,8 +113,6 @@ class LoginViewController: UIViewController {
             guard let `self` = self else { return }
             if error == nil, user != nil{
                 self.userInfo?.uid = (user?.uid)!
-                let uid = String(describing: user?.uid)
-                print(uid)
                 self.performSegue(withIdentifier: "mainSegue", sender: self)
             }else{
                 UIAlertController.presentAlertController(target: self,
@@ -126,11 +126,12 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - 커스텀 토큰을 만들기위해 만든 서버에 POST를 보내서 파이어베이스에 맞는 커스텀 토큰을 가져옴
+    
+    //Alamfire로 바꿔보기
     func requestFirebaseCustomToken(accessToken: String) {
         HUD.show(.labeledProgress(title: "로그인 중", subtitle: "잠시만 기다려주세요"))
         //VALIDATION SERVER는 로컬 서버
         let url = URL(string: String(format: "%@/verifyToken", kakaoServerURL))!
-        print(url)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

@@ -18,8 +18,6 @@ class SplashViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {        
         super.viewDidLoad()
-
-        getTimeStamp()
         DataCenter.main.dataLoadSingleEvent() //{ (mainVCPostData) in
 //            let mainVCData = mainVCPostData
 //            NotificationCenter.default.post(name: Notification.Name.mainVCData, object: mainVCData)
@@ -34,10 +32,5 @@ class SplashViewController: UIViewController {
                 self.performSegue(withIdentifier: self.loginSegue, sender: self)
             }
         }
-    }
-    func getTimeStamp() {
-        let timeStamp = ServerValue.timestamp()
-        print("타임스탬프")
-        print(timeStamp)
     }
 }

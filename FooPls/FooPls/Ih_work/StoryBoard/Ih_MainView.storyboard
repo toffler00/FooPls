@@ -23,9 +23,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wL-Nr-qeh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooPls" translatesAutoresizingMaskIntoConstraints="NO" id="UaK-Ph-iPn">
+                                        <rect key="frame" x="131" y="40" width="113" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="n4a-qE-zu8"/>
+                                            <constraint firstAttribute="width" constant="113" id="v6U-SE-XEy"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.94117647059999998" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="8Kz-Ou-UAZ"/>
+                                    <constraint firstItem="UaK-Ph-iPn" firstAttribute="centerX" secondItem="8wL-Nr-qeh" secondAttribute="centerX" id="RNu-WE-UFs"/>
+                                    <constraint firstItem="UaK-Ph-iPn" firstAttribute="centerY" secondItem="8wL-Nr-qeh" secondAttribute="centerY" multiplier="0.7" id="my3-Z2-q5C"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdd-YT-Cah">
@@ -67,13 +78,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="점포이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-ff-1BQ">
-                                                    <rect key="frame" x="8" y="180" width="95" height="30"/>
+                                                    <rect key="frame" x="8" y="180" width="138.5" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCt-Fg-aiD">
-                                                    <rect key="frame" x="8" y="210" width="95" height="24"/>
+                                                    <rect key="frame" x="8" y="210" width="155.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -107,12 +118,12 @@
                                             <constraint firstItem="Cjm-c8-iCj" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.9" id="6ve-YX-mlg"/>
                                             <constraint firstItem="3dq-Wl-rWS" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.9" id="9y6-pJ-9QY"/>
                                             <constraint firstItem="dMn-Wr-Jzy" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.44" id="Ggn-Fk-igk"/>
-                                            <constraint firstItem="dpP-ff-1BQ" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.55" id="Li4-7Q-EKT"/>
+                                            <constraint firstItem="dpP-ff-1BQ" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.8" id="Li4-7Q-EKT"/>
                                             <constraint firstItem="rCt-Fg-aiD" firstAttribute="height" secondItem="TBn-P7-aqY" secondAttribute="height" multiplier="0.08" id="Muj-Fu-7va"/>
                                             <constraint firstItem="LLl-h5-OXg" firstAttribute="leading" secondItem="TBn-P7-aqY" secondAttribute="leading" constant="10" id="Oa0-OD-pug"/>
                                             <constraint firstItem="3dq-Wl-rWS" firstAttribute="top" secondItem="LLl-h5-OXg" secondAttribute="bottom" constant="1" id="Ur2-eO-GMT"/>
                                             <constraint firstItem="Cjm-c8-iCj" firstAttribute="top" secondItem="dMn-Wr-Jzy" secondAttribute="bottom" constant="1" id="UrP-Ve-wBS"/>
-                                            <constraint firstItem="rCt-Fg-aiD" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.55" id="XJQ-Xv-RmD"/>
+                                            <constraint firstItem="rCt-Fg-aiD" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.9" id="XJQ-Xv-RmD"/>
                                             <constraint firstItem="rCt-Fg-aiD" firstAttribute="top" secondItem="dpP-ff-1BQ" secondAttribute="bottom" id="czV-ZI-EDx"/>
                                             <constraint firstItem="dpP-ff-1BQ" firstAttribute="height" secondItem="TBn-P7-aqY" secondAttribute="height" multiplier="0.1" id="eDx-iN-rDE"/>
                                             <constraint firstItem="dpP-ff-1BQ" firstAttribute="leading" secondItem="TBn-P7-aqY" secondAttribute="leadingMargin" id="jbF-sg-Yxo"/>
@@ -379,6 +390,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FooPls" width="198" height="73"/>
         <image name="back_black" width="64" height="64"/>
         <image name="chat" width="512" height="512"/>
         <image name="food1" width="564" height="792"/>

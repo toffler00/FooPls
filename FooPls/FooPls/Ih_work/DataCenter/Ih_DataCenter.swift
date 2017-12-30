@@ -29,13 +29,12 @@ class DataCenter {
     //MARK: - Property
     let reference = Database.database().reference()
     let storage = Storage.storage().reference()
-    let userInfo = Auth.auth().currentUser
     var postModel : PostModel?
     var currentUser : UserModel?
     var imageInfo : PostModel?
     var postsData : PostModel?
     var profileImgUrl : String?
-     var mainVCpostsData : [PostModel] = []
+    var mainVCpostsData : [PostModel] = []
     init() {}
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
@@ -71,19 +70,19 @@ class DataCenter {
         reference.child("users").child(uid).child("profile").observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
             guard let nickName = data["nickname"] else {return}
-            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)
-           
+            self.currentUser = UserModel(uid: uid, nickname: nickName, email: email!)           
         }
     }
     
     //MARK : - Get profileimg url
-    func getProfileImgUrl() {
+    func getProfileImgUrl(uid : String) {
         let uid = currentUser?.uid
+        var imgurl : String = ""
         reference.child("users").child(uid!).child("profile").observe(.value) { (snapshot) in
             guard let data = snapshot.value as? [String : String] else {return}
-            if let imgurl = data["photoID"] {
-                self.profileImgUrl = imgurl
-            }
+            guard let url = data["photoID"] else {return}
+            imgurl = url
+            DataCenter.main.profileImgUrl = imgurl
         }
     }
     
@@ -117,61 +116,35 @@ class DataCenter {
             }
         }
     }
-
-//    func dbValueObserver() {
-//        ref.child("users").observe(DataEventType.childAdded) { (snapshot) in
-//            if let users = snapshot.value as? [String : [String : [String : String]]] {
-//                if let posts = users["users"] as? [String : [String : String]] {
-//                    for (_ , value) in posts {
-//                        var name = value["storename"]
-//                        var address = value["storeadress"]
-//                        var content = value["content"]
-//                        var imgurl = value["storeimgurl"]
-//                        var lati = value["latitude"]
-//                        var longi = value["longitude"]
-//
-//
-//                    }
-//
-//                }
-//            }
-//        }
-//    }
     
-    // MARK: - upload
-    func postingUpload(uid : String, storeName: String, storeAddress: String, content: String, latitude: String, longitude: String, storeImgurl: String, date: String, timeStamp: String, photoName: String, thoughts: String, nickname: String) {
-        
-        let postDic = ["storename" : storeName, "storeaddress" : storeAddress,
-                       "content" : content, "latitude" : latitude, "longitude" : longitude,
-                       "storeimgurl" : storeImgurl, "date" : date, "timeStamp" : timeStamp,
-        "photoname" : photoName, "thoughts" : thoughts, "nickname" : nickname] as [String: String]
-        reference.child("users").child(uid).child("posts").childByAutoId().updateChildValues(postDic) { (error, ref) in
-            if error != nil {
-                print(error.debugDescription)
-            }else {
-                print("업로드성공")
+    //MARK: - DataEventtype childAdded
+    func dbValueObserver() {
+        print("이벤트수신대기확인중")
+        ref.child("posts").observe(DataEventType.childAdded) { (snapshot) in
+            if let temp = snapshot.value as? [String : Any] {
+                for (_ , value) in temp {
+                    if let dic = value as? [String : Any] {
+                       let dataDic = PostModel(dbValueObserver: dic)
+                       DataCenter.main.mainVCpostsData.append(dataDic)
+                    }
+                }
             }
         }
     }
     
-    func postUpload(uid : String?, storeimg : UIImage, storeName : String,
-                    storeAdress : String, contents : String) {
-        guard ((postModel?.storeImg = storeimg) != nil) else {return}
-        guard let img = postModel?.storeImgData else {return}
-        Storage.storage().reference().child(uid!).child("storeimg").putData(img, metadata: nil) { (metadata, error) in
-            guard let imgUrl = metadata?.downloadURL()?.absoluteString
-                else {return}
-            let dic = ["storename" : storeName,
-                       "storeadress" : storeAdress,
-                       "content" : contents,
-                       "storeimgurl" : imgUrl] as [String : Any]
-            Database.database().reference().child("users").child(uid!).child("posts")
-                .childByAutoId().updateChildValues(dic) { (error, ref) in
-                    if error != nil {
-                        print(error.debugDescription)
-                    }else {
-                        print("업로드성공")
-                    }
+    // MARK: - upload
+    func postingUpload(uid : String, storeName: String, storeAddress: String, content: String, latitude: Double, longitude: Double, storeImgurl: String, date: String, timeStamp: Any, photoName: String, thoughts: String, nickname: String, autoIDkey : String) {
+        
+        let postDic = ["storename" : storeName, "storeaddress" : storeAddress,
+                       "content" : content, "latitude" : latitude, "longitude" : longitude,
+                       "imageurl" : storeImgurl, "date" : date, "timeStamp" : timeStamp,
+                       "photoname" : photoName, "thoughts" : thoughts, "nickname" : nickname,
+                       "uid" : uid] as [String : Any]
+        reference.child("posts").child(autoIDkey).updateChildValues(postDic) { (error, ref) in
+            if error != nil {
+                print(error.debugDescription)
+            }else {
+                print("업로드성공")
             }
         }
     }
