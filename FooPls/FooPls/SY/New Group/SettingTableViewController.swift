@@ -29,7 +29,7 @@ class SettingTableViewController: UITableViewController {
     @IBAction func firebaseLogOut(_ sender: UIButton) {
         UIAlertController.presentAlertController(target: self, title: "로그아웃", massage: "정말 로그아웃 하시겠습니까?", actionStyle: .destructive, cancelBtn: true) { [weak self] _ in
             guard let `self` = self else { return }
-            self.firebaseAuthlogOut()
+            self.firebaseLogOut()
         }
     }
     
@@ -48,8 +48,8 @@ class SettingTableViewController: UITableViewController {
 
 // MARK: - Extension
 extension SettingTableViewController {
-    // MARK: Common FiebaseAuth Logout
-    private func firebaseAuthlogOut() {
+    // MARK: Fiebase Logout
+    private func firebaseLogOut() {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -64,7 +64,7 @@ extension SettingTableViewController {
         versionLB.text = versionText ?? "정보를 읽어 올 수 없습니다."
     }
     
-//    func <#name#>(<#parameters#>) -> <#return type#> {
-//        <#function body#>
-//    }
+    func logout() {
+        
+    }
 }

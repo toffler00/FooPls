@@ -23,7 +23,7 @@
                 <subviews>
                     <button opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-NC-BE7">
                         <rect key="frame" x="67.5" y="82.5" width="165" height="165"/>
-                        <color key="backgroundColor" red="0.049587673611111112" green="0.66303168402777779" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.47731924057006836" green="0.85289937257766724" blue="0.49111419916152954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Zwi-NC-BE7" secondAttribute="height" multiplier="1:1" id="AIM-Yd-PdD"/>
                         </constraints>
