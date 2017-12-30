@@ -224,13 +224,10 @@ extension LoginViewController : LoginButtonDelegate{
         default:
             break
         }
-
     }
-
+    
     // MARK: 페이스북 로그아웃시
-    func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        
-    }
+    func loginButtonDidLogOut(_ loginButton: LoginButton) { }
 }
 
 // MARK: UITextFieldDelegate

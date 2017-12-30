@@ -67,11 +67,12 @@ extension CalendarViewController: UITableViewDataSource {
             if let cell = cell as? PostCell {
                 let text = contentTitleList[indexPath.row]
                 cell.postLB.text = text
-                //                tableView.separatorStyle = .singleLine
+                tableView.separatorStyle = .singleLine
+//                tableView.tableFooterView = UIView(frame: CGRect.zero)
+                
             }
             return cell
         }
-        
     }
 }
 
@@ -88,13 +89,18 @@ extension CalendarViewController: UITableViewDelegate {
     }
     // MARK: 셀 선택했을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index = indexPath.row
-        let testTitle = contentTitleList[index]
-        postDelegate?.selectedPostCellData(controller: self, data: testTitle)
-        let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
-        let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
-        detailVC.selectedKey = self.contentKeys[index]
-        present(detailVC, animated: true, completion: nil)
+        switch contentTitleList.count {
+        case 0:
+            break
+        default:
+            let index = indexPath.row
+            let testTitle = contentTitleList[index]
+            postDelegate?.selectedPostCellData(controller: self, data: testTitle)
+            let detailSB = UIStoryboard(name: "TJDetailTimeline", bundle: nil)
+            let detailVC = detailSB.instantiateViewController(withIdentifier: "TJDetail") as! TJDetailTimelineViewController
+            detailVC.selectedKey = self.contentKeys[index]
+            present(detailVC, animated: true, completion: nil)
+        }
         
     }
     // MARK: ios 11부터 셀 삭제
@@ -121,16 +127,13 @@ extension CalendarViewController: UITableViewDelegate {
         }
     }
 }
-
 // MARK: - EmptyCellDelegate
 extension CalendarViewController: EmptyCellDelegate {
     // MARK: 빈셀의 버튼을 눌렀을 경우 글쓰기 VC로 이동
     func emptyCellButton(_ cell: EmptyCell) {
         self.performSegue(withIdentifier: "NewWrite", sender: self )
     }
-    
 }
-
 // MARK: - PopViewDelegate
 extension CalendarViewController: PopViewDelegate {
     // 포스팅버튼
@@ -141,9 +144,7 @@ extension CalendarViewController: PopViewDelegate {
     func popUpWritingDelegate(date: String) {
         popUpView.dateLB.text = date
     }
-    
 }
-
 // MARK: - UIGestureRecognizerDelegate
 extension CalendarViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -151,4 +152,3 @@ extension CalendarViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
-
