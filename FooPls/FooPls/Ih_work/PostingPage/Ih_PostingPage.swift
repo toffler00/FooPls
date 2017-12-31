@@ -131,6 +131,15 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     @IBAction func searchPlace(_ sender: Any) {
            presentAutoSearch()
     }
+    func presentAutoSearch() {
+        let autoSearch = UIStoryboard(name: "SKMain", bundle: nil)
+        var navigationCon: UINavigationController?
+        
+        navigationCon = autoSearch.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
+        //        autoSearchVC?.delegate = self
+        
+        present(navigationCon!, animated: true, completion: nil)
+    }
     
     @IBAction func imagePick(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -156,15 +165,7 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
         DataCenter.main.uploadImgAndgetUrl(selectedImg: seletedImges)
     }
     
-    func presentAutoSearch() {
-        let autoSearch = UIStoryboard(name: "SKMain", bundle: nil)
-        var navigationCon: UINavigationController?
-        
-        navigationCon = autoSearch.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
-//        autoSearchVC?.delegate = self
-        
-        present(navigationCon!, animated: true, completion: nil)
-    }
+    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
        contentTextView.text = ""

@@ -10,6 +10,18 @@ class GradientPostingView: UIViewController {
         gradientV.backgroundColor = UIColor.clear
         return gradientV
     }()
+    
+    let writePostBtn : UIButton = {
+        let postbtn = UIButton()
+        postbtn.addTarget(GradientPostingView.self, action: #selector(showPostingPage(_:)), for: UIControlEvents.touchUpInside)
+        return postbtn
+    }()
+    
+    let writeCallenderBtn : UIButton = {
+        let callenbtn = UIButton()
+        return callenbtn
+    }()
+    
     var gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
@@ -19,6 +31,7 @@ class GradientPostingView: UIViewController {
         setGradientLayer()
         view.addSubview(gradientView)
         gradientView.layer.addSublayer(gradientLayer)
+        btnLayout()
         
     }
     
@@ -36,7 +49,9 @@ class GradientPostingView: UIViewController {
         gradientLayer.locations = [0.0 , 0.7 ,1.0]
     }
     
-    
+    @objc func showPostingPage(_ sender : Any) {
+        print("확인")
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -55,4 +70,17 @@ class GradientPostingView: UIViewController {
     }
     */
 
+}
+extension GradientPostingView {
+    func btnLayout() {
+        gradientView.addSubview(writePostBtn)
+        let dx = self.view.frame.size.width / 8
+        writePostBtn.frame = gradientView.bounds.offsetBy(dx: (self.view.frame.size.width - dx) / 2, dy: 480)
+        writePostBtn.frame.size = CGSize(width: (self.view.frame.size.width) / 2, height: 56)
+        
+        writePostBtn.setTitle("리뷰 쓰기", for: UIControlState.normal)
+        writePostBtn.titleLabel?.textColor = UIColor.white
+        writePostBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+        
+    }
 }

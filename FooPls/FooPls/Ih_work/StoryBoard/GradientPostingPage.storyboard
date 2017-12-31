@@ -6,24 +6,116 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gradient Posting View-->
+        <!--Gradient View-->
         <scene sceneID="til-P4-eKg">
             <objects>
-                <viewController id="zIs-1M-FXc" customClass="GradientPostingView" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zIs-1M-FXc" customClass="GradientView" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="km3-Uf-KYD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2bH-pm-bE8">
+                                <rect key="frame" x="33.5" y="413.5" width="214.5" height="66.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posting" translatesAutoresizingMaskIntoConstraints="NO" id="6oN-HG-4qF">
+                                        <rect key="frame" x="0.0" y="13.5" width="40.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="GCt-Bw-44t"/>
+                                            <constraint firstAttribute="height" constant="40" id="QgY-fF-QMN"/>
+                                            <constraint firstAttribute="width" secondItem="6oN-HG-4qF" secondAttribute="height" multiplier="1:1" id="tQk-dd-k7M"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-gZ-nDG">
+                                        <rect key="frame" x="64.5" y="0.0" width="150" height="66.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="showPostingPage:" destination="zIs-1M-FXc" eventType="touchUpInside" id="qiX-h6-O6h"/>
+                                            <segue destination="DMq-cD-tu4" kind="modal" id="1Ll-ao-Tg7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZJk-gZ-nDG" secondAttribute="bottom" id="0KI-ng-Jfs"/>
+                                    <constraint firstItem="ZJk-gZ-nDG" firstAttribute="top" secondItem="2bH-pm-bE8" secondAttribute="top" id="LSs-qa-Vt3"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZJk-gZ-nDG" secondAttribute="trailing" id="sli-aO-zDh"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="bHk-qx-sjd">
+                                <rect key="frame" x="33.5" y="499" width="214.5" height="66.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="write" translatesAutoresizingMaskIntoConstraints="NO" id="A3p-ew-dag">
+                                        <rect key="frame" x="0.0" y="13.5" width="40.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5fJ-ar-ZLN"/>
+                                            <constraint firstAttribute="width" secondItem="A3p-ew-dag" secondAttribute="height" multiplier="1:1" id="IjM-zW-STi"/>
+                                            <constraint firstAttribute="width" constant="40" id="OTm-bY-Qsy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nK6-Gg-1DA">
+                                        <rect key="frame" x="64.5" y="0.0" width="150" height="66.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="showCalendarPage:" destination="zIs-1M-FXc" eventType="touchUpInside" id="B5Z-mP-PGB"/>
+                                            <segue destination="4jS-i0-M8l" kind="modal" id="brb-zK-7T2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nK6-Gg-1DA" firstAttribute="top" secondItem="bHk-qx-sjd" secondAttribute="top" id="bMc-HB-YhM"/>
+                                    <constraint firstAttribute="trailing" secondItem="nK6-Gg-1DA" secondAttribute="trailing" id="e31-42-0lz"/>
+                                    <constraint firstAttribute="bottom" secondItem="nK6-Gg-1DA" secondAttribute="bottom" id="uHU-Fh-WNd"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bHk-qx-sjd" firstAttribute="centerX" secondItem="0nz-MA-Pqx" secondAttribute="centerX" multiplier="0.75" id="548-Xf-fdB"/>
+                            <constraint firstItem="2bH-pm-bE8" firstAttribute="centerY" secondItem="0nz-MA-Pqx" secondAttribute="centerY" multiplier="1.3" id="6e4-8G-cLm"/>
+                            <constraint firstItem="ZJk-gZ-nDG" firstAttribute="width" secondItem="km3-Uf-KYD" secondAttribute="width" multiplier="0.4" id="7Ji-mb-Sc9"/>
+                            <constraint firstItem="2bH-pm-bE8" firstAttribute="height" secondItem="km3-Uf-KYD" secondAttribute="height" multiplier="0.1" id="Qks-qq-fmx"/>
+                            <constraint firstItem="bHk-qx-sjd" firstAttribute="centerY" secondItem="0nz-MA-Pqx" secondAttribute="centerY" multiplier="1.55" id="VXs-WE-O1g"/>
+                            <constraint firstItem="nK6-Gg-1DA" firstAttribute="height" secondItem="km3-Uf-KYD" secondAttribute="height" multiplier="0.1" id="X08-IX-Hbn"/>
+                            <constraint firstItem="nK6-Gg-1DA" firstAttribute="width" secondItem="km3-Uf-KYD" secondAttribute="width" multiplier="0.4" id="eDe-XF-53Y"/>
+                            <constraint firstItem="2bH-pm-bE8" firstAttribute="centerX" secondItem="0nz-MA-Pqx" secondAttribute="centerX" multiplier="0.75" id="lyy-Qi-JFs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0nz-MA-Pqx"/>
                     </view>
+                    <connections>
+                        <outlet property="writeCalendarBtn" destination="nK6-Gg-1DA" id="Axh-fm-LnL"/>
+                        <outlet property="writePostBtn" destination="ZJk-gZ-nDG" id="sLD-0P-iRf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tt-AL-l3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-209" y="-19"/>
         </scene>
+        <!--Ih_PostPage-->
+        <scene sceneID="AaU-gG-G3G">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ih_PostPage" id="DMq-cD-tu4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pn9-VX-C9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-438" y="411"/>
+        </scene>
+        <!--NewWrite-->
+        <scene sceneID="hRj-SE-6el">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewWrite" id="4jS-i0-M8l" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2t-n5-hMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="411"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="posting" width="24" height="24"/>
+        <image name="write" width="585" height="595"/>
+    </resources>
 </document>
