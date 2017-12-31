@@ -51,6 +51,7 @@
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		6219F9671FF89D8D00A2A4BB /* GradientPostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6219F9661FF89D8D00A2A4BB /* GradientPostingView.swift */; };
 		6219F96A1FF89EEE00A2A4BB /* GradientPostingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6219F9691FF89EEE00A2A4BB /* GradientPostingPage.storyboard */; };
+		6219F96C1FF8CCEB00A2A4BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6219F96B1FF8CCEB00A2A4BB /* GradientView.swift */; };
 		624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */; };
 		624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */; };
 		627672F81FE7BFFA006EDC10 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -148,6 +149,7 @@
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6219F9661FF89D8D00A2A4BB /* GradientPostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPostingView.swift; sourceTree = "<group>"; };
 		6219F9691FF89EEE00A2A4BB /* GradientPostingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradientPostingPage.storyboard; sourceTree = "<group>"; };
+		6219F96B1FF8CCEB00A2A4BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_PostPage.storyboard; sourceTree = "<group>"; };
 		624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ih_PostingPage.swift; sourceTree = "<group>"; };
 		628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				6219F9661FF89D8D00A2A4BB /* GradientPostingView.swift */,
+				6219F96B1FF8CCEB00A2A4BB /* GradientView.swift */,
 			);
 			path = GradientPostingView;
 			sourceTree = SOURCE_ROOT;
@@ -899,6 +902,7 @@
 				230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */,
 				62E1FF5B1FD924BF00E1FEAE /* Ih_UserModel.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
+				6219F96C1FF8CCEB00A2A4BB /* GradientView.swift in Sources */,
 				62E1FF5C1FD924BF00E1FEAE /* Ih_LocationModel.swift in Sources */,
 				CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */,
 				231F59D31FDAC2EA00580D69 /* RAMBounceAnimation.swift in Sources */,
