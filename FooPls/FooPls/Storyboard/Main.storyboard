@@ -384,7 +384,7 @@
                 <viewControllerPlaceholder storyboardName="Ih_PostPage" id="Zye-if-IR0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pX-OF-gFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1200" y="2237"/>
+            <point key="canvasLocation" x="-1270" y="2279"/>
         </scene>
         <!--NewWrite-->
         <scene sceneID="7Ib-7K-YeE">
@@ -392,7 +392,7 @@
                 <viewControllerPlaceholder storyboardName="NewWrite" id="8zs-WF-F5W" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMH-sS-JR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-585" y="2270"/>
+            <point key="canvasLocation" x="-516" y="2279"/>
         </scene>
     </scenes>
     <resources>
