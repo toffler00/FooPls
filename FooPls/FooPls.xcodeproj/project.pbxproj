@@ -51,7 +51,7 @@
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */; };
 		624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */; };
-		627672F81FE7BFFA006EDC10 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		627672F81FE7BFFA006EDC10 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */; };
 		628E5B1F1FE259B700CBEA16 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
@@ -77,7 +77,7 @@
 		CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */; };
 		CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */; };
 		CEAA86431FE92C2700CCCB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAA86421FE92C2500CCCB0E /* Assets.xcassets */; };
-		CEB899781FD9C4A800BFFF3B /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB899721FD9C4A500BFFF3B /* View.xib */; };
+		CEB899781FD9C4A800BFFF3B /* PopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB899721FD9C4A500BFFF3B /* PopView.xib */; };
 		CEB899791FD9C4A800BFFF3B /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB899731FD9C4A500BFFF3B /* PostCell.xib */; };
 		CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899741FD9C4A600BFFF3B /* PostCell.swift */; };
 		CEB8997B1FD9C4A800BFFF3B /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899751FD9C4A700BFFF3B /* EmptyCell.swift */; };
@@ -176,7 +176,7 @@
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEAA86421FE92C2500CCCB0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEB899721FD9C4A500BFFF3B /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		CEB899721FD9C4A500BFFF3B /* PopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopView.xib; sourceTree = "<group>"; };
 		CEB899731FD9C4A500BFFF3B /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		CEB899741FD9C4A600BFFF3B /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CEB899751FD9C4A700BFFF3B /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
@@ -628,7 +628,7 @@
 			children = (
 				CEB899761FD9C4A700BFFF3B /* EmptyCell.xib */,
 				CEB899731FD9C4A500BFFF3B /* PostCell.xib */,
-				CEB899721FD9C4A500BFFF3B /* View.xib */,
+				CEB899721FD9C4A500BFFF3B /* PopView.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -744,7 +744,7 @@
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */,
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
-				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
+				CEB899781FD9C4A800BFFF3B /* PopView.xib in Resources */,
 				232D49FA1FDE507C0094DA1A /* TJTimeline.storyboard in Resources */,
 				232D49F01FDE3F850094DA1A /* MenuCell.xib in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
@@ -866,7 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627672F81FE7BFFA006EDC10 /* BuildFile in Sources */,
+				627672F81FE7BFFA006EDC10 /* (null) in Sources */,
 				FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */,
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				62F1B7331FDFCC0D0084D68F /* Ih_AllPostsData.swift in Sources */,

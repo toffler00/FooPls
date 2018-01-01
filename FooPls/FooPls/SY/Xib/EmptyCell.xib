@@ -22,8 +22,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-NC-BE7">
-                        <rect key="frame" x="67.5" y="82.5" width="165" height="165"/>
-                        <color key="backgroundColor" red="0.47731924057006836" green="0.85289937257766724" blue="0.49111419916152954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="60" y="75" width="180" height="180"/>
+                        <color key="backgroundColor" red="0.46274509803921571" green="0.8666666666666667" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Zwi-NC-BE7" secondAttribute="height" multiplier="1:1" id="AIM-Yd-PdD"/>
                         </constraints>
@@ -36,7 +36,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Zwi-NC-BE7" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.55" id="Gc7-a0-QgR"/>
+                    <constraint firstItem="Zwi-NC-BE7" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="Gc7-a0-QgR"/>
                     <constraint firstItem="Zwi-NC-BE7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="t9P-Tl-ITw"/>
                     <constraint firstItem="Zwi-NC-BE7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="y9a-N2-W0U"/>
                 </constraints>
