@@ -28,7 +28,7 @@
         <!--Posting Page-->
         <scene sceneID="fmC-sT-Bie">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="Obd-8O-oSo" customClass="PostingPage" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostingPage" modalTransitionStyle="crossDissolve" id="Obd-8O-oSo" customClass="PostingPage" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cFO-e7-zS1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

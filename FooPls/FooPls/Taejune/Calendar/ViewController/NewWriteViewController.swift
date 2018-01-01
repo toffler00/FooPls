@@ -45,6 +45,9 @@ class NewWriteViewController: UIViewController, UINavigationControllerDelegate ,
         setupUI()
         loadData()
         
+        autoNavi = autoSB.instantiateViewController(withIdentifier: "googlePlacePickerVC") as? UINavigationController
+        autoVC = autoNavi?.visibleViewController as? SK_AutoSearchViewController
+        
         //플레이스 뷰를 내릴때 노티
         NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
                                                object: nil, queue: nil) {[weak self] (noti) in
