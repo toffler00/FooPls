@@ -50,7 +50,6 @@
 		23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */; };
 		23E6F40B1FD5C50300543A84 /* FooPlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F40A1FD5C50200543A84 /* FooPlsView.swift */; };
 		6219F9671FF89D8D00A2A4BB /* GradientPostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6219F9661FF89D8D00A2A4BB /* GradientPostingView.swift */; };
-		6219F96A1FF89EEE00A2A4BB /* GradientPostingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6219F9691FF89EEE00A2A4BB /* GradientPostingPage.storyboard */; };
 		6219F96C1FF8CCEB00A2A4BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6219F96B1FF8CCEB00A2A4BB /* GradientView.swift */; };
 		624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */; };
 		624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */; };
@@ -148,7 +147,6 @@
 		23E6F40A1FD5C50200543A84 /* FooPlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooPlsView.swift; sourceTree = "<group>"; };
 		54D5D224DE83084B71301F9F /* Pods_FooPls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooPls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6219F9661FF89D8D00A2A4BB /* GradientPostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPostingView.swift; sourceTree = "<group>"; };
-		6219F9691FF89EEE00A2A4BB /* GradientPostingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradientPostingPage.storyboard; sourceTree = "<group>"; };
 		6219F96B1FF8CCEB00A2A4BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ih_PostPage.storyboard; sourceTree = "<group>"; };
 		624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ih_PostingPage.swift; sourceTree = "<group>"; };
@@ -459,7 +457,6 @@
 				62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */,
 				624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */,
 				62E1FF421FD924BF00E1FEAE /* Ih_MainView.storyboard */,
-				6219F9691FF89EEE00A2A4BB /* GradientPostingPage.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -779,7 +776,6 @@
 				230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
 				CEAA86431FE92C2700CCCB0E /* Assets.xcassets in Resources */,
-				6219F96A1FF89EEE00A2A4BB /* GradientPostingPage.storyboard in Resources */,
 				CE07803A1FE5657100590E04 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
