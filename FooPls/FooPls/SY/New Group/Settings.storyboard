@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-aW-H1d">
-                                                    <rect key="frame" x="310" y="0.0" width="66.5" height="44.5"/>
+                                                    <rect key="frame" x="301" y="0.0" width="66.5" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kgb-aW-H1d" firstAttribute="leading" secondItem="xe5-h3-PfZ" secondAttribute="trailing" multiplier="3.5:1" id="1HC-aa-liZ"/>
+                                                <constraint firstItem="kgb-aW-H1d" firstAttribute="leading" secondItem="xe5-h3-PfZ" secondAttribute="trailing" multiplier="3.4:1" id="1HC-aa-liZ"/>
                                                 <constraint firstItem="kgb-aW-H1d" firstAttribute="top" secondItem="xe5-h3-PfZ" secondAttribute="top" id="7Rr-yr-vzx"/>
                                                 <constraint firstItem="xe5-h3-PfZ" firstAttribute="centerY" secondItem="X8q-0p-KBB" secondAttribute="centerY" id="AML-Oa-HOd"/>
                                                 <constraint firstItem="xe5-h3-PfZ" firstAttribute="width" secondItem="X8q-0p-KBB" secondAttribute="width" multiplier="1:4.5" id="H1Y-9d-7I0"/>
@@ -55,6 +55,7 @@
                                                 <constraint firstItem="kgb-aW-H1d" firstAttribute="height" secondItem="X8q-0p-KBB" secondAttribute="height" id="xd8-aF-dkV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="disclosureIndicator" id="bEw-2U-GyD">
                                         <rect key="frame" x="0.0" y="100.5" width="375" height="45"/>
@@ -141,8 +142,8 @@
         <!--Login-->
         <scene sceneID="g6B-zc-yCd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yuz-XD-fG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="Login" id="gGM-4q-ge7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yuz-XD-fG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047" y="-234"/>
         </scene>

@@ -79,7 +79,7 @@
 		CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */; };
 		CE9D36F31FCE92ED00E3713D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */; };
 		CEAA86431FE92C2700CCCB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAA86421FE92C2500CCCB0E /* Assets.xcassets */; };
-		CEB899781FD9C4A800BFFF3B /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB899721FD9C4A500BFFF3B /* View.xib */; };
+		CEB899781FD9C4A800BFFF3B /* PopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB899721FD9C4A500BFFF3B /* PopView.xib */; };
 		CEB899791FD9C4A800BFFF3B /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB899731FD9C4A500BFFF3B /* PostCell.xib */; };
 		CEB8997A1FD9C4A800BFFF3B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899741FD9C4A600BFFF3B /* PostCell.swift */; };
 		CEB8997B1FD9C4A800BFFF3B /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB899751FD9C4A700BFFF3B /* EmptyCell.swift */; };
@@ -180,7 +180,7 @@
 		CE0A7F151FCE90EA009C884F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE9D36F21FCE92ED00E3713D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEAA86421FE92C2500CCCB0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEB899721FD9C4A500BFFF3B /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		CEB899721FD9C4A500BFFF3B /* PopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopView.xib; sourceTree = "<group>"; };
 		CEB899731FD9C4A500BFFF3B /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		CEB899741FD9C4A600BFFF3B /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CEB899751FD9C4A700BFFF3B /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
@@ -642,7 +642,7 @@
 			children = (
 				CEB899761FD9C4A700BFFF3B /* EmptyCell.xib */,
 				CEB899731FD9C4A500BFFF3B /* PostCell.xib */,
-				CEB899721FD9C4A500BFFF3B /* View.xib */,
+				CEB899721FD9C4A500BFFF3B /* PopView.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -758,7 +758,7 @@
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
 				23D434041FE26E8F00481601 /* TJDetailTimeline.storyboard in Resources */,
 				232D49F21FDE3FBA0094DA1A /* FocusView.xib in Resources */,
-				CEB899781FD9C4A800BFFF3B /* View.xib in Resources */,
+				CEB899781FD9C4A800BFFF3B /* PopView.xib in Resources */,
 				232D49FA1FDE507C0094DA1A /* TJTimeline.storyboard in Resources */,
 				232D49F01FDE3F850094DA1A /* MenuCell.xib in Resources */,
 				62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */,
@@ -818,7 +818,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D32F1333C676D2B10543C474 /* [CP] Embed Pods Frameworks */ = {

@@ -7,7 +7,7 @@ class CalendarViewController: UIViewController {
     
     //MARK: - Property
     // 사용자 정의 팝업
-    let popUpView: PopView = UINib(nibName:"View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
+    let popUpView: PopView = UINib(nibName:"PopView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PopView
     var contentTitleList: [String] = []
     var contentKeys: [String] = []
     weak var postDelegate: PostCellDelegate?
