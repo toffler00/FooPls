@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,16 +103,16 @@
             </objects>
             <point key="canvasLocation" x="-1055" y="1431"/>
         </scene>
-        <!--GradientPostingPage-->
+        <!--Ih_MainView-->
         <scene sceneID="6YS-B5-3W8">
             <objects>
-                <viewControllerPlaceholder storyboardName="GradientPostingPage" id="nRi-5n-Ndb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Ih_MainView" id="nRi-5n-Ndb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="n6v-fb-SRg"/>
                     <navigationItem key="navigationItem" id="w7m-MP-dkH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlP-jK-fRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-399" y="1431"/>
+            <point key="canvasLocation" x="-291" y="1526"/>
         </scene>
         <!--TJCalendar-->
         <scene sceneID="fLc-1Z-dKw">
@@ -181,13 +183,23 @@
                                     <segue destination="nRi-5n-Ndb" kind="embed" id="FBZ-Ab-8Zt"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfY-MF-huN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="piO-6L-SeN" kind="embed" id="2AE-eA-z84"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VrO-3b-Gcl" firstAttribute="leading" secondItem="ily-Fc-fPB" secondAttribute="leading" id="1T2-Vy-wbT"/>
                             <constraint firstAttribute="trailing" secondItem="VrO-3b-Gcl" secondAttribute="trailing" id="5b5-ON-FBp"/>
+                            <constraint firstItem="lfY-MF-huN" firstAttribute="leading" secondItem="nCn-hG-pwd" secondAttribute="leading" id="5lX-ua-GH3"/>
                             <constraint firstItem="VrO-3b-Gcl" firstAttribute="top" secondItem="ily-Fc-fPB" secondAttribute="top" id="Ezl-tp-Bva"/>
+                            <constraint firstItem="nCn-hG-pwd" firstAttribute="bottom" secondItem="lfY-MF-huN" secondAttribute="bottom" id="Jpu-HT-0jB"/>
+                            <constraint firstItem="lfY-MF-huN" firstAttribute="top" secondItem="ily-Fc-fPB" secondAttribute="top" id="XqJ-4X-CAw"/>
                             <constraint firstItem="VrO-3b-Gcl" firstAttribute="bottom" secondItem="nCn-hG-pwd" secondAttribute="bottom" id="dXq-1x-u9y"/>
+                            <constraint firstItem="nCn-hG-pwd" firstAttribute="trailing" secondItem="lfY-MF-huN" secondAttribute="trailing" id="ox0-CE-dUT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nCn-hG-pwd"/>
                     </view>
@@ -261,6 +273,127 @@
             </objects>
             <point key="canvasLocation" x="-399" y="134"/>
         </scene>
+        <!--Gradient View-->
+        <scene sceneID="VO5-e0-IDs">
+            <objects>
+                <viewController id="piO-6L-SeN" customClass="GradientView" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m1m-uv-GwI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXL-EP-n8W">
+                                <rect key="frame" x="0.0" y="323" width="375" height="247"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fu3-hu-xOt">
+                                        <rect key="frame" x="37.5" y="66.5" width="187.5" height="40"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posting" translatesAutoresizingMaskIntoConstraints="NO" id="idh-7b-FuS">
+                                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="CTm-Qf-C1X"/>
+                                                    <constraint firstAttribute="width" secondItem="idh-7b-FuS" secondAttribute="height" multiplier="1:1" id="Ih1-O1-yJ0"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Z17-f6-Rwd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuT-zH-svA">
+                                                <rect key="frame" x="50.5" y="0.0" width="137" height="40"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showPostingPage:" destination="piO-6L-SeN" eventType="touchUpInside" id="hY2-4u-XoS"/>
+                                                    <segue destination="Zye-if-IR0" kind="modal" id="4bk-yX-EH2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="xuT-zH-svA" secondAttribute="bottom" id="6BG-dD-JIh"/>
+                                            <constraint firstAttribute="trailing" secondItem="xuT-zH-svA" secondAttribute="trailing" id="8zb-aV-MqJ"/>
+                                            <constraint firstItem="xuT-zH-svA" firstAttribute="leading" secondItem="idh-7b-FuS" secondAttribute="trailing" constant="10" id="DGD-or-apc"/>
+                                            <constraint firstItem="xuT-zH-svA" firstAttribute="top" secondItem="Fu3-hu-xOt" secondAttribute="top" id="jxe-Mz-U74"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-wl-xqN">
+                                        <rect key="frame" x="37.5" y="140.5" width="187.5" height="40"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="write" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-jT-VKj">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Klh-rj-Wm7"/>
+                                                    <constraint firstAttribute="width" constant="40" id="sDU-DB-NBc"/>
+                                                    <constraint firstAttribute="width" secondItem="WFh-jT-VKj" secondAttribute="height" multiplier="1:1" id="uat-yN-8en"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ha-AD-aws">
+                                                <rect key="frame" x="50" y="0.0" width="137.5" height="40"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showCalendarPage:" destination="piO-6L-SeN" eventType="touchUpInside" id="8Nh-uv-ULz"/>
+                                                    <segue destination="8zs-WF-F5W" kind="modal" id="Y3P-Yt-dKz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6Ha-AD-aws" firstAttribute="top" secondItem="bRb-wl-xqN" secondAttribute="top" id="17e-HF-jj7"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Ha-AD-aws" secondAttribute="trailing" id="HgW-lg-uIa"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Ha-AD-aws" secondAttribute="bottom" id="ObE-Wj-PPO"/>
+                                            <constraint firstItem="6Ha-AD-aws" firstAttribute="top" secondItem="bRb-wl-xqN" secondAttribute="top" id="PMY-9I-j0V"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Ha-AD-aws" secondAttribute="trailing" id="SfB-Fk-QFG"/>
+                                            <constraint firstItem="6Ha-AD-aws" firstAttribute="leading" secondItem="WFh-jT-VKj" secondAttribute="trailing" constant="10" id="TfI-a4-Bud"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Ha-AD-aws" secondAttribute="bottom" id="lIZ-TJ-fJO"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bRb-wl-xqN" firstAttribute="centerX" secondItem="NXL-EP-n8W" secondAttribute="centerX" multiplier="0.7" id="9LE-Yn-9Ji"/>
+                                    <constraint firstItem="Fu3-hu-xOt" firstAttribute="width" secondItem="NXL-EP-n8W" secondAttribute="width" multiplier="0.5" id="Khp-eb-akr"/>
+                                    <constraint firstItem="bRb-wl-xqN" firstAttribute="centerY" secondItem="NXL-EP-n8W" secondAttribute="centerY" multiplier="1.3" id="XL1-Eg-vqS"/>
+                                    <constraint firstItem="bRb-wl-xqN" firstAttribute="width" secondItem="NXL-EP-n8W" secondAttribute="width" multiplier="0.5" id="dqB-7l-wSy"/>
+                                    <constraint firstItem="Fu3-hu-xOt" firstAttribute="centerX" secondItem="NXL-EP-n8W" secondAttribute="centerX" multiplier="0.7" id="fOE-UI-Qbh"/>
+                                    <constraint firstItem="Fu3-hu-xOt" firstAttribute="centerY" secondItem="NXL-EP-n8W" secondAttribute="centerY" multiplier="0.7" id="wEW-S0-v7W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NXL-EP-n8W" firstAttribute="width" secondItem="m1m-uv-GwI" secondAttribute="width" id="O9x-Wd-ZX5"/>
+                            <constraint firstItem="NXL-EP-n8W" firstAttribute="height" secondItem="m1m-uv-GwI" secondAttribute="height" multiplier="0.4" id="TAO-Pl-adA"/>
+                            <constraint firstItem="NXL-EP-n8W" firstAttribute="centerX" secondItem="BXI-0O-fbA" secondAttribute="centerX" id="r6a-xY-Pvc"/>
+                            <constraint firstItem="NXL-EP-n8W" firstAttribute="centerY" secondItem="BXI-0O-fbA" secondAttribute="centerY" multiplier="1.4" id="ru1-Ls-Jhn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BXI-0O-fbA"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonView" destination="NXL-EP-n8W" id="tBS-Ke-sjf"/>
+                        <outlet property="writeCalendarBtn" destination="6Ha-AD-aws" id="uQi-rS-Qqv"/>
+                        <outlet property="writePostBtn" destination="xuT-zH-svA" id="Mvz-ue-82C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okV-Jb-hxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-911" y="1847"/>
+        </scene>
+        <!--Ih_PostPage-->
+        <scene sceneID="jh5-gy-MEB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ih_PostPage" id="Zye-if-IR0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pX-OF-gFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1200" y="2237"/>
+        </scene>
+        <!--NewWrite-->
+        <scene sceneID="7Ib-7K-YeE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewWrite" id="8zs-WF-F5W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMH-sS-JR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-585" y="2270"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BlackHome" width="23" height="23"/>
@@ -268,5 +401,6 @@
         <image name="posting" width="24" height="24"/>
         <image name="profile" width="25" height="25"/>
         <image name="search" width="24" height="24"/>
+        <image name="write" width="585" height="595"/>
     </resources>
 </document>

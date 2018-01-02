@@ -12,14 +12,23 @@ class GradientView: UIViewController {
 
     @IBOutlet weak var writePostBtn: UIButton!
     @IBOutlet weak var writeCalendarBtn: UIButton!
+    @IBOutlet weak var buttonView: UIView!
     
     let gridientLayer = CAGradientLayer()
+    let postbtnBgView : UIView = {
+        let vi = UIView()
+        vi.backgroundColor = .clear
+        return vi
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        writeBtnLayout()
         setGradientLayer()
         self.view.layer.addSublayer(gridientLayer)
+        self.view.addSubview(postbtnBgView)
+        setpostbtnBgViewLayout()
+        postbtnBgView.addSubview(buttonView)
+        writeBtnLayout()
         
     }
    
@@ -49,16 +58,23 @@ class GradientView: UIViewController {
 
 }
 extension GradientView {
+    func setpostbtnBgViewLayout() {
+        postbtnBgView.translatesAutoresizingMaskIntoConstraints = false
+        postbtnBgView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 64).isActive = true
+        postbtnBgView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        postbtnBgView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.4).isActive = true
+    }
+    
     
     func writeBtnLayout() {
+
         writePostBtn.setTitle("리뷰 쓰기", for: UIControlState.normal)
-        writePostBtn.titleLabel?.textColor = UIColor.white
-        writePostBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        
+        writePostBtn.setTitleColor(.white, for: UIControlState.normal)
+        writePostBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         
         writeCalendarBtn.setTitle("캘린더에 쓰기", for: .normal)
-        writeCalendarBtn.titleLabel?.textColor = UIColor.white
-        writeCalendarBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        writeCalendarBtn.setTitleColor(.white, for: .normal)
+        writeCalendarBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
     }
     
     func setGradientLayer() {
@@ -67,11 +83,11 @@ extension GradientView {
         gridientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
         
         gridientLayer.colors = [
+            UIColor(red: 0.9803, green: 0.9372, blue: 0.2941, alpha: 1.0).cgColor,
             UIColor(red: 0.9803, green: 0.9372, blue: 0.2941, alpha: 0.8).cgColor,
-            UIColor(red: 0.9803, green: 0.9372, blue: 0.2941, alpha: 0.3).cgColor,
             UIColor(red: 0.9803, green: 0.9372, blue: 0.2941, alpha: 0.0).cgColor
         ]
-        
-        gridientLayer.locations = [0.0 , 0.7 ,1.0]
+    
+        gridientLayer.locations = [0.0 , 0.3 ,1.0]
     }
 }

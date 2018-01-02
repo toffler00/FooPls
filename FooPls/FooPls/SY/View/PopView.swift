@@ -25,7 +25,6 @@ class PopView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setPopUpViewContents()
-
     }
     
     // MARK: 팝뷰 컨텐츠 세팅
@@ -38,7 +37,7 @@ class PopView: UIView {
         }
     }
 }
-
+// MARK: - protocol PopViewDelegate
 protocol PopViewDelegate: class {
     func popUpWritingDelegate(date: String)
     func postWritingButton(button: UIButton)
