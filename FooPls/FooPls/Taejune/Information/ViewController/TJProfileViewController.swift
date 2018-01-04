@@ -14,15 +14,23 @@ class TJProfileViewController: UIViewController {
     
     var followerBtn: UIButton = {
         let followerBtn = UIButton()
-        followerBtn.backgroundColor = UIColor.black
+        followerBtn.addTarget(self, action: #selector(followerBtnAction), for: .touchUpInside)
         return followerBtn
     }()
     
+    var followingBtn: UIButton = {
+        let followingBtn = UIButton()
+        followingBtn.addTarget(self, action: #selector(followingBtnAction), for: .touchUpInside)
+        return followingBtn
+    }()
+
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var profileBGImgView: UIImageView!
     @IBOutlet weak var profileNickname: UILabel!
+    @IBOutlet weak var followerStackView: UIStackView!
     @IBOutlet weak var followerLabel: UILabel!
+    @IBOutlet weak var followingStackView: UIStackView!
     @IBOutlet weak var followingLabel: UILabel!
     
     var dataSource: [(titleImg: String, title: String, vc: UIViewController)]?
@@ -48,10 +56,28 @@ class TJProfileViewController: UIViewController {
         profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
         profileView.layer.cornerRadius = (profileView.frame.width / 2) - 3
-        followerBtn.snp.makeConstraints { (maker) in
-            $0.top.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
+        followerStackView.addSubview(followerBtn)
+        followerBtn.snp.makeConstraints {
+            $0.top.equalTo(followerStackView)
+            $0.bottom.equalTo(followerStackView)
+            $0.right.equalTo(followerStackView)
+            $0.left.equalTo(followerStackView)
         }
-        
+        followingStackView.addSubview(followingBtn)
+        followingBtn.snp.makeConstraints {
+            $0.top.equalTo(followingStackView)
+            $0.bottom.equalTo(followingStackView)
+            $0.right.equalTo(followingStackView)
+            $0.left.equalTo(followingStackView)
+        }
+    }
+    
+    @objc func followerBtnAction() {
+        print("action")
+    }
+    
+    @objc func followingBtnAction() {
+        print("action")
     }
     //파이어베이스 데이터 베이스 저장된 프로파일 값을 불러옴
     private func loadData(){
