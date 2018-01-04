@@ -27,12 +27,12 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-8x-7Vw">
                                     <rect key="frame" x="0.0" y="0.0" width="288" height="70.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-hC-YN8">
-                                            <rect key="frame" x="10" y="0.0" width="210.5" height="70.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-hC-YN8">
+                                            <rect key="frame" x="25" y="0.0" width="210.5" height="70.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="210" id="ska-Wb-d2a"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -51,16 +51,18 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="wxn-hC-YN8" secondAttribute="bottom" id="9CU-U1-R9m"/>
-                                        <constraint firstItem="wxn-hC-YN8" firstAttribute="leading" secondItem="mw3-8x-7Vw" secondAttribute="leading" constant="10" id="Lkn-qI-hAv"/>
+                                        <constraint firstItem="wxn-hC-YN8" firstAttribute="leading" secondItem="mw3-8x-7Vw" secondAttribute="leading" constant="25" id="Lkn-qI-hAv"/>
                                         <constraint firstAttribute="height" constant="70" id="mPP-Jc-gaB"/>
                                         <constraint firstItem="b4U-lw-fqB" firstAttribute="centerX" secondItem="mw3-8x-7Vw" secondAttribute="centerX" multiplier="1.8" id="nFv-R5-Ftl"/>
                                         <constraint firstItem="wxn-hC-YN8" firstAttribute="top" secondItem="mw3-8x-7Vw" secondAttribute="top" id="qEe-A0-Tba"/>
                                         <constraint firstItem="b4U-lw-fqB" firstAttribute="centerY" secondItem="mw3-8x-7Vw" secondAttribute="centerY" id="tBp-cJ-7L6"/>
                                     </constraints>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kQj-df-sBl">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kQj-df-sBl">
                                     <rect key="frame" x="0.0" y="75.5" width="288" height="341"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="separatorColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                     <connections>
                                         <outlet property="dataSource" destination="iN0-l3-epB" id="fGk-4R-c8G"/>
                                         <outlet property="delegate" destination="iN0-l3-epB" id="IsO-qI-nCf"/>

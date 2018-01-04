@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting Table View Controller-->
+        <!--설정-->
         <scene sceneID="C9T-HB-z59">
             <objects>
                 <tableViewController id="U8I-P6-DvM" customClass="SettingTableViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="버전정보" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-h3-PfZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="버전정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-h3-PfZ">
                                                     <rect key="frame" x="5.5" y="0.0" width="83" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -64,8 +64,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈소스?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-Wv-1or">
-                                                    <rect key="frame" x="3" y="-1" width="97" height="45"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이센스" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-Wv-1or">
+                                                    <rect key="frame" x="-2.5" y="-1" width="97" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                                 <constraint firstItem="q1g-Wv-1or" firstAttribute="height" secondItem="brP-ke-MI0" secondAttribute="height" id="KJI-F8-J2C"/>
                                                 <constraint firstItem="q1g-Wv-1or" firstAttribute="width" secondItem="brP-ke-MI0" secondAttribute="width" multiplier="1:3.5" id="co3-R0-Rpc"/>
                                                 <constraint firstItem="q1g-Wv-1or" firstAttribute="centerY" secondItem="brP-ke-MI0" secondAttribute="centerY" id="ibX-mk-4yi"/>
-                                                <constraint firstItem="q1g-Wv-1or" firstAttribute="centerX" secondItem="brP-ke-MI0" secondAttribute="centerX" multiplier="1:3.3" id="qOe-cG-qPa"/>
+                                                <constraint firstItem="q1g-Wv-1or" firstAttribute="centerX" secondItem="brP-ke-MI0" secondAttribute="centerX" multiplier="1:3.7" id="qOe-cG-qPa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -117,7 +117,7 @@
                             <outlet property="delegate" destination="U8I-P6-DvM" id="Bls-7L-eJF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="irQ-jf-85O">
+                    <navigationItem key="navigationItem" title="설정" id="irQ-jf-85O">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="VbV-Xl-COg">
                             <inset key="imageInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DD8-TD-Ohv">

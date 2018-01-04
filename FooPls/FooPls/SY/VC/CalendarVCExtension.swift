@@ -18,6 +18,7 @@ extension CalendarViewController {
         popUpView.tableView.delegate = self
         popUpView.tableView.dataSource = self
         popUpView.popViewDelegate = self
+        popUpView.tableView.tableFooterView = UIView(frame: .zero)
         popUpView.tableView.register(UINib.init(nibName: postCell, bundle: nil), forCellReuseIdentifier: postCell)
         popUpView.tableView.register(UINib.init(nibName: emptyCell, bundle: nil), forCellReuseIdentifier: emptyCell)
         self.view.addSubview(popUpView)
@@ -33,15 +34,6 @@ extension CalendarViewController {
         let baseViewColor = #colorLiteral(red: 1, green: 0.9967653155, blue: 0.9591305852, alpha: 1)
         // 팝업 배경
         popUpView.baseView.backgroundColor = baseViewColor.withAlphaComponent(0.8)
-    }
-    // MARK: TableViewFooterView 이용해 데이터 개수만큼 줄 생성
-    private func setUpTableViewFooterView() {
-        // tableFooterView 정의
-        let footerView = UIView(frame: CGRect.zero)
-        // footerView 투명하게 설정
-        footerView.backgroundColor = UIColor.clear
-        // tableFooterView 설정
-        popUpView.tableView.tableFooterView = footerView
     }
     // MARK: 파이어베이스에서 데이터삭제 함수
     fileprivate func removeDatabase( _ tableView: UITableView, _ indexPath: IndexPath) {
@@ -68,15 +60,15 @@ extension CalendarViewController: UITableViewDataSource {
         switch contentTitleList.count {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: emptyCell, for: indexPath) as! EmptyCell
-            tableView.separatorStyle = .none
+            tableView.bounces = false
             cell.delegate = self
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: postCell, for: indexPath)
-            setUpPopUpView()
+            tableView.bounces = true
             if let cell = cell as? PostCell {
                 let text = contentTitleList[indexPath.row]
-                cell.postLB.text = text                
+                cell.postLB.text = text
             }
             return cell
         }
@@ -108,7 +100,6 @@ extension CalendarViewController: UITableViewDelegate {
             detailVC.selectedKey = self.contentKeys[index]
             present(detailVC, animated: true, completion: nil)
         }
-        
     }
     // MARK: ios 11부터 셀 삭제
     @available (iOS 11.0, *)
