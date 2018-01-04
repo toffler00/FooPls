@@ -225,11 +225,13 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="followerLabel" destination="DDP-nE-pA0" id="cOq-Gb-3n1"/>
+                        <outlet property="followerStackView" destination="Oz9-eG-03t" id="veJ-eP-S46"/>
                         <outlet property="followingLabel" destination="cxr-jV-tvJ" id="iHU-hA-7aN"/>
+                        <outlet property="followingStackView" destination="peE-cP-ps9" id="Lzd-CW-Y2H"/>
                         <outlet property="profileBGImgView" destination="9aH-mS-fls" id="drl-N4-gqS"/>
                         <outlet property="profileImgView" destination="Tcy-i8-OOz" id="Na3-q0-K84"/>
                         <outlet property="profileNickname" destination="8IG-7A-TFU" id="Jgp-ga-6Z6"/>
-                        <outlet property="profileView" destination="HWD-8g-7Fp" id="1yE-62-aWM"/>
+                        <outlet property="profileView" destination="HWD-8g-7Fp" id="mIL-1g-c0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjJ-72-u5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
