@@ -12,11 +12,7 @@
 		230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335CAB51FCF1C9500AF06F0 /* CustomTextField.swift */; };
 		230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */; };
 		230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD781FDFC54000FF26CC /* TJLike.storyboard */; };
-		230EDD7B1FDFC55900FF26CC /* TJList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD7A1FDFC55900FF26CC /* TJList.storyboard */; };
-		230EDD7D1FDFC56400FF26CC /* TJBookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */; };
 		230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */; };
-		230EDD811FDFC58F00FF26CC /* TJListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD801FDFC58F00FF26CC /* TJListViewController.swift */; };
-		230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */; };
 		230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */; };
 		230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
@@ -53,7 +49,7 @@
 		6219F96C1FF8CCEB00A2A4BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6219F96B1FF8CCEB00A2A4BB /* GradientView.swift */; };
 		624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DDE6F1FE7EAFD0022E086 /* Ih_PostPage.storyboard */; };
 		624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624DDE711FE7EB110022E086 /* Ih_PostingPage.swift */; };
-		627672F81FE7BFFA006EDC10 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		627672F81FE7BFFA006EDC10 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1C1FE24DEB00CBEA16 /* ImagePickerVC.swift */; };
 		628E5B1F1FE259B700CBEA16 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628E5B1E1FE259B700CBEA16 /* PhotoCell.swift */; };
 		62E1FF521FD924BF00E1FEAE /* Ih_Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E1FF3F1FD924BF00E1FEAE /* Ih_Posting.storyboard */; };
@@ -106,11 +102,7 @@
 		230ED26A1FD92D260054914A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJTimelineViewController.swift; sourceTree = "<group>"; };
 		230EDD781FDFC54000FF26CC /* TJLike.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJLike.storyboard; sourceTree = "<group>"; };
-		230EDD7A1FDFC55900FF26CC /* TJList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJList.storyboard; sourceTree = "<group>"; };
-		230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJBookmark.storyboard; sourceTree = "<group>"; };
 		230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJLikeViewController.swift; sourceTree = "<group>"; };
-		230EDD801FDFC58F00FF26CC /* TJListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJListViewController.swift; sourceTree = "<group>"; };
-		230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJBookmarkViewController.swift; sourceTree = "<group>"; };
 		230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJModifyProfileViewController.swift; sourceTree = "<group>"; };
 		230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJModifyProfile.storyboard; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -232,8 +224,6 @@
 				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
 				23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */,
 				230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */,
-				230EDD801FDFC58F00FF26CC /* TJListViewController.swift */,
-				230EDD821FDFC5A300FF26CC /* TJBookmarkViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -337,8 +327,6 @@
 				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
 				23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */,
 				230EDD781FDFC54000FF26CC /* TJLike.storyboard */,
-				230EDD7A1FDFC55900FF26CC /* TJList.storyboard */,
-				230EDD7C1FDFC56400FF26CC /* TJBookmark.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -766,8 +754,6 @@
 				CEB899791FD9C4A800BFFF3B /* PostCell.xib in Resources */,
 				62E1FF571FD924BF00E1FEAE /* LaunchScreen.storyboard in Resources */,
 				231F59D71FDC146400580D69 /* TJProfile.storyboard in Resources */,
-				230EDD7B1FDFC55900FF26CC /* TJList.storyboard in Resources */,
-				230EDD7D1FDFC56400FF26CC /* TJBookmark.storyboard in Resources */,
 				230ED26B1FD92D270054914A /* Login.storyboard in Resources */,
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
@@ -880,7 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627672F81FE7BFFA006EDC10 /* BuildFile in Sources */,
+				627672F81FE7BFFA006EDC10 /* (null) in Sources */,
 				FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */,
 				230ED26C1FD931C80054914A /* CustomTextField.swift in Sources */,
 				62F1B7331FDFCC0D0084D68F /* Ih_AllPostsData.swift in Sources */,
@@ -918,8 +904,6 @@
 				231F59CE1FDAC2EA00580D69 /* RAMItemAnimationProtocol.swift in Sources */,
 				628E5B1F1FE259B700CBEA16 /* PhotoCell.swift in Sources */,
 				62E1FF581FD924BF00E1FEAE /* Ih_PostVC.swift in Sources */,
-				230EDD831FDFC5A300FF26CC /* TJBookmarkViewController.swift in Sources */,
-				230EDD811FDFC58F00FF26CC /* TJListViewController.swift in Sources */,
 				FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */,
 				231F59CF1FDAC2EA00580D69 /* RAMFumeAnimation.swift in Sources */,
 				62F1B7411FDFFEFA0084D68F /* SlideOut.swift in Sources */,
