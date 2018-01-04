@@ -73,12 +73,13 @@ class TJProfileViewController: UIViewController {
     }
     
     @objc func followerBtnAction() {
-        print("action")
+        performSegue(withIdentifier: "Follower", sender: nil)
     }
     
     @objc func followingBtnAction() {
-        print("action")
+        performSegue(withIdentifier: "Following", sender: nil)
     }
+    
     //파이어베이스 데이터 베이스 저장된 프로파일 값을 불러옴
     private func loadData(){
         reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in

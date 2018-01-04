@@ -232,11 +232,29 @@
                         <outlet property="profileImgView" destination="Tcy-i8-OOz" id="Na3-q0-K84"/>
                         <outlet property="profileNickname" destination="8IG-7A-TFU" id="Jgp-ga-6Z6"/>
                         <outlet property="profileView" destination="HWD-8g-7Fp" id="mIL-1g-c0h"/>
+                        <segue destination="FgD-me-0Gc" kind="show" identifier="Follower" id="6rm-K4-hc6"/>
+                        <segue destination="6eU-c8-jXl" kind="show" identifier="Following" id="FDW-Zp-lno"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjJ-72-u5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="695.20000000000005" y="300"/>
+        </scene>
+        <!--Follower-->
+        <scene sceneID="Zlt-5c-0gq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Follower" id="FgD-me-0Gc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWH-R5-O5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357" y="-82"/>
+        </scene>
+        <!--Following-->
+        <scene sceneID="xCy-bz-zM3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Following" id="6eU-c8-jXl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8O-si-z9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1362" y="13"/>
         </scene>
         <!--TJModifyProfile-->
         <scene sceneID="tch-DJ-17W">

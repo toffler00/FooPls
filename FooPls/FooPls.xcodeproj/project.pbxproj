@@ -15,6 +15,10 @@
 		230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */; };
 		230EDD851FE0F69C00FF26CC /* TJModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */; };
 		230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */; };
+		231565971FFEA47700AEF8D7 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231565961FFEA47700AEF8D7 /* FollowerViewController.swift */; };
+		231565991FFEA48400AEF8D7 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231565981FFEA48400AEF8D7 /* FollowingViewController.swift */; };
+		2315659B1FFEA4A200AEF8D7 /* Follower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */; };
+		2315659D1FFEA4AE00AEF8D7 /* Following.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */; };
@@ -105,6 +109,10 @@
 		230EDD7E1FDFC58400FF26CC /* TJLikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJLikeViewController.swift; sourceTree = "<group>"; };
 		230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJModifyProfileViewController.swift; sourceTree = "<group>"; };
 		230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TJModifyProfile.storyboard; sourceTree = "<group>"; };
+		231565961FFEA47700AEF8D7 /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		231565981FFEA48400AEF8D7 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follower.storyboard; sourceTree = "<group>"; };
+		2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Following.storyboard; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
@@ -220,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
+				231565961FFEA47700AEF8D7 /* FollowerViewController.swift */,
+				231565981FFEA48400AEF8D7 /* FollowingViewController.swift */,
 				230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */,
 				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
 				23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */,
@@ -323,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
+				2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */,
+				2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */,
 				230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */,
 				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
 				23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */,
@@ -739,8 +751,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2315659D1FFEA4AE00AEF8D7 /* Following.storyboard in Resources */,
 				CEB8997C1FD9C4A800BFFF3B /* EmptyCell.xib in Resources */,
 				23AB58AC1FD586070010C093 /* SKMain.storyboard in Resources */,
+				2315659B1FFEA4A200AEF8D7 /* Follower.storyboard in Resources */,
 				CE0A7F0E1FCE8EDA009C884F /* LaunchScreen.storyboard in Resources */,
 				230EDD891FE0F6D300FF26CC /* TJModifyProfile.storyboard in Resources */,
 				CE0A7F161FCE90EB009C884F /* GoogleService-Info.plist in Resources */,
@@ -884,6 +898,7 @@
 				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */,
+				231565991FFEA48400AEF8D7 /* FollowingViewController.swift in Sources */,
 				62E1FF5B1FD924BF00E1FEAE /* Ih_UserModel.swift in Sources */,
 				231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */,
 				6219F96C1FF8CCEB00A2A4BB /* GradientView.swift in Sources */,
@@ -899,6 +914,7 @@
 				62E1FF551FD924BF00E1FEAE /* CustomCell.swift in Sources */,
 				230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
+				231565971FFEA47700AEF8D7 /* FollowerViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
 				CEF3C2C81FE3FA4F0083511D /* SettingTableViewController.swift in Sources */,
 				231F59CE1FDAC2EA00580D69 /* RAMItemAnimationProtocol.swift in Sources */,
