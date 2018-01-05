@@ -20,6 +20,7 @@ struct AddressData {
     let writtenDate:String?
     let photoUrl:String?
     let comment:String?
+    let username:String?
     
     init?(firebaseData: [String:Any])
     {
@@ -33,6 +34,8 @@ struct AddressData {
         self.photoUrl = photoUrl
         guard let comment = firebaseData["title"] as? String else { return nil }
         self.comment = comment
+        guard let username = firebaseData["nickname"] as? String else { return nil }
+        self.username = username
         
     }
 }

@@ -183,11 +183,22 @@ extension SK_SearchListViewController : UITableViewDelegate, UITableViewDataSour
         let downloadrows = searchedPlaces[indexPath.row]
         print("서치에서 실행되는중 ! : downloadrows", downloadrows)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = downloadrows.placeName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? SearchResultTableViewCell
+        
+        cell?.usernameLB.text = downloadrows.username
         
         
-        return cell
+        
+        
+        return cell!
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let heightForRow:CGFloat = 80
+        
+        return heightForRow
         
     }
     
