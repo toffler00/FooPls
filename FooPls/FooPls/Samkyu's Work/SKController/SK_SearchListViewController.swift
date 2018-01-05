@@ -186,9 +186,19 @@ extension SK_SearchListViewController : UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? SearchResultTableViewCell
         
         cell?.usernameLB.text = downloadrows.username
+        cell?.addressNameLB.text = downloadrows.placeName
+        cell?.commentLB.text = downloadrows.comment
         
-        
-        
+        //dispathQue로 돌리기
+        DispatchQueue.global().async {
+            let imageURLStr:String = downloadrows.photoUrl!
+            let imageURL:URL = URL(string: imageURLStr)!
+            let imageData:NSData = NSData(contentsOf: imageURL)!
+            
+            DispatchQueue.main.async {
+                cell?.uploadedImage.image = UIImage(data: (imageData as? Data)!)
+            }
+        }
         
         return cell!
         
