@@ -11,11 +11,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Follower View Controller-->
         <scene sceneID="xaS-jA-VrT">
             <objects>
-                <viewController id="9MK-W4-P7q" sceneMemberID="viewController">
+                <viewController id="9MK-W4-P7q" customClass="FollowerViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DCU-ke-oU9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +39,9 @@
                                             <constraint firstAttribute="width" constant="20" id="mjI-FN-E6N"/>
                                         </constraints>
                                         <state key="normal" image="back_black"/>
+                                        <connections>
+                                            <action selector="backBtnAction:" destination="9MK-W4-P7q" eventType="touchUpInside" id="tHE-Ue-GLV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,46 +57,63 @@
                                     <constraint firstItem="6wP-ET-pEh" firstAttribute="width" secondItem="6wP-ET-pEh" secondAttribute="height" multiplier="1:1" id="tG5-UP-O7B"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZqG-0c-kdR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZqG-0c-kdR">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="104" id="D1s-xr-NXB">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="104"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="D1s-xr-NXB" customClass="FollowCell" customModule="FooPls" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D1s-xr-NXB" id="PkY-DE-HxB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-2x-hGl">
-                                                    <rect key="frame" x="15" y="10.5" width="82.5" height="82.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-2x-hGl">
+                                                    <rect key="frame" x="18" y="5" width="39.5" height="39.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="5ga-2x-hGl" secondAttribute="height" multiplier="1:1" id="gIb-Do-yfu"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyG-Ty-fST">
-                                                    <rect key="frame" x="110.5" y="41" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="76.5" y="16.5" width="34.5" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6h-G7-iAB">
-                                                    <rect key="frame" x="314.5" y="36" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <rect key="frame" x="287.5" y="12.5" width="62.5" height="25"/>
+                                                    <color key="backgroundColor" red="0.7803921568627451" green="0.91764705882352937" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="g6h-G7-iAB" secondAttribute="height" multiplier="2.5:1" id="pkB-HC-XVZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                                    <state key="normal" title="팔로잉">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5ga-2x-hGl" firstAttribute="centerY" secondItem="PkY-DE-HxB" secondAttribute="centerY" id="2bI-9e-Ocw"/>
                                                 <constraint firstItem="nyG-Ty-fST" firstAttribute="centerY" secondItem="PkY-DE-HxB" secondAttribute="centerY" id="BIK-hK-Vdc"/>
-                                                <constraint firstItem="nyG-Ty-fST" firstAttribute="centerX" secondItem="PkY-DE-HxB" secondAttribute="centerX" multiplier="0.7" id="M8h-1I-bse"/>
+                                                <constraint firstItem="g6h-G7-iAB" firstAttribute="height" secondItem="PkY-DE-HxB" secondAttribute="height" multiplier="0.5" id="GHI-MS-Mrp"/>
+                                                <constraint firstItem="nyG-Ty-fST" firstAttribute="centerX" secondItem="PkY-DE-HxB" secondAttribute="centerX" multiplier="0.5" id="M8h-1I-bse"/>
                                                 <constraint firstItem="g6h-G7-iAB" firstAttribute="centerY" secondItem="PkY-DE-HxB" secondAttribute="centerY" id="Rco-Cq-vSr"/>
-                                                <constraint firstItem="g6h-G7-iAB" firstAttribute="centerX" secondItem="PkY-DE-HxB" secondAttribute="centerX" multiplier="1.8" id="Wbw-Wu-WgY"/>
+                                                <constraint firstItem="g6h-G7-iAB" firstAttribute="centerX" secondItem="PkY-DE-HxB" secondAttribute="centerX" multiplier="1.7" id="Wbw-Wu-WgY"/>
                                                 <constraint firstItem="5ga-2x-hGl" firstAttribute="height" secondItem="PkY-DE-HxB" secondAttribute="height" multiplier="0.8" id="dz8-LX-fcv"/>
-                                                <constraint firstItem="5ga-2x-hGl" firstAttribute="centerX" secondItem="PkY-DE-HxB" secondAttribute="centerX" multiplier="0.3" id="ftD-C0-Rp0"/>
+                                                <constraint firstItem="5ga-2x-hGl" firstAttribute="centerX" secondItem="PkY-DE-HxB" secondAttribute="centerX" multiplier="0.2" id="ftD-C0-Rp0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followBtn" destination="g6h-G7-iAB" id="hb0-LM-dsI"/>
+                                            <outlet property="userImgView" destination="5ga-2x-hGl" id="hDg-4g-spu"/>
+                                            <outlet property="usernameLabel" destination="nyG-Ty-fST" id="MFf-Hv-Nuh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9MK-W4-P7q" id="rP2-Xh-W21"/>
+                                    <outlet property="delegate" destination="9MK-W4-P7q" id="xPA-Ev-zgw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,5 +138,6 @@
     <resources>
         <image name="FooPls" width="198" height="73"/>
         <image name="back_black" width="64" height="64"/>
+        <image name="defaultProfile" width="550" height="550"/>
     </resources>
 </document>

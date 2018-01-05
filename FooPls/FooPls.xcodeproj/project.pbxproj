@@ -19,6 +19,7 @@
 		231565991FFEA48400AEF8D7 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231565981FFEA48400AEF8D7 /* FollowingViewController.swift */; };
 		2315659B1FFEA4A200AEF8D7 /* Follower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */; };
 		2315659D1FFEA4AE00AEF8D7 /* Following.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */; };
+		2315659F1FFF254E00AEF8D7 /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2315659E1FFF254E00AEF8D7 /* FollowCell.swift */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */; };
@@ -113,6 +114,7 @@
 		231565981FFEA48400AEF8D7 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follower.storyboard; sourceTree = "<group>"; };
 		2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Following.storyboard; sourceTree = "<group>"; };
+		2315659E1FFF254E00AEF8D7 /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				232D49F51FDE40950094DA1A /* MenuCell.swift */,
+				2315659E1FFF254E00AEF8D7 /* FollowCell.swift */,
 				232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */,
 				232D49EF1FDE3F850094DA1A /* MenuCell.xib */,
 				232D49F11FDE3FBA0094DA1A /* FocusView.xib */,
@@ -936,6 +939,7 @@
 				62F1B7371FDFE13B0084D68F /* DetailPageCell.swift in Sources */,
 				232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */,
 				62F1B7351FDFE0CA0084D68F /* DetailPageView.swift in Sources */,
+				2315659F1FFF254E00AEF8D7 /* FollowCell.swift in Sources */,
 				62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */,
 				FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */,
 				628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */,
