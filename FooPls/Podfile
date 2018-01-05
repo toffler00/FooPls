@@ -22,7 +22,7 @@ target 'FooPls' do
   pod 'Kingfisher'
   pod 'RAMAnimatedTabBarController'
   pod 'FirebaseUI/Storage'
-  pod 'PagingKit'
+  pod 'PagingKit', '1.1.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'PKHUD', '~> 5.0'
   pod 'hkGraddiant'
