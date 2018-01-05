@@ -87,6 +87,7 @@
 		FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */; };
 		FC1CED901FE3FE78006FBE4B /* SK_CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */; };
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
+		FC6F9DB41FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6F9DB31FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift */; };
 		FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */; };
 		FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */; };
 		FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */; };
@@ -184,6 +185,7 @@
 		FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CustomButton.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
+		FC6F9DB31FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListViewController.swift; sourceTree = "<group>"; };
 		FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListData.swift; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 			children = (
 				FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */,
 				FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */,
+				FC6F9DB31FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift */,
 			);
 			path = SKView;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */,
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
+				FC6F9DB41FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
 				624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
