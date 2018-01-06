@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9MK-W4-P7q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MlD-xY-tO4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,12 +33,12 @@
                                         <rect key="frame" x="132" y="40" width="112.5" height="32"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wP-ET-pEh" userLabel="Back">
-                                        <rect key="frame" x="9" y="46" width="20" height="20"/>
+                                        <rect key="frame" x="346.5" y="46" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6wP-ET-pEh" secondAttribute="height" multiplier="1:1" id="QZ7-L6-1T3"/>
                                             <constraint firstAttribute="width" constant="20" id="mjI-FN-E6N"/>
                                         </constraints>
-                                        <state key="normal" image="back_black"/>
+                                        <state key="normal" image="exit"/>
                                         <connections>
                                             <action selector="backBtnAction:" destination="9MK-W4-P7q" eventType="touchUpInside" id="tHE-Ue-GLV"/>
                                         </connections>
@@ -49,7 +49,7 @@
                                 <constraints>
                                     <constraint firstItem="re9-G8-TK7" firstAttribute="centerY" secondItem="SNq-ew-EE4" secondAttribute="centerY" multiplier="1.4" id="9fc-OT-Fri"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Na7-65-5N8"/>
-                                    <constraint firstItem="6wP-ET-pEh" firstAttribute="centerX" secondItem="SNq-ew-EE4" secondAttribute="centerX" multiplier="0.1" id="UZ2-Kv-9hu"/>
+                                    <constraint firstItem="6wP-ET-pEh" firstAttribute="centerX" secondItem="SNq-ew-EE4" secondAttribute="centerX" multiplier="1.9" id="UZ2-Kv-9hu"/>
                                     <constraint firstItem="re9-G8-TK7" firstAttribute="centerX" secondItem="SNq-ew-EE4" secondAttribute="centerX" id="gWF-S0-S0h"/>
                                     <constraint firstItem="re9-G8-TK7" firstAttribute="height" secondItem="SNq-ew-EE4" secondAttribute="height" multiplier="0.4" id="jX9-01-aW4"/>
                                     <constraint firstItem="re9-G8-TK7" firstAttribute="width" secondItem="SNq-ew-EE4" secondAttribute="width" multiplier="0.3" id="jhi-Zz-4ED"/>
@@ -107,6 +107,7 @@
                                             <outlet property="followBtn" destination="g6h-G7-iAB" id="hb0-LM-dsI"/>
                                             <outlet property="userImgView" destination="5ga-2x-hGl" id="hDg-4g-spu"/>
                                             <outlet property="usernameLabel" destination="nyG-Ty-fST" id="MFf-Hv-Nuh"/>
+                                            <segue destination="bIF-38-QQo" kind="show" id="5Wd-kY-vaE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,15 +130,41 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t5v-bf-Ra6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zaE-CL-4vA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="te2-2B-mOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95.200000000000003" y="26.53673163418291"/>
+            <point key="canvasLocation" x="244" y="26.53673163418291"/>
+        </scene>
+        <!--FollowProfile-->
+        <scene sceneID="ANn-za-0N8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FollowProfile" id="bIF-38-QQo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDl-ts-e59" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.20000000000005" y="-150.22488755622189"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y5H-2S-Zv6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="MlD-xY-tO4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KCd-xn-9h4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9MK-W4-P7q" kind="relationship" relationship="rootViewController" id="i4d-3l-NSu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8E1-n5-rgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-486" y="27"/>
         </scene>
     </scenes>
     <resources>
         <image name="FooPls" width="198" height="73"/>
-        <image name="back_black" width="64" height="64"/>
         <image name="defaultProfile" width="550" height="550"/>
+        <image name="exit" width="24" height="24"/>
     </resources>
 </document>

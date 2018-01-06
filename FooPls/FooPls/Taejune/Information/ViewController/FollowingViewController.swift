@@ -20,7 +20,7 @@ class FollowingViewController: UIViewController {
     }
     
     @IBAction func backBtnAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

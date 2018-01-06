@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gn3-co-32O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LW9-q4-cQg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,12 +32,12 @@
                                         <rect key="frame" x="131.5" y="40.5" width="112.5" height="31.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBb-lv-m13" userLabel="Back">
-                                        <rect key="frame" x="9" y="46" width="20" height="20"/>
+                                        <rect key="frame" x="346.5" y="46" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="9hn-L0-dMh"/>
                                             <constraint firstAttribute="width" secondItem="SBb-lv-m13" secondAttribute="height" multiplier="1:1" id="lMC-Mr-rEO"/>
                                         </constraints>
-                                        <state key="normal" image="back_black"/>
+                                        <state key="normal" image="exit"/>
                                         <connections>
                                             <action selector="backBtnAction:" destination="gn3-co-32O" eventType="touchUpInside" id="KZV-r2-54z"/>
                                         </connections>
@@ -50,7 +50,7 @@
                                     <constraint firstItem="SBb-lv-m13" firstAttribute="centerY" secondItem="KQK-ri-OGh" secondAttribute="centerY" id="I4f-iA-w2C"/>
                                     <constraint firstItem="KQK-ri-OGh" firstAttribute="centerX" secondItem="mcp-VG-P2G" secondAttribute="centerX" id="LDr-ym-kdl"/>
                                     <constraint firstItem="KQK-ri-OGh" firstAttribute="centerY" secondItem="mcp-VG-P2G" secondAttribute="centerY" multiplier="1.4" id="MYl-9R-cPV"/>
-                                    <constraint firstItem="SBb-lv-m13" firstAttribute="centerX" secondItem="mcp-VG-P2G" secondAttribute="centerX" multiplier="0.1" id="PTP-h7-jwm"/>
+                                    <constraint firstItem="SBb-lv-m13" firstAttribute="centerX" secondItem="mcp-VG-P2G" secondAttribute="centerX" multiplier="1.9" id="PTP-h7-jwm"/>
                                     <constraint firstItem="KQK-ri-OGh" firstAttribute="width" secondItem="mcp-VG-P2G" secondAttribute="width" multiplier="0.3" id="gkI-zp-B5n"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="kEb-Is-4i9"/>
                                     <constraint firstItem="SBb-lv-m13" firstAttribute="width" secondItem="SBb-lv-m13" secondAttribute="height" multiplier="1:1" id="owM-EC-lYu"/>
@@ -128,15 +128,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a4L-f9-w3A"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LhM-m9-XUW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ph6-5I-hOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.199999999999999" y="53.523238380809602"/>
+            <point key="canvasLocation" x="316" y="53.523238380809602"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uma-69-3ct">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LW9-q4-cQg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kn3-75-7bM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gn3-co-32O" kind="relationship" relationship="rootViewController" id="1tH-IE-p4o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HtT-W7-gID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-529" y="54"/>
         </scene>
     </scenes>
     <resources>
         <image name="FooPls" width="198" height="73"/>
-        <image name="back_black" width="64" height="64"/>
         <image name="defaultProfile" width="550" height="550"/>
+        <image name="exit" width="24" height="24"/>
     </resources>
 </document>
