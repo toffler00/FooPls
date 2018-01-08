@@ -4,11 +4,13 @@
 
 - 자신이 먹은 음식을 공유 + 자신이 먹은 음식을 기록
 
-####2. 동작 화면
+
+
+#### 2. 동작 화면
 
 |                 앱 시작 화면                  |
 | :--------------------------------------: |
-| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width:"187.5" height="333.5"} |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width:"187" height="333"} |
 
 
 
