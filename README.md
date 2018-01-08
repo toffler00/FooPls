@@ -2,7 +2,19 @@
 
 #### 1. 프로젝트 내용
 
+- 자신이 먹은 음식을 공유 + 자신이 먹은 음식을 기록
 
+####2. 동작 화면
+
+|                 앱 시작 화면                  |
+| :--------------------------------------: |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/tree/master/Resources/FooPls-Splash.gif) |
+
+
+
+|                   메인화면                   |
+| :--------------------------------------: |
+| ![FooPls-Main](https://github.com/toffler00/FooPls/tree/master/Resources/FooPls-Main.gif) |
 
 
 
