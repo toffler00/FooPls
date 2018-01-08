@@ -8,13 +8,13 @@
 
 |                 앱 시작 화면                  |
 | :--------------------------------------: |
-| ![FooPls-Splash](https://github.com/toffler00/FooPls/tree/master/Resources/FooPls-Splash.gif) |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif) |
 
 
 
 |                   메인화면                   |
 | :--------------------------------------: |
-| ![FooPls-Main](https://github.com/toffler00/FooPls/tree/master/Resources/FooPls-Main.gif) |
+| ![FooPls-Main](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Main.gif) |
 
 
 
