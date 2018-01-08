@@ -1,10 +1,10 @@
 PODS:
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
+  - Bolts/Tasks (1.9.0)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.27)
@@ -77,8 +77,8 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.12)
   - hkGraddiant (1.0.0)
-  - JTAppleCalendar (7.1.4)
-  - KakaoOpenSDK/KakaoOpenSDK (1.5.1)
+  - JTAppleCalendar (7.1.5)
+  - KakaoOpenSDK/KakaoOpenSDK (1.6.0)
   - Kingfisher (4.6.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -119,7 +119,7 @@ DEPENDENCIES:
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
@@ -138,8 +138,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   hkGraddiant: a2b58a4a1ae75444342e0a98881703aa75b87d46
-  JTAppleCalendar: aaeee95e939e0b0a381fb51eb77738bd26bb10f6
-  KakaoOpenSDK: 1a539ac476e9397a373672f531e575301f0cac88
+  JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
+  KakaoOpenSDK: 485fb01a89b47c3ce7410a4e8fd278662f149572
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -152,4 +152,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: cd0c0843116b54785a8634dc24c6403c849efcbc
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.2.0

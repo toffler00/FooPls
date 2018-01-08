@@ -187,8 +187,14 @@ extension  RAMAnimatedTabBarController {
 }
 
 /// UITabBarController with item animations
-open class RAMAnimatedTabBarController: UITabBarController {
-  
+open class RAMAnimatedTabBarController: UITabBarController, UITabBarControllerDelegate {
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return true
+    }
+    public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("s!@#!$!@#!$@#!$")
+    }
+   
   fileprivate var didInit: Bool = false
   fileprivate var didLoadView: Bool = false
   
