@@ -19,6 +19,9 @@
 		231565991FFEA48400AEF8D7 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231565981FFEA48400AEF8D7 /* FollowingViewController.swift */; };
 		2315659B1FFEA4A200AEF8D7 /* Follower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */; };
 		2315659D1FFEA4AE00AEF8D7 /* Following.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */; };
+		2315659F1FFF254E00AEF8D7 /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2315659E1FFF254E00AEF8D7 /* FollowCell.swift */; };
+		231565A3200132C000AEF8D7 /* FollowProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231565A2200132C000AEF8D7 /* FollowProfile.storyboard */; };
+		231565A5200132D900AEF8D7 /* FollowProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231565A4200132D900AEF8D7 /* FollowProfileViewController.swift */; };
 		231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231BA7BE1FD0203E00EF2B69 /* Main.storyboard */; };
 		231EC1B31FD5155800A0DD19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EC1B21FD5155800A0DD19 /* CustomButton.swift */; };
 		231F59CC1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */; };
@@ -114,6 +117,9 @@
 		231565981FFEA48400AEF8D7 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follower.storyboard; sourceTree = "<group>"; };
 		2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Following.storyboard; sourceTree = "<group>"; };
+		2315659E1FFF254E00AEF8D7 /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
+		231565A2200132C000AEF8D7 /* FollowProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowProfile.storyboard; sourceTree = "<group>"; };
+		231565A4200132D900AEF8D7 /* FollowProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowProfileViewController.swift; sourceTree = "<group>"; };
 		231BA7BE1FD0203E00EF2B69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		231EC1B21FD5155800A0DD19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		231F59BD1FDAC2EA00580D69 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 				232D49F31FDE3FE50094DA1A /* TJProfileViewController.swift */,
 				231565961FFEA47700AEF8D7 /* FollowerViewController.swift */,
 				231565981FFEA48400AEF8D7 /* FollowingViewController.swift */,
+				231565A4200132D900AEF8D7 /* FollowProfileViewController.swift */,
 				230EDD841FE0F69C00FF26CC /* TJModifyProfileViewController.swift */,
 				230EDD761FDFC3CE00FF26CC /* TJTimelineViewController.swift */,
 				23D434051FE26EDD00481601 /* TJDetailTimelineViewController.swift */,
@@ -244,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				232D49F51FDE40950094DA1A /* MenuCell.swift */,
+				2315659E1FFF254E00AEF8D7 /* FollowCell.swift */,
 				232D49FB1FDE704F0094DA1A /* MyPostingCell.swift */,
 				232D49EF1FDE3F850094DA1A /* MenuCell.xib */,
 				232D49F11FDE3FBA0094DA1A /* FocusView.xib */,
@@ -337,6 +345,7 @@
 				231F59D61FDC146400580D69 /* TJProfile.storyboard */,
 				2315659A1FFEA4A200AEF8D7 /* Follower.storyboard */,
 				2315659C1FFEA4AE00AEF8D7 /* Following.storyboard */,
+				231565A2200132C000AEF8D7 /* FollowProfile.storyboard */,
 				230EDD881FE0F6D300FF26CC /* TJModifyProfile.storyboard */,
 				232D49F91FDE507C0094DA1A /* TJTimeline.storyboard */,
 				23D434031FE26E8F00481601 /* TJDetailTimeline.storyboard */,
@@ -775,6 +784,7 @@
 				231BA7BF1FD0203E00EF2B69 /* Main.storyboard in Resources */,
 				234302E81FD63B9200501C46 /* TJCalendar.storyboard in Resources */,
 				624DDE701FE7EAFD0022E086 /* Ih_PostPage.storyboard in Resources */,
+				231565A3200132C000AEF8D7 /* FollowProfile.storyboard in Resources */,
 				62E1FF541FD924BF00E1FEAE /* Ih_MainView.storyboard in Resources */,
 				230EDD791FDFC54000FF26CC /* TJLike.storyboard in Resources */,
 				2328AB891FCE9FB5004B75C0 /* Splash.storyboard in Resources */,
@@ -926,6 +936,7 @@
 				62E1FF581FD924BF00E1FEAE /* Ih_PostVC.swift in Sources */,
 				FCDCFB861FD691FF00B993C9 /* SK_DetailViewController.swift in Sources */,
 				231F59CF1FDAC2EA00580D69 /* RAMFumeAnimation.swift in Sources */,
+				231565A5200132D900AEF8D7 /* FollowProfileViewController.swift in Sources */,
 				62F1B7411FDFFEFA0084D68F /* SlideOut.swift in Sources */,
 				233773E21FD6D908006C28F0 /* NewWriteViewController.swift in Sources */,
 				232D49F41FDE3FE50094DA1A /* TJProfileViewController.swift in Sources */,
@@ -940,6 +951,7 @@
 				62F1B7371FDFE13B0084D68F /* DetailPageCell.swift in Sources */,
 				232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */,
 				62F1B7351FDFE0CA0084D68F /* DetailPageView.swift in Sources */,
+				2315659F1FFF254E00AEF8D7 /* FollowCell.swift in Sources */,
 				62E1FF5E1FD924BF00E1FEAE /* Ih_DataCenter.swift in Sources */,
 				FCDCFB7F1FD525AF00B993C9 /* SK_MapDataCenter.swift in Sources */,
 				628E5B1D1FE24DEB00CBEA16 /* ImagePickerVC.swift in Sources */,
