@@ -10,13 +10,13 @@
 
 |                 앱 시작 화면                  |
 | :--------------------------------------: |
-| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width:"187" height="333"} |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width="187" height="333"} |
 
 
 
 |                                          |
 | :--------------------------------------: |
-| ![FooPls-Main](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Main.gif) |
+| ![FooPls-Main](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Main.gif){: width="187" height="333"} |
 
 
 
