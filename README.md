@@ -8,21 +8,21 @@
 
 #### 2. 동작 화면
 
-|                 앱 시작 화면                  |
-| :--------------------------------------: |
-| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width="187px" height="333px"} |
+|                 앱 시작 화면                  | 로그인 화면                                   |
+| :--------------------------------------: | ---------------------------------------- |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif) | ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Login.jpg) |
 
 
 
-|                                          |
-| :--------------------------------------: |
-| ![FooPls-Main](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Main.gif){: width="187px" height="333px"} |
+|                  회원 가입                   | 카카오 로그인                                  | 페이스북 로그인                                 |
+| :--------------------------------------: | ---------------------------------------- | ---------------------------------------- |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Signup.gif) | ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-KakaoLogin.gif) | ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-FacebookLogin.gif) |
 
 
 
-|      |
-| ---- |
-|      |
+| 메인 화면                                    |
+| ---------------------------------------- |
+| ![FooPls-Main](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Main.gif) |
 
 
 
