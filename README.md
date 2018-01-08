@@ -8,7 +8,7 @@
 
 |                 앱 시작 화면                  |
 | :--------------------------------------: |
-| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width:"375" height="667"} |
+| ![FooPls-Splash](https://github.com/toffler00/FooPls/blob/master/Resources/FooPls-Splash.gif){: width:"187.5" height="333.5"} |
 
 
 
