@@ -82,6 +82,16 @@ class TJProfileViewController: UIViewController {
     
     //파이어베이스 데이터 베이스 저장된 프로파일 값을 불러옴
     private func loadData(){
+        reference.child("dummyData").child("followerUser").observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
+            guard let value = snapshot.value as? [String] else { return }
+            self.followerLabel.text = String(value.count)
+        }
+        reference.child("dummyData").child("followingUser").observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
+            guard let value = snapshot.value as? [String] else { return }
+            self.followingLabel.text = String(value.count)
+        }
         reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : Any] {

@@ -79,7 +79,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-yB-RSe">
-                                                    <rect key="frame" x="76.5" y="17" width="34.5" height="16.5"/>
+                                                    <rect key="frame" x="75" y="17" width="187.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -93,12 +93,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8HJ-JW-SNe" firstAttribute="centerY" secondItem="Aei-n8-kf1" secondAttribute="centerY" id="1vK-zx-bkJ"/>
+                                                <constraint firstItem="7pA-yB-RSe" firstAttribute="width" secondItem="Aei-n8-kf1" secondAttribute="width" multiplier="0.5" id="3PI-lf-iZU"/>
                                                 <constraint firstItem="D4Z-0u-Ibe" firstAttribute="centerX" secondItem="Aei-n8-kf1" secondAttribute="centerX" multiplier="0.2" id="Is6-Kn-6Ha"/>
                                                 <constraint firstItem="7pA-yB-RSe" firstAttribute="centerY" secondItem="Aei-n8-kf1" secondAttribute="centerY" id="Rac-86-WgD"/>
                                                 <constraint firstItem="D4Z-0u-Ibe" firstAttribute="height" secondItem="Aei-n8-kf1" secondAttribute="height" multiplier="0.8" id="c9A-bf-GpJ"/>
                                                 <constraint firstItem="8HJ-JW-SNe" firstAttribute="height" secondItem="Aei-n8-kf1" secondAttribute="height" multiplier="0.5" id="enM-yq-THE"/>
                                                 <constraint firstItem="D4Z-0u-Ibe" firstAttribute="centerY" secondItem="Aei-n8-kf1" secondAttribute="centerY" id="l4f-rm-iMf"/>
-                                                <constraint firstItem="7pA-yB-RSe" firstAttribute="centerX" secondItem="Aei-n8-kf1" secondAttribute="centerX" multiplier="0.5" id="vVH-NG-6GZ"/>
+                                                <constraint firstItem="7pA-yB-RSe" firstAttribute="leading" secondItem="Aei-n8-kf1" secondAttribute="centerX" multiplier="0.4" id="vVH-NG-6GZ"/>
                                                 <constraint firstItem="8HJ-JW-SNe" firstAttribute="centerX" secondItem="Aei-n8-kf1" secondAttribute="centerX" multiplier="1.7" id="zOx-iu-lKZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -129,6 +130,9 @@
                         <viewLayoutGuide key="safeArea" id="a4L-f9-w3A"/>
                     </view>
                     <navigationItem key="navigationItem" id="LhM-m9-XUW"/>
+                    <connections>
+                        <outlet property="followingTableView" destination="fNz-tF-bkD" id="9B8-vi-Kau"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ph6-5I-hOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

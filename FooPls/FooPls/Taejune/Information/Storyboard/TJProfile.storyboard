@@ -224,9 +224,9 @@
                     <navigationItem key="navigationItem" id="4Y5-wB-Nw3"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="followerLabel" destination="DDP-nE-pA0" id="cOq-Gb-3n1"/>
+                        <outlet property="followerLabel" destination="rza-me-U9A" id="hQz-Lb-QRF"/>
                         <outlet property="followerStackView" destination="Oz9-eG-03t" id="veJ-eP-S46"/>
-                        <outlet property="followingLabel" destination="cxr-jV-tvJ" id="iHU-hA-7aN"/>
+                        <outlet property="followingLabel" destination="ll9-5L-ulr" id="T9e-Yc-zKR"/>
                         <outlet property="followingStackView" destination="peE-cP-ps9" id="Lzd-CW-Y2H"/>
                         <outlet property="profileBGImgView" destination="9aH-mS-fls" id="drl-N4-gqS"/>
                         <outlet property="profileImgView" destination="Tcy-i8-OOz" id="Na3-q0-K84"/>

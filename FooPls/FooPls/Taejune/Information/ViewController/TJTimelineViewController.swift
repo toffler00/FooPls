@@ -30,7 +30,11 @@ class TJTimelineViewController: UIViewController {
     
     //MARK: - 파이어베이스에서 데이터 로드
     private func loadDate() {
+//        reference.child("users").child(userID!).child("calendar").queryOrdered(byChild: "timeStamp").observe( .value) { [weak self] (snapshot) in
+//            //print(snapshot.value)
+//        }
         reference.child("users").child(userID!).child("calendar").observe( .value) { [weak self] (snapshot) in
+            //print(snapshot.value)
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : [String: Any]] {
                 self.myPostingTitles.removeAll()
@@ -41,6 +45,7 @@ class TJTimelineViewController: UIViewController {
                 
                 for (key, postingDic) in value {
                     let postingTitle = postingDic["title"] as! String
+                    print(postingTitle)
                     let postingAddress = postingDic["storeaddress"] as! String
                     let postingDate = postingDic["date"] as! String
                     let postingImgURL = URL(string: postingDic["imageurl"] as! String)
@@ -50,6 +55,11 @@ class TJTimelineViewController: UIViewController {
                     self.myPostingDate.append(postingDate)
                     self.myPostingIndex.append(key)
                     self.myPostingCollectionView.reloadData()
+//                    print(self.myPostingTitles)
+//                    print(self.myPostingAddress)
+//                    print(self.myPostingImgs)
+//                    print(self.myPostingDate)
+//                    print(self.myPostingIndex)
                 }
             }
         }

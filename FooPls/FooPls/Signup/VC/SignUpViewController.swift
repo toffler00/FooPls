@@ -77,9 +77,9 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: pwd, completion: { [weak self] (user, error) in
                 guard let `self` = self else { return }
                 if error == nil && user != nil {
-                    let userNickname = user?.displayName ?? ""
+                    let userNickname = user?.displayName ?? user?.email
                     let defaultProfileURL = "https://firebasestorage.googleapis.com/v0/b/foopls-84f76.appspot.com/o/profile_images%2FdefaultProfile.png?alt=media&token=7bca209f-50c9-4b5f-91ed-b651ded3b57f"
-                    let userDictionary : [String: Any] = ["email": email, "nickname": userNickname, "phone" : "", "photoID": defaultProfileURL]
+                    let userDictionary : [String: Any] = ["email": email, "nickname": userNickname!, "phone" : "", "photoID": defaultProfileURL]
                     self.reference.child("users").child(user!.uid).child("profile").setValue(userDictionary)
                     UIAlertController.presentAlertController(target: self,
                                                              title: "가입축하",
