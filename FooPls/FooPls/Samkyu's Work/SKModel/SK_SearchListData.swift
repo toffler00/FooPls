@@ -32,7 +32,7 @@ struct AddressData {
         self.writtenDate = writtenDate
         guard let photoUrl = firebaseData["imageurl"] as? String else { return nil }
         self.photoUrl = photoUrl
-        guard let comment = firebaseData["title"] as? String else { return nil }
+        guard let comment = firebaseData["thoughts"] as? String else { return nil }
         self.comment = comment
         guard let username = firebaseData["nickname"] as? String else { return nil }
         self.username = username
@@ -55,7 +55,9 @@ class SearchedData {
         
         
         ref = Database.database().reference()
-        ref.child("users").child("YoHvSrPEi7bMuS1GjI2bQi1yYOG2").child("posts").observe(.value) { (Data) in
+        ref.child("posts").observe(.value) { (Data) in
+            
+            print("바뀐후 데이터 : ", Data.value)
             
             var foundDatas:[AddressData] = []
             // 각 루트별로 데이터를 가져오는 아이템을 가져온다.

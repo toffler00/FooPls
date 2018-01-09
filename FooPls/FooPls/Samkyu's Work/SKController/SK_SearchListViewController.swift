@@ -143,7 +143,7 @@ extension SK_SearchListViewController : GMSAutocompleteResultsViewControllerDele
         
         //let downloadData = SearchedData(data: place.name)
         let data = SearchedData()
-        data.loadToFirebase(address: "FooPls!") { (downloadData) in
+        data.loadToFirebase(address: place.name) { (downloadData) in
             print(downloadData)
             for data in downloadData {
                 self.searchedPlaces.append(data)

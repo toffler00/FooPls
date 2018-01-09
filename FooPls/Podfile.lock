@@ -86,7 +86,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - PagingKit (1.2.4)
+  - PagingKit (1.1.0)
   - PKHUD (5.0.0)
   - RAMAnimatedTabBarController (3.0.1)
   - SDWebImage (4.2.3):
@@ -143,7 +143,7 @@ SPEC CHECKSUMS:
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  PagingKit: 50010c6ce6288190ab8f93c572d621288ed76a83
+  PagingKit: 72a8a05c8bd23811c0ab6055360d941ff17a61f9
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   RAMAnimatedTabBarController: 78bafa7a1c1b162f0d4a86a936c0d1ee4a06ffcc
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
