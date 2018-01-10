@@ -29,6 +29,18 @@ class FollowerViewController: UIViewController {
     @IBAction func backBtnAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    private func buttonColorHandler(cell: FollowCell) {
+//        if cell.followBtn.isSelected{
+//            cell.followBtn.backgroundColor = UIColor.white
+//            cell.followBtn.isSelected = false
+//        }else {
+//            cell.followBtn.backgroundColor = UIColor(red: 199.0/255.0, green: 234.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+//            cell.followBtn.isSelected = true
+//        }
+        
+        
+    }
 }
 
 extension FollowerViewController: UITableViewDelegate {
@@ -45,6 +57,8 @@ extension FollowerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FollowCell
         cell.usernameLabel.text = userNickname[indexPath.row]
+        buttonColorHandler(cell: cell)
+        
         return cell
     }
 }
