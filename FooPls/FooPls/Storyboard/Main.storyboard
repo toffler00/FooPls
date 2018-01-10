@@ -262,6 +262,7 @@
                         <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="delegate" destination="B4V-A9-dQX" id="Ttt-xy-aej"/>
                         <segue destination="hhD-Me-bFx" kind="relationship" relationship="viewControllers" id="EHa-im-8h9"/>
                         <segue destination="3Im-qS-jGl" kind="relationship" relationship="viewControllers" id="ymk-yG-kT1"/>
                         <segue destination="2nF-ES-6DM" kind="relationship" relationship="viewControllers" id="kan-AP-rBs"/>
