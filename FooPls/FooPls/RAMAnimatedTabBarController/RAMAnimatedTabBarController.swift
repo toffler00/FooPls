@@ -51,8 +51,8 @@ extension RAMAnimatedTabBarItem {
 }
 
 /// UITabBarItem with animation
-open class RAMAnimatedTabBarItem: UITabBarItem {
-  
+open class RAMAnimatedTabBarItem: UITabBarItem{
+   
   @IBInspectable open var yOffSet: CGFloat = 0
   
   open override var isEnabled: Bool {
@@ -187,8 +187,8 @@ extension  RAMAnimatedTabBarController {
 }
 
 /// UITabBarController with item animations
-open class RAMAnimatedTabBarController: UITabBarController {
-  
+open class RAMAnimatedTabBarController: UITabBarController, UITabBarControllerDelegate {
+   
   fileprivate var didInit: Bool = false
   fileprivate var didLoadView: Bool = false
   
@@ -452,7 +452,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
       animationItem.playAnimation()
       
       let deselectItem = items[selectedIndex]
-      
+        
       let containerPrevious : UIView = deselectItem.iconView!.icon.superview!
       containerPrevious.backgroundColor = items[currentIndex].bgDefaultColor
       
