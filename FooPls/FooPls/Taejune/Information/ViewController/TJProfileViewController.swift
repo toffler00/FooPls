@@ -6,6 +6,7 @@ import SnapKit
 
 class TJProfileViewController: UIViewController {
 
+    
     var menuViewController: PagingMenuViewController!
     var contentViewController: PagingContentViewController!
     var reference = Database.database().reference()
@@ -111,10 +112,6 @@ class TJProfileViewController: UIViewController {
         let timelineVC = timelineSB.instantiateViewController(withIdentifier: "TJTimelineViewController")
         let likeSB = UIStoryboard(name: "TJLike", bundle: nil)
         let likeVC = likeSB.instantiateViewController(withIdentifier: "TJLikeViewController")
-//        let listSB = UIStoryboard(name: "TJList", bundle: nil)
-//        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
-//        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
-//        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
         
         //페이징에 해당하는 뷰컨트롤러와 이미지 타이틀을 저장
         dataSource = [(titleImg: "timeline",title: "타임라인", vc: timelineVC),

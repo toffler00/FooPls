@@ -55,11 +55,6 @@ class TJTimelineViewController: UIViewController {
                     self.myPostingDate.append(postingDate)
                     self.myPostingIndex.append(key)
                     self.myPostingCollectionView.reloadData()
-//                    print(self.myPostingTitles)
-//                    print(self.myPostingAddress)
-//                    print(self.myPostingImgs)
-//                    print(self.myPostingDate)
-//                    print(self.myPostingIndex)
                 }
             }
         }
