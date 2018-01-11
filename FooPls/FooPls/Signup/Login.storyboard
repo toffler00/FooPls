@@ -239,7 +239,6 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="singUpBtn:" destination="N4e-M0-siA" eventType="touchUpInside" id="8ao-C2-hOA"/>
-                                                                    <segue destination="2LH-jv-hXu" kind="presentation" identifier="mainSegue" id="6RM-D4-FOf"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -326,6 +325,7 @@
                         <outlet property="pwdTF" destination="HCf-l6-HYe" id="oL1-pc-7rE"/>
                         <outlet property="rePwdTF" destination="Edg-7d-Yp8" id="z8F-tS-nuj"/>
                         <outlet property="signupScrollView" destination="Pgh-O0-k16" id="7Bk-Zr-5tf"/>
+                        <segue destination="2LH-jv-hXu" kind="presentation" identifier="mainSegue" id="Wxz-tB-bUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hib-Re-1Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,6 +358,6 @@
         <image name="whiteFooPls" width="198" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="80J-S1-MC9"/>
+        <segue reference="Wxz-tB-bUl"/>
     </inferredMetricsTieBreakers>
 </document>
