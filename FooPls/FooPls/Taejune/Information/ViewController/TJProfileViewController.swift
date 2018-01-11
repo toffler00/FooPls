@@ -118,7 +118,7 @@ class TJProfileViewController: UIViewController {
         
         //페이징에 해당하는 뷰컨트롤러와 이미지 타이틀을 저장
         dataSource = [(titleImg: "timeline",title: "타임라인", vc: timelineVC),
-                      (titleImg: "like",title: "가고싶다", vc: likeVC)]
+                      (titleImg: "star",title: "가고싶다", vc: likeVC)]
         
         //페이징 메뉴셀과 메뉴 포커싱 뷰를 등록
         menuViewController.register(nib: UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")

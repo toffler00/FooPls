@@ -35,6 +35,7 @@ class DataCenter {
     var postsData : PostModel?
     var profileImgUrl : String?
     var mainVCpostsData : [PostModel] = []
+    var dummyData : [PostModel] = []
     init() {}
     
     //completion 클로저 사용(네트워크가 완료되었을 때 실행시키는 방법에는 델리게이트, 노티피케이션, 클로져 방법이 있는데 그 중 클로저 사용.) 네트워크는 비동기이기 때문에 네트워크가 완료되었을 때 실행시켜주는 것이 필요함.
@@ -100,7 +101,6 @@ class DataCenter {
                     if let posts = temp as? [String : Any] {
                         if let autoIDs = posts["posts"] as? [String : Any] {
                             dataDic.append(autoIDs)
-                            print(dataDic.count)
                         }
                     }
                 }
@@ -109,7 +109,32 @@ class DataCenter {
                         if let param = datas as? [String : Any] {
                             let posts = PostModel(dictionary: param)
                             self.mainVCpostsData.append(posts)
-                            print(self.mainVCpostsData.count)
+                        }
+                    }
+                }
+            }
+        }
+    }
+        
+    //MARK: - Dummy Data singleEvent
+    func dummyDataLoadSingleEvent() {
+        mainVCpostsData.removeAll()
+        reference.child("dummyData").observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+            //Any = [String : [ String : [String : String]]]
+            
+            var dataDic : [[String : Any]] = []
+            if let dic = snapshot.value as? [String : Any] {
+                
+                if let autoIDs = dic["posts"] as? [String : Any] {
+                    dataDic.append(autoIDs)
+                }
+
+                for temp in dataDic {
+                    for (_ , datas) in temp {
+                        if let param = datas as? [String : Any] {
+                            let posts = PostModel(dictionary: param)
+                            self.dummyData.append(posts)
                         }
                     }
                 }

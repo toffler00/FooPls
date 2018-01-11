@@ -68,7 +68,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-2x-hGl">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-2x-hGl">
                                                     <rect key="frame" x="18" y="5" width="39.5" height="39.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="5ga-2x-hGl" secondAttribute="height" multiplier="1:1" id="gIb-Do-yfu"/>

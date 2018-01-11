@@ -37,6 +37,7 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(DataCenter.main.currentUser?.profileImgurl)
         setUI()
         getDate()
         setUserInfo()

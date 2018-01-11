@@ -12,8 +12,8 @@ class SplashViewController: UIViewController {
     // MARK: property
     let loginSegue = "loginSegue"
     let mainSegue = "mainSegue"
-    let followerUser = ["Taejune Jung", "fastcampus@fastcampus.com", "Taejune", "ilhan", "정태준", "Samuel Sam Kyu Kang"]
-    let followingUser = ["Taejune Jung", "fastcampus@fastcampus.com", "Taejune", "ilhan", "정태준", "Samuel Sam Kyu Kang"]
+    let followerUser = ["fastcampus","Taejune", "ilhan", "정태준", "Samuel Sam Kyu Kang"]
+    let followingUser = ["fastcampus", "ilhan", "정태준", "Samuel Sam Kyu Kang"]
     
     @IBOutlet weak var fooplsLoadingView: FooPlsView!
 
@@ -22,6 +22,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         Database.database().reference().child("dummyData").child("followerUser").setValue(followerUser)
         Database.database().reference().child("dummyData").child("followingUser").setValue(followingUser)
+        DataCenter.main.dummyDataLoadSingleEvent()
         DataCenter.main.dataLoadSingleEvent() //{ (mainVCPostData) in
 //            let mainVCData = mainVCPostData
 //            NotificationCenter.default.post(name: Notification.Name.mainVCData, object: mainVCData)
