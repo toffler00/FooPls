@@ -91,6 +91,7 @@
 		FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */; };
 		FC1CED901FE3FE78006FBE4B /* SK_CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */; };
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
+		FC9CD0BA2008B2E0001BEE5F /* SK_SpecificTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CD0B92008B2E0001BEE5F /* SK_SpecificTableViewController.swift */; };
 		FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */; };
 		FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */; };
 		FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */; };
@@ -192,6 +193,7 @@
 		FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CustomButton.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
+		FC9CD0B92008B2E0001BEE5F /* SK_SpecificTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SpecificTableViewController.swift; sourceTree = "<group>"; };
 		FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListViewController.swift; sourceTree = "<group>"; };
 		FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListData.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
 				FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */,
 				FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */,
+				FC9CD0B92008B2E0001BEE5F /* SK_SpecificTableViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -818,7 +821,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D32F1333C676D2B10543C474 /* [CP] Embed Pods Frameworks */ = {
@@ -895,6 +898,7 @@
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */,
+				FC9CD0BA2008B2E0001BEE5F /* SK_SpecificTableViewController.swift in Sources */,
 				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */,
