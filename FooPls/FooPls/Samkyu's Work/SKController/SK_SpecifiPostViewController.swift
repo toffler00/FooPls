@@ -1,8 +1,8 @@
 //
-//  SK_SpecificTableViewController.swift
+//  SK_SpecifiPostViewController.swift
 //  FooPls
 //
-//  Created by Samuel K on 2018. 1. 10..
+//  Created by Samuel K on 2018. 1. 12..
 //  Copyright © 2018년 SONGYEE SHIN. All rights reserved.
 //
 
@@ -11,8 +11,9 @@ import Firebase
 import GooglePlacePicker
 import PKHUD
 
-class SK_SpecificTableViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate  {
+class SK_SpecifiPostViewController: UIViewController {
 
+    
     let autoSB = UIStoryboard(name: "SKMain", bundle: nil)
     var autoNavi: UINavigationController?
     var autoVC: SK_AutoSearchViewController?
@@ -29,11 +30,11 @@ class SK_SpecificTableViewController: UIViewController, UINavigationControllerDe
     var thought:String?
     var detailImage:UIImage?
     
-//    var longitude: Double?
-//    var latitude: Double?
-
-//    var selectedKey: String?
-//    var photoName: String?
+    //    var longitude: Double?
+    //    var latitude: Double?
+    
+    //    var selectedKey: String?
+    //    var photoName: String?
     
     
     //MARK: - IBOutlet
@@ -66,18 +67,18 @@ class SK_SpecificTableViewController: UIViewController, UINavigationControllerDe
         
         
         //플레이스 뷰를 내릴때 노티
-//        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
-//                                               object: nil, queue: nil) {[weak self] (noti) in
-//                                                guard let `self` = self else { return }
-//                                                self.latitude = DataCenter.main.latitude
-//                                                self.longitude = DataCenter.main.longitude
-//                                                self.detailLocationTitleLabel.text = DataCenter.main.placeName
-//                                                self.detailLocationAddressLabel.text = DataCenter.main.placeAddress
-//                                                self.address = DataCenter.main.placeAddress
-//        }
-//        //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        //        NotificationCenter.default.addObserver(forName: Notification.Name.newPosi,
+        //                                               object: nil, queue: nil) {[weak self] (noti) in
+        //                                                guard let `self` = self else { return }
+        //                                                self.latitude = DataCenter.main.latitude
+        //                                                self.longitude = DataCenter.main.longitude
+        //                                                self.detailLocationTitleLabel.text = DataCenter.main.placeName
+        //                                                self.detailLocationAddressLabel.text = DataCenter.main.placeAddress
+        //                                                self.address = DataCenter.main.placeAddress
+        //        }
+        //        //노티센터를 통해 키보드가 올라오고 내려갈 경우 실행할 함수 설정
+        //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     //MARK: - 키보드가 올라올 경우 키보드의 높이 만큼 스크롤 뷰의 크기를 줄여줌
@@ -97,7 +98,7 @@ class SK_SpecificTableViewController: UIViewController, UINavigationControllerDe
     @IBAction func backBtnAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
 ////MARK: - Extension
@@ -115,4 +116,8 @@ class SK_SpecificTableViewController: UIViewController, UINavigationControllerDe
 //        }
 //    }
 //}
+
+
+
+
 
