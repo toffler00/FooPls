@@ -49,6 +49,16 @@ class MainCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         delegate?.selectedCellInfo(nickName: "toffler", uid: "uid")
     }
     
+    @IBAction func isLikeBtnAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            sender.setImage(UIImage(named: "noLike"), for: .normal)
+        }else {
+            sender.isSelected = true
+            sender.setImage(UIImage(named: "like"), for: .normal)
+        }
+    }
+    
     //MARK: - loadData To Main CollectionView
     
     

@@ -134,7 +134,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="UmR-P8-PcK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UmR-P8-PcK">
                                                     <rect key="frame" x="5" y="7.5" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="65" id="GSA-cJ-YhA"/>
@@ -493,7 +493,6 @@
         <image name="GMarker" width="48" height="48"/>
         <image name="back_black" width="64" height="64"/>
         <image name="coment" width="100" height="100"/>
-        <image name="food1" width="564" height="792"/>
         <image name="picture" width="5000" height="5000"/>
         <image name="store" width="600" height="600"/>
     </resources>

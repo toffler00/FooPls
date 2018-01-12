@@ -90,10 +90,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-4O-Hdr">
+                                                    <rect key="frame" x="142.5" y="30" width="18" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ftL-4O-Hdr" secondAttribute="height" multiplier="1.2:1" id="4kE-pf-wOw"/>
+                                                        <constraint firstAttribute="height" constant="15" id="xla-vL-2Pb"/>
+                                                    </constraints>
+                                                    <state key="normal" image="noLike"/>
+                                                    <connections>
+                                                        <action selector="isLikeBtnAction:" destination="u6J-5p-K0a" eventType="touchUpInside" id="XfG-1e-BRy"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="ftL-4O-Hdr" firstAttribute="centerY" secondItem="TBn-P7-aqY" secondAttribute="centerY" multiplier="0.25" id="1jz-jo-4fu"/>
                                             <constraint firstAttribute="bottom" secondItem="Cjm-c8-iCj" secondAttribute="bottom" constant="4" id="2wa-Dl-Yd7"/>
                                             <constraint firstItem="dpP-ff-1BQ" firstAttribute="top" secondItem="3dq-Wl-rWS" secondAttribute="bottom" id="33g-KU-i7D"/>
                                             <constraint firstItem="Cjm-c8-iCj" firstAttribute="centerX" secondItem="TBn-P7-aqY" secondAttribute="centerX" id="3gh-ZF-2Og"/>
@@ -104,6 +116,7 @@
                                             <constraint firstItem="dpP-ff-1BQ" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.8" id="Li4-7Q-EKT"/>
                                             <constraint firstItem="rCt-Fg-aiD" firstAttribute="height" secondItem="TBn-P7-aqY" secondAttribute="height" multiplier="0.08" id="Muj-Fu-7va"/>
                                             <constraint firstItem="LLl-h5-OXg" firstAttribute="leading" secondItem="TBn-P7-aqY" secondAttribute="leading" constant="10" id="Oa0-OD-pug"/>
+                                            <constraint firstItem="ftL-4O-Hdr" firstAttribute="centerX" secondItem="TBn-P7-aqY" secondAttribute="centerX" multiplier="1.75" id="ThA-dS-l0R"/>
                                             <constraint firstItem="3dq-Wl-rWS" firstAttribute="top" secondItem="LLl-h5-OXg" secondAttribute="bottom" constant="1" id="Ur2-eO-GMT"/>
                                             <constraint firstItem="Cjm-c8-iCj" firstAttribute="top" secondItem="dMn-Wr-Jzy" secondAttribute="bottom" constant="1" id="UrP-Ve-wBS"/>
                                             <constraint firstItem="rCt-Fg-aiD" firstAttribute="width" secondItem="TBn-P7-aqY" secondAttribute="width" multiplier="0.9" id="XJQ-Xv-RmD"/>
@@ -379,5 +392,6 @@
         <image name="FooPls" width="198" height="73"/>
         <image name="back_black" width="64" height="64"/>
         <image name="chat" width="512" height="512"/>
+        <image name="noLike" width="22" height="20"/>
     </resources>
 </document>
