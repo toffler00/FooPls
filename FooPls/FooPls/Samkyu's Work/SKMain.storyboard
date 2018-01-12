@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="-704" y="2509"/>
         </scene>
-        <!--Specific Table View Controller-->
+        <!--Specifi Post View Controller-->
         <scene sceneID="7i3-3t-LhN">
             <objects>
-                <viewController storyboardIdentifier="SK_SpecificTableViewController" modalTransitionStyle="crossDissolve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dHl-LZ-0be" customClass="SK_SpecificTableViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SK_SpecifiPostViewController" modalTransitionStyle="crossDissolve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dHl-LZ-0be" customClass="SK_SpecifiPostViewController" customModule="FooPls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uZB-cf-W56">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -489,7 +489,6 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="FooPls" width="198" height="73"/>
         <image name="GMarker" width="48" height="48"/>
         <image name="back_black" width="64" height="64"/>
@@ -497,9 +496,5 @@
         <image name="food1" width="564" height="792"/>
         <image name="picture" width="5000" height="5000"/>
         <image name="store" width="600" height="600"/>
-=======
-        <image name="food1" width="564" height="792"/>
-        <image name="food2" width="564" height="846"/>
->>>>>>> master
     </resources>
 </document>

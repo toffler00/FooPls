@@ -95,11 +95,8 @@
 		FC0E2CC61FDFBECE00E32F14 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */; };
 		FC1CED901FE3FE78006FBE4B /* SK_CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */; };
 		FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */; };
-<<<<<<< HEAD
-		FC9CD0BA2008B2E0001BEE5F /* SK_SpecificTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CD0B92008B2E0001BEE5F /* SK_SpecificTableViewController.swift */; };
-=======
-		FC6F9DB41FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6F9DB31FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift */; };
->>>>>>> master
+		FC9CD0BE2008D13B001BEE5F /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CD0BD2008D13B001BEE5F /* SearchResultTableViewCell.swift */; };
+		FC9CD0C22008D5AD001BEE5F /* SK_SpecifiPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CD0C12008D5AD001BEE5F /* SK_SpecifiPostViewController.swift */; };
 		FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */; };
 		FCD19ED01FE900AF0005C9CE /* SK_SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */; };
 		FCD19ED21FEA349D0005C9CE /* SK_SearchListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */; };
@@ -205,11 +202,8 @@
 		FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_CustomButton.swift; sourceTree = "<group>"; };
 		FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_PostViewController.swift; sourceTree = "<group>"; };
 		FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_AutoSearchViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		FC9CD0B92008B2E0001BEE5F /* SK_SpecificTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SpecificTableViewController.swift; sourceTree = "<group>"; };
-=======
-		FC6F9DB31FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
->>>>>>> master
+		FC9CD0BD2008D13B001BEE5F /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		FC9CD0C12008D5AD001BEE5F /* SK_SpecifiPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SpecifiPostViewController.swift; sourceTree = "<group>"; };
 		FCD19ECD1FE795380005C9CE /* SK_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SK_CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListViewController.swift; sourceTree = "<group>"; };
 		FCD19ED11FEA349D0005C9CE /* SK_SearchListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SK_SearchListData.swift; sourceTree = "<group>"; };
@@ -688,7 +682,7 @@
 				FC34D5621FD7D4DD00561433 /* SK_PostViewController.swift */,
 				FC34D5641FD8D72600561433 /* SK_AutoSearchViewController.swift */,
 				FCD19ECF1FE900AF0005C9CE /* SK_SearchListViewController.swift */,
-				FC9CD0B92008B2E0001BEE5F /* SK_SpecificTableViewController.swift */,
+				FC9CD0C12008D5AD001BEE5F /* SK_SpecifiPostViewController.swift */,
 			);
 			path = SKController;
 			sourceTree = "<group>";
@@ -708,7 +702,7 @@
 			children = (
 				FC0E2CC51FDFBECE00E32F14 /* CustomLabel.swift */,
 				FC1CED8F1FE3FE78006FBE4B /* SK_CustomButton.swift */,
-				FC6F9DB31FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift */,
+				FC9CD0BD2008D13B001BEE5F /* SearchResultTableViewCell.swift */,
 			);
 			path = SKView;
 			sourceTree = "<group>";
@@ -916,13 +910,11 @@
 				23D434061FE26EDD00481601 /* TJDetailTimelineViewController.swift in Sources */,
 				231F59CD1FDAC2EA00580D69 /* RAMBadge.swift in Sources */,
 				62E1FF5A1FD924BF00E1FEAE /* Ih_MapVC.swift in Sources */,
-				FC6F9DB41FFF1F8F00A7BE26 /* SearchResultTableViewCell.swift in Sources */,
 				CEB899811FD9C53600BFFF3B /* CalendarVCExtension.swift in Sources */,
 				624DDE721FE7EB110022E086 /* Ih_PostingPage.swift in Sources */,
 				233773DC1FD69715006C28F0 /* CalendarCell.swift in Sources */,
 				62E1FF5D1FD924BF00E1FEAE /* Ih_PostModel.swift in Sources */,
 				FCD19ECE1FE795380005C9CE /* SK_CollectionViewCell.swift in Sources */,
-				FC9CD0BA2008B2E0001BEE5F /* SK_SpecificTableViewController.swift in Sources */,
 				232D49FC1FDE704F0094DA1A /* MyPostingCell.swift in Sources */,
 				CEEEFD491FCFB388009CD1D9 /* Extension.swift in Sources */,
 				230EDD771FDFC3CE00FF26CC /* TJTimelineViewController.swift in Sources */,
@@ -941,6 +933,7 @@
 				231F59D11FDAC2EA00580D69 /* RAMTransitionItemAnimations.swift in Sources */,
 				62E1FF551FD924BF00E1FEAE /* CustomCell.swift in Sources */,
 				230EDD7F1FDFC58400FF26CC /* TJLikeViewController.swift in Sources */,
+				FC9CD0C22008D5AD001BEE5F /* SK_SpecifiPostViewController.swift in Sources */,
 				FCDCFB841FD68AB000B993C9 /* SK_MainViewController.swift in Sources */,
 				231565971FFEA47700AEF8D7 /* FollowerViewController.swift in Sources */,
 				FC34D5631FD7D4DD00561433 /* SK_PostViewController.swift in Sources */,
@@ -963,6 +956,7 @@
 				231F59D01FDAC2EA00580D69 /* RAMFrameItemAnimation.swift in Sources */,
 				2328AB8C1FCE9FFC004B75C0 /* SplashViewController.swift in Sources */,
 				62F1B7371FDFE13B0084D68F /* DetailPageCell.swift in Sources */,
+				FC9CD0BE2008D13B001BEE5F /* SearchResultTableViewCell.swift in Sources */,
 				232D49F61FDE40950094DA1A /* MenuCell.swift in Sources */,
 				62F1B7351FDFE0CA0084D68F /* DetailPageView.swift in Sources */,
 				2315659F1FFF254E00AEF8D7 /* FollowCell.swift in Sources */,
