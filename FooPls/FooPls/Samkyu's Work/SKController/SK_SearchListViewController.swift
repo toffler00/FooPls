@@ -212,4 +212,38 @@ extension SK_SearchListViewController : UITableViewDelegate, UITableViewDataSour
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "SKMain", bundle: nil)
+        let specificVC = storyboard.instantiateViewController(withIdentifier: "SK_SpecifiPostViewController") as? SK_SpecifiPostViewController
+        
+        //        var postingIndex: String = ""
+        //        var date: String?
+        //        var longitude: Double?
+        //        var latitude: Double?
+        //        var address: String?
+        //        var selectedKey: String?
+        //        var photoName: String?
+        
+        let rowsIndex = searchedPlaces[indexPath.row]
+        print("rowsIndex", rowsIndex)
+        
+        specificVC?.date = rowsIndex.writtenDate
+        specificVC?.postingIndex = rowsIndex.placeName!
+        specificVC?.address = rowsIndex.placeAddress
+        specificVC?.comment = rowsIndex.comment
+        specificVC?.thought = rowsIndex.content
+        
+        DispatchQueue.global().async {
+            let imageURLStr:String = rowsIndex.photoUrl!
+            let imageURL:URL = URL(string: imageURLStr)!
+            let imageData:NSData = NSData(contentsOf: imageURL)!
+            
+            DispatchQueue.main.async {
+                specificVC?.detailImage = UIImage(data: imageData as Data)
+                self.present(specificVC!, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }
