@@ -489,6 +489,7 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="FooPls" width="198" height="73"/>
         <image name="GMarker" width="48" height="48"/>
         <image name="back_black" width="64" height="64"/>
@@ -496,5 +497,9 @@
         <image name="food1" width="564" height="792"/>
         <image name="picture" width="5000" height="5000"/>
         <image name="store" width="600" height="600"/>
+=======
+        <image name="food1" width="564" height="792"/>
+        <image name="food2" width="564" height="846"/>
+>>>>>>> master
     </resources>
 </document>

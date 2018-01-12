@@ -13,7 +13,7 @@ class GradientPostingView: UIViewController {
     
     let writePostBtn : UIButton = {
         let postbtn = UIButton()
-        postbtn.addTarget(GradientPostingView.self, action: #selector(showPostingPage(_:)), for: UIControlEvents.touchUpInside)
+//        postbtn.addTarget(GradientPostingView.self, action: #selector(showPostingPage(_:)), for: UIControlEvents.touchUpInside)
         return postbtn
     }()
     

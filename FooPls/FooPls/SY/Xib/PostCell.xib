@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +21,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysb-Kh-e7t">
-                        <rect key="frame" x="25" y="0.0" width="270" height="43.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="26.5" y="0.0" width="267" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ysb-Kh-e7t" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-50" id="4yf-KW-aUk"/>
+                    <constraint firstItem="Ysb-Kh-e7t" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:1.2" id="4yf-KW-aUk"/>
                     <constraint firstItem="Ysb-Kh-e7t" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="JpT-bc-sdn"/>
                     <constraint firstItem="Ysb-Kh-e7t" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="ckb-dL-ukS"/>
                     <constraint firstItem="Ysb-Kh-e7t" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dnp-QO-phJ"/>

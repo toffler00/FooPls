@@ -2,19 +2,37 @@
 import UIKit
 import PagingKit
 import Firebase
+import SnapKit
 
 class TJProfileViewController: UIViewController {
 
+    
     var menuViewController: PagingMenuViewController!
     var contentViewController: PagingContentViewController!
     var reference = Database.database().reference()
     var userID = Auth.auth().currentUser?.uid
     var userNickname: String?
     
+    var followerBtn: UIButton = {
+        let followerBtn = UIButton()
+        followerBtn.addTarget(self, action: #selector(followerBtnAction), for: .touchUpInside)
+        return followerBtn
+    }()
+    
+    var followingBtn: UIButton = {
+        let followingBtn = UIButton()
+        followingBtn.addTarget(self, action: #selector(followingBtnAction), for: .touchUpInside)
+        return followingBtn
+    }()
+
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var profileBGImgView: UIImageView!
     @IBOutlet weak var profileNickname: UILabel!
+    @IBOutlet weak var followerStackView: UIStackView!
+    @IBOutlet weak var followerLabel: UILabel!
+    @IBOutlet weak var followingStackView: UIStackView!
+    @IBOutlet weak var followingLabel: UILabel!
     
     var dataSource: [(titleImg: String, title: String, vc: UIViewController)]?
     
@@ -39,10 +57,42 @@ class TJProfileViewController: UIViewController {
         profileView.layer.borderColor = mainColor.cgColor
         profileView.layer.borderWidth = 3
         profileView.layer.cornerRadius = (profileView.frame.width / 2) - 3
-        
+        followerStackView.addSubview(followerBtn)
+        followerBtn.snp.makeConstraints {
+            $0.top.equalTo(followerStackView)
+            $0.bottom.equalTo(followerStackView)
+            $0.right.equalTo(followerStackView)
+            $0.left.equalTo(followerStackView)
+        }
+        followingStackView.addSubview(followingBtn)
+        followingBtn.snp.makeConstraints {
+            $0.top.equalTo(followingStackView)
+            $0.bottom.equalTo(followingStackView)
+            $0.right.equalTo(followingStackView)
+            $0.left.equalTo(followingStackView)
+        }
     }
+    
+    @objc func followerBtnAction() {
+        performSegue(withIdentifier: "Follower", sender: nil)
+    }
+    
+    @objc func followingBtnAction() {
+        performSegue(withIdentifier: "Following", sender: nil)
+    }
+    
     //파이어베이스 데이터 베이스 저장된 프로파일 값을 불러옴
     private func loadData(){
+        reference.child("dummyData").child("followerUser").observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
+            guard let value = snapshot.value as? [String] else { return }
+            self.followerLabel.text = String(value.count)
+        }
+        reference.child("dummyData").child("followingUser").observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
+            guard let value = snapshot.value as? [String] else { return }
+            self.followingLabel.text = String(value.count)
+        }
         reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
             guard let `self` = self else { return }
             if let value = snapshot.value as? [String : Any] {
@@ -62,14 +112,10 @@ class TJProfileViewController: UIViewController {
         let timelineVC = timelineSB.instantiateViewController(withIdentifier: "TJTimelineViewController")
         let likeSB = UIStoryboard(name: "TJLike", bundle: nil)
         let likeVC = likeSB.instantiateViewController(withIdentifier: "TJLikeViewController")
-//        let listSB = UIStoryboard(name: "TJList", bundle: nil)
-//        let listVC = listSB.instantiateViewController(withIdentifier: "TJListViewController")
-//        let bookmarkSB = UIStoryboard(name: "TJBookmark", bundle: nil)
-//        let bookmarkVC = bookmarkSB.instantiateViewController(withIdentifier: "TJBookmarkViewController")
         
         //페이징에 해당하는 뷰컨트롤러와 이미지 타이틀을 저장
         dataSource = [(titleImg: "timeline",title: "타임라인", vc: timelineVC),
-                      (titleImg: "like",title: "좋아요", vc: likeVC)]
+                      (titleImg: "star",title: "가고싶다", vc: likeVC)]
         
         //페이징 메뉴셀과 메뉴 포커싱 뷰를 등록
         menuViewController.register(nib: UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")

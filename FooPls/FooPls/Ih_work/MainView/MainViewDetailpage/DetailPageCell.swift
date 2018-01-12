@@ -22,6 +22,6 @@ class DetailPageCell: UICollectionViewCell {
     @IBOutlet weak var adressLb: UILabel!
     @IBOutlet weak var showStoryLb: UILabel!
     @IBOutlet weak var thoughtsLb: UILabel!
-    
+
     
 }

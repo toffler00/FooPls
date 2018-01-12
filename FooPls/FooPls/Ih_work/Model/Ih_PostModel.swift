@@ -29,6 +29,7 @@ struct  PostModel {
     var timeStamp : Any?
     var photoName : String?
     var author : String?
+    var photoID: String?
     var storeImgData : Data?{
         if let image = storeImg
         {
@@ -127,6 +128,7 @@ struct  PostModel {
         self.timeStamp = dictionary["timestamp"] as? String
         self.photoName = dictionary["photoname"] as? String
         self.nickName = (dictionary["nickname"] as? String)!
+        self.photoID = dictionary["photoID"] as? String
     }
     
 }

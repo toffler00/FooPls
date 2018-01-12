@@ -262,6 +262,7 @@
                         <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="delegate" destination="B4V-A9-dQX" id="Ttt-xy-aej"/>
                         <segue destination="hhD-Me-bFx" kind="relationship" relationship="viewControllers" id="EHa-im-8h9"/>
                         <segue destination="3Im-qS-jGl" kind="relationship" relationship="viewControllers" id="ymk-yG-kT1"/>
                         <segue destination="2nF-ES-6DM" kind="relationship" relationship="viewControllers" id="kan-AP-rBs"/>
@@ -285,7 +286,7 @@
                                 <rect key="frame" x="0.0" y="323" width="375" height="247"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fu3-hu-xOt">
-                                        <rect key="frame" x="37.5" y="66.5" width="187.5" height="40"/>
+                                        <rect key="frame" x="37.5" y="128" width="187.5" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posting" translatesAutoresizingMaskIntoConstraints="NO" id="idh-7b-FuS">
                                                 <rect key="frame" x="0.0" y="0.0" width="40.5" height="40"/>
@@ -315,7 +316,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-wl-xqN">
-                                        <rect key="frame" x="37.5" y="140.5" width="187.5" height="40"/>
+                                        <rect key="frame" x="37.5" y="190" width="187.5" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="write" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-jT-VKj">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -352,10 +353,10 @@
                                 <constraints>
                                     <constraint firstItem="bRb-wl-xqN" firstAttribute="centerX" secondItem="NXL-EP-n8W" secondAttribute="centerX" multiplier="0.7" id="9LE-Yn-9Ji"/>
                                     <constraint firstItem="Fu3-hu-xOt" firstAttribute="width" secondItem="NXL-EP-n8W" secondAttribute="width" multiplier="0.5" id="Khp-eb-akr"/>
-                                    <constraint firstItem="bRb-wl-xqN" firstAttribute="centerY" secondItem="NXL-EP-n8W" secondAttribute="centerY" multiplier="1.3" id="XL1-Eg-vqS"/>
+                                    <constraint firstItem="bRb-wl-xqN" firstAttribute="centerY" secondItem="NXL-EP-n8W" secondAttribute="centerY" multiplier="1.7" id="XL1-Eg-vqS"/>
                                     <constraint firstItem="bRb-wl-xqN" firstAttribute="width" secondItem="NXL-EP-n8W" secondAttribute="width" multiplier="0.5" id="dqB-7l-wSy"/>
                                     <constraint firstItem="Fu3-hu-xOt" firstAttribute="centerX" secondItem="NXL-EP-n8W" secondAttribute="centerX" multiplier="0.7" id="fOE-UI-Qbh"/>
-                                    <constraint firstItem="Fu3-hu-xOt" firstAttribute="centerY" secondItem="NXL-EP-n8W" secondAttribute="centerY" multiplier="0.7" id="wEW-S0-v7W"/>
+                                    <constraint firstItem="Fu3-hu-xOt" firstAttribute="centerY" secondItem="NXL-EP-n8W" secondAttribute="centerY" multiplier="1.2" id="wEW-S0-v7W"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -384,7 +385,7 @@
                 <viewControllerPlaceholder storyboardName="Ih_PostPage" id="Zye-if-IR0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pX-OF-gFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1200" y="2237"/>
+            <point key="canvasLocation" x="-1270" y="2279"/>
         </scene>
         <!--NewWrite-->
         <scene sceneID="7Ib-7K-YeE">
@@ -392,7 +393,7 @@
                 <viewControllerPlaceholder storyboardName="NewWrite" id="8zs-WF-F5W" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMH-sS-JR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-585" y="2270"/>
+            <point key="canvasLocation" x="-516" y="2279"/>
         </scene>
     </scenes>
     <resources>

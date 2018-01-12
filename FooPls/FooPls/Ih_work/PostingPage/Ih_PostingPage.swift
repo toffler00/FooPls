@@ -14,13 +14,15 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
 
     //MARK : - Variable
     
-    
+    var reference = Database.database().reference()
+    var userID = Auth.auth().currentUser?.uid
     var userInfo = Auth.auth().currentUser
     var lati : Double?
     var longi : Double?
     var timeStamp : String?
     var imageUrl : String?
     var photoName : String?
+    var profileImgURL: String?
     
     @IBOutlet weak var postPageScrollView: UIScrollView!
     @IBOutlet weak var postDateLb: UILabel!
@@ -93,7 +95,11 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
        
         UIAlertController.presentAlertController(target: self, title: "업로드성공",
                                                  massage: "업로드 성공하였습니다.",
-                                                 cancelBtn: false, completion: nil)
+                                                 cancelBtn: false, completion: { [weak self] (action) in
+                                                    guard let `self` = self else { return }
+                                                    self.performSegue(withIdentifier: "MainSegue", sender: nil)
+                                                    DataCenter.main.postingUpload(uid : uid!, storeName: name, storeAddress: address, content: content, latitude: self.lati!, longitude: self.longi!, storeImgurl: url!, date: date, timeStamp: timeStamp, photoName: photoname!, thoughts: thoughts, nickname: nickName!, autoIDkey: autoIDkey)
+        })
         print("업로드성공")
     }
     
@@ -118,10 +124,12 @@ GooglePlaceDataDelegate, UITextViewDelegate, UIImagePickerControllerDelegate {
                     if error != nil {
                         print(error.debugDescription)
                     }else {
-                    UIAlertController.presentAlertController(target: self, title: "업로드성공",
-                                                             massage: "업로드 성공하였습니다.",
-                                                             cancelBtn: false, completion: nil)
-                    print("업로드성공")
+                        UIAlertController.presentAlertController(target: self, title: "업로드성공",
+                                                                 massage: "업로드 성공하였습니다.",
+                                                                 cancelBtn: false, completion: { [weak self] (action) in
+                                                                    guard let `self` = self else { return }
+                                                                    self.performSegue(withIdentifier: "MainSegue", sender: nil)
+                        })
                     }
             }
         }
@@ -213,7 +221,16 @@ extension PostingPage {
         }
         
     }
+    
     func getDate() {
+        reference.child("users").child(userID!).child("profile").observe(.value) { [weak self] (snapshot) in
+            guard let `self` = self else { return }
+            if let value = snapshot.value as? [String: Any] {
+                self.profileImgURL = value["photoID"] as? String
+                self.profileImgView.kf.setImage(with: URL(string: self.profileImgURL!))
+            }
+        }
+        
         let getToday = Date()
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "YYYY년 MM월 dd일"

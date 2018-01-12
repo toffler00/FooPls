@@ -33,11 +33,11 @@ class GradientView: UIViewController {
     }
    
     @IBAction func showPostingPage(_ sender: UIButton) {
-       
+       print("postButton")
     }
     
     @IBAction func showCalendarPage(_ sender: UIButton) {
-        
+        print("캘린터")
     }
     
     override func didReceiveMemoryWarning() {

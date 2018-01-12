@@ -143,7 +143,7 @@ extension SK_SearchListViewController : GMSAutocompleteResultsViewControllerDele
         
         //let downloadData = SearchedData(data: place.name)
         let data = SearchedData()
-        data.loadToFirebase(address: "FooPls!") { (downloadData) in
+        data.loadToFirebase(address: place.name) { (downloadData) in
             print(downloadData)
             for data in downloadData {
                 self.searchedPlaces.append(data)
@@ -183,11 +183,32 @@ extension SK_SearchListViewController : UITableViewDelegate, UITableViewDataSour
         let downloadrows = searchedPlaces[indexPath.row]
         print("서치에서 실행되는중 ! : downloadrows", downloadrows)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = downloadrows.placeName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? SearchResultTableViewCell
         
+        cell?.usernameLB.text = downloadrows.username
+        cell?.addressNameLB.text = downloadrows.placeName
+        cell?.commentLB.text = downloadrows.comment
         
-        return cell
+        //dispathQue로 돌리기
+        DispatchQueue.global().async {
+            let imageURLStr:String = downloadrows.photoUrl!
+            let imageURL:URL = URL(string: imageURLStr)!
+            let imageData:NSData = NSData(contentsOf: imageURL)!
+            
+            DispatchQueue.main.async {
+                cell?.uploadedImage.image = UIImage(data: (imageData as? Data)!)
+            }
+        }
+        
+        return cell!
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let heightForRow:CGFloat = 80
+        
+        return heightForRow
         
     }
     

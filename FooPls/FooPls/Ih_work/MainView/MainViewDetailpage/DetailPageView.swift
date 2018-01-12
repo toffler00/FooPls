@@ -1,8 +1,9 @@
 
 import UIKit
-import SDWebImage
+//import SDWebImage
 import Firebase
 import FirebaseStorage
+import Kingfisher
 
 
 class DetailPageView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,     UICollectionViewDelegate, SendSelectedCellIntfo {
@@ -49,7 +50,7 @@ class DetailPageView: UIViewController, UICollectionViewDataSource, UICollection
         cell.showStoryLb.text = postData[indexPath.item].contentsText
         cell.nickNameLb.text = postData[indexPath.item].nickName
         cell.thoughtsLb.text = postData[indexPath.item].thoughts
-
+        cell.postingDateLb.text = postData[indexPath.item].date
         
         if let storeImgUrl = self.postData[indexPath.row].imageurl {
             let url = URL(string: storeImgUrl)

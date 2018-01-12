@@ -77,9 +77,9 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: pwd, completion: { [weak self] (user, error) in
                 guard let `self` = self else { return }
                 if error == nil && user != nil {
-                    let userNickname = user?.displayName ?? ""
+                    let userNickname = user?.displayName ?? user?.email
                     let defaultProfileURL = "https://firebasestorage.googleapis.com/v0/b/foopls-84f76.appspot.com/o/profile_images%2FdefaultProfile.png?alt=media&token=7bca209f-50c9-4b5f-91ed-b651ded3b57f"
-                    let userDictionary : [String: Any] = ["email": email, "nickname": userNickname, "phone" : "", "photoID": defaultProfileURL]
+                    let userDictionary : [String: Any] = ["email": email, "nickname": userNickname!, "phone" : "", "photoID": defaultProfileURL]
                     self.reference.child("users").child(user!.uid).child("profile").setValue(userDictionary)
                     UIAlertController.presentAlertController(target: self,
                                                              title: "가입축하",
@@ -89,6 +89,12 @@ class SignUpViewController: UIViewController {
                                                              completion: { _ in
                                                                 self.performSegue(withIdentifier: "mainSegue", sender: nil)
                     })
+                }else {
+                    let firebaseErrorMsg = error!.localizedDescription
+                    let errorMsg = firebaseError(rawValue: firebaseErrorMsg)?.errorStr
+                    
+                    UIAlertController.presentAlertController(target: self,
+                                                             title: "경고", massage: errorMsg, cancelBtn: false, completion: nil)
                 }
             })
         }
@@ -102,6 +108,25 @@ extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         rePwdTF.resignFirstResponder()
         return true
+    }
+}
+
+//MARK: - Enum
+//파이어베이스 가입시 발생하는 에러에 대한 한국어 처리
+enum firebaseError : String{
+    case alreadyEmail = "The email address is already in use by another account."
+    case badlyFormatEmail = "The email address is badly formatted."
+    case passwordError = "The password must be 6 characters long or more."
+    
+    var errorStr: String {
+        switch self {
+        case .alreadyEmail:
+            return "이미 존재하는 메일입니다."
+        case .badlyFormatEmail:
+            return "잘못된 이메일 형식입니다."
+        case .passwordError:
+            return "비밀번호가 너무 짧습니다."
+        }
     }
 }
 

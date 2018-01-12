@@ -47,7 +47,7 @@
                                         </constraints>
                                         <state key="normal" image="back_black"/>
                                         <connections>
-                                            <segue destination="qNu-YF-D9n" kind="modal" id="muw-7k-LbO"/>
+                                            <segue destination="qNu-YF-D9n" kind="modal" identifier="MainSegue" id="muw-7k-LbO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er5-BR-SrM" userLabel="Write">
