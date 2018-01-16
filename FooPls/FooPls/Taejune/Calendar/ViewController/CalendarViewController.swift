@@ -174,7 +174,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         // 데이트를 선택하면 그 날짜에 해당하는 데이터가 테이블 뷰에 나타남
         if oldDate == selectedDate {
             
-            self.reference.child("user")
             self.reference.child("users").child(self.userID!).child("calendar").queryOrdered(byChild: "date").queryEqual(toValue: self.selectedDate).observe(.value, with: { [weak self] (snapshot) in
                 guard let `self` = self else { return }
                 // 데이터 읽기 전에 배열 안에 든 데이터 지우고 데이터를 읽음
@@ -224,7 +223,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
         cell.calendarLb.text = cellState.text
-        
         handleCellisContents(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
         handleCellTextColor(cell: cell, cellState: cellState)
