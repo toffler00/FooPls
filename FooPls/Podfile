@@ -9,7 +9,6 @@ target 'FooPls' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Core'
-  pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
   pod 'FacebookCore'
   pod 'FacebookLogin'
