@@ -5,22 +5,24 @@
 - 자신이 먹은 음식을 공유 + 자신이 먹은 음식을 기록
 
 
+  Link : [프로젝트 영상 보기](https://youtu.be/k75gYIzaQBs)
+
 
 #### 2. 동작 화면
 
-|                 앱 시작 화면                  | 로그인 화면                                   |
+|                 앱 시작 화면                  |                  로그인 화면                  |
 | :--------------------------------------: | :--------------------------------------: |
 | ![FooPls-Splash](/Resources/FooPls-Splash.gif) | ![FooPls-Splash](/Resources/FooPls-Login.jpg) |
 
 
 
-|                  회원 가입                   | 카카오 로그인                                  | 페이스북 로그인                                 |
+|                  회원 가입                   |                 카카오 로그인                  |                 페이스북 로그인                 |
 | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
 | ![FooPls-Splash](/Resources/FooPls-Signup.gif) | ![FooPls-Splash](/Resources/FooPls-KakaoLogin.gif) | ![FooPls-Splash](/Resources/FooPls-FacebookLogin.gif) |
 
 
 
-| 메인 화면                                    |
+|                  메인 화면                   |
 | :--------------------------------------: |
 | ![FooPls-Main](/Resources/FooPls-Main.gif) |
 
