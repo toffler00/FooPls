@@ -5,26 +5,26 @@
 - 자신이 먹은 음식을 공유 + 자신이 먹은 음식을 기록
 
 
-  Link : [프로젝트 영상 보기](https://youtu.be/k75gYIzaQBs)
+  Link : [프로젝트 영상 보기][1]
 
 
 #### 2. 동작 화면
 
 |                 앱 시작 화면                  |                  로그인 화면                  |
 | :--------------------------------------: | :--------------------------------------: |
-| ![FooPls-Splash](/Resources/FooPls-Splash.gif) | ![FooPls-Splash](/Resources/FooPls-Login.jpg) |
+| ![FooPls-Splash][image-1] | ![FooPls-Splash][image-2] |
 
 
 
 |                  회원 가입                   |                 카카오 로그인                  |                 페이스북 로그인                 |
 | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
-| ![FooPls-Splash](/Resources/FooPls-Signup.gif) | ![FooPls-Splash](/Resources/FooPls-KakaoLogin.gif) | ![FooPls-Splash](/Resources/FooPls-FacebookLogin.gif) |
+| ![FooPls-Splash][image-3] | ![FooPls-Splash][image-4] | ![FooPls-Splash][image-5] |
 
 
 
 |                  메인 화면                   |
 | :--------------------------------------: |
-| ![FooPls-Main](/Resources/FooPls-Main.gif) |
+| ![FooPls-Main][image-6] |
 
 
 
@@ -74,3 +74,11 @@
 
   : 어떠한 작업의 진행을 표현하기 위해 사용
 
+[1]:	https://youtu.be/k75gYIzaQBs
+
+[image-1]:	/Resources/FooPls-Splash.gif
+[image-2]:	/Resources/FooPls-Login.jpg
+[image-3]:	/Resources/FooPls-Signup.gif
+[image-4]:	/Resources/FooPls-KakaoLogin.gif
+[image-5]:	/Resources/FooPls-FacebookLogin.gif
+[image-6]:	/Resources/FooPls-Main.gif
