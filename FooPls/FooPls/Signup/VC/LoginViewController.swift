@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     var userInfo : UserModel?
     
     // @IBOutlet
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var kakaoBtn: KOLoginButton!
     @IBOutlet weak var emailTF: UITextField!
@@ -33,14 +34,14 @@ class LoginViewController: UIViewController {
         
         // MARK: 페이스북 버튼
         let fbLoginButton = LoginButton(readPermissions: [.publicProfile, .email])
-        view.addSubview(fbLoginButton)
+        contentView.addSubview(fbLoginButton)
         
         // 페이스북 버튼 레이아웃
         fbLoginButton.snp.makeConstraints {
             $0.width.equalTo(kakaoBtn)
             $0.height.equalTo(kakaoBtn)
-            $0.centerX.equalTo(view)
-            $0.centerY.equalTo(view).multipliedBy(1.8)
+            $0.centerX.equalTo(contentView)
+            $0.centerY.equalTo(contentView).multipliedBy(1.8)
         }
         
         fbLoginButton.delegate = self
